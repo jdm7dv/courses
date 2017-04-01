@@ -1,0 +1,28 @@
+#!/bin/sh
+
+FILE="file:/home/hines/nrn/html/help"
+HTTP="http://www.neuron.yale.edu/neuron/docs/help"
+
+
+case $1 in
+	http)
+		FROM=${FILE}
+		TO=${HTTP}
+		;;
+	file)
+		TO=${FILE}
+		FROM=${HTTP}
+		;;
+	*)
+		echo "\"$0 file\" for ${FILE} style"
+		echo "\"$0 http\" for ${HTTP} style"
+		exit 0
+esac
+echo "From ${FROM}"
+echo "To ${TO}"
+for i in `find . -name \*.htm\* -print` ; do
+	echo $i
+	echo "s;${FROM};${TO};g"
+	sed "s;${FROM};${TO};g" <$i > temp
+	mv temp $i
+done

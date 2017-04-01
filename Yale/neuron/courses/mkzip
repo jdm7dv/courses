@@ -1,0 +1,14 @@
+rm course.zip
+cd ..
+zip -r course.zip course
+zip -d course.zip \*/CVS/\*
+zip -d course.zip \*/sparc/\*
+zip -d course.zip \*/talk/\*
+zip -d course.zip \*/lincir1/\*.ps
+zip -d course.zip \*/lincir1/\*.id
+zip -d course.zip \*/lincir2/\*.ps
+zip -d course.zip \*/lincir2/\*.id
+zip -d course.zip \*/hb/\*
+zip -d course.zip \*/hbx/\*
+zip -d course.zip \*/methods/\*
+mv course.zip course/course.zip

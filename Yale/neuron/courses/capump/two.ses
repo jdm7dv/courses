@@ -1,0 +1,128 @@
+objectvar save_window_, rvp_
+objectvar scene_vector_[4]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+
+//Begin Insert/Remove Mechanisms
+{
+load_file("inserter.hoc", "Inserter")
+}
+{
+soma ocbox_ = new Inserter(0)
+}
+{object_push(ocbox_)}
+{
+mt.select("capmp") i = mt.selected()
+ms[i] = new MechanismStandard("capmp")
+ms[i].set("width_capmp", 0.1, 0)
+ms[i].set("tau_capmp", 100000, 0)
+ms[i].set("cabulk_capmp", 100, 0)
+ms[i].set("pump0_capmp", 3e-14, 0)
+mstate[i]= 1
+maction(i)
+}
+{object_pop() doNotify()}
+{
+ocbox_ = ocbox_.v1
+ocbox_.map("Insert/Remove Mechanisms", 391, 124, 93.12, 129.6)
+}
+objref ocbox_
+//End Insert/Remove Mechanisms
+
+{
+save_window_ = new Graph(0)
+save_window_.size(0,100,0,0.101)
+scene_vector_[2] = save_window_
+{save_window_.view(0, 0, 100, 0.101, 806, 41, 300.48, 200.32)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addvar("soma.cai( 0.5 )", 1, 1, 0.365495, 0.919169, 2)
+}
+{
+xpanel("soma(0 - 1) (Parameters)", 0)
+xlabel("soma(0 - 1) (Parameters)")
+xlabel("nseg = 1")
+soma.L = 3.1831
+xvalue("L","soma.L", 1,"define_shape()", 0, 0 )
+soma.diam = 10
+xvalue("diam","soma.diam", 1,"", 0, 0 )
+soma.cm = 1
+xvalue("cm","soma.cm", 1,"", 0, 0 )
+soma.width_capmp = 0.1
+xvalue("width_capmp","soma.width_capmp", 1,"", 0, 0 )
+soma.tau_capmp = 100000
+xvalue("tau_capmp","soma.tau_capmp", 1,"", 0, 0 )
+soma.cabulk_capmp = 100
+xvalue("cabulk_capmp","soma.cabulk_capmp", 1,"", 0, 0 )
+soma.pump0_capmp = 3e-14
+xvalue("pump0_capmp","soma.pump0_capmp", 1,"", 0, 0 )
+xpanel(51,122)
+}
+{
+xpanel("soma(0.5) (Assigned)", 0)
+xlabel("soma(0.5) (Assigned)")
+soma.v(0.5) = -266.6
+xvalue("v","soma.v(0.5)", 0,"", 0, 1 )
+soma.i_cap(0.5) = -1.97786e-06
+xvalue("i_cap","soma.i_cap(0.5)", 0,"", 0, 1 )
+soma.ica_capmp(0.5) = 1.97786e-06
+xvalue("ica_capmp","soma.ica_capmp(0.5)", 0,"", 0, 1 )
+soma.eca(0.5) = 146.536
+xvalue("eca","soma.eca(0.5)", 0,"", 0, 1 )
+soma.ica(0.5) = 1.97786e-06
+xvalue("ica","soma.ica(0.5)", 0,"", 0, 1 )
+xpanel(354,433)
+}
+{
+xpanel("soma(0.5) (States)", 0)
+xlabel("soma(0.5) (States)")
+soma.v(0.5) = -266.6
+xvalue("v","soma.v(0.5)", 0,"", 0, 1 )
+soma.cam_capmp(0.5) = 0.0103468
+xvalue("cam_capmp","soma.cam_capmp(0.5)", 0,"", 0, 1 )
+soma.pump_capmp(0.5) = 2.93918e-14
+xvalue("pump_capmp","soma.pump_capmp(0.5)", 0,"", 0, 1 )
+soma.capump_capmp(0.5) = 6.08184e-16
+xvalue("capump_capmp","soma.capump_capmp(0.5)", 0,"", 0, 1 )
+soma.cai(0.5) = 1.03468e-05
+xvalue("cai","soma.cai(0.5)", 0,"", 0, 1 )
+soma.cao(0.5) = 2
+xvalue("cao","soma.cao(0.5)", 0,"", 0, 1 )
+xpanel(50,429)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(-10,100,0,0.0029)
+scene_vector_[3] = save_window_
+{save_window_.view(-10, 0, 110, 0.0029, 807, 306, 300.48, 200.32)}
+graphList[1].append(save_window_)
+save_window_.save_name("graphList[1].")
+save_window_.addvar("soma.ica( 0.5 )", 1, 1, 0.496486, 0.919169, 2)
+}
+{
+xpanel("RunControl", 0)
+v_init = -65
+xvalue("Init","v_init", 1,"stdinit()", 1, 1 )
+xbutton("Init & Run","run()")
+xbutton("Stop","stoprun=1")
+runStopAt = 100
+xvalue("Continue til","runStopAt", 1,"{continuerun(runStopAt) stoprun=1}", 1, 1 )
+runStopIn = 1
+xvalue("Continue for","runStopIn", 1,"{continuerun(t + runStopIn) stoprun=1}", 1, 1 )
+xbutton("Single Step","steprun()")
+t = 100
+xvalue("t","t", 2 )
+tstop = 100
+xvalue("Tstop","tstop", 1,"tstop_changed()", 0, 1 )
+dt = 1
+xvalue("dt","dt", 1,"setdt()", 0, 1 )
+steps_per_ms = 1
+xvalue("Points plotted/ms","steps_per_ms", 1,"setdt()", 0, 1 )
+xcheckbox("Quiet",&stdrun_quiet,"")
+realtime = 0
+xvalue("Real Time","realtime", 0,"", 0, 1 )
+xpanel(497,41)
+}
+objectvar scene_vector_[1]
+{doNotify()}

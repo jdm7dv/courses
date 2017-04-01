@@ -1,0 +1,172 @@
+<HTML>
+<HEAD>
+  <!-- saveses.html -->
+  <!-- version 1.2b 12:50 PM 9/13/2000 -->
+  <TITLE>Saving Windows</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<H1>
+Saving Windows
+</H1>
+
+Saving the windows of an interface for later re-use is an essential
+operation. The position, size, and contents of all the windows you have
+constructed often represent a great deal of labor that you don't want to
+do over again.  Losing a CellBuild or MulRunFitter window can be a
+disaster. 
+
+<p>
+This article explains how to save windows, how to save them in groups
+in separate files in order to keep separate the ideas of specification,
+control, graphing, optimization, etc, and how to recover as much work as
+possible in the event that a saved window generates an error when
+reading it from a file. 
+
+<H2>
+What is a session?
+</H2>
+
+We call the set of windows, including the ones that are hidden, a
+"session".  The simplest way to save the windows is to save them all at
+once with NEURONMainMenu / File / save session.  
+This creates a session file, which 
+NEURON can use to recreate the windows that were saved.
+Session files, which are 
+generally given the suffix ".ses"
+to distinguish them from user-written hoc files, 
+are discussed below in more detail.
+
+<H2>
+When (and how) to save all windows to a ses file
+</H2>
+
+Near the beginning of a project it's an 
+excellent practice to save the entire
+session in a temporary file whenever a crash 
+(losing all the work since the previous save) 
+would cause distress.  
+Do this with NEURONMainMenu / File / save session.
+Be sure to verify that the session file
+can be retrieved (NEURONMainMenu / File / load session) 
+before you overwrite an earlier working session file!
+
+<p>
+It is most useful to retrieve such a session file 
+right after launching NEURON, when no other windows are 
+present on the screen.
+It is especially useful if one of the windows is a
+CellBuild or NetGUI, because most windows depend on the 
+existence of information
+declared by them.
+Conflicts can arise if there are multiple CellBuild or
+NetGui windows that could interfere with one another, 
+especially if they create sections with the same names.  
+
+<H2>
+When (and how) to save selected windows
+</H2>
+
+The main problem with saving <it>all</it> windows in a single session file is
+that it mixes specification, control, parameter, and graphing windows. 
+Experience has shown that it is best to segregate these categories 
+in order to have more control over when groups of windows should be created.  
+This allows you to easily start a simulation by retrieving the desired
+variant of a CellBuilder window, separately retrieving
+one of several possible stimulus
+protocols and parameter sets, and lastly retrieving groups of graph windows.
+
+<H3>
+The Window Group Manager
+</H3>
+
+The NEURONMainMenu / Window / GroupManager enables the separate creation
+of such session files with just a little more effort than the bulk
+NEURONMainMenu / File/ save session. With the "NewGroup" and "ChangeName"
+buttons one can define several named groups, e.g. "Cell", "Stimulus",
+"Control", and "Voltage Graphs".
+
+<p>
+The names of window groups appear in the left panel of the 
+window group manager.
+If you click on one of these names, 
+the titles of the windows that belong to it will appear 
+in the center panel.
+Clicking on one of these titles removes it from the group, 
+and the title will now appear in the right panel, 
+which lists the ungrouped windows.
+To add a window to the group, just click on the 
+window title in the right panel.
+You can move a window from one
+window group to another by following this sequence :
+<ol>
+  <li>Select the group it is currently in.
+  <li>Select its window title. (Makes it ungrouped)
+  <li>Select the group you want it to be in.
+  <li>Select its window title in the ungrouped list.
+</ol>
+
+<p>
+To save any window group to its own session file, 
+click on the SaveGroup button.
+
+<p>
+The window group manager is a dialog box and so must be closed before
+other windows will accept further input. 
+It may be opened at any time via the NEURONMainMenu / Window / GroupManager
+menu item and groups re-saved, new windows added to existing groups, etc.
+
+<H2>
+What's in a ses file
+</H2>
+
+A session file is actually just a sequence of hoc instructions 
+for reconstructing the windows that have been saved to it.
+In a session file, the
+instructions for each window are identified by comments.
+It is often
+a simple matter to use a text editor to modify those instructions, 
+e.g. change the value of a parameter, 
+or remove all the instructions for a
+window if it is preventing the file from being loaded.  
+Below we discuss how the latter can happen.
+There are circumstances in which a
+window in the current session may not easily be made to start again when
+NEURON is exited and relaunched. 
+
+<H2>
+What can go wrong, and how to fix it
+</H2>
+
+The most common reason for an error during retrieval of
+a session file is when variables used by the window have not yet
+been defined.
+Thus, retrieving a point process manager window
+before the prerequisite cable section has been created will result
+in a hoc error. Retrieving a Graph of SEClamp[0].i will not succeed
+if SEClamp[0] does not exist. In most cases, loading the prerequisite
+sessions first will fix the error. The init.hoc file is an excellent
+place to put a sequence of load_file statements that start a
+default session.  Errors due to mismatched object IDs are easy
+to correct by editing the session file. Mismatched object IDs
+can occur from particular sequences of creation and destruction
+of windows by the user. For example, suppose you
+<ol>
+  <li>Start a PointProcessManager and
+      create the first instance of an IClamp. This will be IClamp[0]
+  <li>Start another PointProcessManager and
+      create a second instance of an IClamp. This will be IClamp[1]
+  <li>Close the first PointProcessManager. That destroys IClamp[0].
+  <li>Start a graph and plot IClamp[1].i
+  <li>Save the session.
+</ol>
+If you now exit and re-launch NEURON and retrieve the session,
+the old IClamp[1] will be re-created as IClamp[0], and the
+creation of the Graph window will fail due to the invalid variable
+name it is attempting to define. The fix requires editing the
+session file and changing the IClamp[1].i string to IClamp[0].i
+
+<P>
+  <hr>
+<FONT size = -1><EM> Page and graphics copyright &copy; 1999-2001 N.T. Carnevale and M.L. Hines,
+All Rights Reserved.</EM></FONT>
+</BODY></HTML>

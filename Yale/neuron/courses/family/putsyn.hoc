@@ -1,0 +1,24 @@
+/* putsyn.hoc for somatic epsp as a function of synaptic location
+   last modified 7/15/99 NTC
+*/
+
+synloc=0	// accessible to the Gather Values tool
+
+proc putsyn() {
+	if ($1 < 0 || $1 > 1) {
+		printf("%c",7)	// ring bell
+		print "ERROR--location must be in the range [0, 1]" 
+		synloc = -1
+	} else {
+		// say what we want
+		dend AlphaSynapse[0].loc($1)
+		// find out what we got
+		synloc = AlphaSynapse[0].get_loc()
+   /* Note: get_loc() pushes the section of the target point 
+	process onto the section stack, so that it becomes the 
+	currently accessed section.  We must restore the currently 
+	accessed section to what it was before get_loc(). */
+		pop_section()
+		run()
+	}
+}

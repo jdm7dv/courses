@@ -1,0 +1,10 @@
+/* init.hoc for somatic epsp as a function of synaptic location
+   last modified 6/20/2007 NTC
+*/
+
+// start the GUI and load the ballstk cellbuilder
+load_file("nrngui.hoc")
+load_file("ballstk.ses")
+
+// load an initial starting session
+load_file("start.ses")

@@ -1,0 +1,84 @@
+objectvar save_window_, rvp_
+objectvar scene_vector_[4]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+
+//Begin Insert/Remove Mechanisms
+{
+load_file("inserter.hoc", "Inserter")
+}
+{
+soma ocbox_ = new Inserter(0)
+}
+{object_push(ocbox_)}
+{
+mt.select("capmp") i = mt.selected()
+ms[i] = new MechanismStandard("capmp")
+ms[i].set("width_capmp", 0.1, 0)
+ms[i].set("tau_capmp", 1, 0)
+ms[i].set("cabulk_capmp", 100, 0)
+ms[i].set("pump0_capmp", 3e-14, 0)
+mstate[i]= 1
+maction(i)
+mt.select("capmp2") i = mt.selected()
+ms[i] = new MechanismStandard("capmp2")
+ms[i].set("width_capmp2", 0.1, 0)
+ms[i].set("tau_capmp2", 1, 0)
+ms[i].set("cabulk_capmp2", 100, 0)
+ms[i].set("pump0_capmp2", 0.03, 0)
+mstate[i]= 0
+}
+{object_pop() doNotify()}
+{
+ocbox_ = ocbox_.v1
+ocbox_.map("Insert/Remove Mechanisms", 420, 252, 83.52, 129.6)
+}
+objref ocbox_
+//End Insert/Remove Mechanisms
+
+
+//Begin Grapher
+{
+load_file("grapher.hoc")}
+{
+ocbox_=new Grapher(1)
+
+ocbox_.info("x","x", "cabulk_capmp=10^x init()", -4, 2, -0.0001, 0.0029, 20, -4, 2)
+{
+save_window_=ocbox_.g
+save_window_.size(-4,2,-0.0001,0.0029)
+ocbox_.g = save_window_
+save_window_.save_name("ocbox_.g")
+save_window_.xexpr("x", 0)
+save_window_.addvar("soma.ica( 0.5 )", 1, 1, 0.426198, 0.990945, 2)
+}
+ocbox_ = ocbox_.vbox
+ocbox_.map("Grapher", 81, 249, 308.16, 453.12)
+}
+objref ocbox_
+//End Grapher
+
+
+//Begin Grapher
+{
+load_file("grapher.hoc")}
+{
+ocbox_=new Grapher(1)
+
+ocbox_.info("x","x", "cabulk_capmp2=10^x init2()", -4, 2, -0.0001, 0.0029, 20, -4, 2)
+{
+save_window_=ocbox_.g
+save_window_.size(-4,2,-0.0001,0.0029)
+ocbox_.g = save_window_
+save_window_.save_name("ocbox_.g")
+save_window_.xexpr("x", 0)
+save_window_.addvar("soma.ica( 0.5 )", 1, 1, 0.477316, 0.971799, 2)
+}
+ocbox_ = ocbox_.vbox
+ocbox_.map("Grapher", 523, 251, 308.16, 453.12)
+}
+objref ocbox_
+//End Grapher
+
+objectvar scene_vector_[1]
+{doNotify()}

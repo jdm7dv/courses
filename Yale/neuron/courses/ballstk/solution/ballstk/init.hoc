@@ -1,0 +1,11 @@
+/* init.hoc for first ball & stick exercise
+   last modified 9/12/2000 NTC
+*/
+
+// start the GUI and load ballstk.hoc
+load_file("nrngui.hoc")
+
+load_file("ballstk.ses")
+
+// load an initial starting session
+load_file("start.ses")

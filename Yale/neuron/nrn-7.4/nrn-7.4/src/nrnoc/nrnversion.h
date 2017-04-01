@@ -1,0 +1,7 @@
+#define NRN_MAJOR_VERSION "7"
+#define NRN_MINOR_VERSION "4"
+#define HG_DATE "2015-11-09"
+#define HG_BRANCH "Release 7.4"
+#define HG_CHANGESET "16a7055d4a86"
+#define HG_LOCAL "1370"
+#define HG_TAG ""

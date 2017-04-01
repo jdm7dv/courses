@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+  <!-- version 3.1 10:25 AM on 9/4/2000 -->
+  <TITLE>HH potassium channel model</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h1> HH potassium channel model </h1>
+Download the <a href="hhkchan/hhkchan.mod">hhkchan.mod file</a> into
+an empty directory.
+<hr>
+<h2>Part 1:</h2>
+
+<h3>On a PC . . . </h3>
+Launch mknrndll from the icon in the NEURON program group.
+<blockquote>
+Navigate to the directory containing the desired mod files. <br>
+Select "Make nrnmech.dll".
+</blockquote>
+and the "mknrndll" script will create a nrnmech.dll file which contains 
+the HHk model.
+
+<h3>On a unix workstation . . . </h3>
+Go to the directory that holds the hhkchan.mod file and run the shell script
+<pre>
+	nrnivmodl
+</pre>
+This will create a new executable called "special" which
+is a complete copy of NEURON and also includes the HHk model.
+
+<hr>
+
+<h3> Part 2:</h3>
+Using the location of hhkchan.mod as the working directory, 
+start NEURON with its standard GUI.
+
+<h3>On a PC . . . </h3>
+<blockquote>
+Under MSWin, double clicking on a hoc file opens that file using NEURON
+which automatically looks in the working 
+directory for a nrnmech.dll file. <br>
+<br>
+Alternatively, you can launch nrngui from the icon in the NEURON program group
+and use NEURONMainMenu/File/WorkingDir or RecentDir
+to navigate to the directory containing the nrnmech.dll file.
+</blockquote>
+<h3>On a unix workstation . . . </h3>
+<blockquote>
+when you run the script nrngui in a working directory, 
+it will automatically look for the special
+i.e. i686/special, that you created with nrnivmodl in the previous step.
+If it doesn't find one, it will execute the standard nrniv, 
+which contains only the "built-in" mechanisms 
+(hh, pas, IClamp etc..).
+</blockquote>
+
+Bring up a single compartment model with surface area of 
+100 um<sup>2</sup> (NEURON Main Menu / Build / single compartment) 
+and toggle the HHk button in the Distributed Mechanism Inserter ON.
+
+Verify that the new HHk model (along with the Na portion of the
+built-in HH channel) produces the same action potential
+as the built-in HH channel (using both its Na and K portions).
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2001 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

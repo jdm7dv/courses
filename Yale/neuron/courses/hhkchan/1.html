@@ -1,0 +1,32 @@
+<font size=+2>
+<br>
+<br>
+<br>
+<h1>UNIX</h1>
+In the directory containing the desired mod files:
+<pre>
+    nrnivmodl
+    nrngui
+</pre>
+Select NEURONMainMenu/Build/singlecompartment.
+
+<h1>MSWIN</h1>
+Launch mknrndll from the icon in the NEURON program group.
+<blockquote>
+Navigate to the directory containing the desired mod files. <br>
+Select "Make nrnmech.dll".
+</blockquote>
+Launch nrngui from the icon in the NEURON program group.
+<blockquote>
+Select NEURONMainMenu/File/RecentDir to change the working dir and load nrnmech.dll.<br>
+Select NEURONMainMenu/Build/singlecompartment.
+</blockquote>
+<hr>
+<h2>single.hoc</h2>
+<pre>
+load_file("stdgui.hoc")
+create soma
+access soma
+// area 100 um2 means mA/cm2 identical to nA 
+{diam=10  L=10/PI}
+</pre>

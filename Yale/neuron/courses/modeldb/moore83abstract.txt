@@ -1,0 +1,29 @@
+J Physiol. 1983 Mar;336:301-11.
+On the site of impulse initiation in a neurone.
+Moore JW, Stockbridge N, Westerfield M.
+
+In the preceding paper (Moore & Westerfield, 1983) the 
+effects of changes in membrane properties and non-uniform 
+geometry on impulse propagation and threshold parameters 
+were investigated. In this paper the contributions of these 
+and other parameters to the site of initiation of an 
+impulse were determined by computer simulations using the 
+Hodgkin-Huxley membrane description, the cable equations, 
+and geometry appropriate for a simplified motoneurone with 
+a non-myelinated axon. Antidromic invasion of action 
+potentials into the soma was found to depend upon (a) the 
+ionic channel rate constants (determined by the 
+temperature), (b) the abruptness of the transition from the 
+small-diameter axon to the larger diameter (and increased 
+load) of the soma-dendrite, (c) extensions of active 
+properties into the dendrite, and (d) density of ion 
+channels. The location of the apparent site of initiation 
+of impulses was not necessarily at the site of synaptic 
+input nor the nearest active membrane. Its position 
+depended upon (a) the fraction of the dendritic tree with 
+excitable membrane, and secondarily on (b) the stimulus 
+strength. Even with uniform excitability in the active 
+membrane, the apparent site of initiation could be moved a 
+considerable distance from the soma and the site of 
+stimulation by appropriate choice of the various parameters 
+noted above.

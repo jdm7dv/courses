@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+  <!-- version 2.1 4:45 PM on 7/10/2000 -->
+  <TITLE>Overview of the CellBuilder</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300"
+vlink="#330099">
+
+<h3>Overview of the CellBuilder</h3>
+
+The CellBuilder is a graphical tool for creating, editing, 
+and managing models of nerve cells. 
+It is probably most useful in two different settings.
+<p>
+
+The first, which you are exploring in this exercise, 
+is when you want to build a model from scratch 
+that will have only a few sections. 
+If you need more than 5 - 10 sections, 
+you might prefer to write an algorithm 
+that creates the model under program control.
+
+<p>
+<table border=0 width=400>	<!-- begin table-->
+<tr>
+<td width=20><br></td>
+<td width=380>		<!-- total = 400 -->
+<SMALL>
+Later in this course you will encounter the second setting 
+in which the CellBuilder is helpful: 
+when you already have a model cell with a large number of sections, 
+and you want to make targeted changes in its 
+biophysical or anatomical properties without having to write any code.
+</SMALL>
+</td>
+</tr>
+</table>			<!-- end of table-->
+<p>
+
+The CellBuilder breaks the process of creating 
+and managing a model of a cell into several tasks. 
+These tasks are analogous to what you would do 
+if you were writing a program in hoc.  
+They are
+
+<OL>
+
+  <LI>setting up the topology (branching pattern) of the model
+
+  <LI>grouping sections into subsets. 
+For example, it might make sense to group dendritic branches 
+into subsets according to anatomical criteria 
+(e.g. basilar, apical, oblique, spiny, aspiny), 
+or biophysical criteria (passive, active).
+
+  <LI>assigning geometric properties to individual sections 
+or subsets of sections (e.g. length, diameter)
+
+  <LI>assigning biophysical properties to individual sections 
+or subsets of sections (e.g. cytoplasmic resistivity, 
+membrane capacitance, ion channels, buffers, pumps)
+
+</OL>
+
+Finally, the CellBuilder lets you save your model 
+to a file for future use, 
+or export it to NEURON's interpreter 
+so you can run simulations with it immediately.  
+
+<p>
+<table border=0 width=400>	<!-- begin table-->
+<tr>
+<td width=20><br></td>
+<td width=380>		<!-- total = 400 -->
+<SMALL>
+The CellBuilder can also import a model that already exists 
+during a NEURON session.
+As you will see in a later exercise, 
+this is particularly useful for dealing with complex models 
+that are based on morphometric data.
+</SMALL>
+</td>
+</tr>
+</table>			<!-- end of table-->
+<p>
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2001 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY></HTML>

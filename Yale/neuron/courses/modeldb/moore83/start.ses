@@ -1,0 +1,248 @@
+objectvar save_window_, rvp_
+objectvar scene_vector_[6]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+
+//Begin CellBuild[0]
+{
+load_file("celbild.hoc", "CellBuild")
+}
+{ocbox_ = new CellBuild(1)}
+{object_push(ocbox_)}
+{
+version(5.1)
+continuous = 1
+}
+{object_push(topol)}
+{
+first = 0
+slist.remove_all()
+sname = "ax"
+objref tobj
+}
+{
+tobj = new CellBuildSection("soma",0, 0, tobj, 0) slist.append(tobj)
+  tobj.position(0,0,15,0) tobj.lx=6.45351 tobj.ly=19.6453 tobj.i3d=0
+tobj = new CellBuildSection("dend",0, 0, tobj, 0) slist.append(tobj)
+tobj.parent=slist.object(0)
+  tobj.position(0,0,-135,30) tobj.lx=-121.579 tobj.ly=15.0957 tobj.i3d=0
+tobj = new CellBuildSection("axon",0, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(0)
+  tobj.position(15,0,150,30) tobj.lx=135.638 tobj.ly=16.2474 tobj.i3d=0
+all_init()
+}
+for i=0, slist.count-1 {slist.object(i).rdses()}
+{object_pop()}
+{
+}
+{object_push(subsets)}
+{first = 0}
+{tobj = new SNList("somden") snlist.append(tobj)}
+for i=0,1 tobj.add(bild.topol.slist.object(fscan()))
+0
+1
+{consist()}
+{object_pop()}
+{
+}
+{object_push(geom)}
+{
+first = 0
+tobj = new GeoSpec(0)
+tobj.value = 100
+bild.topol.slist.object(0).geo.append(tobj)
+tobj = new GeoSpec(1)
+tobj.value = 50
+bild.topol.slist.object(0).geo.append(tobj)
+tobj = new GeoSpec(4)
+tobj.value = 2
+bild.topol.slist.object(0).geo.append(tobj)
+tobj = new GeoSpec(0)
+tobj.value = 3400
+bild.topol.slist.object(1).geo.append(tobj)
+tobj = new GeoSpec(1)
+tobj.value = 50
+bild.topol.slist.object(1).geo.append(tobj)
+tobj = new GeoSpec(4)
+tobj.value = 68
+bild.topol.slist.object(1).geo.append(tobj)
+tobj = new GeoSpec(0)
+tobj.value = 1500
+bild.topol.slist.object(2).geo.append(tobj)
+tobj = new GeoSpec(1)
+tobj.value = 10
+bild.topol.slist.object(2).geo.append(tobj)
+tobj = new GeoSpec(4)
+tobj.value = 30
+bild.topol.slist.object(2).geo.append(tobj)
+set_default()
+}
+{object_pop()}
+{
+}
+{object_push(memb)}
+{first=0}
+{
+tobj = new GeoSpec(0)
+tobj.value = 100
+tobj.set_default()
+tobj = new MStanWrap(tobj, 0)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{
+tobj = new GeoSpec(1)
+tobj.value = 1
+tobj.set_default()
+tobj = new MStanWrap(tobj, 0)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("hh")
+tobj.set("gnabar_hh", 0.12, 0)
+tobj.set("gkbar_hh", 0.036, 0)
+tobj.set("gl_hh", 0.0003, 0)
+tobj.set("el_hh", -54.3, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(0).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("pas")
+tobj.set("g_pas", 0.00016667, 0)
+tobj.set("e_pas", -65, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(1).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("hh")
+tobj.set("gnabar_hh", 0, 0)
+tobj.set("gkbar_hh", 0, 0)
+tobj.set("gl_hh", 0, 0)
+tobj.set("el_hh", -54.3, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(1).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("hh")
+tobj.set("gnabar_hh", 0.12, 0)
+tobj.set("gkbar_hh", 0.036, 0)
+tobj.set("gl_hh", 0.0003, 0)
+tobj.set("el_hh", -54.3, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(2).ml.append(tobj)
+}
+{object_pop()}
+{
+}
+{object_push(manage)}
+{
+first = 0
+classname = "Cell"
+etop=1 esub=1 egeom=1 emem=1
+itop=1 isub=0 igeom=0 imem=0
+bild.topol.names_off = 0
+bild.topol.circles_off = 0
+}
+{object_pop()}
+{
+cexport()
+}
+{object_pop()}
+{
+save_window_=ocbox_.gtopol
+save_window_.size(-200,200,-150,150)
+scene_vector_[2] = save_window_
+ocbox_.gtopol = save_window_
+save_window_.save_name("ocbox_.gtopol")
+}
+{
+ocbox_.map("CellBuild[0]", 82, 121, 762.3, 256.5)
+}
+objref ocbox_
+//End CellBuild[0]
+
+{doNotify()}
+{WindowMenu[0].ses_gid(1, 0, 0, "axon")}
+
+//Begin PointProcessManager
+{
+load_file("pointman.hoc")
+}
+{
+axon ocbox_ = new PointProcessManager(0)
+}
+{object_push(ocbox_)}
+{
+mt.select("IClamp") i = mt.selected()
+ms[i] = new MechanismStandard("IClamp")
+ms[i].set("del", 0, 0)
+ms[i].set("dur", 0.1, 0)
+ms[i].set("amp", 20, 0)
+mt.select("IClamp") i = mt.selected() maction(i)
+hoc_ac_ = 1
+sec.sec move() d1.flip_to(0)
+}
+{object_pop() doNotify()}
+{
+ocbox_ = ocbox_.v1
+ocbox_.map("PointProcessManager", 3, 532, 215.1, 376.2)
+}
+objref ocbox_
+//End PointProcessManager
+
+{
+xpanel("RunControl", 0)
+v_init = -65
+xvalue("Init","v_init", 1,"stdinit()", 1, 1 )
+xbutton("Init & Run","run()")
+xbutton("Stop","stoprun=1")
+runStopAt = 5
+xvalue("Continue til","runStopAt", 1,"{continuerun(runStopAt) stoprun=1}", 1, 1 )
+runStopIn = 0.1
+xvalue("Continue for","runStopIn", 1,"{continuerun(t + runStopIn) stoprun=1}", 1, 1 )
+xbutton("Single Step","steprun()")
+t = 0
+xvalue("t","t", 2 )
+tstop = 3
+xvalue("Tstop","tstop", 1,"tstop_changed()", 0, 1 )
+dt = 0.01
+xvalue("dt","dt", 1,"setdt()", 0, 1 )
+steps_per_ms = 100
+xvalue("Points plotted/ms","steps_per_ms", 1,"setdt()", 0, 1 )
+xcheckbox("Quiet",&stdrun_quiet,"")
+realtime = 0
+xvalue("Real Time","realtime", 0,"", 0, 1 )
+xpanel(2,100)
+}
+{
+xpanel("Temperature", 0)
+celsius = 16.3
+xvalue("celsius","celsius", 1,"", 0, 1 )
+xpanel(363,-1)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(-1000,1000,-80,40)
+scene_vector_[4] = save_window_
+{save_window_.view(-1000, -80, 2000, 120, 620, 358, 423, 265.6)}
+flush_list.append(save_window_)
+save_window_.save_name("flush_list.")
+objectvar rvp_
+rvp_ = new RangeVarPlot("v")
+dend rvp_.begin(1)
+axon rvp_.end(1)
+rvp_.origin(0)
+save_window_.addobject(rvp_, 1, 1, 0.8, 0.9)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(-2.98023e-08,3,-80,40)
+scene_vector_[5] = save_window_
+{save_window_.view(0, -80, 5, 120, 619, 0, 420.3, 214.3)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addvar("axon.v( 0.25 )", 1, 1, 0.8, 0.9, 2)
+save_window_.addvar("soma.v( 0.25 )", 2, 1, 0.8, 0.9, 2)
+}
+objectvar scene_vector_[1]
+{doNotify()}

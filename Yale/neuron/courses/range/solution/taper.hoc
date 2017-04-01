@@ -1,0 +1,23 @@
+/* taper.hoc for threshold gmax as a function of extent of dendritic active currents
+   last modified 7/17/99 NTC
+*/
+
+proc hhtaper() {
+	dend {
+		gnabar_hh = 0
+		gkbar_hh = 0
+		gl_hh = 0
+		if ($1 > 0) {
+			if ($1 > 1) $1 = 1
+			gnabar_hh(0:$1) = soma.gnabar_hh:0
+			gkbar_hh(0:$1) = soma.gkbar_hh:0
+			gl_hh(0:$1) = soma.gl_hh:0
+		}
+	}
+}
+
+// threshold as function of taper for use in Grapher
+func g_thresh_taper() {
+	hhtaper($1)
+	return threshold(&AlphaSynapse[0].gmax)
+} 

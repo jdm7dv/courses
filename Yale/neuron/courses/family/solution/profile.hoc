@@ -1,0 +1,34 @@
+/* profile.hoc for somatic epsp as a function of synaptic location
+   last modified 7/13/2000 NTC
+*/
+
+// objects must first be declared _outside_ procedures
+objref location, amplitude
+location = new Vector()		// stores locations along the dendrite
+amplitude = new Vector()	// stores peak amplitude at each location
+
+objref vm
+vm = new Vector()	// to hold the time course of somatic Vm 
+			//   evoked by a synaptic input
+vm.record(&soma.v(0.5))	// "attach" vm to soma.v(0.5)
+
+objref g
+g = new Graph()		// for plot of amplitude vs. location
+
+proc profile() {
+	// next three statements discard prior results, if any
+	location = new Vector()
+	amplitude = new Vector()
+	g = new Graph()
+	dend for (x) {	// loop over each node in dend
+		putsyn(x)
+		// at this point, vm should contain a record of soma.v(0.5)
+		maximum = vm.max()	// find maximum element in vm
+		maximum -= v_init	// epsp amplitude relative to baseline
+		amplitude.append(maximum)	// append this to amplitude vector
+		location.append(x*dend.L)	// append x to location vector
+						//   use units of um, not range
+	}
+	/* plot amplitude vs. location */
+	amplitude.plot(g, location)	// plot amplitude vs. location
+}

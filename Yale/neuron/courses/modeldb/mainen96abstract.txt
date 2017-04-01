@@ -1,0 +1,29 @@
+Nature. 1996 Jul 25;382(6589):363-6.
+Influence of dendritic structure on firing pattern in model 
+neocortical neurons.
+Mainen ZF, Sejnowski TJ.
+Howard Hughes Medical Institute, Computational Neurobiology 
+Laboratory, Salk Institute for Biological Studies, La 
+Jolla, California 92037, USA.
+
+Neocortical neurons display a wide range of dendritic 
+morphologies, ranging from compact arborizations to highly 
+elaborate branching patterns. In vitro electrical 
+recordings from these neurons have revealed a 
+correspondingly diverse range of intrinsic firing patterns, 
+including non-adapting, adapting and bursting types. This 
+heterogeneity of electrical responsivity has generally been 
+attributed to variability in the types and densities of 
+ionic channels. We show here, using compartmental models of 
+reconstructed cortical neurons, that an entire spectrum of 
+firing patterns can be reproduced in a set of neurons that 
+share a common distribution of ion channels and differ only 
+in their dendritic geometry. The essential behaviour of the 
+model depends on partial electrical coupling of fast active 
+conductances localized to the soma and axon and slow active 
+currents located throughout the dendrites, and can be 
+reproduced in a two-compartment model. The results suggest 
+a causal relationship for the observed correlations between 
+dendritic structure and firing properties and emphasize the 
+importance of active dendritic conductances in neuronal 
+function.

@@ -1,0 +1,187 @@
+<HTML>
+<HEAD>
+  <!-- version 3R 10:00 AM on 2/23/2015 -->
+  <TITLE>Network Ready Cells</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h1>Network ready cells from the CellBuilder</h1>
+
+<h2> Model </h2>
+<img src="images/net2mod.gif">
+<p>
+Ball-Stick model cell with distal excitation and proximal inhibition.
+
+This is another "hello world" level
+exercise. It shows how to use the a specification from a cell builder
+to create a network ready cell (spike initiation site and a set of synapses)
+from a NetReadyCellGUI. It shows how to use these cell types in a NetGUI
+to make connections between spike initiation sites and synapses.
+
+<h2> Simulation </h2>
+
+The strategy is to
+<br>1) Use a CellBuilder window to create a cell type with specific
+morphology and membrane properties.
+The CellBuilder also specifies the type name and the spike initiation site.
+<br>2) Define synapse types with a SynTypeGUI.
+E.g. inhibitory and excitatory synapses from suitable PointProcesses. 
+<br>3) Define a network ready cell type with a NetReadyCellGUI. I.e. specify
+where instances of the synapse types should be located on the cell.
+The NetReadyCellGUI references a CellBuilder to obtain
+the basic cell morphology and membrane properties. It references a
+SynTypeGUI which is used to obtain the synapse types.
+<br>4) Use a NetGUI to construct the network
+<br>5) Run a simulation and plot the input and output spike trains.
+If you have trouble with
+the following instructions, <a href="net2/net2run.hoc">this executes
+a working exercise</a> --- the NetReadyCellGUI (for the ball stick cell)
+and ArtCellGUI
+(for the stimulators) are in the "cell types" window group.
+
+<h3> Ball-Stick cell model </h3>
+Start with the ball-stick specification in course/net2/start.ses .
+This model has
+<br>soma area = 500 um2 with hh channels (standard density)
+<br>dendrite L = 200 um, diam = 1 um with pas channel ( g_pas = .001 S/um2 and
+e_pas = -65 mV )
+<br>Ra = 100 ohm-cm
+<br>cm = 1 uF/cm2
+<br>and uses d_lambda=.1 compartmentalization policy.
+<p>
+From the CellBuild Management/CellType panel, the classname should be
+declared as "BallStick" and the output variable which is watched for
+spike event should be soma.v(1). At this point the windows should look
+something like
+<a href="images/net2cbld.gif">this</a>.
+
+<h3> Ball-Stick cell model with synapses.</h3>
+The NEURONMainMenu/Build/NetworkCell/FromCellBuilder menu item starts
+a dialog box which requests references to a "Synapse type set" (left
+list) and a "CellBuild type" (right list). The synapse type set list is empty
+now but the CellBuild type list should have a reference to the cell builder
+previously loaded. Select "CellBuild[0]" and press the "Use Selection" button.
+<p>
+This starts a NetReadyCellGUI window (nrc) and a SynTypeGUI window.
+(It would have also started a new CellBuild window as well if no
+CellBuild type had been selected in the dialog). Note that the nrc contains
+a drawing of the cell topology. At this time you can close the
+CellBuild window --- It can always be re-created with the nrc's Info menu.
+In fact, when saving the nrc in a session, it is best to first close both the
+cell builder and the SynTypeGUI to avoid saving duplicate copies in the
+session file. After closing the CellBuild[0] window the interface should
+look something like
+<a href="images/net2nrc1.gif">this</a>.
+
+<p> From the SynTypeGUI window, create a "E" synapse type via a
+New/ExpSyn followed by a Rename. Since the reversal potential for
+the standard
+<a href = "http://www.neuron.yale.edu/neuron/static/docs/help/neuron/neuron/mech.html#ExpSyn">
+ExpSyn</a>
+is 0 mV, it is already excitatory. However, change the
+time constant from 0.1 to 2 ms.
+
+<p> In the same SynTypeGUI window create a "I" synapse type via a
+New/ExpSyn followed by a Rename. Set the reversal potential "e" to -80 mV
+so that it will be inhibitory and set tau to 5ms.
+
+<p> In the NetReadyCellGUI, press the Refresh button so that the
+new SynTypes appear.
+<br> Change the cell name to "B" so the label won't take up so much space later
+on when we use it in a NetGUI tool.
+
+<p> In the NetReadyCellGUI, press the "Locate" radiobutton and
+drag an E to location .8 on the dendrite. Then drag an I to location .1
+on the dendrite. The label in the canvas will show whether the synapse type
+is close enough to be attached or not. Each synapse on the cell is given
+an index which is the order of creation. Several synapses can be
+attached to the same location. The synapse label can be dragged up to
+two font sizes above or below the location to avoid label overlap. If a label
+is dragged too far away from the cell it will become detached and
+the larger synapse indices will be reduced by 1.
+The interface at this point should look something like
+<a href="images/net2nrc2.gif">this</a>.
+Enough work has been done up to this point so that
+you should save the NetReadyCellGUI in a session by itself (without
+the CellBuild or SynTypeGUI windows -- these may safely be closed as well).
+
+<p> This cell type is now ready for use in the NetGUI.
+
+<h3> Stimulators </h3>
+In analogy with the previous hands-on exercise create two stimulus types,
+"SE" and "SI" to provide event streams to stimulate the ball-stick model.
+<br> For SE, set interval=5 , number=50 , and start=0.
+<br> For SI, set interval=10, number=5, and start=20.
+<br> I.e. from NEURONMainMenu/Build/NetworkCell/ArtificialCell get
+an ArtCellGUI and use NetStim to define the stimulus types. After
+setting it up the window will look something like
+<a href="images/net2stim.gif">this</a>.
+
+<p> At this point I created a Window Group called
+<a href="images/net2wgrp.gif">"cell types"</a>, 
+placed the ArtCellGUI and NetReadyCellGUI in it, and saved the group.
+In case things go wrong I can easily return to this point.
+
+<h3> Cell creation </h3>
+Start a NetGUI tool and create a "B0" ball-stick cell and "SE1" and "SI2"
+stimulators as shown in this
+<a href="images/net2cre.gif"> picture</a>
+
+<h3> Connections</h3>
+In the NetGUI window, select the "Src->Tar" radiobutton and drag a line
+from SE1 to B0. The string near the top of the canvas describes the
+operation to be performed when the mouse button is released. When the
+connection line gets near B0 a picture of the BallStick topology will
+be drawn and the mouse should be moved to the E0 synapse label. The following
+three figures illustrate the process.
+<br><a href="images/net2con1.gif">Select the source cell</a>
+<br><a href="images/net2con2.gif">Select the target cell</a>
+<br><a href="images/net2con3.gif">Select the synapse on the target cell</a>
+<p>Connect SI1 to I1 of B0
+<p>The NetGUI window should now look something like
+<a href="images/net2edge.gif">this</a>.
+<p> Use the "Weights" button to pop up a NetEdgeGUI panel and enter the
+following weights.<br>
+<img src="images/net2wt.gif">
+<br>
+
+<h3> Simulation</h3>
+In the NetGUI window, press the "Create" button.
+The <tt>topology()</tt> statement should produce
+<pre>
+oc>topology()
+
+|-|       acell_home_(0-1)
+|-|       B_BallStick[0].soma(0-1)
+   `------|       B_BallStick[0].dend(0-1)
+
+        1 
+oc>
+</pre>
+<p> Press the "SpikePlot" button to pop up a plot window.
+<p> Start a NEURONMainMenu/Tools/RunControl and VariableStepControl.
+Set TStop to 500 and invoke "Use variable dt"
+<p> Get a voltage style graph window and plot the soma voltage for the
+ball-stick cell. The ShowCellMap button on the NetGUI is useful here.
+The relevant interface looks something like
+<a href="images/net2plt1.gif">this</a>
+<p> Do an Init&Run.
+<p>The relevant windows should now look something like
+<a href="images/net2plt2.gif">this</a>.
+
+<h3>Other Simulation Exercises</h3>
+<p>Plot the value of the conductance and current of the inhibitory synapse.
+
+<h3> The automatically generated hoc code </h3>
+<p>The hoc file for the above spec looks like
+<a href="net2/net2spec.ho">this</a>.
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 2000 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

@@ -1,0 +1,102 @@
+/* anat.hoc for quantitative morphometry exercise
+   last modified 7/26/2000 NTC
+*/
+
+load_file("nrngui.hoc")
+
+NAPICAL=5
+NBASILAR=2
+create soma, ap[NAPICAL], ba[NBASILAR]
+
+access soma
+
+connect ap[0](0), soma(1)
+connect ap[1](0), ap[0](1)
+connect ap[2](0), ap[1](1)
+connect ap[3](0), ap[1](1)
+connect ap[4](0), ap[0](1)
+connect ba[0](0), soma(0)
+connect ba[1](0), soma(0)
+
+forall pt3dclear()
+
+/*
+n	measurement index
+p	index of previous measurement (-1 means no previous)
+	If current position is an origin of a daughter neurite, 
+	previous measurement is the termination of the parent 
+	neurite to which the daughter is attached.
+x,y,z,d	position and diameter of measurement
+t	type of measurement
+	O	origin
+	C	continuation
+	B	branch point (gives rise to 1 or 2 daughters)
+	T	termination
+comment	ap, ba == neurite in apical or basilar field
+
+n	p	x	y	z	d	t	comment
+0	-1	0	0	0	20	O	soma(0)
+1	0	0	15	0	20	C	soma
+2	1	0	20	0	3	B	soma(1)
+3	2	0	20	0	3	O	ap[0](0)
+4	3	0	120	0	3	B	ap[0](1)
+
+5	4	0	120	0	2	O	ap[1](0)
+6	5	0	320	0	2	B	ap[1](1)
+
+7	6	0	320	0	1	O	ap[2](0)
+8	7	-70	390	0	1	T	ap[2](1)
+
+9	6	0	320	0	1	O	ap[3](0)
+10	9	70	390	0	1	T	ap[3](1)
+
+11	4	0	120	0	1	O	ap[4](0)
+12	11	60	200	0	1	T	ap[4](1)
+
+13	0	0	0	0	1	O	ba[0](0)
+14	13	-60	-80	0	1	T	ba[0](1)
+15	0	0	0	0	1	O	ba[1](0)
+16	15	80	-60	0	1	T	ba[1](1)
+*/
+
+soma {
+	pt3dadd(0, 0, 0, 20)
+	pt3dadd(0, 15, 0, 20)
+	pt3dadd(0, 20, 0, 3)
+}
+
+ap[0] {
+	pt3dadd(0, 20, 0, 3)
+	pt3dadd(0, 120, 0, 3)
+}
+
+ap[1] {
+	pt3dadd(0, 120, 0, 2)
+	pt3dadd(0, 320, 0, 2)
+}
+
+ap[2] {
+	pt3dadd(0, 320, 0, 1)
+	pt3dadd(-70, 390, 0, 1)
+}
+
+ap[3] {
+	pt3dadd(0, 320, 0, 1)
+	pt3dadd(70, 390, 0, 1)
+}
+
+ap[4] {
+	pt3dadd(0, 120, 0, 1)
+	pt3dadd(60, 200, 0, 1)
+}
+
+ba[0] {
+	pt3dadd(0, 0, 0, 1)
+	pt3dadd(-60, -80, 0, 1)
+}
+
+ba[1] {
+	pt3dadd(0, 0, 0, 1)
+	pt3dadd(80, -60, 0, 1)
+}
+

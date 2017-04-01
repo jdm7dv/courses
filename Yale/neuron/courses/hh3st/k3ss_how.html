@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+  <!-- version 3.1 10:50 AM on 6/13/2001 -->
+  <TITLE>Fitting steady state k conductance with k3.mod</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h2>Fitting steady state k conductance with k3.mod</h2>
+
+<h3>Motivation</h3>
+
+In the previous part of this exercise you used the 
+MultipleRunFitter to tune the parameters of a <I>function</I> 
+to a set of data.
+However, there are times when you have a <I>mechanism</I> 
+whose parameters need to be adjusted to fit experimental 
+observations.
+Learning how to do this is the goal of this section.
+
+<h3>Strategy</h3>
+
+Set up a single compartment model with the khh channel
+inserted. Use the MultipleRunFitter with a FunctionFitness generator
+and fit <tt>soma.g_khh</tt> vs <tt>v_init</tt> to the steady state
+data by optimizing the five parameters in k3.mod that
+govern steady state:<br>
+<tt>soma.gbar_khh(.5) k1_khh d1_khh k2_khh d2_khh</tt><br>
+<p>
+The completed example can be run by executing the k3ssfit.hoc file.
+
+<h3>Step-by-step procedure</h3>
+
+1) Start NEURON and invoke NEURONMainMenu/Build/singlecompartment.
+Make sure the k3.mod file is one of the "Additional
+mechanisms." 
+If the k3.mod mechanism is available then not only can
+we use it but we can infer that our working directory also has the
+file needed for the next step.
+<blockquote>
+Note that the single compartment builder creates a
+soma section of size 100 um2. 
+</blockquote>
+<p>
+
+2) Load prefit.ses, the session from the "Pre-analysis" exercise. This already
+has a similar generator and the steady state data. 
+<blockquote>
+If you don't have
+it or want to start from scratch, load hh508.hoc instead.
+</blockquote>
+The following takes the tack of modifying
+the MultipleRunFitter in prefit.ses. Refer to the
+<a href="prefit_how.html">"how to"</a> page for the prefit exercise
+to recall some hints about setting up the MultipleRunFitter.
+<p>
+
+3) Insert the khh mechanism into the patch using the Inserter window or pop
+up a new Inserter with
+NEURONMainMenu/Tools/DistributedMechanisms/Managers/Inserter. Checkmark the
+khh box.
+<p>
+
+4) From the MultipleRunFitter, double click on the existing generator 
+("Closed form 3-state") to display
+it. If you are not in the "Display" mode, first select
+Generators/DisplayGenerator. (Note that this
+is our desired type of "Function Fitness" and already contains the steady
+state data).
+<p>
+5) In the generator that popped up, select Fitness/OrFunctionBody to
+pop up a string editor. Enter the string
+<pre>
+	v_init=$1 init() return g_khh
+</pre>
+For each x value of the data, v_init will be set to that x value, init()
+is executed, and finally the value of g_khh is the result of the
+entire expression. The default init() procedure in the standard run
+library calls the built-in function finitialize(v_init) which in turn
+calls the INITIAL block of the k3.mod file. That computes the
+steady state of the state variables c, o1, and o2. Then the default
+init() procedure calls the built-in function fcurrent() which in turn
+calls the BREAKPOINT block of the k3.mod file. That assigns the proper
+value to g_khh.
+<p>
+6) Change the parameters. Instead of A,k1,d1,k2,d2, they should be
+gbar_khh, k1_khh, d1_khh, k2_khh, d2_khh. In the MultipleRunFitter select
+Parameters/ChangeParameter and double click on the existing parameters
+to pop up a string editor. Or else remove the existing ones and do
+a sequence of Parameters/AddParameter
+If you changed them (as opposed to the remove/add sequence) then
+their values are the same as the old parameters and clicking on
+the "ErrorValue" of the generator will give the same fit as the
+analytic steady state function.
+<p>
+7) Make sure the generator fitness will be added to the total error
+value by using Generators/PopUp"Use"Panel and checkmarking the generator
+("Closed form 3-state").
+You can close the "Use" panel after this is done.
+(That panel can be Close'd after this is done.) 
+<P>
+In the MultipleRunFitter panel note that there is a "+"
+in front of the generator name in the generator list so clicking on the
+"ErrorValue" in the MultipleRunFitter main panel shows the same error.
+<p>
+8) Pop up a Parameters/ParameterPanel and
+Parameters/SelectOptimizers/Praxis panel. Start with all parameters at 1 and
+Optimize.
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2001 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

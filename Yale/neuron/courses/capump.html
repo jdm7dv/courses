@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+  <!-- version 2.2 10:25 AM on 7/22/99 -->
+  <TITLE>Calcium pump</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h1> Calcium pump </h1>
+
+<h2> Physical System </h2>
+Calcium pump
+
+<h2> Model </h2>
+Rate limited active transport of calcium.
+<p>
+<IMG SRC="images/capump.gif" BORDER=0 HEIGHT=243 WIDTH=201 ALT="calcium pump cartoon">
+<p>
+Also want to include that average internal calcium concentration
+is different from that near the membrane. Ie a bulk compartment
+and a membrane adjacent compartment. Assume time constant of transfer
+between membrane adjacent and bulk compartments is tau and width of
+adjacent membrane compartment is "width"
+
+<h2> Simulation </h2>
+All the above can be captured by the kinetic scheme
+<pre>
+KINETIC pmp {
+	~ cabulk <-> cam		(1/tau, 1/tau)
+	~ cam + pump <-> capump		(k1, k2)
+	~ capump <-> cao + pump		(k3, k4)
+	ica_pmp = 2*FARADAY*(f_flux - b_flux)
+
+	~ cam << -(ica)	: there is a problem here
+
+	COMPARTMENT width {cam}		: volume has dimensions of (um)
+	COMPARTMENT 1 {pump capump}	: area is dimensionless
+	COMPARTMENT 1(m) {cao cabulk}
+}
+</pre>
+But the above scheme needs to be considerably elaborated with regard
+to units. Also there is some confusion about whether ica_pmp is counted twice.
+The latter is due to the fact that ica contains the current
+calculated from the BREAKPOINT blocks of all the contributors
+to calcium current and that includes the contribution from THIS model.
+<p>
+The <a href="capump/capump.mod">capump.mod file</a>, 
+which is in the course/capump directory, deals with all these issues.
+Verify that the units are
+consistent and create a "special" (unix) or "nrnmech.dll" (mswindows).
+<p>
+1) Plot the pump current as a function of internal calcium concentration.
+<p>
+2) Initialize the model to a fairly high internal calcium concentration
+near the membrane and set tau large so that the change in cai is due
+solely to pumping. Then plot the internal concentration and pump current
+as a function of time.
+<p>
+Note that it is non-trivial to set up this initial
+condition since the default standard run library init()
+procedure which calls finitialize initializes cai to its steady state
+with respect to cabulk and the steady state pump current.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998, 1999 by N.T. Carnevale and M.L. Hines, all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

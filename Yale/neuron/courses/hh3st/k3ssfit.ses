@@ -1,0 +1,54 @@
+objectvar save_window_, rvp_
+objectvar scene_vector_[2]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+
+//Begin Insert/Remove Mechanisms
+{
+load_file("inserter.hoc", "Inserter")
+}
+{
+soma ocbox_ = new Inserter(0)
+}
+{object_push(ocbox_)}
+{
+mt.select("khh") i = mt.selected()
+ms[i] = new MechanismStandard("khh")
+ms[i].set("gbar_khh", 23.235, 0)
+mstate[i]= 1
+maction(i)
+}
+{object_pop() doNotify()}
+{
+ocbox_ = ocbox_.v1
+ocbox_.map("Insert/Remove Mechanisms", 170, 264, 57.6, 111.36)
+}
+objref ocbox_
+//End Insert/Remove Mechanisms
+
+
+//Begin MulRunFitter[0]
+{
+load_file("mulfit.hoc", "MulRunFitter")
+}
+{
+ocbox_ = new MulRunFitter(1)
+}
+{object_push(ocbox_)}
+{
+version(2)
+ranfac = 2
+fspec = new File("./k3ssfit.ses.ft1")
+fdat = new File("./k3ssfit.ses.fd1")
+read_data()
+build()
+}
+{object_pop()}
+{
+ocbox_.map("MulRunFitter[0]", 451, 55, 368.64, 199.68)
+}
+objref ocbox_
+//End MulRunFitter[0]
+
+objectvar scene_vector_[1]
+{doNotify()}

@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+  <!-- version 2.2b 4:10 PM on 7/22/99 -->
+  <TITLE>Vector/matrix: subtracting linear response</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h1>Vector/matrix: subtracting linear response</h1>
+
+<h2>Exercises</h2>
+
+1) Run plotdata.hoc in the course/vec directory.
+This reads the contents of data4.dat and displays four curves: 
+the voltage responses to hyperpolarizing current pulses 
+of -9, -18, -27, and -36 nA.
+Scale these curves according to the magnitude of
+the current pulse to see if the response was linear.
+<p>
+<b>Hints</b>
+<p>
+A good way to test a Vector method is to pick a curve into the
+clipboard, apply the method, and either printf the result or
+plot it in a NEURONMainMenu/Display tool.
+For example, if we pick the 36nA curve and put it in a Vector/Display
+and then pick the 9nA curve, scale it with
+<pre>
+	hoc_obj_.mul(4)
+</pre>
+and then put it in the tool, we suddenly realize that the curves need
+to be shifted to 0 before being scaled. One way to shift would be merely
+to select a point on the resting curve and subtract that value from the
+entire curve, ie
+<pre>
+	hoc_obj_.sub(hoc_obj_.x[10])
+</pre>
+If the resting value is noisy, we could subtract the mean value over
+a short range as in
+<pre>
+	hoc_obj_.sub(hoc_obj_.mean(5,15))
+</pre>
+
+To modify a column in a matrix, get it into a Vector with m.getcol(i)
+and put a Vector into the column with m.setcol(i, vector). i.e
+one can scale a column in one statement with
+<pre>
+m.setcol(i, m.getcol(i).sub(m.getcol(i).mean(5,15)).div(9*i))
+</pre>
+but long nested chains get easier to write than to read and it is
+generally better to do only one or two Vector operations per statement.
+<p>
+2) This has nothing to do with data but it will give you practice
+in Vector manipulations. Set up a simulation with several action
+potentials, e.g. with a long but low amplitude current pulse
+in an HH patch. Run it with the variable time step method.
+Now, plot log10(dt) as a function of t.
+<p>
+<b>Hints</b>
+<p>
+Use the clipboard. The t values are in hoc_obj_[1]. Calculate the dt values
+in hoc_obj_ (a synonym for hoc_obj_[0]) and use a Vector/Display to
+plot it.
+<p>
+Some pertinent Vector methods are
+<br>
+<TABLE BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%">
+  <TR VALIGN=top>
+	<TD><code>vec.c</TD>
+	<TD><nbsp></TD>
+	<TD>return a clone (new identical copy) of the vector instance</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD><code>vec.deriv(1, 1)</code></TD>
+	<TD><nbsp></TD>
+	<TD>v.x[i+1]-v.x[i] -> v.x[i] , size is 1 less than before</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD><code>vec.resize(vec.size-1)</code></TD>
+	<TD><nbsp></TD>
+	<TD>reduce size of vector by 1</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD><code>vec.log10</code></TD>
+	<TD><nbsp></TD>
+	<TD>log10(v.x[i]) -> v.x[i] , log10(0) is an error</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD><code>vec.remove(index_vector)</code></TD>
+	<TD><nbsp></TD>
+	<TD>remove all elements at values given by index_vector</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD><code>index_vector = vec.where("==", 0)</code></TD>
+	<TD><nbsp></TD>
+	<TD>indices where v.x[i] == 0</TD>
+  </TR>
+</TABLE>
+
+<p>
+If removing 0 elements seems too complicated, it is less elegant but
+just as effective to add 1e-9 to every element before taking the log.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998, 1999 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

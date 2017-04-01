@@ -1,0 +1,16 @@
+ParmFitness: HH K steady state
+	FitnessFunction: Closed form 2-state
+		A/(1 + exp(k1*(d1-$1)))
+		RegionFitness:
+
+	FitnessFunction: Closed form 3-state
+		A/(1 + exp(k1*(d1-$1)) + exp(k2*(d2-$1)))
+		RegionFitness:
+
+	Parameters:
+		"A", 22.1537, 1e-09, 1e+09, 1, 1
+		"k1", 0.0365167, 1e-09, 1e+09, 1, 1
+		"d1", 42.906, 1e-09, 1e+09, 1, 1
+		"k2", 0.199816, 1e-09, 1e+09, 1, 1
+		"d2", 20.8954, 1e-09, 1e+09, 1, 1
+End ParmFitness

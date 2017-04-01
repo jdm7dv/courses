@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+  <!-- version 3.1 12:20 PM on 6/15/2008 -->
+  <TITLE>C'est la bouteille &agrave; l'encre.</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h1>Idioms</h1>
+
+<h3>Iterating over all segments</h3>
+<pre>
+forall for (x) print secname(), x
+forall for (x,0) print secname(), x // leave out 0 and 1, i.e. the 0 area nodes
+</pre>
+
+<h3>Data Structures</h3>
+<pre>
+begintemplate Temp
+	public str, obj, x
+	strdef str
+	objref obj
+	x = 0
+endtemplate Temp
+
+objref temp
+temp = new Temp()
+temp.x = 2
+temp.str = "hello"
+temp.obj = new SectionList()
+
+print temp, temp.x, temp.str, temp.obj
+</pre>
+
+<h3>Adding a Graph so it works with the Standard Run Library</h3>
+<pre>
+begintemplate P
+        public flush, plot, begin, view_count
+        objref this
+        proc flush() { print this, "flush", t }
+        proc plot() { print this, "plot", t }  
+        proc begin() { print this, "begin", t }   
+	func view_count() { print this, "view_count"   return 1}
+endtemplate P
+
+flush_list.append(new P()) // call flush every step
+graphList[0].append(new P()) // call plot and flush every step
+</pre>
+
+<h3> Arrays of strings </h3>
+<pre>
+/*
+// The standard run library includes this template which defines a String class:
+begintemplate String
+	public s
+	strdef s
+	proc init() {
+		if (numarg() == 1) {
+			s = $s1
+		}
+	}
+endtemplate String
+*/
+
+objref sobj[5]
+for i=0, 4 sobj[i] = new String()
+for i=0, 4 sprint(sobj[i].s, "Number %d", i)
+for i=0, 4 print sobj[i].s
+</pre>
+
+<h3> Neat stuff to do after picking a Graph line into the vector clipboard </h3>
+
+You can then apply the Vector methods, as in these examples.
+<DL>
+  <DT><code>hoc_obj_.c.printf</code>
+    <DD>prints a copy of the vector<p>
+  <DT><code>hoc_obj_.c.deriv(1,1).printf</code>
+    <DD>prints the euler derivative<p>
+  <DT><code>hoc_obj_.c.deriv(1,1).indvwhere(">", 1e-5).printf</code>
+    <DD>prints the indices<p>
+  <DT><code>hoc_obj_.ind(hoc_obj_.c.deriv(1,1).indvwhere(">", 1e-5).add(1)).printf</code>
+    <DD>prints the peak values<p>
+  <DT><code>hoc_obj_[1].ind(hoc_obj_.c.deriv(1,1).indvwhere(">", 1e-5).add(1)).deriv(1,1).printf</code>
+    <DD>prints the time intervals between synaptic discontinuities<p>
+</DL>
+
+
+<P>
+<HR>
+<P>
+
+The following aren't hoc idioms, but they can be helpful.
+
+<h2> NEURON's interpreter window </h2>
+
+<h3> EMACS </h3>
+<p>
+These EMACS commands work for command line editing 
+from the console (MSWin: NEURON's interpreter window).<br>
+^P &nbsp &nbsp previous line (up arrow may also work; this crude history function can be applied repeatedly to scroll through prior commands)<br>
+^A &nbsp &nbsp front of line<br>
+^E &nbsp &nbsp end of line<br>
+^B &nbsp &nbsp backward character<br>
+^F &nbsp &nbsp forward character<br>
+Long command lines can be constructed by revision + accretion 
+(recall a prior line, make changes and add new stuff to it).
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2008 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

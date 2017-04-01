@@ -1,0 +1,78 @@
+load_file("stdgui.hoc")
+
+begintemplate Cell
+   public soma, syn, position
+   create soma
+   objref syn
+   proc init() {
+      create soma
+      soma {
+         diam = 20
+         L = 20
+         insert hh
+         syn = new ExpSyn(.5)
+         syn.tau = 1
+      }
+   }
+
+   proc position() {local l
+      x = $1
+      y = $2
+      soma {
+         l=L/2
+         pt3dclear()
+         pt3dadd(100*x-l, 100*y, 0, diam)
+         pt3dadd(100*x+l, 100*y, 0, diam)
+      }
+   }
+endtemplate Cell
+
+// create 5x5 array of cells
+
+objref cell[5][5]
+for j=0,4 {
+   for i=0,4 {
+      cell[i][j] = new Cell()
+      cell[i][j].position(i, j)
+   }
+}
+
+access cell[0][0].soma
+
+// view the cells
+objref s
+s = new Shape()
+s.show(0)
+s.action("print section_owner()")
+
+
+objref nclist
+nclist = new List()
+proc netcon() { // $o1 = source cell  $o2 = target cell
+   $o1.soma nclist.append(new NetCon(&v(.5), $o2.syn, -10, 3, .003))
+}
+
+
+// connect the cells together
+
+for j=0,3 for i=0,4 for k=-1,1 {
+   netcon(cell[i][j], cell[(i+k)%5][(j+1)%5])
+}
+
+
+// show the connections
+objref tobj
+strdef tstr
+proc npan() {
+   xpanel("NetCon Info")
+   for i=0, $o1.count-1 {
+      tobj = $o1.object(i)
+      sprint(tstr, "%s -> %s -> %s", tobj.precell, tobj, tobj.postcell)
+      xlabel(tstr)
+      xpvalue("weight", &tobj.weight, 1)
+      xpvalue("delay", &tobj.delay, 1)
+   }
+   xpanel()
+}
+
+s.action("npan(cvode.netconlist(\"\", section_owner(), \"\"))")

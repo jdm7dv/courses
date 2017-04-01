@@ -1,0 +1,204 @@
+<HTML>
+<HEAD>
+  <!-- version 3R 10:00 AM on 2/23/2015 -->
+  <TITLE>Working with morphometric data</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+<H1>
+  Working with morphometric data
+</H1>
+
+If you have detailed morphometric data, why not use it?
+This may be easier said than done, since quantitative morphometry 
+typically produces hundreds or thousands of measurements for a single cell --
+you wouldn't want to translate this into a model by hand.
+Several programs have been written to generate hoc code 
+from morphometric data files.
+
+
+<h2>Stylized specification</h2>
+
+Some of these programs create very simple translations 
+that amount to "stylized specifications" of anatomy, 
+i.e. explicit specification of length and diameter 
+without any orientation information, such as 
+<PRE>	dend[n] { L = aa diam = bb } </PRE>
+
+This is fine if your model is simple enough, 
+but Shape Plots of complex models can be indecipherable.
+
+<blockquote>
+Example: model with a soma and a single primary dendrite that
+gives rise to several side branches. 
+Each of the short neurites is 10 um long, 
+and the soma and long neurites are all 50 um long.
+<P ALIGN=Center>
+<IMG SRC="anat.gif" WIDTH="249" HEIGHT="86">
+<P>
+<A HREF="stylized.ho">You can examine the hoc code</A>
+that implements a stylized specification of this model, or 
+<a href="stylized.hoc">run it yourself</a>, if you like.
+Here is the resulting Shape plot
+<P ALIGN=Center>
+<IMG SRC="stylized.gif" WIDTH="247" HEIGHT="286">
+<P>
+Real cells can look much worse.
+</blockquote>
+
+
+<h2>3d specification</h2>
+
+A better way to construct architecturally complex models 
+from quantitative morphometric data is through 3d specification (pt3d data).
+<p>
+
+Example: consider the morphometric data in the following table.
+The data format is practically identical to one that is actually in use. 
+The principal difference is the presence of a comment field 
+that spells out which measurements belong to which section, 
+so you don't have to try to figure this out for yourself.
+<P>
+
+<PRE>Item	Definition
+----	----------
+n	measurement index
+p	index of previous measurement (-1 means no previous)
+	If current position is an origin of a daughter neurite, 
+	previous measurement is the termination of the parent neurite.
+x,y,z,d	position and diameter of measurement
+t	type of measurement
+	O	origin
+	C	continuation
+	B	branch point (gives rise to 1 or 2 daughters)
+	T	termination
+comment	ap, ba == neurite in apical or basilar field
+
+n	p	x	y	z	d	t	comment
+0	-1	0	0	0	20	O	soma(0)
+1	0	0	15	0	20	C	soma
+2	1	0	20	0	3	B	soma(1)
+3	2	0	20	0	3	O	ap[0](0)
+4	3	0	120	0	3	B	ap[0](1)
+5	4	0	120	0	2	O	ap[1](0)
+6	5	0	320	0	2	B	ap[1](1)
+7	6	0	320	0	1	O	ap[2](0)
+8	7	-70	390	0	1	T	ap[2](1)
+9	6	0	320	0	1	O	ap[3](0)
+10	9	70	390	0	1	T	ap[3](1)
+11	4	0	120	0	1	O	ap[4](0)
+12	11	60	200	0	1	T	ap[4](1)
+13	0	0	0	0	1	O	ba[0](0)
+14	13	-60	-80	0	1	T	ba[0](1)
+15	0	0	0	0	1	O	ba[1](0)
+16	15	80	-60	0	1	T	ba[1](1)
+</PRE>
+
+The file <A HREF="anat.ho">anat.hoc</A> implements a model based on these data by 
+<ol>
+  <li>creating the necessary sections
+  <li>connecting them to build the basic architecture of the cell
+  <li>using <CODE>forall pt3dclear()</CODE> to eliminate any pre-existing 3d data
+  <li>using <CODE>pt3dadd()</CODE> to enter the individual measurement in this table, 
+	on a section-by-section basis.
+</ol>
+
+<h2>Exercise</h2>
+
+This shows you how to perform a "litmus test" 
+for the integrity of a model with complex architecture.
+<p>
+<A HREF="anat.hoc">Execute anat.hoc</A>.
+<ol>
+  <li>Bring up the CellBuilder and Import this model.
+	Review its Topology and Geometry.
+  <li>Insert the <code>pas</code> mechanism into all sections.
+	<br>
+	If you're dealing with a very extensive cell 
+	(especially if the axon is included), 
+	you might want to cut Ra to 10 ohm cm 
+	and reduce g_pas to 1e-5 mho/cm<sup>2</sup>.
+  <li>Turn on Continuous Export (if you haven't already).
+  <li>Bring up a Shape Plot, which should look like this
+<P ALIGN=Center>
+<IMG SRC="cellanat.gif" WIDTH="247" HEIGHT="286">
+<P>
+  <li>Turn this into a Shape Plot of Vm 
+	(R click in the Shape Plot and scroll down the menu to "Shape Plot".
+	Release the mouse button and a color scale calibrated in mV should appear).
+  <li>Examine the response of the cell
+	to a 3 nA current step lasting 5 ms applied at the soma.
+	<br>
+	For very extensive cells, especially if you have reduced g_pas, 
+	you may want to increase both Tstop and the duration of the 
+	injected current to 1000 ms and use variable dt.
+</ol>
+
+<P ALIGN=Center>
+<IMG SRC="v0.gif" WIDTH="248" HEIGHT="287"><IMG SRC="v5.gif" WIDTH="248"
+    HEIGHT="287">
+<P ALIGN=Center>
+Left: Vm at t = 0. Right: Vm at t = 5 ms.
+<P>
+
+<H3>Quantitative tests of anatomy</H3>
+
+This one line hoc statement checks for pt3d diameters == 0 and 
+reports the names of the sections where they are found&nbsp:
+<p>
+<code>
+forall for i=0, n3d()-1 if (diam3d(i) == 0) print secname(), i, diam3d(i)
+</code>
+<p>
+There are many other potential strategies for checking 
+anatomical data, such as
+<UL>
+<LI>creating a space plot of diam.  Bring up a Shape Plot 
+and use its Plot what? menu item to select diam.
+Then select its Space plot menu item, click and drag 
+over the path of interest, and voila!
+<LI>making a histogram of diameter measurements, 
+which can reveal outliers and systematic errors 
+such as "favorite values" and quantization artifacts 
+(what is the smallest diameter that was measured?  
+how fine is the smallest increment of diameter?).
+This requires some coding, which is left as an exercise 
+to the reader.
+</UL>
+
+
+<H2>Detailed morphometric data: sources, caveats, and importing into NEURON</H2>
+
+Currently the largest collection of detailed morphometric data that I know of is 
+<A HREF="http://neuromorpho.org/">NeuroMorpho.org</A>.
+There are many potential pitfalls in the collection and use of such data.
+Before using any data you find at NeuroMorpho.org or anywhere else, 
+sure to carefully read any papers that were
+written about those data by the anatomists who obtained them.
+
+<p>
+Some of the artifacts that can afflict morphometric data 
+are discussed in these two papers, which are well worth reading:<br>
+Kaspirzhny AV, Gogan P, Horcholle-Bossavit G, Tyc-Dumont S. 2002.
+Neuronal morphology data bases: morphological noise and assesment of data quality.
+Network: Computation in Neural Systems 13:357-380.<br>
+Scorcioni, R., Lazarewicz, M.T., and Ascoli, G.A.
+Quantitative morphometry of hippocampal pyramidal cells: differences between
+anatomical classes and reconstructing laboratories.
+Journal of Comparative Neurology 473:177-193, 2004.
+
+<p>
+NEURON's Import3D tool can import data in several file formats:
+SWC, Neurolucida, Eutectic, and MorphML.
+For an online tutorial about this tool, see
+<A HREF="http://www.neuron.yale.edu/neuron/static/docs/import3d/main.html">http://www.neuron.yale.edu/neuron/static/docs/import3d/main.html</A>.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2008 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

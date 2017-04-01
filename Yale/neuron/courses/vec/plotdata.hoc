@@ -1,0 +1,24 @@
+pwman_place(0,0) // can't pop up browsers unless at least one window exists
+
+objref f
+f = new File()
+f.ropen("data4.dat")
+
+objref m
+m = new Matrix()
+m.scanf(f)
+f.close
+
+objref tvec
+tvec = m.getcol(0)
+
+objref g, tobj
+strdef tstr
+g = new Graph()
+for i=1,m.ncol-1 {
+	sprint(tstr, "%g", i*9)
+	tobj = m.getcol(i)
+	tobj.label(tstr)
+	tobj.line(g, tvec)
+}
+

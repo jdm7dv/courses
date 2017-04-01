@@ -1,0 +1,17 @@
+/* init.hoc for range variable exercise
+   last modified 7/16/2000 NTC
+*/
+
+// start the GUI and load the ballstk cellbuilder
+load_file("nrngui.hoc")
+load_file("ballstktaper.ses")
+
+// find threshold
+load_file("thresh.hoc")
+
+// routines to change taper and then search for threshold
+load_file("taper.hoc")
+
+// load custom GUI
+load_file("start.ses")
+

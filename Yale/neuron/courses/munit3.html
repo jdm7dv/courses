@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+  <!-- version 2.2 10:45 AM on 7/22/99 -->
+  <TITLE>A methodical approach</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h3>A methodical approach</h3>
+
+It will help to have three windows. One to stay in an editor and
+modify and save "temp.mod". Another to run "modlunit temp" and see the
+error message. A third to run the UNIX units command to help you figure out
+certain dimensional factors.
+
+What follows assumes steps 0 and 1 have been completed and no other
+changes have been made to the temp.mod file.
+
+The "modlunit temp"
+output is:
+<pre>
+Checking units of temp.mod
+REACTION quantity units for pump is: 1-21 /m2
+but the quantity units of the first term is: 1-09 /m2
+Inconsistent material quantity units
+Need a correct COMPARTMENT statement at line 52 in file temp.mod
+        ~ cam + pump <-> capump ((1e7)*k1, (1e10)*k2<<ERROR>>)
+</pre>
+Use the units command to verify that the quantity units of cam are
+<pre>
+you have: micro micron / liter
+you want: 
+conformability
+        1.000000e-09 /m2
+        1.000000e+00 
+</pre>
+as stated by the modlunit output.
+We can figure out the right units factor in the COMPARTMENT statement
+for pump by
+<pre>
+you have: pico/cm2        
+you want: micro micron / liter
+        * 1.000000e+01
+        / 1.000000e-01
+</pre>
+and changing the factor (1e12) currently there to (1e1) or (10).
+<p>
+I leave it to the philosophers to explain <a href="wisdom.html">why</a> something that is measured
+in moles/cm<sup>2</sup> and has a huge factor of (1e13) gets its factor reduced
+to (1e1) when the units are the much smaller picomoles/cm<sup>2</sup>. Seems to
+me the factor should have gone up to (1e25)!
+<p>
+Re-run modlunit. Now it is the flux values that are bad.
+<pre>
+Flux units for this reaction: 1-06 /m2-sec
+This implies forward rate units: 100000 m3/sec
+But the users forward rate units are: 1-07 m3/sec
+inconsistent reaction units at line 52 in file temp.mod
+        ~ cam + pump <-> capump ((1e7)*k1, (1e10)*k2<<ERROR>>)
+</pre>
+The forward rate factor needs to be changed from 1e7 to 1e-5.
+That is, since the ratio between user and the implied is 1e-7/1e5
+we either multiply or divide the existing factor by this amount.
+More laboriously we can use the units command again to compare
+vol* dcam/dt and k1*cam*pump (i.e. micron * uM/ms and
+/mM-s * uM * pmol/cm2) to see
+<pre>
+you have: liter micro pico / milli s liter cm2
+you want: micro micron/liter ms
+        * 1.000000e-05
+        / 1.000000e+05
+</pre>
+The difficulty in using the UNIX units command is that it requires all
+terms in the numerator to be written first followed by all
+the terms in the denominator. I have ordered them so that
+everything in the numerator for k1 is followed by the numerator for
+cam followed by the numerator for pump and then the denominator terms
+respectively.
+
+<p>
+
+Now the backward rates are inconsistent and need to be changed from
+(1e10) to (1e-2). At last, that reaction is dimensionally consistent.
+Several modlunit runs later we also get the other pump reaction consistent
+with
+<pre>
+        ~ capump <-> cao + pump ((1e-2)*k3, (1e-2)*k4)
+</pre>
+When comparing factors to the previous reaction note that cam and cao
+have different units.
+
+<p>
+Dimensional problems with expressions are easy to fix since the
+modlunit command suggests the correct factor. e.g.
+<pre>
+The previous primary expression with units: 1-21 /m2
+is missing a conversion factor and should read:
+  (1e-12)*()
+ at line 58 in file temp.mod
+        CONSERVE pump + capump = (1e13)*pump0<<ERROR>>
+</pre>
+can be fixed by writing
+<pre>
+        CONSERVE pump + capump = (1e1)*pump0  
+</pre>
+With this, modlunit no longer complains.
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998, 1999 by N.T. Carnevale and M.L. Hines, all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

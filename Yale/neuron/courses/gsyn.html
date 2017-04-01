@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+  <!-- version 2.2 5:05 PM on 7/22/99 -->
+  <TITLE>G-protein synapse</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h1> G-protein synapse </h1>
+
+<h2> Physical System </h2>
+
+Synaptic conductance modulated by activation of postsynaptic G-protein.
+
+<h2> Model </h2>
+
+Alpha function approximation to both a conductance change and G-protein change
+on occurrence of event. An event does two things,
+<p>
+1) An amount of material is introduced at the beginning of the G-protein
+cascade which produces a peak change of Ginc in the G-protein concentration
+(relative to its steady state value of 1)
+approximately Gtau1 after the event (assuming Gtau1 is nearly the same
+as Gtau2).
+<p>
+2) An amount of transmitter is released which is proportional to the
+weight of the event and the G-protein concentration and produces a peak
+change in g of weight*G approximately tau1 after the event (assuming
+tau1 is nearly the same as tau2).
+<pre>
+	Ginc increase in A -> G ->
+	weight*G increase in a -> g -> 
+	i = g*(v - e)
+</pre>
+
+<h2> Simulation </h2>
+
+<a href="gsyn/gsyn.mod"> gsyn.mod </a>
+<p>
+<a href="gsyn/gsyn.ho"> text of gsyn.hoc file </a>
+<p>
+The simulation differs from the previous example only in that it uses
+a different synapse model.
+<p>
+These files are copies of the gsyn example files (along with pregen.mod)
+in nrn/examples/nrniv/netcon. By running 
+<pre>
+	special gsyn.hoc -
+</pre>
+the example will start with a PointProcessGroupManager that allows you to
+vary the parameters for the three spike train generators
+and the synapse. Another panel shows the weight and delay for the
+three connections.
+
+<h2>Exercises</h2>
+
+1) When Ginc=1 does the g-protein for a single spike double?
+Is the maximum conductance change for a single spike equal to
+the weight?
+<p>
+2) When a second spike arrives at the peak of the g-protein pulse
+from the same network connection, is the increment in the conductance
+twice as much? What if the second spike arrives on a different
+network connection?
+<p>
+3) It is impossible to plot the real value of G in this model because
+it is computed only when an event occurs. Does it make sense to
+move the computation out of the NET_RECEIVE block and into the
+DERIVATIVE block? How would that change the behavior with regard
+to multiple input lines?
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998, 1999 by N.T. Carnevale and M.L. Hines, all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

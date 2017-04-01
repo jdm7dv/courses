@@ -1,0 +1,473 @@
+objectvar save_window_, rvp_
+objectvar scene_vector_[13]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+
+//Begin CellBuild[0]
+{
+load_file("celbild.hoc", "CellBuild")
+}
+{ocbox_ = new CellBuild(1)}
+{object_push(ocbox_)}
+{
+version(1)
+continuous = 1
+}
+{object_push(topol)}
+{
+first = 0
+slist.remove_all()
+sname = "left"
+objref tobj
+}
+{
+tobj = new CellBuildSection("left",0, 0, tobj, 0) slist.append(tobj)
+  tobj.position(-15,0,-75,-60) tobj.lx=-82.5 tobj.ly=-60 tobj.i3d=0
+}
+for i=0, slist.count-1 {slist.object(i).rdses()}
+{object_pop()}
+{
+}
+{object_push(subsets)}
+{first = 0}
+{tobj = new SNList("all") snlist.append(tobj)}
+for i=0,0 tobj.add(bild.topol.slist.object(fscan()))
+0
+{object_pop()}
+{
+}
+{object_push(geom)}
+{
+first = 0
+tobj = new GeoSpec(0)
+tobj.value = 1000
+bild.topol.slist.object(0).geo.append(tobj)
+tobj = new GeoSpec(1)
+tobj.value = 10
+bild.topol.slist.object(0).geo.append(tobj)
+tobj = new GeoSpec(5)
+tobj.value = 0.1
+bild.topol.slist.object(0).geo.append(tobj)
+set_default()
+}
+{object_pop()}
+{
+{
+save_window_=geom.g
+save_window_.size(-200,200,-150,150)
+scene_vector_[2] = save_window_
+geom.g = save_window_
+save_window_.save_name("geom.g")
+}
+}
+{object_push(memb)}
+{first=0}
+{
+tobj = new MechanismStandard("hh")
+tobj.set("gnabar_hh", 0.12, 0)
+tobj.set("gkbar_hh", 0.036, 0)
+tobj.set("gl_hh", 0.0003, 0)
+tobj.set("el_hh", -54.3, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(0).ml.append(tobj)
+}
+{object_pop()}
+{
+}
+{object_push(manage)}
+{
+first = 0
+classname = "Cell"
+etop=1 esub=1 egeom=1 emem=1
+itop=1 isub=0 igeom=0 imem=0
+bild.topol.names_off = 0
+bild.topol.circles_off = 0
+}
+{object_pop()}
+{
+cexport()
+}
+{
+save_window_=gtopol
+save_window_.size(-200,200,-150,150)
+scene_vector_[2] = save_window_
+gtopol = save_window_
+save_window_.save_name("gtopol")
+}
+{object_pop()}
+{
+ocbox_.map("CellBuild[0]", 80, 63, 822.72, 374.4)
+}
+objref ocbox_
+//End CellBuild[0]
+
+{WindowMenu[0].ses_gid(1, 0, 0, "CellBuilders and gap spec")}
+
+//Begin CellBuild[1]
+{
+load_file("celbild.hoc", "CellBuild")
+}
+{ocbox_ = new CellBuild(1)}
+{object_push(ocbox_)}
+{
+version(1)
+continuous = 1
+}
+{object_push(topol)}
+{
+first = 0
+slist.remove_all()
+sname = "right"
+objref tobj
+}
+{
+tobj = new CellBuildSection("right",0, 0, tobj, 0) slist.append(tobj)
+  tobj.position(15,0,90,-90) tobj.lx=82.5 tobj.ly=-90 tobj.i3d=0
+}
+for i=0, slist.count-1 {slist.object(i).rdses()}
+{object_pop()}
+{
+}
+{object_push(subsets)}
+{first = 0}
+{tobj = new SNList("all") snlist.append(tobj)}
+for i=0,0 tobj.add(bild.topol.slist.object(fscan()))
+0
+{object_pop()}
+{
+}
+{object_push(geom)}
+{
+first = 0
+tobj = new GeoSpec(0)
+tobj.value = 1000
+bild.topol.slist.object(0).geo.append(tobj)
+tobj = new GeoSpec(1)
+tobj.value = 10
+bild.topol.slist.object(0).geo.append(tobj)
+tobj = new GeoSpec(5)
+tobj.value = 0.1
+bild.topol.slist.object(0).geo.append(tobj)
+set_default()
+}
+{object_pop()}
+{
+{
+save_window_=geom.g
+save_window_.size(-200,200,-150,150)
+scene_vector_[3] = save_window_
+geom.g = save_window_
+save_window_.save_name("geom.g")
+}
+}
+{object_push(memb)}
+{first=0}
+{
+tobj = new MechanismStandard("hh")
+tobj.set("gnabar_hh", 0.12, 0)
+tobj.set("gkbar_hh", 0.036, 0)
+tobj.set("gl_hh", 0.0003, 0)
+tobj.set("el_hh", -54.3, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(0).ml.append(tobj)
+}
+{object_pop()}
+{
+}
+{object_push(manage)}
+{
+first = 0
+classname = "Cell"
+etop=1 esub=1 egeom=1 emem=1
+itop=1 isub=0 igeom=0 imem=0
+bild.topol.names_off = 0
+bild.topol.circles_off = 0
+}
+{object_pop()}
+{
+cexport()
+}
+{
+save_window_=gtopol
+save_window_.size(-200,200,-150,150)
+scene_vector_[3] = save_window_
+gtopol = save_window_
+save_window_.save_name("gtopol")
+}
+{object_pop()}
+{
+ocbox_.map("CellBuild[1]", 130, 126, 822.72, 374.4)
+}
+objref ocbox_
+//End CellBuild[1]
+
+{WindowMenu[0].ses_gid(0, 0, 0, "CellBuilders and gap spec")}
+
+//Begin CellBuild[2]
+{
+load_file("celbild.hoc", "CellBuild")
+}
+{ocbox_ = new CellBuild(1)}
+{object_push(ocbox_)}
+{
+version(1)
+continuous = 1
+}
+{object_push(topol)}
+{
+first = 0
+slist.remove_all()
+sname = "gap"
+objref tobj
+}
+{
+tobj = new CellBuildSection("gap",0, 0, tobj, 0) slist.append(tobj)
+  tobj.position(0,30,0,75) tobj.lx=-7.5 tobj.ly=75 tobj.i3d=0
+}
+for i=0, slist.count-1 {slist.object(i).rdses()}
+{object_pop()}
+{
+}
+{object_push(subsets)}
+{first = 0}
+{tobj = new SNList("all") snlist.append(tobj)}
+for i=0,0 tobj.add(bild.topol.slist.object(fscan()))
+0
+{object_pop()}
+{
+}
+{object_push(geom)}
+{
+first = 0
+tobj = new GeoSpec(2)
+tobj.value = 100
+bild.topol.slist.object(0).geo.append(tobj)
+set_default()
+}
+{object_pop()}
+{
+{
+save_window_=geom.g
+save_window_.size(-200,200,-150,150)
+scene_vector_[4] = save_window_
+geom.g = save_window_
+save_window_.save_name("geom.g")
+}
+}
+{object_push(memb)}
+{first=0}
+{
+tobj = new GeoSpec(1)
+tobj.value = 1e-06
+tobj.set_default()
+tobj = new MStanWrap(tobj, 0)
+bild.topol.slist.object(0).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("extracellular")
+tobj.set("xraxial", 1e+09, 0)
+tobj.set("xg", 0, 0)
+tobj.set("xc", 0, 0)
+tobj.set("e_extracellular", 0, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(0).ml.append(tobj)
+}
+{object_pop()}
+{
+}
+{object_push(manage)}
+{
+first = 0
+classname = "Cell"
+etop=1 esub=1 egeom=1 emem=1
+itop=1 isub=0 igeom=0 imem=0
+bild.topol.names_off = 0
+bild.topol.circles_off = 0
+}
+{object_pop()}
+{
+cexport()
+}
+{
+save_window_=gtopol
+save_window_.size(-200,200,-150,150)
+scene_vector_[4] = save_window_
+gtopol = save_window_
+save_window_.save_name("gtopol")
+}
+{object_pop()}
+{
+ocbox_.map("CellBuild[2]", 192, 200, 822.72, 374.4)
+}
+objref ocbox_
+//End CellBuild[2]
+
+{WindowMenu[0].ses_gid(0, 0, 0, "CellBuilders and gap spec")}
+
+//Begin PointProcessManager
+{
+load_file("pointman.hoc")
+}
+{
+left ocbox_ = new PointProcessManager(0)
+}
+{object_push(ocbox_)}
+{
+mt.select("IClamp") i = mt.selected()
+ms[i] = new MechanismStandard("IClamp")
+ms[i].set("del", 0, 0)
+ms[i].set("dur", 0.3, 0)
+ms[i].set("amp", 10, 0)
+mt.select("IClamp") i = mt.selected() maction(i)
+hoc_ac_ = 1
+sec.sec move() d1.flip_to(0)
+}
+{object_pop() doNotify()}
+{
+ocbox_ = ocbox_.v1
+ocbox_.map("PointProcessManager", 81, 503, 229.44, 326.4)
+}
+objref ocbox_
+//End PointProcessManager
+
+{WindowMenu[0].ses_gid(0, 1, 1, "Control")}
+
+//Begin PointProcessManager
+{
+load_file("pointman.hoc")
+}
+{
+gap ocbox_ = new PointProcessManager(0)
+}
+{object_push(ocbox_)}
+{
+mt.select("RectifyingGapJunction") i = mt.selected()
+ms[i] = new MechanismStandard("RectifyingGapJunction")
+ms[i].set("g", 1, 0)
+mt.select("RectifyingGapJunction") i = mt.selected() maction(i)
+hoc_ac_ = 0.5
+sec.sec move() d1.flip_to(0)
+}
+{object_pop() doNotify()}
+{
+ocbox_ = ocbox_.v1
+ocbox_.map("PointProcessManager", 694, 355, 208.32, 326.4)
+}
+objref ocbox_
+//End PointProcessManager
+
+{WindowMenu[0].ses_gid(0, 0, 0, "CellBuilders and gap spec")}
+{
+xpanel("RunControl", 0)
+v_init = -65
+xvalue("Init","v_init", 1,"stdinit()", 1, 1 )
+xbutton("Init & Run","run()")
+xbutton("Stop","stoprun=1")
+runStopAt = 5
+xvalue("Continue til","runStopAt", 1,"{continuerun(runStopAt) stoprun=1}", 1, 1 )
+runStopIn = 1
+xvalue("Continue for","runStopIn", 1,"{continuerun(t + runStopIn) stoprun=1}", 1, 1 )
+xbutton("Single Step","steprun()")
+t = 5
+xvalue("t","t", 2 )
+tstop = 5
+xvalue("Tstop","tstop", 1,"tstop_changed()", 0, 1 )
+dt = 0.025
+xvalue("dt","dt", 1,"setdt()", 0, 1 )
+steps_per_ms = 40
+xvalue("Points plotted/ms","steps_per_ms", 1,"setdt()", 0, 1 )
+xcheckbox("Quiet",&stdrun_quiet,"")
+realtime = 3
+xvalue("Real Time","realtime", 0,"", 0, 1 )
+xpanel(62,107)
+}
+{WindowMenu[0].ses_gid(0, 1, 1, "Control")}
+{
+save_window_ = new Graph(0)
+save_window_.size(-1000,1000,-80,40)
+scene_vector_[6] = save_window_
+{save_window_.view(-1000, -80, 2000, 120, 364, 579, 300.48, 200.32)}
+flush_list.append(save_window_)
+save_window_.save_name("flush_list.")
+objectvar rvp_
+rvp_ = new RangeVarPlot("v")
+left rvp_.begin(1)
+left rvp_.end(0)
+rvp_.origin(0)
+save_window_.addobject(rvp_, 2, 1, 0.8, 0.9)
+objectvar rvp_
+rvp_ = new RangeVarPlot("v")
+right rvp_.begin(0)
+right rvp_.end(1)
+rvp_.origin(0)
+save_window_.addobject(rvp_, 3, 1, 0.8, 0.9)
+}
+{WindowMenu[0].ses_gid(0, 2, 1, "Graphs")}
+{
+save_window_ = new Graph(0)
+save_window_.size(0,5,-80,40)
+scene_vector_[7] = save_window_
+{save_window_.view(0, -80, 5, 120, 363, 311, 300.48, 200.32)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addvar("left.v(0)", 2, 1, 0.560383, 1.06773, 2)
+save_window_.addvar("right.v(0)", 3, 1, 0.557188, 1.07252, 2)
+save_window_.addvar("gap.v(0.5)", 1, 1, 0.557188, 1.07732, 2)
+}
+{WindowMenu[0].ses_gid(0, 2, 1, "Graphs")}
+
+//Begin LinearCircuit[0]
+{
+load_file("lincir.hoc", "LinearCircuit")
+}
+{
+ocbox_ = new LinearCircuit(1)
+}
+{object_push(ocbox_)}
+{mkelm(8, 160, 150, 2, 0)}
+{mklabel(0, "gap(0.5)", 3.994, 38.39)}
+{sel.extra_info.set("gap", 0.5) sel.extra_info.name(sel)}
+{mkelm(3, 125, 115, 3.80789, 1.1659)}
+{mklabel(0, "B1", -32.9333, 8.177)}
+{sel.extra_info.restore()}
+3
+1e+09 0
+1e+09 0
+1e+09 0
+{mkelm(3, 195, 115, 3.80789, -1.1659)}
+{mklabel(0, "B2", 32.29, 6.258)}
+{sel.extra_info.restore()}
+3
+1e+09 0
+1e+09 0
+1e+09 0
+{mkelm(7, 110, 60, 2, 0)}
+{mklabel(0, "left(0)", -1.63, -15.4638)}
+{sel.extra_info.set("left", 0) sel.extra_info.name(sel)}
+{mkelm(7, 210, 60, 2, 0)}
+{mklabel(0, "right(0)", 1.945, -19.2999)}
+{sel.extra_info.set("right", 0) sel.extra_info.name(sel)}
+{g.exec_menu("Simulate")}
+{sel = nil}
+{object_pop()}
+{
+{
+save_window_=ocbox_.g
+save_window_.size(0,300,0,200)
+scene_vector_[9] = save_window_
+ocbox_.g = save_window_
+save_window_.save_name("ocbox_.g")
+save_window_.label(163.994, 188.39, "gap(0.5)", 1, 1, 0.5, 0.5, 1)
+save_window_.label(92.0667, 123.177, "B1", 1, 1, 0.5, 0.5, 1)
+save_window_.label(227.29, 121.258, "B2", 1, 1, 0.5, 0.5, 1)
+save_window_.label(108.37, 44.5362, "left(0)", 1, 1, 0.5, 0.5, 1)
+save_window_.label(211.945, 40.7001, "right(0)", 1, 1, 0.5, 0.5, 1)
+}
+ocbox_.map("LinearCircuit[0]", 365, 24, 438.72, 257.28)
+}
+objref ocbox_
+//End LinearCircuit[0]
+
+objectvar scene_vector_[1]
+{doNotify()}

@@ -1,0 +1,23 @@
+<h1>
+Rate limited active transport of calcium.
+</h1>
+<p>
+<center>
+<img src="../images/capump.gif">
+</center>
+<p>
+<pre>
+<font size=+2>
+KINETIC pmp {
+        ~ cabulk <-> cam                (1/tau, 1/tau)
+        ~ cam + pump <-> capump         (k1, k2)
+        ~ capump <-> cao + pump         (k3, k4)
+        ica_pmp = 2*FARADAY*(f_flux - b_flux)
+
+        ~ cam << -(ica) : there is a problem here
+
+        COMPARTMENT width {cam} : volume in (um)
+        COMPARTMENT 1 {pump capump} : area is dimensionless
+        COMPARTMENT 1(m) {cao cabulk}
+}
+</pre>

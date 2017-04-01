@@ -1,0 +1,23 @@
+<h1> Testing capump.mod </h1>
+<pre>
+<font size=+2>
+load_file("single.hoc")
+
+// define a replacement for the stdrun.hoc version of
+// proc init() {
+//	finitialize(v_init)
+//	fcurrent()
+// }
+// that lets you escape from the tyranny of the
+// steady state initialization of cai.
+
+proc init() { local savtau
+	// will initialize cai to cabulk
+	savtau = tau_capmp
+	tau_capmp = 1e-6
+	finitialize(v_init)
+	tau_capmp = savtau
+	fcurrent()
+}
+</pre>
+

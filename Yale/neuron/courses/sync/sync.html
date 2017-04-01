@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+  <!-- version 3R 10:00 AM on 2/23/2015 -->
+  <TITLE>Networks : synchrony in a small net</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300"
+vlink="#330099">
+<h1> Synchronization of two cells </h1>
+
+This exercise shows how two cells, with the same input but firing out of phase, 
+can be synchronized by a weak reciprocal inhibitory connection.
+It also introduces the use of hoc code to specify 
+connections in a network.
+<p>
+
+<h2> Implementation </h2>
+
+The file model_ex.hoc contains the specifications for each cell.
+
+There are two single compartment neurons: 
+cella and cellb, with identical passive and active
+properties, identical synapses syna and synb, 
+and same input currents (stima and stimb) that,
+however, start at different times.
+
+
+<h2> Exercise </h2>
+
+Go to the sync directory and compile the mod files for the Na+ and
+K+ conductances that are used in this exercise.
+
+<p>
+Edit the model_ex.hoc file to add two NetCon statements,
+connecting each cell to the synapse on the other cell. 
+Use the same weight for both connections.
+See 
+<A HREF="http://www.neuron.yale.edu/neuron/static/docs/help/index.html">
+NEURON help 
+</A>
+for syntax and parameters. 
+
+<p>
+Run the sync_ex.hoc simulation and adjust the 
+synaptic weights to obtain synchronization.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 2001 by M. Migliore, 
+all rights reserved.</em>
+</FONT>
+</BODY></HTML>

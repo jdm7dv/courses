@@ -1,0 +1,30 @@
+load_file("stdgui.hoc")
+xopen("net1.hoc")
+
+objref tobj
+strdef tstr
+
+objref cell[4]
+for i=0,3 {cell[i] = new Cell() cell[i].position(0, 100*i)}
+cell[3].soma cell[3].syn = new KSyn(.5)
+access cell[3].soma
+nclist = new List()
+for i=0,2 netcon(cell[i], cell[3])
+for i=0,2 {nclist.object(i).delay=1 nclist.object(i).weight=.001}
+
+// show the connections
+proc npan() {
+        xpanel("NetCon Info")
+        for i=0, nclist.count-1 {
+                tobj = nclist.object(i)
+                sprint(tstr, "%s -> %s -> %s", tobj.precell, tobj, tobj.postcell)
+                xlabel(tstr)
+                xpvalue("weight", &tobj.weight, 1)
+                xpvalue("delay", &tobj.delay, 1)
+        }
+        xpanel()
+}
+npan()
+
+xopen("fig1.ses")
+

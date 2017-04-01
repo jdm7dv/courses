@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+  <!-- version 3.0c 12:40 PM on 9/5/2000 -->
+  <TITLE>Discontinuous parameters</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h1> Discontinuous parameters </h1>
+
+<h2> Physical System </h2>
+
+Pulse current injection electrode
+
+<h2> Model </h2>
+
+A current source with abrupt start and stop
+
+<h2> Simulation </h2>
+To work properly with variable time step methods,
+models that change parameters discontinuously during a simulation
+must notify NEURON when such events take place. This exercise
+illustrates the kinds of problems that occur when models do not
+use the notification function, "at_time".
+
+1) Copy the built-in current clamp pulse model 
+to a file with a new name, say stim1.mod.
+(the original is in  nrn-4.3.1/src/nrnoc/stim.mod (UNIX) 
+or c:\nrn\src\nrnoc\stim.mod (MSWin). It is probably easier, though
+to copy it from this
+<a href=discon/stimcopy.txt>copy of stim.mod.</a>
+<p>
+The substantive portions of stim.mod looks like:
+<pre>
+...
+NEURON {
+        POINT_PROCESS IClamp
+        RANGE del, dur, amp, i
+        ELECTRODE_CURRENT i
+}
+...
+BREAKPOINT {
+        at_time(del)
+        at_time(del+dur)
+
+        if (t < del + dur && t > del) {
+                i = amp
+        }else{  
+                i = 0
+        }
+}
+</pre>
+
+2) Edit stim1.mod and change its POINT_PROCESS name to BadPulse
+and also comment out the two at_time call in the BREAKPOINT block.
+Before the closing brace of the BREAKPOINT block it will also
+be helpful to print t, v, and i.
+<p>
+3) Do a "Lipid Bilayer" style simulation with the BadPulse with
+<pre>
+del = 1, dur = 1, amp = 0.1
+</pre>
+when CVode is used as the integration method. Notice that the pulse
+is completely missed since it lies entirely within one of the large
+integration intervals used by CVode.
+<p>
+4) Change the duration of the BadPulse to a very large number and rerun with CVode.
+Notice the inefficient search for the location of the discontinuities.
+<p>
+5) Uncomment the at_time calls (but leave in the printf statement)
+By notifying NEURON when the discontinuities occur, CVode stops just
+before them and restarts just after.
+To print the return value of at_time I use a BREAKPOINT block of:
+<pre>
+BREAKPOINT { LOCAL adel, adur
+        adel = at_time(del)
+        adur = at_time(del+dur)
+
+        if (t < del + dur && t > del) {
+                i = amp
+        }else{
+                i = 0
+        }
+printf("adel=%g adur=%g ", adel, adur)
+printf("t=%g t-del=%g v=%g i=%g\n", t, t-del, v, i)
+}
+</pre>
+
+<hr>
+<h1> Changing parameters from hoc </h1>
+Statements can be executed at specified times through the use of the
+<pre>
+    cvode.event(time, "statement")
+</pre>
+command which places an event on the queue for later delivery.
+Note: since the event queue is cleared when the finitialize() statement
+is executed, the first event needs to be sent from a user define
+init procedure.
+<p>
+However, if the statement changes any parameters or states, the
+<pre>
+    cvode.re_init()
+</pre>
+should be called.
+<p>
+Use the hevent.hoc file as a framework to experiment with what
+happens when you change the g_pas parameter or v state with and
+without the cvode.re_init() statement.
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2001 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

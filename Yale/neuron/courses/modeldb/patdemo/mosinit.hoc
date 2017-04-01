@@ -1,0 +1,2 @@
+xopen("$(NEURONHOME)/lib/hoc/noload.hoc")
+xopen("demofig1.hoc")

@@ -1,0 +1,35 @@
+/* stylized.hoc for quantitative morphometry exercise
+   last modified 7/26/2000 NTC
+*/
+
+load_file("nrngui.hoc")
+create soma
+access soma
+
+NAPICAL=12	// must be >1
+NOBLIQUE=NAPICAL-1
+NTERMINAL=2
+create apdend[NAPICAL], obdend[NOBLIQUE], tdend[NTERMINAL]
+
+connect apdend[0](0), soma(1)
+for ii=1,NAPICAL-1 connect apdend[ii](0), apdend[ii-1](1)
+for ii=0,NOBLIQUE-1 connect obdend[ii](0), apdend[ii](1)
+for ii=0,NTERMINAL-1 connect tdend[ii](0), obdend[1](1)
+
+
+forall { diam = 1  L = 50 }
+
+access soma
+diam = NAPICAL*2
+
+for ii=0,NAPICAL-1 apdend[ii] {
+	diam=NAPICAL+1-ii
+}
+
+for ii=0,3 apdend[ii] {
+	L=10
+}
+
+for ii=6,9 apdend[ii] {
+	L=10
+}

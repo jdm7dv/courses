@@ -1,0 +1,146 @@
+<HTML>
+<HEAD>
+  <!-- version 1.1c 9:20 AM on 7/3/2003 -->
+  <TITLE>Custom initialization</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300"
+vlink="#330099">
+<h1> Custom initialization </h1>
+
+<h2> Physical System </h2>
+<img src="images/pyramid.gif">
+
+<h2> Model </h2>
+<h3>Ball-Stick approximation to cell</h3>
+<img src="images/ballstk.gif">
+
+<h2> Simulation </h2>
+
+The aim of this exercise is to learn how to perform one of the most common 
+types of custom initializaton:
+<b>initializing to steady state</b>.
+
+<p>
+We start by making a ball & stick model
+in which the natural resting 
+potential of the somatic sphere and dendritic cylinder are different.
+No matter what v_init you choose, default initializaton to a uniform 
+membrane potential results in simulations that show an initial drift 
+of v as the cell settles toward a stable state.
+
+<p>
+After demonstrating this initial drift, we will implement and test
+a method for initializing to steady state 
+that leaves membrane potential nonuniform in space but constant in time.
+
+<h3>Getting started</h3>
+In this exercise you will be creating several files, 
+so you need to be in a working directory 
+for which you have file "write" permission.
+Start NEURON with course/init as the working directory.
+
+
+<h3>Making the representation</h3>
+Use the CellBuilder 
+to make a simple ball and stick model that has these properties:
+<p>
+
+<TABLE BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%">
+  <TR VALIGN=top>
+	<TD>Section</TD>
+	<TD>Anatomy</TD>
+	<TD>Compartmentalization</TD>
+	<TD>Biophysics</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>soma</TD>
+	<TD>length 20 microns<br>diameter 20 microns</TD>
+	<TD>d_lambda = 0.1</TD>
+	<TD>Ra = 160 ohm cm, Cm = 1 uf/cm<SUP>2</SUP><br>
+	    Hodgkin-Huxley channels</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>dend</TD>
+	<TD>length 1000 microns<br>diameter 5 microns</TD>
+	<TD>d_lambda = 0.1</TD>
+	<TD>Ra = 160 ohm cm, Cm = 1 uf/cm<SUP>2</SUP><br>
+	    passive with Rm = 10,000 ohm cm<SUP>2</SUP></TD>
+  </TR>
+</TABLE>
+
+Turn Continuous Create ON and save your CellBuilder to a session file.
+
+
+<h3>Using the Representation</h3>
+
+Bring up a RunControl and a voltage axis graph.<br>
+Set Tstop to 40 ms and run a simulation.<br>
+Use View = plot to see the time course of somatic membrane potential more clearly.
+
+<p>
+Add dend.v(1) to the graph (use Plot what?), then run another simulation.<br>
+Use Move Text and View = plot as needed to get a better picture.
+
+<p>
+Add a space plot and use its Set View to change the y axis range to -70 -65.<br>
+Run another simulation and watch how drastically v changes from the initial condition.
+
+<p>
+Save everything to a session file called all.ses (use File / save session)
+and exit NEURON.
+
+
+<h2>Exercise: initializing to steady state</h2>
+
+In the course/init directory, make an initss.hoc file with the contents
+<pre>
+	// load the GUI tools
+	load_file("nrngui.hoc")
+	// the model and user interface
+	load_file("all.ses")
+	// custom steady state init 
+	load_file("ssprocinit.hoc")
+</pre>
+
+Also make a file called ssprocinit.hoc that contains these lines :
+<pre>
+proc init() { local dtsav, temp
+  finitialize( v_init)
+  t = -1e10
+  dtsav = dt
+  dt = 1e9
+  // if cvode is on, turn it off to do large fixed step
+  temp = cvode.active()
+  if (temp!=0) { cvode.active(0) }
+  while (t<-1e9) { fadvance() }
+  // restore cvode if necessary
+  if (temp!=0) { cvode.active(1) }
+  dt = dtsav
+  t = 0
+  if (cvode.active()) {
+    cvode.re_init()
+  } else {
+    fcurrent()
+  }
+  frecord_init()
+}
+</pre>
+
+Now use NEURON to execute initss.hoc.<br>
+Click on Init & Run and see what happens.
+
+<h2>"Special credit" exercise</h2>
+Another common initialization is for the 
+initialized model to satisfy a particular criterion.
+Create an initialization that will ensure that resting potential 
+throughout the cell equals v_init.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 2003 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY></HTML>

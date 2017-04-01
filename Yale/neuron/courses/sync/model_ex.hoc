@@ -1,0 +1,43 @@
+celsius = 34
+amp=0.004			
+wi=0.0
+objref nta,ntb,stima, stimb, syna, synb
+create cella,cellb
+access cella
+
+cella {
+	L=10 nseg=1 diam=10 
+	insert pas g_pas=1/10000 cm=1
+	insert nans gbar_nans=0.015 ena=55
+	insert kap gkabar_kap = 0.05 ek=-90
+
+	stima=new IClamp(0.5)
+	stima.amp=amp
+	stima.dur=1.e9
+	stima.del=10
+
+	syna = new ExpSyn(0.5)
+	syna.e=-80
+	syna.tau=6
+	
+	}
+
+cellb {
+	L=10 nseg=1 diam=10 
+	insert pas g_pas=1/10000 cm=1
+	insert nans gbar_nans=0.015 ena=55
+	insert kap gkabar_kap = 0.05 ek=-90
+
+	stimb=new IClamp(0.5)
+	stimb.amp=amp
+	stimb.dur=1.e9
+	stimb.del=50
+
+	synb = new ExpSyn(0.5)
+	synb.e=-80
+	synb.tau=6
+}
+
+
+// insert here your NetCon statements (one for each cell)
+//

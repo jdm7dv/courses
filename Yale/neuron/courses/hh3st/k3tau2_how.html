@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+  <!-- version 2.2c 10:48 PM on 7/25/2000 -->
+  <TITLE>Voltage dependent tau1 and tau2 in k3.mod</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h3>Voltage dependent tau1 and tau2 in k3.mod</h3>
+Strategy:<br>
+Start from the previous session and simultaneously fit the 109mV and
+32mV curves allowing all four parameters governing the time constants to
+vary.
+<p>
+The completed exercise can be run by executing the k3taufit2.hoc file.
+<p>
+1) Start from your own previous session or start with the solution to
+the previous exercise: k3taufit1.hoc
+<p>
+2) Mark both "109" and "32" generators for use.
+<p>
+3) Pop up the parameter and domain panels and mark tk1 and tk2 for
+optimization (all four parameters marked) and give starting values
+for tk1 and tk2 different from 0 (e.g. 1)
+<p>
+I generally like to use
+log scaling since optimization often proceeds much faster. However in
+this case it is not clear whether tk1 and tk2 should be positive or
+negative. Actually, it is clear with a bit of thought. The overall
+time constant gets smaller as voltage increases. Although the fact that
+our model has two time constants somewhat muddies the waters. So start
+with unbounded limits for those parameters. When it is clear what sign
+they are, and if the fit is slow,
+we can restrict to that half of the number line and try
+log scaling. In the domain panel, double clicking on a parameter line
+pops up a string editor in which you enter three numbers separated by
+spaces. In our case enter:
+<pre>
+0 -1e6 1e6
+</pre>
+The first number must be 1 or 0 and refers to log or linear scaling.
+The remaining two numbers are the low and high limits.
+<p>
+3) Pop up an Optimizer panel and optimize for a while. Press Stop if
+it does not seem to converge, enter a more reasonable starting value
+for any parameter that seems to be far out of range and restart.
+<p>
+4) If you are not using the best steady state values open the
+k3ssfit.ses file and optimize for the steady state (the default
+values in the k3.mod file are approximate versions of the best values).
+But remember that the steady state fit leaves v_init at 109 so use
+the RunControl panel to put it back to the default of 0 before doing
+time course fits.
+<p>
+5) Add a few more conductance curves to the multiple run fitter.
+(Use the Generators/CloneGenerator)
+You can get the data by loading hh508.hoc.
+Don't bother to optimize them
+all. Perhaps just add the "63mV" curve to the total error value.
+Each needs a phenomenological delay via the SEClamp[0].dur1 protocol
+constant if it is to be seriously fit.
+Just check the quality of the model at other voltage values finding
+the appropriate delay for each.
+<p>
+6) You can see what I came up with by running k3taufit2.hoc, selecting
+Generators/ViewAllGraphs and then Generators/RunAll
+<p>
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2001 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

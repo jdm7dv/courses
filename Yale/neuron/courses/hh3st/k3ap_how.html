@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+  <!-- version 3.1 9:52 PM on 6/14/2008 -->
+  <TITLE>How to simulate an action potential with k3.mod</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h3>How to simulate an action potential with k3.mod</h3>
+The completed exercise can be run by executing k3ap.hoc
+<p>
+1) Run nrngui, build a single compartment,
+insert hh, create a IClamp, and view an hh action potential.
+Hopefully, this should be routine by now. Save the AP in the voltage graph
+by toggling "KeepLines" on and off.
+<p>
+2) Insert the khh channel.
+Note: leave the hh channels inserted since we need the sodium and leak
+of that model.
+Pop up a soma parameter panel.
+NEURONMainMenu/Tools/DistributedMechanisms/Viewers/ShapeName
+and double click on "soma".
+<p>
+3) Change gkbar_hh to 0 and rerun. Should we accept failure and quit?
+Remember vrest_khh.
+<p>
+4) Pop up a
+NEURONMainMenu/Tools/DistributedMechanisms/Viewers/Mechanisms(Globals)/khh
+panel and set vrest_khh to -65. Rerun.
+<p>
+5)
+The AP with khh isn't bad but the fit to the hh AP can be made
+quite a bit better by starting a multiple run fitter using the hh AP as
+data, setting the fitting range from the peak to the end of the AP
+and fitting soma.v(.5) vs t to the hh AP by varying soma.gbar_khh.
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2008 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

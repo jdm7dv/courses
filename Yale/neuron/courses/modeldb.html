@@ -1,0 +1,300 @@
+<HTML>
+<HEAD>
+  <!-- version 2 5:00 PM on 6/14/2008 -->
+  <TITLE>Using ModelDB</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300"
+vlink="#330099">
+<h1> Using ModelDB </h1>
+
+<a href="http://senselab.med.yale.edu/modeldb/">
+http://senselab.med.yale.edu/modeldb/</a>
+is the the home page of ModelDB, but for most of this exercise 
+we'll just use a local copy of some files from it.
+<p>
+
+We'll be analyzing a couple of models in order to answer these questions:
+<ol>
+<li>
+What physical system is being represented, and for what purpose?
+<li>
+What is the representation of the physical system, 
+and how was it implemented?
+<li>
+What is the user interface, how was it implemented, 
+and how do you use it?
+</ol>
+
+
+<h2> Example: Moore et al. 1983 </h2>
+
+<blockquote>
+Moore JW, Stockbridge N, Westerfield M (1983)<br>
+On the site of impulse initiation in a neurone.<br>
+J. Physiol. 336:301-11
+</blockquote>
+
+<p>
+This one doesn't have any mod files, but there's plenty to keep us busy.
+
+<p>
+The model archive moore83.zip has already been downloaded and 
+unzipped. 
+You'll find its contents in course/modeldb/moore83
+
+<h3>1. What physical system is being represented, and for what purpose?</h3>
+
+ModelDB provides a link to 
+<a href='http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=6308224&dopt=Abstract' target='url' >PubMed</a> 
+for the abstract (
+<a href="modeldb/moore83abstract.txt">here's a local copy of the abstract</a>
+).
+At some point we should also read the paper.
+
+<p>
+Go to course/modeldb/moore83 and read the README file.
+Does it provide any more clues?
+
+
+<h3>
+2. What is the representation of the physical system, 
+and how was it implemented?
+</h3>
+
+Run mosinit.hoc in course/modeldb/moore83
+
+<p>
+The PointProcessManager shows a shape plot of the cell.
+
+<p>
+<B>Using hoc to Examine What's in the Model</B>
+<p>
+To see what sections exist and how they are connected, type 
+<pre>
+	topology()
+</pre>
+and
+<pre>
+	forall psection()
+</pre>
+at the oc> prompt.
+
+<p>
+At this point, 
+you might think you'd have to start reading source code
+in order to get any more information about what's in the model.
+But the Model View tool can save you a lot of time and effort,
+and it has the advantage of telling you exactly what the model 
+specification is.  This is a big advantage, since some programs use 
+complex specification and initialization routines that 
+change model structure and parameters "on the fly."
+
+<p>
+<B>Using Model View to Discover What's in a Model</B>
+
+<p>
+Start a Model View tool
+NEURON Main Menu / Tools / Model View
+<p>
+This shows a browsable outline of the model's properties.<br>
+Asterisks mark the items that are "expandable."<br>
+Expand the outline by clicking on "1 real cells". 
+Then peer inside the model by clicking on each of its expandable subitems.
+<p>
+Notice what happens when you get down to<br>
+1 real cells / root soma / 6 inserted mechanisms / hh / 2 gnabar_hh<br>
+In the ModelView Range Graph, click on the "SpacePlot" button, 
+then click and drag in that tool's shape plot to bring up a space plot of gnabar_hh.
+Do the same for gkbar_hh and gl_hh.
+<p>
+A shortcut for discovering the distributions of spatially inhomogeneous parameters:<br>
+Density Mechanisms / Heterogeneous parameters<br>
+reveals all that are spatially nonuniform.  Click on any one to make the 
+ModelView Range Graph reveal its values over the model.
+
+<p>
+<b>Analyzing the Underlying Code</b>
+<p>
+
+Was this model specified by user-written hoc code, or was a CellBuilder used?<br>
+Exit the simulation and search the hoc files for create statements.<br>
+Under UNIX type
+<pre>
+	grep create *hoc
+</pre>
+Under MSWin you can open a Command Prompt window, cd to the course/modeldb/moore83 directory, 
+and then type
+<pre>
+	c:\nrn54\bin\grep create *hoc
+</pre>
+Alternatively you could try Windows Explorer's semi-useful Search function, 
+or open each hoc file with a text editor and search for create.
+
+<p>
+If no hoc file contains the create keyword, maybe the CellBuilder was used.<br>
+Run mosinit.hoc again and look for a CellBuilder.<br>
+If you don't see one, maybe a Window Group Manager is hiding it.<br>
+Click on NEURON Main Menu/Window and look for one or more window names that are 
+missing a red check mark. If you see one, scroll down to it and release the mouse button.<br>
+If a CellBuilder pops up, examine its Topology, Subsets, Geometry, and Biophysics pages.<br>
+Do they agree with the output of forall psection() and/or what you discovered with the 
+Model View tool?
+
+<p>
+<b>"Extra Credit" Question</b>
+<p>
+Now you know what's in the model cell, and how it was implemented.
+Suppose you wanted to get a copy of it that you could use in a program of your own.
+Would you do this by saving a CellBuilder to a new session file, 
+or by using a text editor to copy create, connect, 
+insert etc. statements from one of the hoc files?
+
+<h3>
+3. What is the user interface, how was it implemented, 
+and how do you use it?
+</h3>
+
+What is that panel with all the buttons?<br>
+What happens if you click on one of them?<br>
+Click on a different one and see what happens to the string at the top of the panel.<br>
+Click on some more and see what happens to the blue dot in the PointProcessManager's shape plot.<br>
+Is this one of the standard GUI tools you can bring up with the NEURON Main Menu?<br>
+How does it work?
+
+<blockquote>
+Hints: look for an xpanel statement in one of the hoc files.<br>
+Read about xpanel, xbutton, and xvarlabel in the help files.
+</blockquote>
+
+Find the procedures that implement the actions that are caused 
+by clicking on a button.<br>
+The last statement in each of these procedures launches a simulation.<br>
+What does the very first statement do?<br>
+What does the second statement do?<br>
+
+<blockquote>
+The remaining statements do one or more of the following:<br>
+change model parameters (e.g. spatial distribution of HH in the dendrite)<br>
+change stimulus parameters (e.g. stimulus location and duration)<br>
+change simulation parameters<br>
+</blockquote>
+
+<p>
+Why does the space plot automatically save traces every 0.1 ms?
+
+<blockquote>
+Hint:  analyze the procedure that actually executes a simulation<br>
+Which hoc file contains this procedure?
+</blockquote>
+
+<p>
+What procedure actually changes the stimulus location, duration, and amplitude?
+Read about PointProcessManager in the help files.
+
+
+<h2> Another example: Mainen and Sejnowski 1996 </h2>
+
+<blockquote>
+Mainen ZF, Sejnowski TJ (1996)<br>
+Influence of dendritic structure on firing pattern in model neocortical neurons.<br>
+Nature 382:363-6
+</blockquote>
+
+<p>
+This one has interesting anatomy and several mod files.
+
+<p>
+The model archive patdemo.zip has already been downloaded and 
+unzipped. 
+Its contents are in course/modeldb/patdemo
+
+<h3>1. What physical system is being represented, and for what purpose?</h3>
+
+This is ModelDB's link to 
+<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8684467&amp;dopt=Abstract" target='url' >PubMed</a>
+for the abstract, and 
+<a href="modeldb/mainen96abstract.txt">here's a local copy of the abstract</a>.
+Another paper to read.
+
+<p>
+Read the README.txt file in course/modeldb/mainen96 .
+Any more clues here?
+
+<h3>
+2. What is the representation of the physical system, 
+and how was it implemented?
+</h3>
+
+Compile the mod files, then run mosinit.hoc.
+
+<p>
+Four different cell morphologies are available.
+Select one of them, then click on the Init button to make sure that 
+all model specification and initialization code has been executed.
+Use Model View to browse the model, and examine the heterogeneous parameters.
+
+<p>
+Now it's time to discover how this model was created.
+Where are the files that contain the pt3d statements of these cells?
+
+<p>
+This program grafts a stylized myelinated axon onto 3d specifications of detailed morphometry.<br>
+Where is the hoc code that accomplishes this grafting?<br>
+If you run mosinit.hoc and then try to import one of the cell 
+morphologies into the CellBuilder, do you also get the axon?
+
+<p>
+Length and diameter are scaled in order to compensate for the effect of 
+spines on dendritic surface area.  Find the procedure that does this.<br>
+What is an alternative way to represent the effect of spines?
+
+<p>
+nseg is adjusted in each section so that no segment is longer than 50 um.
+What procedure does this?
+
+<p>
+Five active currents and one pump mechanism are included.
+Examine these mod files.<br>
+Do they appear to be compatible with CVODE?
+
+<p>
+Check them with modlunit.<br>
+Did you find any inconsistencies?<br>
+Do any of these seem likely to affect simulation results?<br>
+Are there any other warning messages?<br>
+Is there anything that would cause numerical errors?<br>
+How might you fix the problems that you found?
+
+<h3>
+3. What is the user interface, how was it implemented, 
+and how do you use it?
+</h3>
+
+mosinit.hoc brings up a minimal GUI for selecting cells and running simulations.<br>
+How did they do that?
+
+<h3>
+4. Reuse one of their cells in a model of your own design
+</h3>
+
+Import its morphology into a CellBuilder, then save the CellBuilder to a session 
+file and exit the simulation.
+
+<p>
+Restart nrngui and load the CellBuilder's session file.<br>
+Assign a plausible set and spatial distribution of biophysical properties 
+and save to a session file.
+
+<p>
+Instrument your new model and run a simulation.<br>
+Save the model, with instrumentation, to a session file.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2008 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY></HTML>

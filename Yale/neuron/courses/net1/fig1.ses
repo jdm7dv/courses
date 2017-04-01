@@ -1,0 +1,101 @@
+objectvar save_window_, rvp_
+objectvar scene_vector_[4]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+//Begin PointProcessGroupManager
+{
+load_file("pointgrp.hoc")
+}
+{
+ocbox_ = new PointProcessGroupManager(0)
+}
+{object_push(ocbox_)}
+{
+ms = new MechanismStandard("IClamp")
+ms.set("del", 1, 0)
+ms.set("dur", 0.1, 0)
+ms.set("amp", 1, 0)
+mnews("IClamp", ms)
+select(0)
+execute("Cell[0].soma ocbox_.move(0.5)")
+ms = new MechanismStandard("IClamp")
+ms.set("del", 21, 0)
+ms.set("dur", 0.1, 0)
+ms.set("amp", 1, 0)
+mnews("IClamp", ms)
+select(1)
+execute("Cell[0].soma ocbox_.move(0.5)")
+ms = new MechanismStandard("IClamp")
+ms.set("del", 28, 0)
+ms.set("dur", 0.1, 0)
+ms.set("amp", 1, 0)
+mnews("IClamp", ms)
+select(2)
+execute("Cell[0].soma ocbox_.move(0.5)")
+ms = new MechanismStandard("IClamp")
+ms.set("del", 35, 0)
+ms.set("dur", 0.1, 0)
+ms.set("amp", 1, 0)
+mnews("IClamp", ms)
+select(3)
+execute("Cell[0].soma ocbox_.move(0.5)")
+ms = new MechanismStandard("IClamp")
+ms.set("del", 61, 0)
+ms.set("dur", 0.1, 0)
+ms.set("amp", 1, 0)
+mnews("IClamp", ms)
+select(4)
+execute("Cell[0].soma ocbox_.move(0.5)")
+ms = new MechanismStandard("IClamp")
+ms.set("del", 64, 0)
+ms.set("dur", 0.1, 0)
+ms.set("amp", 1, 0)
+mnews("IClamp", ms)
+select(5)
+execute("Cell[1].soma ocbox_.move(0.5)")
+ms = new MechanismStandard("IClamp")
+ms.set("del", 67, 0)
+ms.set("dur", 0.1, 0)
+ms.set("amp", 1, 0)
+mnews("IClamp", ms)
+select(6)
+execute("Cell[2].soma ocbox_.move(0.5)")
+}
+{object_pop() doNotify()}
+{
+ocbox_ = ocbox_.v1
+ocbox_.map("PointProcessGroupManager", 12, 312, 562.56, 317.76)
+}
+objref ocbox_
+//End PointProcessGroupManager
+
+{
+xpanel("KSyn[0] at Cell[3].soma(0.5)", 0)
+xlabel("KSyn[0] at Cell[3].soma(0.5)")
+cell[3].syn.tau = 5
+xvalue("tau","cell[3].syn.tau", 1,"", 0, 1 )
+cell[3].syn.e = 10
+xvalue("e","cell[3].syn.e", 1,"", 0, 1 )
+cell[3].syn.i = -0.00548184
+xvalue("i","cell[3].syn.i", 0,"", 0, 1 )
+cell[3].syn.A = 1.1307e-05
+xvalue("A","cell[3].syn.A", 0,"", 0, 1 )
+cell[3].syn.G = 7.30972e-05
+xvalue("G","cell[3].syn.G", 0,"", 0, 1 )
+xpanel(634,394)
+}
+{
+save_window_ = new Graph(0)
+save_window_.size(0,100,-80,830)
+scene_vector_[2] = save_window_
+{save_window_.view(0, -80, 100, 910, 733, 309, 301.44, 498.88)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addexpr("cell[0].soma.v(.5) + 800", 1, 1, 0.174994, 0.981381, 2)
+save_window_.addexpr("cell[1].soma.v(.5) + 600", 1, 1, 0.154572, 0.75662, 2)
+save_window_.addexpr("cell[2].soma.v(.5) + 400", 1, 1, 0.122663, 0.600213, 2)
+save_window_.addexpr("cell[3].soma.v(.5) + 000", 1, 1, 0.167463, 0.217807, 2)
+save_window_.addexpr("KSyn[0].G*50000 + 100", 1, 1, 0.144855, 0.403897, 2)
+}
+objectvar scene_vector_[1]
+{doNotify()}

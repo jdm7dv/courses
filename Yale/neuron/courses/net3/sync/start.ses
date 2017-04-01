@@ -1,0 +1,58 @@
+load_file("nrngui.hoc")
+objectvar save_window_, rvp_
+objectvar scene_vector_[4]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+{
+xpanel("Synchronizing network parameters", 0)
+ncell = 10
+xvalue("Number of all to all cells","ncell", 1,"recreate(ncell)", 0, 0 )
+w = -0.3
+xvalue("All to all connection weight","w", 1,"weight(w)", 0, 0 )
+del = 4
+xvalue("Delay (ms)","del", 1,"delay(del)", 0, 0 )
+ta = 10
+xvalue("Cell time constant (ms)","ta", 1,"tau(ta)", 0, 0 )
+low = 10
+xvalue("Lowest natural interval","low", 1,"interval(low, high)", 0, 0 )
+high = 15
+xvalue("Highest natural interval","high", 1,"interval(low, high)", 0, 0 )
+xpanel(389,47)
+}
+{
+xpanel("RunControl", 0)
+v_init = -65
+xvalue("Init","v_init", 1,"stdinit()", 1, 1 )
+xbutton("Init & Run","run()")
+xbutton("Stop","stoprun=1")
+runStopAt = 5
+xvalue("Continue til","runStopAt", 1,"{continuerun(runStopAt) stoprun=1}", 1, 1 )
+runStopIn = 1
+xvalue("Continue for","runStopIn", 1,"{continuerun(t + runStopIn) stoprun=1}", 1, 1 )
+xbutton("Single Step","steprun()")
+t = 500
+xvalue("t","t", 2 )
+tstop = 500
+xvalue("Tstop","tstop", 1,"tstop_changed()", 0, 1 )
+dt = 34323
+xvalue("dt","dt", 1,"setdt()", 0, 1 )
+steps_per_ms = 40
+xvalue("Points plotted/ms","steps_per_ms", 1,"setdt()", 0, 1 )
+xcheckbox("Quiet",&stdrun_quiet,"")
+realtime = 0
+xvalue("Real Time","realtime", 0,"", 0, 1 )
+xpanel(86,279)
+}
+
+//Begin VariableTimeStep
+{
+ocbox_ = NumericalMethodPanel[0]
+ocbox_ = ocbox_.b1
+ocbox_.map("VariableTimeStep", 87, 131, 272.64, 106.56)
+}
+objref ocbox_
+//End VariableTimeStep
+
+objectvar scene_vector_[1]
+{doNotify()}

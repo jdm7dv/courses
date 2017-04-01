@@ -1,0 +1,14 @@
+load_file("nrngui.hoc")
+load_file("hevent.ses")
+
+proc init() {
+	g_pas = .001
+	finitialize(v_init)
+	cvode.event(1, "ev()")
+}
+
+proc ev() {
+	print "ev at ", t
+	g_pas = .01
+	cvode.re_init()
+}

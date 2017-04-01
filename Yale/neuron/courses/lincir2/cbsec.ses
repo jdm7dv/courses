@@ -1,0 +1,308 @@
+objectvar save_window_, rvp_
+objectvar scene_vector_[5]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+
+//Begin CellBuild[0]
+{
+load_file("celbild.hoc", "CellBuild")
+}
+{ocbox_ = new CellBuild(1)}
+{object_push(ocbox_)}
+{
+version(1)
+continuous = 1
+}
+{object_push(topol)}
+{
+first = 0
+slist.remove_all()
+sname = "left"
+objref tobj
+}
+{
+tobj = new CellBuildSection("left",0, 0, tobj, 0) slist.append(tobj)
+  tobj.position(-15,0,-75,-60) tobj.lx=-82.5 tobj.ly=-60 tobj.i3d=0
+}
+for i=0, slist.count-1 {slist.object(i).rdses()}
+{object_pop()}
+{
+}
+{object_push(subsets)}
+{first = 0}
+{tobj = new SNList("all") snlist.append(tobj)}
+for i=0,0 tobj.add(bild.topol.slist.object(fscan()))
+0
+{object_pop()}
+{
+}
+{object_push(geom)}
+{
+first = 0
+tobj = new GeoSpec(0)
+tobj.value = 1000
+bild.topol.slist.object(0).geo.append(tobj)
+tobj = new GeoSpec(1)
+tobj.value = 10
+bild.topol.slist.object(0).geo.append(tobj)
+tobj = new GeoSpec(5)
+tobj.value = 0.1
+bild.topol.slist.object(0).geo.append(tobj)
+set_default()
+}
+{object_pop()}
+{
+{
+save_window_=geom.g
+save_window_.size(-200,200,-150,150)
+scene_vector_[2] = save_window_
+geom.g = save_window_
+save_window_.save_name("geom.g")
+}
+}
+{object_push(memb)}
+{first=0}
+{
+tobj = new MechanismStandard("hh")
+tobj.set("gnabar_hh", 0.12, 0)
+tobj.set("gkbar_hh", 0.036, 0)
+tobj.set("gl_hh", 0.0003, 0)
+tobj.set("el_hh", -54.3, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(0).ml.append(tobj)
+}
+{object_pop()}
+{
+}
+{object_push(manage)}
+{
+first = 0
+classname = "Cell"
+etop=1 esub=1 egeom=1 emem=1
+itop=1 isub=0 igeom=0 imem=0
+bild.topol.names_off = 0
+bild.topol.circles_off = 0
+}
+{object_pop()}
+{
+cexport()
+}
+{
+save_window_=gtopol
+save_window_.size(-200,200,-150,150)
+scene_vector_[2] = save_window_
+gtopol = save_window_
+save_window_.save_name("gtopol")
+}
+{object_pop()}
+{
+ocbox_.map("CellBuild[0]", 85, 124, 822.72, 374.4)
+}
+objref ocbox_
+//End CellBuild[0]
+
+{WindowMenu[0].ses_gid(1, 0, 1, "CellBuilders")}
+
+//Begin CellBuild[1]
+{
+load_file("celbild.hoc", "CellBuild")
+}
+{ocbox_ = new CellBuild(1)}
+{object_push(ocbox_)}
+{
+version(1)
+continuous = 1
+}
+{object_push(topol)}
+{
+first = 0
+slist.remove_all()
+sname = "right"
+objref tobj
+}
+{
+tobj = new CellBuildSection("right",0, 0, tobj, 0) slist.append(tobj)
+  tobj.position(15,0,90,-90) tobj.lx=82.5 tobj.ly=-90 tobj.i3d=0
+}
+for i=0, slist.count-1 {slist.object(i).rdses()}
+{object_pop()}
+{
+}
+{object_push(subsets)}
+{first = 0}
+{tobj = new SNList("all") snlist.append(tobj)}
+for i=0,0 tobj.add(bild.topol.slist.object(fscan()))
+0
+{object_pop()}
+{
+}
+{object_push(geom)}
+{
+first = 0
+tobj = new GeoSpec(0)
+tobj.value = 1000
+bild.topol.slist.object(0).geo.append(tobj)
+tobj = new GeoSpec(1)
+tobj.value = 10
+bild.topol.slist.object(0).geo.append(tobj)
+tobj = new GeoSpec(5)
+tobj.value = 0.1
+bild.topol.slist.object(0).geo.append(tobj)
+set_default()
+}
+{object_pop()}
+{
+{
+save_window_=geom.g
+save_window_.size(-200,200,-150,150)
+scene_vector_[3] = save_window_
+geom.g = save_window_
+save_window_.save_name("geom.g")
+}
+}
+{object_push(memb)}
+{first=0}
+{
+tobj = new MechanismStandard("hh")
+tobj.set("gnabar_hh", 0.12, 0)
+tobj.set("gkbar_hh", 0.036, 0)
+tobj.set("gl_hh", 0.0003, 0)
+tobj.set("el_hh", -54.3, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(0).ml.append(tobj)
+}
+{object_pop()}
+{
+}
+{object_push(manage)}
+{
+first = 0
+classname = "Cell"
+etop=1 esub=1 egeom=1 emem=1
+itop=1 isub=0 igeom=0 imem=0
+bild.topol.names_off = 0
+bild.topol.circles_off = 0
+}
+{object_pop()}
+{
+cexport()
+}
+{
+save_window_=gtopol
+save_window_.size(-200,200,-150,150)
+scene_vector_[3] = save_window_
+gtopol = save_window_
+save_window_.save_name("gtopol")
+}
+{object_pop()}
+{
+ocbox_.map("CellBuild[1]", 142, 261, 822.72, 374.4)
+}
+objref ocbox_
+//End CellBuild[1]
+
+{WindowMenu[0].ses_gid(0, 0, 1, "CellBuilders")}
+
+//Begin CellBuild[2]
+{
+load_file("celbild.hoc", "CellBuild")
+}
+{ocbox_ = new CellBuild(1)}
+{object_push(ocbox_)}
+{
+version(1)
+continuous = 1
+}
+{object_push(topol)}
+{
+first = 0
+slist.remove_all()
+sname = "gap"
+objref tobj
+}
+{
+tobj = new CellBuildSection("gap",0, 0, tobj, 0) slist.append(tobj)
+  tobj.position(0,30,0,75) tobj.lx=-7.5 tobj.ly=75 tobj.i3d=0
+}
+for i=0, slist.count-1 {slist.object(i).rdses()}
+{object_pop()}
+{
+}
+{object_push(subsets)}
+{first = 0}
+{tobj = new SNList("all") snlist.append(tobj)}
+for i=0,0 tobj.add(bild.topol.slist.object(fscan()))
+0
+{object_pop()}
+{
+}
+{object_push(geom)}
+{
+first = 0
+tobj = new GeoSpec(2)
+tobj.value = 100
+bild.topol.slist.object(0).geo.append(tobj)
+set_default()
+}
+{object_pop()}
+{
+{
+save_window_=geom.g
+save_window_.size(-200,200,-150,150)
+scene_vector_[4] = save_window_
+geom.g = save_window_
+save_window_.save_name("geom.g")
+}
+}
+{object_push(memb)}
+{first=0}
+{
+tobj = new GeoSpec(1)
+tobj.value = 1e-06
+tobj.set_default()
+tobj = new MStanWrap(tobj, 0)
+bild.topol.slist.object(0).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("extracellular")
+tobj.set("xraxial", 1e+09, 0)
+tobj.set("xg", 0, 0)
+tobj.set("xc", 0, 0)
+tobj.set("e_extracellular", 0, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(0).ml.append(tobj)
+}
+{object_pop()}
+{
+}
+{object_push(manage)}
+{
+first = 0
+classname = "Cell"
+etop=1 esub=1 egeom=1 emem=1
+itop=1 isub=0 igeom=0 imem=0
+bild.topol.names_off = 0
+bild.topol.circles_off = 0
+}
+{object_pop()}
+{
+cexport()
+}
+{
+save_window_=gtopol
+save_window_.size(-200,200,-150,150)
+scene_vector_[4] = save_window_
+gtopol = save_window_
+save_window_.save_name("gtopol")
+}
+{object_pop()}
+{
+ocbox_.map("CellBuild[2]", 220, 384, 822.72, 374.4)
+}
+objref ocbox_
+//End CellBuild[2]
+
+{WindowMenu[0].ses_gid(0, 0, 1, "CellBuilders")}
+objectvar scene_vector_[1]
+{doNotify()}

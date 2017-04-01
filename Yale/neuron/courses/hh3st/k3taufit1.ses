@@ -1,0 +1,30 @@
+objectvar save_window_, rvp_
+objectvar scene_vector_[3]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+
+//Begin MulRunFitter[0]
+{
+load_file("mulfit.hoc", "MulRunFitter")
+}
+{
+ocbox_ = new MulRunFitter(1)
+}
+{object_push(ocbox_)}
+{
+version(2)
+ranfac = 2
+fspec = new File("./k3taufit1.ses.ft1")
+fdat = new File("./k3taufit1.ses.fd1")
+read_data()
+build()
+}
+{object_pop()}
+{
+ocbox_.map("MulRunFitter[0]", 454, 27, 368.64, 199.68)
+}
+objref ocbox_
+//End MulRunFitter[0]
+
+objectvar scene_vector_[1]
+{doNotify()}

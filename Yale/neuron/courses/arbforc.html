@@ -1,0 +1,319 @@
+<HTML>
+<HEAD>
+  <!-- version 3R 10:00 AM on 2/23/2015 -->
+  <TITLE>Arbitrary forcing functions</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h1> Model Control: Arbitrary forcing functions</h1>
+
+It is often useful to make some model parameter follow a 
+predetermined time course during a simulation.
+For example, you might want to drive a voltage or current clamp 
+with a complex waveform that you have computed or measured experimentally, 
+or have a synaptic conductance or equilibrium potential 
+change in a particular manner.
+You <em>could</em> do this at the interpreter level by 
+inserting the necessary hoc statements inside the main computational loop, 
+but this is cumbersome and imposes extra interpreter overhead at each time step.
+<p>
+The record and play functions of the Vector class are a better alternative.
+These are accessible using hoc statements and also through the GUI.
+<p>
+To help you learn how to generate and use arbitrary forcing functions, 
+in this exercise you will use the GUI to make a ramp clamp.
+You will
+<ul>
+  <li>set up and test a voltage clamp with a standard step command
+  <li>generate the desired waveform
+  <li>use this waveform as the command for the voltage clamp
+</ul>
+But first, you need some membrane with HH channels--
+
+
+<h2>Physical System</h2>
+
+A patch of excitable membrane
+
+
+<h2>Model</h2>
+
+Hodgkin-Huxley g<SUB>Na</SUB>, g<SUB>K</SUB>, and g<SUB>leak</SUB> 
+in parallel with membrane capacitance
+
+
+<h2>Simulation</h2>
+
+Start NEURON with its standard GUI with /course/arbforc as the 
+working directory.
+Then use Build / single compartment from the Main Menu.
+This creates a single section with a total surface area 
+of 100 um<sup>2</sup> and nseg = 1. 
+It also brings up a Distributed Mechanism Inserter 
+(a small window with checkboxes) 
+that you can use to specify which mechanisms are present.
+
+<blockquote>
+An aside: 
+the total current in units of [nA] (nanoamperes) through a patch of membrane with area = 100 um<sup>2</sup> 
+is numerically equal to the current density in units of [mA/cm<sup>2</sup>]
+</blockquote>
+
+The membrane of this single-compartment model 
+has cm = 1 uf/cm<SUP>2</SUP>, but it lacks ion channels.
+Use the inserter to endow it with ion channels (hh),
+and then set up instrumentation to experiment on it.
+
+<p>
+The tools you'll bring up with the NEURON Main Menu:
+<ul>
+  <li>RunControl
+  <li>Voltage axis graph for a plot of v vs. t
+  <li>a PointProcessManager configured as an IClamp to deliver a 
+	stimulus pulse (verify that the membrane is excitable)
+</ul>
+
+<p>
+
+<b>Set up and test a voltage clamp</b>
+<p>
+Turn the point process into a single electrode clamp (SEClamp) 
+that has these parameters:<br>
+dur1 = 1 ms, amp1 = - 65mV<br>
+dur2 = 3 ms, amp2 = - 35mV<br>
+dur3 = 1 ms, amp3 = - 65mV<br>
+<p>
+You need another graph to show clamp current vs. t<br>
+(Graph / Current axis, 
+then use the graph's Plot what? to specify SEClamp[0].i)
+<p>
+Run a simulation to test the voltage clamp.
+If voltage control is visibly poor, divide rs by 10 and try again.
+Repeat until membrane potential is well controlled.
+<p>
+
+<b>Generate the ramp waveform</b>
+<p>
+You want a voltage ramp that starts at v_init mV when t = 0, 
+and rises at a constant rate.
+<p>
+This could be done in hoc by creating a vector with the right 
+number of elements (one for each time step in the simulation),
+and then assigning the desired value to each element.
+However, it is more convenient to use the Grapher 
+(NEURON Main Menu / Graph / Grapher).
+<br>
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/stdrun/grapher.html#Grapher">
+Read about it</a> and try this simple example:<br>
+Use Plot what?, and enter the expression <CODE>sin(t)</CODE>
+into the "Variable to graph" field.<br>
+Then L click on the Grapher's Plot button.
+<p>
+The Grapher can plot any function that you specify in hoc.
+Once the desired waveform is plotted, 
+you can use Pick Vector to copy it to NEURON's Clipboard.
+<p>
+Let's make a ramp that starts at the holding potential v_init 
+and depolarizes steadily at a rate of 1 mV/ms for 50 ms.
+To do this, set the following parameters in the Grapher :
+<br>
+<TABLE BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="500">
+  <TR VALIGN=top>
+	<TD>PARAMETER</TD>
+	<TD>VALUE</TD>
+	<TD>COMMENT</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>Indep Begin</TD>
+	<TD>0</TD>
+	<TD>t at start of ramp</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>Indep End</TD>
+	<TD>50</TD>
+	<TD>t at end of ramp</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>Steps</TD>
+	<TD>50/dt</TD>
+	<TD>NEURON's GUI defined dt for us</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>Independent Var</TD>
+	<TD>t</TD>
+	<TD></TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>X-expr</TD>
+	<TD>t</TD>
+	<TD></TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>Generator</TD>
+	<TD></TD>
+	<TD>leave blank</TD>
+  </TR>
+</TABLE>
+<p>
+Next tell the Grapher what to plot 
+(use Plot what?, and enter the expression 
+<CODE>v_init+t*1</CODE>
+into the "Variable to graph" field).
+<p>
+Plot and examine the resulting waveform (may need to use View=plot).
+<p>
+When you are satisfied with the result, 
+use Pick Vector to copy the ramp into NEURON's Clipboard.
+<p>
+
+<b>Use the waveform as the command for the voltage clamp</b>
+<p>
+The play function of the Vector class can be exercised in hoc, 
+but it is more convenient to use the GUI's Vector Play tool<br>
+(NEURON Main Menu / Vector / Play).
+<p>
+This tool has a "Specify" button that brings up a menu with several items.
+For this exercise, the most important are
+"Variable Name" and "Vector from Clipboard".
+"Vector from Clipboard" will deposit the ramp 
+waveform into the Vector Play tool.
+Use the tool's View=plot to verify that this has happened.
+Then use "Variable Name" to specify SEClamp[0].amp1
+<p>
+You are almost ready to test the ramp clamp -- 
+but first you should increase SEClamp[0].dur1 to something BIG. 
+Anything >=50 ms will do, 
+and if you plan to play with other waveforms, 
+you might as well make it much larger, say 1000 ms 
+(why is this necessary?).
+<p>
+Finally, L click on Vector Play's "Connected" button, 
+and then run a simulation.
+<p>
+When everything is working, save the configured SEClamp, 
+the graph of clamp current vs. t, the Vector Play tool, 
+and the Grapher to a new session file (call it rampclamp.ses).
+
+
+<h2>Exercises</h2>
+
+1.  Try changing dt.<br>
+Turning on Keep Lines in the voltage and current plots 
+will let you compare the new and old results side-by-side.
+<br>
+In the RunControl window, cut dt in half.
+<br>
+What happens to the time course of Vm and clamp current?
+<br>
+What do you think would happen if you increased dt to 0.05 ms?
+<p>
+Why does this occur?
+<p>
+Don't forget to restore dt to 0.025 ms when you're done.
+<p>
+
+2.  Try changing the ramp's dv/dt.
+In the Grapher's graph window, invoke Change Text and edit the expression, 
+then Plot the new waveform and copy it to the Vector Play tool.
+Try 2 mV/ms, 3 mV/ms, whatever -- you can't fry this cell!
+<p>
+
+3.  How do you get a plot of clamp current vs. Vm?<br>
+Answer: use a Phase Plane graph (Graph / Phase Plane).<br>
+For the x axis expression enter v (OK for this simple one-compartment model, 
+but SEClamp[0].amp1 would be a more flexible choice for a cell with many sections 
+if you want to move the clamp away from the default section).
+<p>
+
+4. Try a different driving function, e.g. <code>v_init+sin(2*PI*t/10)*5</code>
+<p>
+An interesting variation:  reconfigure the PointProcessManager as an IClamp 
+and drive the amplitude of the current it delivers 
+with a sinusoid or some other waveform.
+<p>
+
+5. Try the ramp clamp with a different cell, e.g. 
+the ball and stick model used in previous exercises.<br>
+Use NEURON to execute the init.hoc file in the /course/arbforc subdirectory.<br>
+Incidentally, I have included the statement<br>
+<code>&nbsp&nbsp dend nseg = 27</code><br>
+in the init.hoc file for improved spatial accuracy.<br>
+
+After playing with the cell under current clamp, 
+close the IClamp PointProcessManager and retrieve 
+the session file rampclamp.ses (a good copy of this 
+file already exists under the name rampclamp.se).
+<p>
+<table width="500">
+<tr>
+<td width="50"></td>
+<td width="450">
+<small>
+An important aside: when rampclamp.ses was saved, 
+its SEC referred to a section with the name "soma". 
+Therefore it will work with any cell that has a section called "soma".
+If you try to use it with a cell that does NOT have such a section, 
+it won't work and you'll get an error message.
+</small>
+</td>
+</tr>
+</table>
+<p>
+First try a 1 mV/ms ramp applied to the soma, 
+then try a 2 mV/ms ramp.
+<p>
+Can you improve control of Vm by cutting the SEClamp's 
+access resistance (rs)?
+<p>
+See what happens when you move the SEClamp out onto the dendrite.
+It might be instructive to bring up a space plot 
+that monitors Vm along the entire length of the model; 
+in this case, you may also want to speed things up 
+by reducing Points plotted/ms from 40 to 20.
+
+
+<h2>Hints & tips</h2>
+
+0. The Grapher can display more than one function at a time--just 
+invoke Plot what? more than once.  Avoid visual confusion by 
+making the traces have different colors (Color/Brush).
+<p>
+
+1. The forcing function can be far more complicated than a one-liner. 
+Create a hoc file that contains your own function, 
+xopen() the file, and then plot it.
+Simple scaling and baseline shifts can be accomplished in the 
+Grapher itself (Change Text).
+<br>
+Example:
+<pre>
+func whatnot() { local abc
+  if ($1 < 10) abc = sin(2*PI*$1/10)
+  if ($1 >= 10 && $1 < 20) abc = (sin(4*PI*$1/10) > 0)
+  if ($1 >= 20) abc = exp(($1-20)/30)*sin(2*PI*(($1-20)/10)^2)
+  return abc
+}
+</pre>
+
+2. Alternatively, you could create a vector graphically with Vector / Draw.
+This is best suited to waveforms that consist of a sequence of rectangular steps. 
+If necessary, you can subsequently use the Vector class's interpolate() function 
+to produce a sequence of ramps and plateaus.
+<p>
+
+3. Experimental data (e.g recordings of membrane potential 
+or clamp current) can also be used as forcing functions.
+File i/o can be done through the GUI with the Clipboard,
+or under program control with these Vector class methods:
+fread, fwrite, vread, vwrite, scanf, printf, scantil.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2008 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

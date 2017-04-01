@@ -1,0 +1,17 @@
+ParmFitness: Unnamed multiple run protocol
+	FitnessGenerator: 109
+		RunConstant:	SEClamp[0].amp2 109 109
+				SEClamp[0].dur1 0.3 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	FitnessGenerator: 32
+		RunConstant:	SEClamp[0].amp2 32 109
+				SEClamp[0].dur1 1 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	Parameters:
+		"ta1_khh", 1.94567, 1e-09, 1e+09, 1, 1
+		"tk1_khh", 0, 1e-09, 1e+09, 0, 1
+		"ta2_khh", 1.94149, 1e-09, 1e+09, 1, 1
+		"tk2_khh", 0, 1e-09, 1e+09, 0, 1
+End ParmFitness

@@ -1,0 +1,143 @@
+<HTML>
+<HEAD>
+  <!-- version 3.1 10:05 AM on 6/13/2001 -->
+  <TITLE>Using the MultipleRunFitter with hh508.hoc </TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h3> Using the MultipleRunFitter </h3>
+
+Here is how to use a "bare" MultipleRunFitter to show that the
+3-state boltzmann distribution is a good fit to the steady state
+HH potassium conductance data.
+<p>
+1) If you don't have the conductance data plotted in NEURON start it up
+now from the <a href="hh508.hoc">hh508.hoc</a> file. Along with the
+NEURONMainMenu, you will see
+a graph with a family of conductance time courses and a graph with the
+steady state conductances (single line).
+<p>
+2) Copy the steady state conductance line to the clipboard. ie. in the
+steady state graph select the "PickVector" tool from the Graph menu (right
+mouse button) and then click slowly on the steady state graph line (left mouse
+button). The line will turn red while the button is pressed.
+<p>
+3) Select the NEURONMainMenu/Tools/Fitting/MultipleRunFitter item
+to start a MultipleRunFitter.
+<p>
+4)
+In the MulRunFitter, select Generators/AddFitnessGenerator/AddFunctionFitness.
+An "Unnamed Function Fitness" item preceded by a '-' will appear in
+the generator list of the MulRunFitter panel.
+<p>
+5)
+Make sure the list is in "Display" mode (The mode is selected via the
+"Generators" menu item) and double click on the 
+"Unnamed Function Fitness" item you created to pop up
+a panel for that fitness generator. At any time that panel may be closed
+and another popped up from the main MulRunFitter panel.
+<p>
+6)
+In the generator panel, select the
+Fitness/CommonFunctionalForms/ThreeStateBoltzmann item and "Accept" the
+expression that pops up in the dialog. The expression
+<pre>
+     A/(1 + exp(k1*(d1-$1)) + exp(k2*(d2-$1)))
+</pre>
+will appear in the generator panel. The names, A, k1, d1, k2, d2
+are the parameters
+and $1 is the independent variable (in this case, voltage clamp level)
+<p>
+7) Copy the steady state data from the Clipboard to the generator panel
+by placing the mouse in the Graph part of the generator and selecting
+the DataFromClipboard menu item (right mouse button shows the menu).
+The data will appear in the Graph as a red line and there will be a
+default region (indicated by two vertical blue lines) spanning the
+data.  Press the "ErrorValue"
+button in the generator panel, The expression is evaluated at each
+data point and drawn on the Graph as a black line. The error value is
+the square norm beteen data and expression treated as continuous
+functions. If the parameters still have their default value of "1" the
+error value should be 119.4 .
+<p>
+8) Now is a good time to save what has been done so far.
+Setting up complicated optimization strategies with the
+fitter is a lengthy process and you don't want to
+lose the effort expended so far if a mistake is made later on (e.g.
+accidentally closing the main MulRunFitter instance panel; or
+crashing the fitter with parameters which were allowed to get out
+of range). The rule is to save if you have done enough work since
+the last save that you would mind if that work increment was lost.
+The NEURONMainMenu/File/SaveSession saves all windows on the screen
+but that is unsuitable since we only want to save the one MulRunFitter
+instance. Saving subsets of windows can be done either with the
+NEURONMainMenu/Window/GroupManager tool
+or the NEURONMainMenu/Window/Print&FileWindowManager tool. Here we
+use the latter.
+First pop up the Print&FileWindowManager tool by selecting
+NEURONMainMenu/Window/Print&FileWindowManager.
+To save, select the window item in the Print&FileWindowManager (PWM)
+corresponding
+to the main MulRunFitter instance (do not select any other windows such
+as the generators which are created by the main instance) by pressing the
+left mouse button (we assume you are in the "select" mode)
+so that the window icon appears on the paper side
+of the PWM and select the Session/SaveSelected menu item. At this time
+"temp1.ses" is an appropriate file name.
+Test the "temp1.ses" file by retrieving it with the
+NEURONMainMenu/File/LoadSession menu item (or, equivalently, with the
+PWM Session/Retrieve menu item).
+<p>
+9) Add the A,k1,d1,k2,d2 parameters to the MulRunFitter with the
+Parameters/AddParameter menu item. Unfortunately they must be added one at a
+time (but see the note below about the *.ses.ft1 file)
+It is simplest in this case just to type the name of the parameter
+into the string field editor of the variable chooser that pops up
+each time. The names of the parameters appear in the list. If a mistake
+is made, you can use the Parameters menu to change and remove names
+from the parameter list. When the parameter names are entered, I always
+save the session again.
+
+<blockquote>
+Note: when a MultipleRunFitter is saved in a session file, say temp1.ses,
+two other files are created called temp1.ses.fd1 and temp1.ses.ft1.
+The fd1 file contains mostly the data to be fit. The ft1 file, however,
+is intended to be a readable and easily understandable specification
+of the fitting strategy -- an essential piece of documentation in
+a lengthy fitting project . In many cases, it is easier to change that
+file than to use the GUI tool to modify that information.
+</blockquote>
+
+10) Recall that the generator item in the list of generators had a '-'
+in front of it. This means that that generator will NOT be executed
+when the total error value is calculated. Select the Generators/UseGenerator
+item and double click on the generator item. Items with a '+' contribute
+to the total error value. Press the "ErrorValue" button. The value should
+be the same as the error value of the individual generator.
+<p>
+11) Pop up an optimizer control panel by selecting the
+MulRunFitter/Parameters/SelectOptimizers/Praxis menu item. Press the "Optimize"
+button on the resulting panel.
+The fit may converge faster if you first
+enter reasonable values into the parameter field editors. It may happen
+that bad initial values cause the fit to fail.
+If it does not seem to
+be converging, stop the fit by pressing the Stop button on the optimizer
+control panel
+and restarting, perhaps with a different set of parameters.
+When starting with parameter values all equal to 1, praxis finds the
+optimum in approximately 6400 function evaluations.
+With those (all 1's) starting values and using the
+MulRunFitter/Parameters/DomainPanel and setting the "group attributes"
+to "positive definite limits" and "use log scale", the fit succeeds in
+approximately 300 function evaluations.
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2001 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

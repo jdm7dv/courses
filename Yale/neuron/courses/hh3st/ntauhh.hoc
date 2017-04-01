@@ -1,0 +1,28 @@
+objectvar save_window_, rvp_
+objectvar scene_vector_[3]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+
+//Begin Grapher
+{
+load_file("grapher.hoc")}
+{
+ocbox_=new Grapher(1)
+
+ocbox_.info("t","t", "rates_hh(t)", -100, 50, -1.19209e-07, 6, 100, -100, 50)
+{
+save_window_=ocbox_.g
+save_window_.size(-100,50,-5.96046e-08,6)
+ocbox_.g = save_window_
+save_window_.save_name("ocbox_.g")
+save_window_.xexpr("t", 0)
+save_window_.addvar("ntau_hh", 1, 1, 0.8, 0.9, 2)
+}
+ocbox_ = ocbox_.vbox
+ocbox_.map("Grapher", 117, 254, 308.16, 453.12)
+}
+objref ocbox_
+//End Grapher
+
+objectvar scene_vector_[1]
+{doNotify()}

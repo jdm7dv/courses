@@ -1,0 +1,178 @@
+<HTML><HEAD><TITLE>/u/billl/nrniv/course/net.dol</TITLE></HEAD><BODY bgcolor=white>
+<p>
+<H1>Hopfield Brody synchronization (sync) model</H1>
+<p>
+ Individual units are integrate-and-fire neurons.  
+<p>
+<ul>
+<li><H2>Standard intfire implementation (eg IntFire1 from intfire1.mod))</H2>
+ The basic intfire implementation in neuron utilizes a decaying state variable (<i>m</i> as a stand-in for voltage) which is pushed up by the arrival of an excitatory input or down by the arrival of an inhibitory input (<i>m = m + w</i>).  When <i>m</i> exceeds threshold the cell "fires," sending events to other connected cells.
+ <pre>
+<p> if (m > 1) { ...
+<p>              net_event(t)    <b>//</b> trigger synapses </pre>
+<p>
+<li><H2>IntIbFire in sync model</H2>
+ The integrate-and-fire neuron in the current model must fire spontaneously with no input, as well as firing when a threshold is reached.  This is implemented by utilizing a <i>firetime()</i> routine to calculate when the state variable <i>m</i> will reach threshold <u>assuming no other inputs during that time</u>.   This firing time is calculated based on the natural firing interval of the cell (<i>invl</i>) and the time constant for state variable decay (<i>tau</i>).  When an input comes in, a new firetime is calculated after taking into account the synaptic input (<i>m = m + w</i>) which perturbs the state variable's trajectory towards threshold.
+<p>
+<li><H2><b>Cell</b> template</H2>
+ IntIBFire is enclosed in a template named "Cell."  An instantiation of this template provides access to the underlying mechanism through object pointer <i>pp</i>. Execute the following:
+<p>
+<p> oc> objref mycell
+<p> oc> mycell = new Cell()
+<p> oc> print mycell.pp, mycell.pp.tau, mycell.pp.invl
+<p> The Cell template also provides 3 procedures.  <i>connect2target()</i> is optionally used to hook this cell to a postsynaptic cell.
+<p>
+<li><H2>Network</H2>
+ The network has all-to-all inhibitory connectivity with all connections set to equal negative values.  The network is initially set up with fast firing cells at the bottom of the graph (Cell[0], highest natural interval) and slower cells at the top (Cell[ncell-1], lowest natural interval).  Cells in between have sequential evenly-spaced periods.
+<p>
+</ul>
+<H1>How it works</H1>
+<p>
+ The synchronization mechanism requires that all of the cells fire spontaneously at similar frequencies.  It is obvious that if all cells are started at the same time, they will still be roughly synchronous after one cycle (since they have  similar intrinsic cycle periods).  After two cycles, they will have drifted further apart.  After many cycles, differences in period will be magnified, leading to no temporal relationship of firing.
+<p> The key observation utilized here is that firing is fairly synchronized one cycle after onset. The trick is to reset the cells after each cycle so that they start together again.  They then fire with temporal differences equal to the differences in their intrinsic periods.  This resetting can be provided by an inhibitory input which pushes state variable <i>m</i> down far from threshold (hyperpolarized, as it were). This could be accomplished through an external pacemaker that reset all the cells, thereby imposing the external frequency onto the network.  The interesting observation in this network is that pacemaking can also be imposed from within, though an intrinsic connectivity that enslaves all members to the will of the masses.
+<p>
+<H1>Exercises to gain familiarity </H1>
+<p>
+<p>
+<ul>
+<li><H2>Increase to 100 neurons and run.  Many neurons do not fire.  These have periods that are too long -- before they can fire, the population has fired again and reset them.  Notice that the period of network firing is longer than the natural periods of the individual cells.   This is because the threshold is calculated to provide this period when <i>m</i> starts at 0.  However, with the inhibition, m starts negative.</H2>
+<p>
+<li><H2>Narrow the difference between fast and slow cells so as to make more of them fire. Alternatively, increase the delay.</H2>
+<p>
+<li><H2>Reduce the inhibition and demonstrate that synchrony worsens.  With inhibition set to zero, there is no synchrony and each cell fires at its natural period.</H2>
+<p>
+<li><H2>Increase cell time constant.  This will destroy synchrony.  Increase inhibitory weight; synchrony recovers.  This is a consequence of the exponential rise of the state variable.  If the interval is short but the time constant long, then the cell will amplify small variations in the amount of inhibition received.</H2>
+<p>
+</ul>
+<H1>Beyond the GUI -- Saving and displaying spikes</H1>
+<p>
+<p>
+<ul>
+<li><H2>Spike times are being saved in a series of vectors in a template:  sp.vecs[0] .. sp.vecs[ncell-1]</H2>
+ Count the total number of spikes using a <i>for</i> loop and <i>total+=sp.vecs[ii].size</i>
+<p>
+<li><H2>We will instead save spike times in a single vector (<i>tvec</i>), using a second vector (<i>ind</i>) for indices</H2>
+<p>
+ oc> load_file("ocomm.hoc") <b>//</b> additional routines
+<p> oc> savspks()      <b>//</b> record spike times to tvec; indices to ind
+<p> oc> run()          <b>//</b> or hit run button on GUI
+<p>
+<li><H2>Make sure that the same number of spikes are being saved as were saved in sp.vecs[]</H2>
+ oc> print ind.size,tvec.size
+<ul>
+<li><H3>Wise precaution -- check step by step to make sure that nothing's screwed up </H3>
+<li><H3>Can use <i>for ... {vec.append(sp.vecs[ii])</i> vec.sort tvec.sort vec.eq(tvec)} to make sure have all the same spike times (still doesn't tell you they correspond to the same cells) </H3>
+<p>
+</ul>
+<li><H2>Graph spike times -- should look like SpikePlot1 graph</H2>
+<p>
+  oc> g=new Graph()
+<p>  oc> ind.mark(g,tvec)  <b>//</b> throw them up there
+<p>  oc> showspks()        <b>//</b> fancier marking with sync lines
+<p>
+</ul>
+<H1>Synchronization measures</H1>
+<p>
+<p>
+<ul>
+<li><H2>Look at synchronization routine</H2>
+<p>
+  oc>syncer()
+<p>  oc>for (w=0;w>-5e-2;w-=5e-3) {weight(w) run() print w,syncer()}
+<p>
+<li><H2>Exercise: write (or find and implement) a better synchronization routine</H2>
+ NB: This exercise is potentially a major project by itself.  The student may wish to defer this exercise and some of those below until after working through the given material. 
+<p>
+<li><H2>Graph synchronization</H2>
+<p>
+  oc> for ii=0,1 vec[ii].resize(0) <b>//</b> clear
+<p>  oc> for (w=0;w>-5e-2;w-=5e-3) {weight(w) run() vec[1].append(w) vec[2].append(syncer())}
+<p>  oc> print vec[1].size,vec[2].size <b>//</b> make sure nothing went wrong
+<p>  oc> g.erase() <b>//</b> assuming it's still there, else put up a new one
+<p>  oc> vec[2].line(g,vec[1]) <b>//</b> use "View = plot" on pull down to see it
+<p>  oc> vec[2].mark(g,vec[1],"O",8,2,1) <b>//</b> big (8) red (2) circles ("O")
+<p>
+<ul>
+<li><H3>Make sure that the values graphed are the same as the values printed out before </H3>
+<p>
+</ul>
+<li><H2>Exercises</H2>
+<ul>
+<li><H3>enclose the weight exploration above in a procedure </H3>
+<li><H3>write a similar routine to explore cell time constant (param is called ta; set with tau(ta)); run it </H3>
+<li><H3>write a similar routine to explore synaptic delay (param is called del; set with delay(del)); run it </H3>
+<li><H3>harder: write a general proc that takes 3 args: min,max,iter that can be used to explore any of the params  (hint: call a general <i>setpar()</i> procedure that can be redefined  eg <i>proc setpar() { weight($1) </i>} depending on which param you are changing </H3>
+<p>
+</ul>
+</ul>
+<H1>Procedure interval2() in ocomm.hoc sets cell periods randomly</H1>
+<p>
+<ul>
+<li><H3>can be used instead of interval() in synchronize.hoc </H3>
+<li><H3>randomizing cell identities is easier than randomizing connections </H3>
+<li><H3>with randomized identities can attach cell 0 to cells 1-50 and not have interval uniformity </H3>
+<li><H3>To replace interval() with interval2(), overwrite interval(): </H3>
+<p>
+  oc> proc interval () { interval2($1,$2) }
+<p>
+<li><H3>Run interval() from command line or by changing low and high in GUI panel </H3>
+<li><H3>Check results </H3>
+  oc> for ii=0,ncell-1 printf("%g ",cells.object(ii).pp.invl)
+<li><H3>Exercise: check results graphically by setting wt to 0, running sim, and graphing results </H3>
+<p>
+</ul>
+<H1>Rewiring the network</H1>
+<p>
+ All of the programs that I used in my presentation are available in ocomm.hoc. The student may wish to use or rewrite any of these procedures.  Below I suggest a different approach to wiring the network.
+<p>
+<ul>
+<li><H2>procedure wire() in ocomm.hoc is slightly simplified from that in synchronize.hoc but does the same thing</H2>
+ <pre>
+<p>    proc wire () {
+<p>      nclist.remove_all()
+<p>      for i=0,ncell-1 for j=0,ncell-1 if (i!=j) {
+<p>  	netcon = new NetCon(cells.object(i).pp,cells.object(j).pp)
+<p>  	nclist.append(netcon)
+<p>      }
+<p>    } </pre>
+<p>
+<li><H2>Exercises</H2>
+<ul>
+<li><H3>rewrite wire() to connect each neuron to half of the neurons </H3>
+ suggestion: for each neuron, pick an initial projection randomly 
+<p> eg <i>rdm.discunif(0,ncell-1) proj=rdm.repick()</i>
+ <i>if (proj<ncell/2)</i> project to 0->proj else project to proj->ncell
+<p>
+<p> This algorithm is not very good since cells in center get more convergence
+<p>
+<p> Can get even convergence by always counting upwards from <i>proj</i> using modulus to wrap-around and get values between 0 and ncell-1
+<li><H3>run(), graph and check synchrony </H3>
+<li><H3>generalize your procedure to take argument <i>pij=$1</i> that defines connection density </H3>
+<li><H3>assess synchrony at different connection densities </H3>
+<p>
+</ul>
+</ul>
+<H1>Assessing connectivity</H1>
+<p>
+<ul>
+<li><H2><i>cvode.netconlist(cells.object(0).pp,"","")</i> gives a divergence list for cell#0</H2>
+<li><H2><i>cvode.netconlist("","",cells.object(0).pp)</i> gives a convergence list for cell#0</H2>
+<li><H2>Exercise: use these lists to calculate average, min, max for conv and div</H2>
+<p>
+</ul>
+<H1>Graphing connectivity</H1>
+<p>
+<ul>
+<li><H2>use <i>fconn(prevec,postvec)</i> to get parallel vecs of pre and postsyn cell numbers</H2>
+<li><H2>use <i>postvec.mark(g,prevec)</i> to demonstrate that central cells get most of the convergence (if using original suggestion for <i>wire()</i> rewrite)</H2>
+<li><H2>use <i>showdiv1(cell#)</i> and <i>showconv1(cell#)</i> to graph connections for selected cells</H2>
+<li><H2>Exercise: write a procedure to count and print out all cells with reciprocal connectivity, eg A->B and B->A</H2>
+<p>
+</ul>
+<H1>Animate</H1>
+<p>
+<ul>
+<li><H2>Use <i>animplot()</i> to put up squares for animating simulation</H2>
+<li><H2>Resize and shift around as needed but afterwards make sure that "Shape Plot" is set on pulldown menu</H2>
+<li><H2>After running a simulation to set tvec and ind, run <i>anim()</i> to look at the activity</H2>
+<p><i> Last updated: Jun 16, 2003 (8:41)</i><p>

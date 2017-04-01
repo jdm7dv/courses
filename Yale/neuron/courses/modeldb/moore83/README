@@ -1,0 +1,17 @@
+Moore, Stockbridge, and Westerfield. (1983) On the site of impulse initiation
+in a neurone. 
+J. Physiol. 336: 301-311.
+
+This model qualitatively reproduces figures 1-5.
+Note that orthodromic stimulus amplitude is considerably different from
+that noted in the paper. IClamp[0].amp was chosen to give qualitative similarity.
+We attribute minor quantitative differences to the following:
+1) The precise site of axon v vs t curve is not specified. We plot
+axon.v(0.25).
+2) The antidromic stimulus was unspecified.
+
+
+The NEURON implementation of this model was prepared by Michael Hines.
+Questions about details of this implementation should be addressed to him
+at michael.hines@yale.edu.
+

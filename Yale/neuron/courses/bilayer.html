@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+  <!-- version 5 2:40 PM on 6/13/2008 -->
+  <TITLE>Bilayer</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300"
+vlink="#330099">
+<h1> Lipid Bilayer </h1>
+
+<h2> Physical System </h2>
+Membrane with no channels
+
+<h2> Model </h2>
+Capacitor
+<p>
+<img src="images/bilayer.gif">
+
+<h2> Simulation </h2>
+
+<h3> Representation </h3>
+<pre>
+	create soma
+</pre>
+
+<h3> Using the representation </h3>
+<a href="bilayer/bilayer.hoc">Run NEURON with above spec.</a>
+
+<h2> Exercises </h2>
+
+1. Run it.
+
+<p>
+Double the duration and halve the amplitude (injected charge is constant).
+<ul>
+Notes:
+<li>
+Select Show / Parameters in the PointProcessManager window to view
+the field editors.
+<li>
+Multiplying a field editor value by 2 can be done
+by typing *2 &lt;return&gt; at the end of the value. Divide by 2 by typing
+/2 &lt;return&gt;.<br>
+<li>
+The mouse cursor must be in the panel that contains the field editor. 
+</ul>
+
+<p>
+Return the duration and amplitude to their default values (click in
+the checkmark box with left mouse button).<br>
+Halve the duration and double the amplitude.
+
+<p>
+2. Insert passive conductance channels by clicking on the "pas" checkbox
+in the "SingleCompartment" window and repeat part 1.
+<br>
+Notice that the voltage tends toward -70 mV, 
+which is the default reversal potential for the passive channel. 
+This reflects the fact that the initial condition v = 0 
+is not the steady state for this model. 
+
+<p>
+In the "RunControl" set the Init field editor to -70 and repeat the run.
+
+<blockquote>
+The graphs can be automatically
+rescaled to show the curves by invoking the Graph menu with the right
+mouse button and selecting the "View=Plot" menu item.
+</blockquote>
+
+<p>
+3. Change the stimulus amplitude to 1A (1e9 nA) and run.
+Rescale the graphs to see the result.
+<br> 
+The model is a poor representation of the physical system in this case.
+
+<p>
+4. Change the stimulus duration to 0.01 ms.
+<br>
+The simulation is a poor representation of the model in this case
+
+<p> 
+Change the number of Points plotted/ms to 100 and dt to 0.01 ms 
+and repeat the run.
+
+<p>
+5. Increase the amplitude to 1e4 nA, cut the duration to 1e-5 ms, 
+increase Points plotted/ms to 1e5, and let 'er rip.  
+<br>
+After a few seconds of eternity, stop the simulation.
+
+<p>
+Select "Use variable dt" and try again.
+
+<p>
+When you're done, use "NEURONMainMenu / File / Quit" to exit NEURON.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2008 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY></HTML>

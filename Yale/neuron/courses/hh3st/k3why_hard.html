@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+  <!-- version 2.2 9:55 PM on 7/21/99 -->
+  <TITLE>Why it is hard to fit tau1 and tau2 in k3.mod</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h3>Why it is hard to fit tau1 and tau2 in k3.mod</h3>
+Because tau1 and tau2 are not parameters but volatile assigned variables
+that serve as the voltage sensitive time constants on the last call to
+rates_khh(v). They are essentially functions of v, ta1_khh, tk1_khh, ta2_khh,
+tk2_hh, and vrest_khh and are defined by:
+<pre>
+vr = v - vrest : v = vrest means rates at 0
+tau1 = ta1*exp(tk1*vr)
+tau2 = ta2*exp(tk2*vr)
+</pre>
+<p>
+The simplest work around is to set tk1 to 0 and use
+ta1 as a proxy for tau1.
+<h3> Where did that functional form for the time constants come from? </h3>
+The steady state Boltzmann distribution has a highly satisfying and simple
+physical interpretation. Voltage dependent time constants, on the other
+hand, seem to be based on more speculative mechanisms and I have been
+satisfied with merely capturing the phenomenology. In fact previous
+incarnations of the last exercise in this lesson used the FUNCTION_TABLE
+specification to directly use the measured time constants without
+imagining an underlying mechanism at all.
+<p>
+If you plot <a href="ntauhh.hoc">ntau_hh(v)</a> you'll see that it
+is more complicated than my simple exponential above. Prior to the existence
+of the multiple run fitter, when the tau's were fit one at a time and
+<a href="oldtau.hoc">plotted using GatherVector tool</a> I noticed
+the downward trend at hyperpolarizing potentials
+and the apparent saturation at high depolarizing potentials and was
+not unpleased with the similarity to hh, not noticing that the hh peak
+occurred hyperpolarized from rest and the data clearly shows
+a slower (larger) time constant at 6mV than at 19mV.
+<p>
+Rewriting this exercise to take advantage of the multiple run fitter
+required that I come up with some kind of functional form for the
+voltage sensitive rates. Of the forms easy to imagine, only a constant
+would be simpler and that can't fit the data. The exponential has
+a simple interpretation in terms of a fixed size energy barrier a la
+Eyring rate theory and has only two parameters per state transition pair.
+The forms for alpha and beta when all this is put together have a
+not unpleasing mathematical symmetry. The final result of
+four parameters per state transition pair is probably a minimum.
+The chain of closed states suggests
+some simplified models analogous to diffusion that might be
+interesting to pursue that would naturally account for delay.
+<pre>
+</pre>
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998, 1999 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

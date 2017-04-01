@@ -1,0 +1,86 @@
+objectvar save_window_, rvp_
+objectvar scene_vector_[3]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+
+//Begin GatherVec[0]
+{
+load_file("gatherv.hoc")
+}
+{
+ocbox_=new GatherVec(1)
+}
+{object_push(ocbox_)}
+{xvar = new GVItem("SEClamp[0].amp2")}
+{listadd("SEClamp[0].dur1")}
+{listadd("ta1_khh")}
+{listadd("ta2_khh")}
+{xvar.v.resize(12) for i=0, 11 { xvar.v.x[i] = fscan() }}
+109
+100
+88
+76
+63
+51
+38
+32
+26
+19
+10
+6
+{list.object(0).v.resize(12) for i=0, 11 { list.object(0).v.x[i] = fscan() }}
+0.3
+0.3
+0.3
+0.3
+0.3
+0.5
+0.5
+0.8
+1
+1
+1
+1
+{list.object(1).v.resize(12) for i=0, 11 { list.object(1).v.x[i] = fscan() }}
+0.312819
+0.448281
+0.460509
+0.556089
+1.25111
+1.38925
+2.03036
+2.02282
+2.259
+2.76384
+2.68174
+1.84669
+{list.object(2).v.resize(12) for i=0, 11 { list.object(2).v.x[i] = fscan() }}
+1.16241
+1.21344
+1.35779
+1.67672
+1.3936
+1.61305
+1.93588
+2.46401
+2.61439
+3.18902
+3.06597
+2.31269
+{flush()}
+{object_pop()}
+{
+{
+save_window_=ocbox_.g
+save_window_.size(0,120,0,4)
+ocbox_.g = save_window_
+save_window_.save_name("ocbox_.g")
+}
+ocbox_ = ocbox_.b
+ocbox_.map("GatherVec[0]", 35, 237, 337.92, 264.96)
+}
+objref ocbox_
+//End GatherVec[0]
+
+objectvar scene_vector_[1]
+{doNotify()}

@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+  <!-- version 1.1 3:20 PM on 7/13/2000 -->
+  <TITLE>Skeleton of the procedure</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300"
+vlink="#330099">
+
+Here is a skeleton of one possible implementation of the final procedure.
+<br>
+Ordinary comments
+s are indicated by <code>//</code>, <br>
+things that remain to be done are indicated <br>
+by remarks inside <code>/*    */</code> pairs.
+<p>
+In broad outline, the procedure <b><code>profile()</code></b>
+walks the synapse along the length of <b><code>dend</code></b>.
+At each node (the 0 and 1 ends plus the center of each 
+segment), the time course of somatic Vm is computed and 
+stored in the vector <b><code>vm</code></b>, which is then 
+examined to find its maximum value.
+The synaptic location and the peak amplitude of the 
+somatically observed epsp are then stored in the vectors 
+<b><code>location</code></b> and <b><code>amplitude</code></b>, respectively.
+Finally, the graph <b><code>g</code></b> displays a plot of 
+<b><code>amplitude</code></b> vs. <b><code>location</code></b>.
+<p>
+
+<pre>
+// objects must first be declared _outside_ procedures
+objref location, amplitude
+location = new Vector()		// stores locations along the dendrite
+amplitude = new Vector()	// stores peak amplitude at each location
+
+objref vm
+vm = new Vector()	// to hold the time course of somatic Vm 
+			//   evoked by a synaptic input
+/* use Vector class .record() to "attach" vm to soma.v(0.5) */
+
+objref g
+g = new Graph()		// for plot of amplitude vs. location
+
+proc profile() {
+	// next three statements discard prior results, if any
+	location = new Vector()
+	amplitude = new Vector()
+	g = new Graph()
+	dend for (x) {	// loop over each node in dend
+		putsyn(x)
+		// at this point, vm should contain a record of soma.v(0.5) 
+		/* find maximum element in vm */
+		/* append this to amplitude vector */
+		/* append x to location vector */
+	}
+	/* plot amplitude vs. location */
+}
+</pre>
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2001 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

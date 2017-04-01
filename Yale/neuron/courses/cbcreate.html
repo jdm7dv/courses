@@ -1,0 +1,165 @@
+<HTML>
+<HEAD>
+  <!-- version 3.1 11:30 PM on 6/13/2008 -->
+  <TITLE>Managing Models on the Fly</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300"
+vlink="#330099">
+
+<h2>Managing Models on the Fly</h2>
+
+If the CellBuilder's Continuous Create button is checked, 
+changes are passed from the CellBuilder to the interpreter as they occur.
+This means that you can immediately explore the effects 
+of anything you do with the CellBuilder.
+<p>
+
+To see how this works, try the following.
+<p>
+
+1. Start NEURON with its standard GUI in the /course/ballstk directory 
+(
+<A HREF="cbhints.html#startcb">
+remember how?
+</A>
+).
+<p>
+
+2. Bring up the CellBuilder and construct a cell that looks like this:
+<p>
+<IMG SRC="images/cbc1.gif" BORDER= HEIGHT=115 WIDTH=382 ALT="---O--<__">
+<p>
+Use any anatomical and biophysical properties you like; 
+these might be interesting to start with:
+<p>
+<TABLE BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="300">
+  <TR VALIGN=top>
+	<TD>Section</TD>
+	<TD>L (um)</TD>
+	<TD>diam (um)</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>soma</TD>
+	<TD>30</TD>
+	<TD>30</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>trunk</TD>
+	<TD>400</TD>
+	<TD>3</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>trunk[1]</TD>
+	<TD>400</TD>
+	<TD>2</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>oblique</TD>
+	<TD>300</TD>
+	<TD>1.5</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>tuft</TD>
+	<TD>300</TD>
+	<TD>1</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>basilar</TD>
+	<TD>300</TD>
+	<TD>3</TD>
+  </TR>
+</TABLE>
+<P>
+
+<UL>
+  <LI>nseg = 1 for all sections
+  <LI>Ra = 160, Cm = 1, both uniform throughout the cell
+  <LI>soma has hh
+  <LI>trunk and all its tributaries have hh, 
+	but with gnabar & gkbar reduced by a factor of 10
+	and gleak = 0 (Subsets makes this easy)
+  <LI>all dendrites have pas with gpas = 3e-5
+</UL>
+
+3. Toggle Continuous Create ON.
+<p>
+
+4. In the interpreter verify the structure and parameters of your model with
+<CODE>topology()</CODE> and <CODE>forall psection()</CODE>
+<p>
+
+5. At the proximal end of tuft, 
+place an alpha function synapse that has 
+onset = 0 ms, tau = 1 ms, gmax = 0.01 umho, and e = 0 mV
+(hint:  NEURON Main Menu / Tools / Point Processes / Managers / Point Manager).
+<p>
+
+6. Open a graph window to plot soma Vm vs. time.
+Also set up a space plot that shows Vm along the length of the cell 
+from the distal end of the basilar to the distal end of the tuft.
+<p>
+
+7. Run a simulation.  If necessary, increase Tstop until you can 
+see the full time course of the cell's response to synaptic input.
+<p>
+
+8. Increase nseg until the spatial profile of Vm is smooth enough 
+(a couple of applications of
+<br>
+<CODE>forall nseg *= 3</CODE>
+<br> 
+in the interpreter window should do the trick).
+You may need to adjust the peak synaptic conductance in order 
+to trigger a spike.
+Then use the command
+<br>
+<CODE>forall print secname(), " ", nseg</CODE>
+<br> 
+to see how many segments are in each section.
+<p>
+
+9. You can also set nseg for any or all sections using the CellBuilder 
+according to options that you select by Geometry/Specify Strategy.
+You can set the number of segments manually, 
+or let the CellBuilder adjust them automatically according to 
+one of these criteria:
+<ul>
+  <li><b>d_lambda</b> (the maximum length of any segment, 
+	expressed as a fraction of the AC length constant at 100 Hz
+	for a cylindrical cable with identical diameter, Ra, and cm)
+<br>
+or
+<br>
+  <li><b>d_X</b> (the maximum anatomical length of any segment)
+</ul>
+Try each of these criteria, setting different values for d_lambda or d_X, 
+and see what happens to nseg in each section 
+and how this affects the spatial profile of membrane potential.
+
+<ul>
+Comments:
+  <li>Don't forget that that execution of your strategy is sequential.
+	In other words, if your strategy specifies d_lambda for the all subset, 
+	but then sets nseg = 1 for the tuft section, the tuft will 
+	end up with nseg = 1 despite the fact that it needs a much finer 
+	grid according to the d_lambda criterion.
+  <li>Whether you choose d_lambda or d_X, 
+	the final value of nseg will be an odd number 
+	(this preserves the node at x = 0.5).
+  <li>Of these two options, d_lambda seems to have a more rational basis
+	and may in general be preferable. A value of 0.1 is generally adequate.
+</ul>
+
+<p>
+10. What happens if the sodium channels are blocked throughout the apical dendrites? 
+Use the CellBuilder to reduce apical gnabar to 0 and then run a simulation.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2008 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY></HTML>

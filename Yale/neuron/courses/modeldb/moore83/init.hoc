@@ -1,0 +1,55 @@
+load_file("nrngui.hoc")
+load_file("start.ses")
+
+// add a 3-d point at 150 um in axon to allow taper from 0 to 150 if needed
+// the cell builder only constructs 2 point 3d sections.
+axon { pt3dinsert(1, .9*x3d(0)+.1*x3d(1), .9*y3d(0)+.1*y3d(1), 0, 10) }
+
+proc prun() { // normal run but keep lines every .1 ms on shape plot
+	stdinit()
+	Graph[1].erase()
+	while (t < tstop) {
+		continuerun(t + .1)
+		if (stoprun) break
+		Graph[1].exec_menu("Keep Lines")
+		Graph[1].exec_menu("Keep Lines")
+	}
+}
+
+// undo any figure changes
+proc standard() {
+	tstop = 3
+	tstop_changed()
+	celsius = 16.3
+	axon.diam=10
+	forall { gnabar_hh = .12  gkbar_hh = .036  gl_hh = .0003 }
+	dend {
+		gnabar_hh = 0  gkbar_hh = 0  gl_hh = 0
+		g_pas = 1/6000
+	}
+	axon { stimdef(1, .1, 20) }
+}
+
+proc stimdef() {
+	hoc_ac_ = $1
+	PointProcessManager[0].move()
+	PointProcessManager[0].pp.dur = $2
+	PointProcessManager[0].pp.amp = $3
+}
+
+proc taper() {
+	axon {pt3dchange(0, soma.diam)}
+	// since the next 2d point is at 150 microns this will result in
+	// a taper
+}
+
+proc extrahh() {local x
+	dend {
+		x = $1/L
+		g_pas(0:x) = 0:0
+		gnabar_hh(0:x) = .12:.12
+		gkbar_hh(0:x) = .036:.036
+		gl_hh(0:x) = .0003:.0003
+	}
+}
+

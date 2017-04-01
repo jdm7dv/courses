@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+  <!-- version 3.0 12:50 PM on 9/5/2000 -->
+  <TITLE>Fitting a single tau1 and tau2 in k3.mod</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h3>Fitting a single tau1 and tau2 in k3.mod</h3>
+
+Strategy:<br> Set up a single compartment model with the khh channel
+inserted. Stimulate with a voltage clamp.
+Use the MultipleRunFitter with a "Run Fitness" generator to
+fit g_khh vs t to the 109mV conductance time course
+by optimizing ta1 and ta2 in k3.mod with tk1=tk2=0.
+<p>
+The completed example can be run by executing the k3taufit1.hoc file.
+<p>
+1) Run nrngui and build a single compartment.
+Make sure the k3.mod file is one of the "Additional
+mechanisms."
+<p>
+2) Insert the khh mechanism into the patch.
+<p>
+3) Insert a SEClamp (single electrode clamp) point process into the patch
+and set it up with dur1=0, amp1=0, dur2=100, and amp2=109.
+Hint: later on we'll be using dur1 to define an initial delay.
+<p>
+4) Observe the membrane potential during a run to verify that the
+voltage clamp is operating correctly. You may wish to reduce the rs of the
+SEClamp.
+<p>
+5) Load the data, i.e. load hh508.hoc .
+<p>
+6) Pop up a multiple run fitter instance. Add a generator of type
+"Run Fitness" and name it "109". Display the generator and select a variable
+to fit of soma.g_khh(.5). Close and re-display the generator so it pops
+up with the proper size. Pick the 109 data curve and put it into the
+generator graph.
+<p>
+7) Selecting the Generator's Fitness/ProtocolConstant will pop up a
+symbol chooser. Show "Objects" and select SEClamp_[0].amp2.
+Close and re-display the generator so it pops ups with the proper size.
+Notice that the string "109" should be in three places within this generator:
+The name of the generator, the value of the protocol constant, and the
+name of the data vector. Of course, only the protocol constant value
+is substantive, but later on we'll be adding more generators for  different
+voltage levels and consistent
+mnemonic names will help distinguish them properly.
+<p>
+8) Press the ErrorValue button in the generator. You'll get an error in
+the terminal window complaining about a vector argument being too small
+in meansqerror. The problem is that the run is not long enough to span
+the data. Pop up a control panel and change tstop to 12. While you're at
+it change the Init field editor (v_init) to 0. The generator is set
+properly if it can calculate an error value between model and data.
+<p>
+9) Add four parameters. ta1_khh, tk1_khh, ta2_khh, and tk2_khh.
+Pop up a parameter panel and turn off the optimizing of tk1 and tk2
+and set their values to 0. Pop up a domain panel and select
+GroupAttributes/PositiveDefiniteLimits" followed by
+GroupAtrributes/UseLogScale
+<p>
+10) Calculate the total error value from the MulRunFitter main panel.
+If it is 0 you forgot to turn on the generator.
+<p>
+11) Pop up an Optimizer panel, press Optimize, and see what happens for
+a while.
+<p>
+12) The fit is poor because the model cannot produce the long initial
+delay. Add a new protocol constant to the generator for SEClamp[0].dur1
+and set it to 0.3 . Re-optimize. The fit is much more pleasing.
+What is your judgment as to the physical meaning of this artifice?
+<p>
+13) Clone the generator and name the new one "32". Make it the one
+being added to the error function and don't use "109". Return to the
+Display mode close the old Generator panel and show the new "32" generator.
+It is the same as "109" except for it's name. Replace the data with the
+32mV conductance data and change the amp2 protocol constant to 32.
+
+Note: To clone, select Generators/CloneGenerator and double click on the
+"109" generator. To re-name the new one, select Generators/ChangeName
+and double click on the new one. To conveniently select the new one for
+use and NOT use the old one, select Generators/PopUp"Use"Panel and
+checkmark the appropriate subset.
+<p>
+14) Optimize the "32" data. What if the dur1 protocol constant is 1?
+<p>
+15) Save this session. It will be used in the next exercise.
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2001 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+  <!-- version 3R 10:00 AM on 2/23/2015 -->
+  <TITLE>Hodgkin-Huxley cable model</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300"
+vlink="#330099">
+
+<h1> Hodgkin - Huxley axon </h1>
+<h2> Physical System </h2>
+<img src="images/loligo.jpg">
+From <a href="http://www.mbl.edu">http://www.mbl.edu</a>
+<h2> Model </h2>
+<h3>Hodgkin-Huxley cable equations</h3>
+<img src="images/hheqn.gif">
+
+<h2> Simulation </h2>
+<h3> Representation </h3>
+<pre>
+	create axon
+	axon {
+		nseg = 75
+		diam = 100
+		L = 20000
+		insert hh
+	}
+</pre>
+<h3> Using the Representation </h3>
+<a href="hhcable/hhcable.hoc">Run NEURON with above spec.</a>
+
+<h2> Exercises </h2>
+1) Stimulate with current pulse and see a propagated action potential.
+<p>
+The basic tools you'll need from the 
+<A HREF="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/stdrun/0stdrun.html#NEURONMainMenu">NEURON Main Menu
+</A><b>:</b> <br>
+<A HREF="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/stdrun/pointman.html#PointProcessManager">
+Tools / Point Processes / Manager / Point Manager</A> to specify stimulation<br>
+<A HREF="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/stdrun/0stdrun.html#Voltageaxis">
+Graph / Voltage axis</A>
+and 
+<A HREF="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/stdrun/0stdrun.html#Shapeplot">
+Graph / Shape plot</A>
+to create graphs of v vs t and v vs x.<br>
+<A HREF="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/stdrun/runctrl.html#RunControl">Tools / RunControl</A>
+to run the simulation<br>
+Tools / Movie Run to see a smooth evolution of the space plot in time.
+
+<p>
+2) Change excitability by adjusting sodium channel density.
+<p>
+Tool needed:<br>
+<A HREF="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/stdrun/0stdrun.html#Viewers">
+Tools / Distributed Mechanisms / Viewers / Shape Name</A>
+<p>
+3) Use two current electrodes to stimulate both ends at the same time.
+<p>
+4) Up to this point, the model has used a very fine spatial grid (nseg = 75).<br>
+Change nseg to 15 and see what happens.
+<p>
+
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/contents.html">
+Help reference</a>
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2007 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

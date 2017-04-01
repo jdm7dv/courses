@@ -1,0 +1,162 @@
+<HTML>
+<HEAD>
+  <!-- version 2 1:30 PM on 6/15/2008 -->
+  <TITLE>Rectifying Gap Junction</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300"
+vlink="#330099">
+<h1>Rectifying Gap Junction</h1>
+
+<h2>Physical System</h2>
+Not in this universe.
+
+<h2>Model</h2>
+Rectifying gap junction between two Hodgkin-Huxley axons.
+When the internal voltage of the left side is greater than the internal
+voltage of the right side, current can pass. Otherwise the conductance
+is 0.
+<p>
+<center>
+<img src="rgap.gif">
+</center>
+
+<h2>Simulation</h2>
+
+This exercise shows how an understanding
+of the underlying NEURON representation of neuron cable sections in terms
+of equivalent circuits can become the basis for hitherto impossible
+simulations.
+
+<h3> Representation</h3>
+A Model description for a rectifying gap junction is 
+<a href="rgap.mod">rgap.mod.</a>
+This membrane mechanism must somehow be wrenched out
+of its normal context of a channel between the inside and outside of
+a point on a section so that it can represent a channel between the
+insides of two sections.
+
+<p>
+However, I have a problem. I want you to be able to run the <a href="rgap.hoc">completed example</a>
+from this page but this disallows the running of "special" versions
+of NEURON on unix machines. (There would be no problem under mswin since
+the downloaded hoc file that is to be executed could change to the
+proper directory "$(NEURONHOME)/../course/lincir2" and dynamically
+load the nrnmech.dll file). 
+
+<p>
+So, to allow all machines to run this
+example from the web, I am using a Channel Builder to specify the properties 
+of the gap junction channels in terms of a simple HH-style mechanism 
+with a single gating variable:
+g = gmax * O, where O' = (Oinf - O)/Otau<br>
+<ul>
+<li>Oinf = 1/(1+exp(-100*v)) so the steady state gap conductance is almost a step function at v = 0
+<p>
+<center>
+<img src="oinf.gif">
+</center>
+<p>
+<li>Otau = 0.01 ms, which is "instantaneous" compared to membrane time constant
+</ul>
+
+<p>
+We use three cellbuilders to create the two HH axons and a gap section.
+By specifying the orientation of each section and moving the 0 location
+of the root, we can arrange the sections so that combined appearance
+will turn out to look like 
+<p>
+<center>
+<img src="3sec.gif">
+</center>
+<p>
+which nicely indicates the intended relation between the
+structures and 
+makes it convenient to select the site of stimulus current injection
+as well as points for a time plot and two separate paths for a space
+plot.
+
+<p>
+Happily, the use of the "Reposition" tool in the "Topology" panel
+of a "Continuously Create"ing CellBuilder constantly updates the
+location of the instantiated sections and this is immediately
+re-plotted in a shape scene.
+
+<p>
+I'm using 1000um x 10um sections with hh channels and "d_lambda" segmentation
+for the "left" and "right" cables. For the gap section, I am using 
+an area of 100 um2, 
+cm as close to 0 as the cell builder allows
+(the default implicit method in NEURON allows cm=0 but that is another
+story),
+an rgap channel with maximum conductance of 1 mA/cm2 == 1 uS,
+ena=0 (ions mistakenly don't show up in the CellBuilder so that can only
+be done with a NEURONMainMenu/Tools/DistibutedMechanism/Viewers/ShapeName
+tool or with an interpreter statement)
+and an extracellular mechanism.
+
+<p>
+The extracellular mechanism for the gap section is a key idea in this
+exercise since it gives us a non-trivial extracellular node (without
+an extracellular mechanism, the outside voltage next to the membrane
+is defined to be 0).  This means
+that we can use available channel and point process mechanisms 
+to create 
+an arbitrary two terminal conductance component which, in conjunction
+with the LinearCircuit builder, can be attached between any two points
+in a network of cells. We defeat the normal usage of the extracellular
+mechanisms by setting xg to 0 so that there is no longer a default
+path from the extracellular node to ground. Thus the normal
+equivalent circuit of a single compartment section has been subverted
+to look like
+<p>
+<center>
+<img src="equiv.gif">
+</center>
+
+<p>
+Now the Linear Circuit Builder can be used to connect these pieces.
+<p>
+<center>
+<img src="cir.gif">
+</center>
+
+<p>
+The batteries are necessary in order to introduce electrical current
+variables as first class states of the system. These current states allow
+consistency of an otherwise overdetermined system. 
+That is, connecting two voltage nodes by a short circuit 
+introduces the equation
+v1 = v2 and the only way to make this consistent with the two
+current balance equations for the nodes is to calculate the current
+flowing through the short circuit simultaneously with all the
+other membrane potentials. The batteries themselves have a default
+potential of 0 mV.
+This is a nice trick to use when one wishes to
+measure the current through a short circuit.
+
+<p>
+<a href="rgap.hoc">Completed example</a>
+<br>
+See how an action potential initiated on the left propagates into the
+right section. However an action potential initiated on the right
+is blocked by the gap junction.
+
+<p>
+Clearly, the linear circuit builder would be inadequate to handle
+more than a few gap junctions. In hoc one would manage such simulations
+by writing a "GapJunction" template that manages a gap section with
+an rgap and extracellular mechanism along with a LinearMechanism
+instance to connect the gap junction to the desired locations.
+With that class as the basic object, it would then not be too much
+trouble to create a GUI tool (perhaps using a Shape scene) that
+managed interactive creation of the gap junctions.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2008 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY></HTML>

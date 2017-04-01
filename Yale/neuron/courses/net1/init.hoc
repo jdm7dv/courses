@@ -1,0 +1,21 @@
+load_file("stdgui.hoc")
+xopen("net1.hoc")
+objref tobj
+strdef tstr
+
+// show the connections
+proc npan() {
+	xpanel("NetCon Info")
+	for i=0, nclist.count-1 {
+		tobj = nclist.object(i)
+		sprint(tstr, "%s -> %s -> %s", tobj.precell, tobj, tobj.postcell)
+		xlabel(tstr)
+		xpvalue("weight", &tobj.weight, 1)
+		xpvalue("delay", &tobj.delay, 1)
+	}
+	xpanel()
+}
+
+xopen("start.ses")
+
+npan()

@@ -1,0 +1,14 @@
+load_file("init.hoc")
+weight(w/50)
+{ncell*=50 recreate(ncell)}
+
+stdinit()
+{jj = startsw()  cvode.solve(tstop)  print "global ", startsw()-jj}
+cvode.statistics
+sp.flush()
+
+{cvode_local(1)}
+stdinit()
+{jj = startsw()  cvode.solve(tstop)  print "local ", startsw()-jj}
+cvode.statistics
+sp.flush()

@@ -1,0 +1,345 @@
+<HTML>
+<HEAD>
+  <!-- version 3R 10:00 AM on 2/23/2015 -->
+  <TITLE>Range variables</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h1> Model Control: Range Variables</h1>
+
+The task in the previous exercise was to characterize 
+the effect of an independent variable (synaptic location) 
+on a simple dependent variable (peak depolarization at the soma).
+Now we turn to a somewhat more complex problem: 
+determining how the spatial distribution of biophysical properties 
+affects the peak synaptic conductance needed to trigger a spike.
+Synaptic location is presumed to remain constant, 
+although it is easy to imagine generalizing this question.
+<p>
+This exercise will show you how to
+<ul>
+  <li>specify inhomogeneous range variables
+  <li>change membrane properties under program control
+  <li>use the APCount point process to detect spikes
+  <li>use the Grapher to generate a family of simulations
+  <li>write short (e.g. 3 line) procedures or functions that 
+	greatly enhance the power of the GUI
+</ul>
+
+
+<h2>Physical System</h2>
+
+The presence of voltage-gated channels 
+distributed widely over the cell surface 
+appears to be a general property of neurons.
+However, the density and even the biophysical properties 
+of these channels may vary substantially with location.
+Although quantitative details generally remain uncertain, 
+new experimental observations are beginning to provide 
+an empirical basis for exploring how the spatial distribution 
+of active currents may affect neuronal function.
+
+
+<h2>Model</h2>
+
+This exercise is based on the familiar ball and stick model.
+Imagine that HH channels are present on the soma and the proximal dendrite.
+Furthermore, channel density along the dendrite falls off linearly 
+with distance from the soma, finally becoming
+An excitatory synapse is located at the distal end of the dendrite.
+
+
+<h2>Simulation</h2>
+
+Start NEURON with the init.hoc in the /course/range directory.
+This calls up the same init.hoc, ballstk.ses, and start.ses 
+that we saw at the beginning of the "Simulation Families" exercise.
+Once again, be sure that the CellBuilder's Continuous Create button is checked.
+Otherwise the sections of the ball and stick model will not exist.
+<p>
+It's always a good idea to test things as you go along, 
+so create an AlphaSynapse with tau = 1 ms, e = 0, 
+and place it at the distal end of the dendrite.
+Try a few runs and manually adjust gmax until you trigger a spike.
+These tests are always reassuring when they work, 
+but the dendrite has only one segment at this stage, 
+so you shouldn't take the numerical value of gmax too seriously.
+<p>
+Be sure to include a "control" run with synaptic conductance = 0.
+Did soma.v drift away from the resting potential of -65mV?
+Why? (hint: do you need to change dendritic e_pas?)
+
+
+<b>Strategy</b>
+<p>
+You need to use the GUI and hoc code 
+to build an interface that will automate the following tasks:
+<blockquote>
+<DL>
+  <DT>For selected locations along the dendrite
+	<DD><b>Set up channel distribution</b> : 
+	  create a linear gradient of HH channels in dend that falls to 0 at x<br>
+	<b>Find threshold gmax</b> : 
+	  the smallest synaptic conductance that triggers a somatic spike<br>
+	<b>Plot result</b> : gmax vs. x<br>
+</DL>
+</blockquote>
+In the previous exercise, you used a <code>for</code> loop 
+to generate a family of simulations, 
+plotting the final results in a graph that you created with hoc code.
+For this exercise you will use the Grapher, 
+which combines a <code>for</code> loop and a graph 
+in a way that can be quite convenient for controlling a 
+series of simulations.
+<blockquote>
+You have already used the Grapher in a very direct way: 
+to generate an arbitrary forcing function for a voltage clamp.
+The current exercise will show you how to 
+exploit the Grapher in a way that is more subtle 
+and far more powerful.
+</blockquote>
+<p>
+
+
+<b>Preparing to set up channel distribution</b>
+<p>
+The model needs some initial adjustments before you can use it 
+to explore the effects of altered ion channel distributions.
+<p>
+<OL>
+<LI>The dendrite should have a reasonably fine spatial grid. 
+Use the CellBuilder to change dendritic nseg to 25 (odd multiples
+of 5 guarantee that there will be nodes at 0.1, 0.3, 0.5, 0.7, and 0.9). 
+
+<LI>Before you can adjust the density of <em>any</em> ion channels,
+the conductance mechanism in question must first 
+be inserted into the section.
+Any reference to a mechanism that has not been inserted 
+will elicit an error message.
+For example, the first command below is OK 
+but the second fails:
+<blockquote>
+<pre>
+oc>print dend.g_pas(0.3)
+0.0001 
+oc>print dend.gnabar_hh(0.3)
+hh mechanism not inserted in section dend
+D:\NRN\BIN\NEURON.EXE:  near line 28
+print dend.gnabar_hh(0.3)
+</pre>
+</blockquote>
+Use the CellBuilder for this 
+(in Biophysics / Specify Strategy 
+make sure both pas and hh are checked for dend).
+Also change e_pas to -65 mV (why?). 
+Finally, to avoid any confusion about the initial configuration of your model, 
+it may be a good idea to reduce all of the hh conductances (including gl_hh) 
+in dend to 0.
+</OL>
+
+At this point you probably should save the CellBuilder 
+by itself to a new session file (call it something 
+other than ballstk.ses, maybe ballstktaper.ses).
+<p>
+
+
+<b>Set up channel distribution</b>
+<p>
+Next you will want to construct a procedure 
+that establishes the tapering HH channel density in the dendrite, e.g.
+<pre>
+proc hhtaper() {
+	dend {
+		gnabar_hh = 0
+		gkbar_hh = 0
+		gl_hh = 0
+		if ($1 > 0) {
+			if ($1 > 1) {$1 = 1}
+			gnabar_hh(0:$1) = soma.gnabar_hh:0
+			gkbar_hh(0:$1) = soma.gkbar_hh:0
+			gl_hh(0:$1) = soma.gl_hh:0
+		}
+	}
+}
+</pre>
+This procedure could be placed in the ballstk.hoc file; 
+an argument could be made for putting it in a separate 
+file that is xopen'ed by init.hoc.
+An appropriate name for such a file might be taper.hoc.
+<p>
+Test your code with a few different arguments (e.g. 0, 0.5, and 1).
+First, verify that the conductances have the correct profile 
+and change appropriately.
+Then see if increasing the dendritic extent of HH channels 
+has the expected effect on threshold gmax.
+<br>
+Hint: use the GUI to make a space plot that shows 
+gnabar_hh throughout the cell; 
+after invoking hhtaper() with a new argument, 
+update this graph by pressing RunControl's Init button.
+Alternatively, try the command<br>
+<code>
+dend for (x) print x, " ", x*L, " ", gnabar_hh(x)
+</code>
+<p>
+
+
+<b>Find threshold</b>
+<p>
+The basic idea is to repeat these actions
+<blockquote>
+<DL>
+  <DT>Run a simulation<br>
+	If a spike occurred
+	<DD>reduce gmax
+  <DT>otherwise increase gmax
+</DL>
+</blockquote>
+You have already seen that the hoc statement run() 
+is equivalent to pressing the Init & Run button.
+<p>
+
+Whether or not an action potential occurs can be most easily determined
+by an APCount point process located at the soma. 
+If APCount[0].n > 1 after a run, then voltage passed APCount[0].thresh 
+(default -20 mV) at least once during the run.
+<p>
+
+Attach an APCount to the soma (hint: use a new Point Process Manager) 
+and verify that APCount[0].n depends on whether a spike occurs.
+<p>
+
+The only remaining trick is to reduce or increase gmax 
+by an amount that is governed by a clever rule 
+that progressively homes in on the threshold.
+<p>
+
+A binary search is a convenient and reasonably efficient way 
+to find a threshold.
+The kernel of the algorithm is:
+<pre>
+while ( high - low > resolution) {
+	run()
+	if (APCount[0].n > 0) {
+		high = independent_variable	// upper bound
+	}else{
+		low = independent_variable	// lower bound
+	}
+	independent_variable = (high + low)/2	//average
+}
+</pre>
+where the interval gets smaller by half on each iteration of the loop.
+After 10 iterations, 
+the interval would be 1/1024 of its original size --
+much better than testing each of the 1024 subintervals.
+<p>
+
+Actually, some elaboration of this algorithm is required 
+to make a sensible choice of initial values of high and low. 
+Also, the "independent_variable" has to be the one YOU choose. 
+For this reason I am supplying 
+<a href="range/thresh.ho">a thresh.hoc file</a>
+which contains a binary search implementation of
+<pre>
+	final_val = threshold(&var_name)
+</pre>
+You will need to edit your init.hoc file to load thresh.hoc by adding the line
+<pre>
+	load_file("thresh.hoc")
+</pre>
+You can test the function with 
+<pre>
+	threshold(&AlphaSynapse[0].gmax)
+</pre>
+While testing, it is a good idea to display the soma voltage and the
+parameters of AlphaSynapse[0] and APCount[0].
+<p>
+
+Hints to keep run time short:
+<br>
+1. Set Tstop to 15 ms (we happen to know that no spike will start 
+later than 15 ms)
+<br>
+2. Use variable dt (gains a large speedup at the cost of slightly lower accuracy)
+<p>
+
+
+<b>Plot result</b>
+<p>
+Bring up a Grapher tool (NEURON Main Menu / Graph / Grapher).
+You have already
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/stdrun/grapher.html#Grapher">
+read about it</a> but you might want to try this simple example
+just to brush up:<br>
+PlotWhat : sin(t*t) <br>
+Plot
+<p>
+
+To use the Grapher to generate a family of simulations 
+and plot the results, we want to plot
+<pre>
+	AlphaSynapse[0].gmax vs taper
+</pre>
+If we define "taper" as our independent variable, 
+we need a generator such as
+<pre>
+	hhtaper(taper) threshold(&AlphaSynapse[0].gmax)
+</pre>
+This is just a "one-liner" 
+(old BASIC hackers will remember one-liners)
+that first executes the procedure hhtaper(taper)
+and then applies the threshold() function, 
+adjusting gmax until the threshold value is found.
+<p>
+Alternatively we could leave the Generator field empty
+and just plot a function like
+<pre>
+func g_thresh_taper() {
+	hhtaper($1)
+	return threshold(&AlphaSynapse[0].gmax)
+} 
+</pre>
+Don't forget that taper should be allowed to range only from 0 to 1.
+<p>
+To save time (you'll be executing a lot of runs!), 
+set the Grapher's Steps parameter to 5 or 10 at most.
+
+
+<h2> Footnotes </h2>
+
+<b>Speed</b>
+<p>
+Notice that the threshold function executes a family of runs. 
+Since we are using the Grapher to plot the threshold value 
+as a function of the spatial extent of HH channels, 
+we effectively have a family of families 
+(or, if we changed synaptic location as well, 
+a family of families of families . . . ), 
+which may involve hundreds of runs.
+Since plotting is often the rate limiting step for a simulation, 
+the entire process can be speeded up considerably 
+by not plotting the soma voltage 
+(in the NEURON Main Menu, toggle "Quiet" <em>on</em>).
+<p>
+
+<A HREF="range/grafr.html">
+<b>Using the Grapher to plot threshold gmax as a function of ion channel distribution</b>
+</A>
+
+
+<h2> Exercises </h2>
+
+Try putting the AlphaSynapse at different points in the model.
+Turn on Keep Lines in the Grapher so you can compare results 
+for different synaptic locations.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2001 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

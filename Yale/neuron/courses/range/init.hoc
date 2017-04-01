@@ -1,0 +1,10 @@
+/* init.hoc for range variable exercise
+   last modified 7/16/2000 NTC
+*/
+
+// start the GUI and load the ballstk cellbuilder
+load_file("nrngui.hoc")
+load_file("ballstk_builder.ses")
+
+// load an initial starting session
+load_file("start.ses")

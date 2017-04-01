@@ -1,0 +1,30 @@
+<h1> Define the types of cells </h1>
+<pre>
+<font size=+2>
+begintemplate Cell
+   public soma, syn, position
+   create soma
+   objref syn
+   proc init() {
+      create soma
+      soma {
+         diam = 20
+         L = 20
+         insert hh
+         syn = new ExpSyn(.5)
+         syn.tau = 1
+      }
+   }
+
+   proc position() {local l
+      x = $1
+      y = $2
+      soma {
+         l=L/2
+         pt3dclear()
+         pt3dadd(100*x-l, 100*y, 0, diam)
+         pt3dadd(100*x+l, 100*y, 0, diam)
+      }
+   }
+endtemplate Cell
+</pre>

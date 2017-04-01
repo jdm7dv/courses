@@ -1,0 +1,20 @@
+//copy all the files in this directory to an empty directory and create
+//a nrnmech.dll file that contain the .mod mechanisms by
+//	mknrndll
+// or else on unix create a special with
+//	nrnivmodl
+// Then run under MSWin by double clicking on this hoc file or run under
+// unix by executing
+//	nrngui init.hoc
+// at the shell
+
+load_file("stdgui.hoc")
+tstop = 12
+
+create soma
+access soma
+diam = 10
+L = 10/PI
+
+xopen("hh508.hoc")
+xopen("start.ses")

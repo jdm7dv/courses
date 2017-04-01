@@ -1,0 +1,18 @@
+objref f, m
+f = new File()
+f.ropen("data.dat")
+objref m
+m = new Matrix()
+m.scanf(f)
+f.close
+
+objref m2
+m2=new Matrix(200, 5)
+m2.setcol(0, m.getcol(0))
+for i=1,4 {
+	m2.setcol(i, m.getcol((i)*2+1))
+}
+
+f.wopen("temp.dat")
+m2.fprint(f)
+f.close

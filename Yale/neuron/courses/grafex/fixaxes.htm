@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+  <!-- version 2.3 10:20 PM on 7/14/2000 -->
+  <TITLE>Fixing funny axes</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+<h3>Fixing funny axes</h3>
+
+Sometimes the algorithm that chooses the X and Y axis ranges and tick intervals
+for View = plot needs a little help. The algorithm seems to attempt to maximize
+the size of the plots at all costs, and can quite easily produce graphs with axes
+like these
+<P ALIGN=Center>
+<IMG SRC="viewplot.gif" WIDTH="439" HEIGHT="366">
+<P>
+even though a better choice from the user's standpoint might be for X to
+run from 0 to 10 by 2s, and for Y to run from 0 to 0.04 by intervals of 0.01.
+<P>
+Set View can be used to achieve rational axes, but often you have to be a
+bit clever. Try specifying 0 10 for X size and 0 0.04 for Y size. You will
+see that this fixes the X axis problem, but the Y axis still won't be right--Y
+still runs from 0.005 to 0.035. So try Set View again, but this time try
+a slightly wider range than you really need for the Y axis, e.g. -0.001 0.041.
+<P>
+Generally, View = plot&nbsp;seems to try to divide each axis into 3 - 5
+intervals. A useful strategy is to let it do what it wants the first time
+so you can see the data. Then if the intervals aren't satisfactory, use Set
+View to pick a range that is "slightly" wider. How big is "slightly" ? Usually
+something a bit less than half of the tick interval
+ will do the job, 
+but not too small or it won't have any effect.
+<P>
+So in this example, where View = plot had settled on a Y axis range of 0.005
+to 0.035 with tick intervals of 0.005, and the desired Y range was 0 to 0.04,
+reasonable choices to try for the Y range with Set View would be ~ -0.002
+or -0.001 at the low end and 0.041 or 0.042 at the high end.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2001 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

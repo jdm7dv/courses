@@ -1,0 +1,277 @@
+<HTML><HEAD><TITLE>/u/billl/nrniv/course/hoc.dol</TITLE></HEAD><BODY bgcolor=white>
+<p>
+<H1>HOC exercises</H1>
+<p>
+ <b>//</b> Executable lines below are shown with the hoc prompt
+ <b>//</b> Typing these, although trivial, can be a valuable way to get familiar with the language
+<p> oc> <b>//</b> A comment
+<p> oc> /* ditto */
+<H1>Data types: numbers strings and objects</H1>
+<p>
+<ul>
+<li><H2>anything not explicitly declared is assumed to be a number</H2>
+ oc> x=5300 <b>//</b> no previous declaration as to what 'x' is
+<ul>
+<li><H3>numbers are all doubles (high precision numbers) </H3>
+ there is no integer type in Hoc
+<li><H3>Scientific notation use e or E </H3>
+ oc> print 5.3e3,5.3E3 <b>//</b> e preferred (see next)
+<li><H3>there are some useful built-in values </H3>
+ oc> print PI, E, FARADAY, R
+</ul>
+<li><H2>Do you have anything to declare?: objects and strings</H2>
+<ul>
+<li><H3>Must declare an object reference (=object variable) before making an object </H3>
+<li><H3>Objref: manipulate references to objects, not the objects themselves </H3>
+ often names are chosen that make it easy to remember what an object reference is to be used for (eg g for a Graph or vec for a Vector) but it's important to remember that these are just for convenience and that any object reference can be used to point to any kind of object
+<p>
+<li><H3>Objects include vectors, graphs, lists, ... </H3>
+ oc> objref XO,YO  <b>//</b> capital 'oh' not zero
+<p> oc> print XO,YO   <b>//</b> these are object references
+<p> oc> XO = new List() <b>//</b> 'new' creates a new instance of the List class 
+<p> oc> print XO,YO  <b>//</b> XO now points to something, YO does not
+<p> oc> objref XO <b>//</b> redeclaring an objref breaks the link; if this is the only reference to that object the object is destroyed
+<p> oc> XO = new List() <b>//</b> a new <i>new</i> List
+<p> oc> print XO  <b>//</b> notice the List[#] -- this is a different List, the old one is gone
+<p>
+<li><H3>After creating object reference, can use it to point a new or old object </H3>
+<p>
+ oc> objref vec,foo <b>//</b> two object refs
+<p> oc> vec = new Vector() <b>//</b> use 'new' to create something
+<p> oc> foo = vec     <b>//</b> foo is now just another reference to the same thing
+<p> oc> print vec, foo      <b>//</b> same thing
+<p> oc> vec=XO
+<p> oc> print vec, foo      <b>//</b> vec no longer points to a vector
+<p> oc> objectvar vec   <b>//</b> objref and objectvar are the same; redeclaring an  objref breaks the link between it and the object it had pointed to
+<p> oc> print vec, foo  <b>//</b> vec had no special status, foo still points equally well
+<p>
+<li><H3>Can create an array of objrefs </H3>
+<p>
+ oc> objref objarr[10]
+<p> oc> objarr[0]=XO
+<p> oc> print objarr, objarr[0] <b>//</b> two ways of saying same thing
+<p> oc> objarr[1]=foo
+<p> oc> objarr[2]=objarr[0]  <b>//</b> piling up more references to the same thing
+<p> oc> print objarr[0],objarr[1],objarr[2]
+<p>
+<li><H3>Exercises: Lists are useful for maintaining pointers to objects so that they are maintained when explicit object references are removed </H3>
+ 1. Make vec point to a new vector.  Print out and record its identity (<i>print vec</i>).   Now print using the object name (ie <i>print Vector[#]</i> with the right #).  This confirms that the object exists.  Destroy the object by reinitializing the vec reference.  Now try to print using the object name.  What does it say.
+<p> 2. As in Exercise 1: make vec point to a new vector and use print to find the vector name. Make XO a reference to a new list.  Append the vector to the list: <i></i>{XO.append(vec).   Now dereference vec as in Exercise 1.  Print out the object by name and confirm that it still exists.  Even though the original objref is gone, it is still point to by the list.
+<p> 3. Identify the vector on the list: (<i>print XO.object(0)</i>).  Remove the vector from the list (<i>print XO.remove(0)</i>).  Confirm that this vector no longer exists.
+<p>
+<li><H3>Strings </H3>
+<li><H3>Must declare a string before assigning it </H3>
+ oc> mystr = "hello"       <b>//</b> <b>ERROR</b>: needed to be declared
+<p> oc> strdef mystr          <b>//</b> declaration
+<p> oc> mystr = "hello"       <b>//</b> can't declare and set together
+<p> oc> print mystr
+<p> oc> printf(<t>"</t><n>-%s-</n>", mystr) <b>//</b> tab-string-newline; printf=print formatted; see documentation
+<li><H3>There are <b>no</b> string arrays; get around this using arrays of String objects </H3>
+<p>
+<li><H3>Can also declare number arrays, but vectors are often more useful </H3>
+ oc> x=5
+<p> oc> double x[10]
+<p> oc> print x <b>//</b> overwrote prior value
+<p> oc> x[0]=7
+<p> oc> print x, x[0] <b>//</b> these are the same
+<p>
+</ul>
+</ul>
+<H1>Operators and numerical functions</H1>
+<p>
+ oc> x=8   <b>//</b> assignment
+<p> oc> print x+7, x*7, x/7, x%7, x-7, x^7 <b>//</b> doesn't change x
+<p> oc> x==8  <b>//</b> comparison
+<p> oc> x==8 && 5==3 <b>//</b> logical AND, 0 is False; 1 is True
+<p> oc> x==8 \\ 5==3 <b>//</b> logical OR
+<p> oc> !(x==8) <b>//</b> logical NOT, need parens here
+<p> oc> print 18%5, 18/5, 5^3, 3*7, sin(3.1), cos(3.1), log(10), log10(10), exp(1)
+<p> oc> print x, x+=5, x*=2, x-=1, x/=5, x <b>//</b> each changes value of x; <b>no</b> x++
+<p>
+<H1>Blocks of code {}</H1>
+<p>
+ oc> { x=7 
+<p> print x   
+<p> x = 12
+<p> print x 
+<p> }
+<p>
+<H1>Conditionals</H1>
+<p>
+ oc> x=8
+<p> oc> if (x==8) print "T" else print "F" <b>//</b> brackets optional for single statements
+<p> oc> if (x==8) {print "T"} else {print "F"} <b>//</b> usually better for clarity
+<p> oc> {x=1 while (x<=7) {print x   x+=1}}  <b>//</b> nested blocks, statements separate by space
+<p> oc> {x=1 while (x<=7) {print x, x+=1}}  <b>//</b> notice difference: comma makes 2 args of print
+<p> oc> for x=1, 7 print x  <b>//</b> simplest for loop
+<p> oc> for (x=1;x<=7;x+=2) print x <b>//</b> (init;until;change)
+<p>
+<H1>Procedures and functions</H1>
+<p>
+ oc> proc hello () { print "hello" }
+<p> oc> hello()
+<p> oc> func hello () { print "hello" return 1.7 }  <b>//</b> functions return a number
+<p> oc> hello()
+<ul>
+<li><H2>Numerical arguments to procedures and functions </H2>
+ oc> proc add () { print $1 + $2 } <b>//</b> first and second argument, then $3, $4...
+<p> oc> add(5, 3)
+<p> oc> func add () { return $1 + $2 } 
+<p> oc> print 7*add(5, 3)  <b>//</b> can use the returned value
+<p> oc> print add(add(2, 4), add(5, 3)) <b>//</b> nest as much as you want
+<li><H2>String ($s1, $s2, ...) and object arguments ($o1, $o2, ...)</H2>
+ oc> proc prstuff () { print $1, "::", $s2, "::", $o3 }
+<p> oc> prstuff(5.3, "hello", vec)
+<li><H2>Exercises</H2>
+ *** Use printf in a procedure to print out a formatted table of powers of 2
+<p> *** Write a function that returns the average of 4 numbers
+<p> *** Write a procedure that creates a section called soma and sets diam and L to 2 args
+<p>
+</ul>
+<H1>Built-in object types: graphs, vectors, lists, files</H1>
+<p>
+<p>
+<ul>
+<li><H2>Graph</H2>
+ oc> objref g[10]
+<p> oc> g = new Graph()
+<p> oc> g.size(5, 10, 2, 30) <b>//</b> set x and y axes
+<p> oc> g.beginline("line", 2, 3)  <b>//</b> start a red (2), thick (3) line
+<p> oc> {g.line(6, 3) g.line(9, 25)} <b>//</b> draw a line (x, y) to (x, y)
+<p> oc> g.flush() <b>//</b> show the line
+<li><H2>Exercises</H2>
+<ul>
+<li><H3>write proc that draws a colored line ($1) from (0, 0) to given coordinate ($2, $3) assume g is a graph object </H3>
+<li><H3>write a proc that puts up two new graphs </H3>
+<li><H3>bring up a graph using GUI, on graph use right-button right pull-down to "Object Name"; set 'g' objectvar to point to this graph and use g.size() to resize it </H3>
+<p>
+</ul>
+<li><H2>Vector</H2>
+ oc> objref vec[10]
+<p> oc> for ii=0, 9 vec[ii]=new Vector()
+<p> oc> vec.append(3, 12, 8, 7) <b>//</b> put 4 values in the vector
+<p> oc> vec.append(4)        <b>//</b> put on one more
+<p> oc> vec.printf           <b>//</b> look at them
+<p> oc> vec.size             <b>//</b> how many are there?
+<p> oc> print vec.sum/vec.size, vec.mean  <b>//</b> check average two ways
+<p> oc> {vec.add(7) vec.mul(3) vec.div(4) vec.sub(2) vec.printf}
+<p> oc> vec.resize(vec.size-1) <b>//</b> get rid of last value
+<p> oc> for ii=0, vec.size-1 print vec.x[ii] <b>//</b> print values
+<p> oc> vec[1].copy(vec[0])  <b>//</b> copy vec into vec[1]
+<p> oc> vec[1].add(3)    
+<p> oc> vec.mul(vec[1])      <b>//</b> element by element; must be same size
+<p>
+<li><H2>Exercises</H2>
+<ul>
+<li><H3>write a proc to make $o1 vec elements the product of $o2*$o3 elements  </H3>
+     (use resize to get $o1 to right size; generate error if sizes wrong eg
+<p>     if ($o2.size!=$o3.size) { print "ERROR: wrong sizes" return }
+<li><H3>graph vector values: vec.line(g, 1) or vec.mark(g, 1) </H3>
+     play with colors and mark shapes (see doc for details)
+<li><H3>graph one vec against another: vec.line(g, vec[1]); vec.mark(g, vec[1]) </H3>
+<li><H3>write a proc to multiply the elements of a vector by sequential values from 1 to size-1 </H3>
+     hint: use vec.resize, vec.indgen, vec.mul
+<p>
+</ul>
+</ul>
+<H1>File</H1>
+<p>
+ oc> objref file
+<p> oc> mystr = "AA.dat"  <b>//</b> use as file name
+<p> oc> file = new File()
+<p> oc> file.wopen(mystr) <b>//</b> 'w' means write, arg is file name
+<p> oc> vec.vwrite(file) <b>//</b> binary format
+<p> oc> file.close()
+<p> oc> vec[1].fill(0) <b>//</b> set all elements to 0
+<p> oc> file.ropen(mystr)   <b>//</b> 'r' means read
+<p> oc> vec[1].vread(file)
+<p> oc> if (vec.eq(vec[1])) print "SAME" <b>//</b> should be the same
+<ul>
+<li><H2>Exercises</H2>
+<ul>
+<li><H3>proc to write a vector ($o1) to file with name $s1 </H3>
+<li><H3>proc to read a vector ($o1) from file with name $s1 </H3>
+<li><H3>proc to append a number to end of a file: tmpfile.aopen(), tmpfile.printf </H3>
+<p>
+</ul>
+</ul>
+<H1>List</H1>
+<p>
+ oc> objref list
+<p> oc> list = new List()
+<p> oc> list.append(vec) <b>//</b> put an object on the list
+<p> oc> list.append(g)   <b>//</b> can put different kind of object on
+<p> oc> list.append(list) <b>//</b> pointless
+<p> oc> print list.count()  <b>//</b> how many things on the list
+<p> oc> print list.object(2) <b>//</b> count from zero as with arrays
+<p> oc> list.remove(2)    <b>//</b> remove this object
+<p> oc> for ii=0, list.count-1 print list.object(ii) // <b>remember</b> list.count, vec.size
+<ul>
+<li><H2>Excercise</H2>
+<ul>
+<li><H3>write proc that takes a list $o1 with a graph (.object(0)) followed by a vector (.object(1)) and shows the vector on the graph </H3>
+<li><H3>modify this proc to read the vector out of file given in $s2 </H3>
+<p>
+</ul>
+</ul>
+<H1>Simulation</H1>
+<p>
+ oc> create soma
+<p> oc> access soma
+<p> oc> insert hh
+<p> oc> ismembrane("hh") <b>//</b> make sure it's set
+<p> oc> print v, v(0.5), soma.v, soma.v(0.5) <b>//</b> only have 1 seg in section
+<p> oc> tstop=50
+<p> oc> run()
+<p> oc> print t, v
+<p> oc> print gnabar_hh 
+<p> oc> gnabar_hh *= 10
+<p> oc> run()
+<p> oc> print t, v <b>//</b> what happened?
+<p> oc> gnabar_hh /= 10 <b>//</b> put it back
+<p>
+<H1>Recording the simulation</H1>
+<p>
+ oc> cvode_active(0)    <b>//</b> this turns off variable time step
+<p> oc> dt = 0.025
+<p> oc> vec.record(&soma.v(0.5)) <b>//</b> '&' gives a pointer to the voltage
+<p> oc> objref stim
+<p> oc> soma stim = new IClamp(0.5) <b>//</b> current clamp at location 0.5 in soma
+<p> oc> stim.amp = 20         <b>//</b> need high amp since cell is big
+<p> oc> stim.dur = 1e10       <b>//</b> forever
+<p> oc> run()
+<p> oc> print vec.size()*dt, tstop <b>//</b> make sure stored the right amount of data
+<p>
+<H1>Graphing and analyzing data</H1>
+<p>
+ oc> g=new Graph()
+<p> oc> vec.line(g, dt, 2, 2)
+<p> oc> g.size(0, tstop, -80, 50)
+<p> oc> print vec.min, vec.max, vec.min_ind*dt, vec.max_ind*dt
+<p> oc> vec[1].deriv(vec, dt)
+<p> oc> print vec[1].max, vec[1].max_ind*dt <b>//</b> steepest AP
+<ul>
+<li><H2>Exercises</H2>
+<ul>
+<li><H3>change params (stim.amp, gnabar_hh, gkbar_hh), regraph and reanalyze </H3>
+<li><H3>bring up the GUI and demonstrate that the GUI and command line control same parameters </H3>
+<li><H3>write proc to count spikes and determine spike frequency (use vec.where) </H3>
+<p>
+</ul>
+</ul>
+<H1>Roll your own GUI</H1>
+<p>
+<p>
+ oc> proc sety () { y=x print x }
+<p> oc> xpanel("test panel")
+<p> oc> xvalue("Set x", "x")
+<p> oc> xvalue("Set y", "y")
+<p> oc> xbutton("Set y to x", "sety()")
+<p> oc> xpanel()
+<p>
+<ul>
+<li><H2>Exercises</H2>
+<ul>
+<li><H3>put up panel to run sim and display (in an xvalue) the average frequency </H3>
+<p>
+<p><i> Last updated: Jun 16, 2003 (11:09)</i><p>

@@ -1,0 +1,556 @@
+<HTML>
+<HEAD>
+  <!-- nipsfin.html -->
+  <!-- version 1.2 12:25 AM 5/24/99 -->
+  <TITLE> Relating Neuronal Form to Function </TITLE>
+</HEAD>
+
+<BODY BGCOLOR="FFFFFF">
+
+<P>
+Originally published as<br>
+Carnevale, N.T., Tsai, K.Y., Claiborne, B.J., and Brown, T.H..
+The electrotonic transformation:  a tool for relating neuronal
+form to function.  In:  <I>Advances in Neural Information Processing
+Systems</I>, vol. 7, eds. Tesauro, G., Touretzky, D.S., and Leen,
+T.K..  MIT Press, Cambridge, MA, 1995, pp. 69-76.<br>
+<em>Copyright &copy; 1999 by the 
+Massachusetts Institute of Technology, all rights reserved</em>
+<a href="NIPS94.pdf"><br>
+Download a digital preprint of this paper (NIPS94.pdf 67,595)</a>
+that is readable with Adobe Acrobat.
+<p>
+<FONT  SIZE=-1>NOTE:  The equations in this document are actually 
+small .gif files.  Many are embedded in lines of text.
+Depending on the configuration of your viewer, these may appear to 
+be shifted vertically relative to adjacent text.  If this occurs, 
+try using 11 point Times New Roman, or an equivalent, 
+as the display font for Latin 1 encoding (Netscape users:  
+this is under Options / General Preferences / Fonts).</FONT>
+<P>
+
+
+<HR>
+<CENTER><H1><B>The Electrotonic Transformation:  
+a Tool for Relating Neuronal Form to Function</B></H1></CENTER>
+
+<CENTER>
+<TABLE CELLPADDING=10 CELLSPACING=0>
+<TR ALIGN=center>
+	<TD><B>Nicholas T. Carnevale</B><BR>
+		Department of Psychology<BR>
+		Yale University<BR>
+		New Haven, CT 06520</TD>
+	<TD><B>Kenneth Y. Tsai</B><BR>
+		Department of Psychology<BR>
+		Yale University<BR>
+		New Haven, CT 06520</TD>
+</TR>
+<TR ALIGN=center>
+	<TD><B>Brenda J. Claiborne</B><BR>
+		Division of Life Sciences<BR>
+		University of Texas<BR>
+		San Antonio, TX 79285</TD>
+	<TD><B>Thomas H. Brown</B><BR>
+		Department of Psychology<BR>
+		Yale University<BR>
+		New Haven, CT 06520</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<P>
+
+<P>
+<H2>Abstract</H2>
+<P>
+The spatial distribution and time course of electrical signals
+in neurons have important theoretical and practical consequences.
+ Because it is difficult to infer how neuronal form affects electrical
+signaling, we have developed a quantitative yet intuitive approach
+to the analysis of electrotonus.  This approach transforms the
+architecture of the cell from anatomical to electrotonic space,
+using the logarithm of voltage attenuation as the distance metric.
+ We describe the theory behind this approach and illustrate its
+use.
+<P>
+<H2>1  INTRODUCTION</H2>
+<P>
+The fields of computational neuroscience and artificial neural
+nets have enjoyed a mutually beneficial exchange of ideas.  This
+has been most evident at the network level, where concepts such
+as massive parallelism, lateral inhibition, and recurrent excitation
+have inspired both the analysis of brain circuits and the design
+of artificial neural net architectures.
+<P>
+Less attention has been given to how properties of the individual
+neurons or processing elements contribute to network function.
+ Biological neurons and brain circuits have been simultaneously
+subject to eons of evolutionary pressure.  This suggests an essential
+interdependence between neuronal form and function, on the one
+hand, and the overall architecture and operation of biological
+neural nets, on the other.  Therefore reverse-engineering the
+circuits of the brain appears likely to reveal design principles
+that rely upon neuronal properties.  These principles may have
+maximum utility in the design of artificial neural nets that are
+constructed of processing elements with greater similarity to
+biological neurons than those which are used in contemporary designs.
+<P>
+Spatiotemporal extent is perhaps the most obvious difference between
+real neurons and processing elements.  The processing element
+of most artificial neural nets is essentially a point in time
+and space.  Its activation level is the instantaneous sum of its
+synaptic inputs.  Of particular relevance to Hebbian learning
+rules, all synapses are exposed to the same activation level.
+ These simplifications may insure analytical and implementational
+simplicity, but they deviate sharply from biological reality.
+ Membrane potential, the biological counterpart of activation
+level, is neither instantaneous nor spatially uniform.  Every
+cell has finite membrane capacitance, and all ionic currents are
+finite, so membrane potential must lag behind synaptic inputs.
+ Furthermore, membrane capacitance and cytoplasmic resistance
+dictate that membrane potential will almost never be uniform throughout
+a living neuron embedded in the circuitry of the brain.  The combination
+of ever-changing synaptic inputs with cellular anatomical and
+biophysical properties guarantees the existence of fluctuating
+electrical gradients.
+<P>
+Consider the task of building a massively parallel neural net
+from processing elements with such &quot;nonideal&quot; characteristics.
+ Imagine moreover that the input surface of each processing element
+is an extensive, highly branched structure over which approximately
+10,000 synaptic inputs are distributed.  It might be tempting
+to try to minimize or work around the limitations imposed by device
+physics.  However, a better strategy might be to exploit the computational
+consequences of these properties by making them part of the design,
+thereby turning these apparent weaknesses into strengths.
+<P>
+To facilitate an understanding of the spatiotemporal dynamics
+of electrical signaling in neurons, we have developed a new theoretical
+approach to linear electrotonus and a new way to make practical
+use of this theory.  We present this method and illustrate its
+application to the analysis of synaptic interactions in hippocampal
+pyramidal cells.
+<P>
+<H2>2  THEORETICAL BACKGROUND</H2>
+<P>
+Our method draws upon and extends the results of two prior approaches:
+ cable theory and two-port analysis.
+<P>
+<H3>2.1  CABLE THEORY</H3>
+<P>
+The modern use of cable theory in neuroscience began almost four
+decades ago with the work of Rall (1977).  Much of the attraction
+of cable theory derives from the conceptual simplicity of the
+steady-state decay of voltage with distance along an infinite
+cylindrical cable:  
+<P><CENTER><IMG SRC="expdecay.gif" WIDTH=98 HEIGHT=24></CENTER><P>
+where <I>x</I> is physical distance and 
+<IMG SRC="lambda.gif" WIDTH=12 HEIGHT=16 ALIGN=texttop>
+is the length constant.  This exponential relationship makes it
+useful to define the electrotonic distance <I>X</I> as the logarithm
+of the signal attenuation:  <IMG SRC="xeqln.gif" WIDTH=98 HEIGHT=18 ALIGN=texttop>.  
+In an infinite cylindrical cable,
+electrotonic distance is directly proportional to physical distance:
+<IMG SRC="xclass.gif" WIDTH=56 HEIGHT=18 ALIGN=texttop>.  
+<P>
+However, cable theory is difficult to apply to real neurons since
+dendritic trees are neither infinite nor cylindrical.  Because
+of their anatomical complexity and irregular variations of branch
+diameter and length, attenuation in neurons is not an exponential
+function of distance.  Even if a cell met the criteria that would
+allow its dendrites to be reduced to a finite equivalent cylinder
+(Rall 1977), voltage attenuation would not bear a simple exponential
+relationship to <I>X</I> but instead would vary inversely with
+a hyperbolic function (Jack et al. 1983).
+<P>
+<H3>2.2  TWO-PORT THEORY</H3>
+<P>
+Because of the limitations and restrictions of cable theory, Carnevale
+and Johnston (1982) turned to two-port analysis.  Among their
+conclusions, three are most relevant to this discussion.
+<P>
+<CENTER><IMG SRC="fig1r.gif" WIDTH=305 HEIGHT=155></CENTER>
+<P>
+<CENTER>Figure 1:  Attenuation is direction-dependent.</CENTER>
+<P>
+The first is that signal attenuation depends on the direction
+of signal propagation.  Suppose that <I>i</I> and <I>j</I> are
+two points in a cell where <I>i</I> is &quot;upstream&quot; from
+<I>j</I> (voltage is spreading from <I>i</I> to <I>j</I>), and
+define the voltage attenuation from <I>i</I> to <I>j</I>:  
+<P>
+<CENTER><IMG SRC="avijdef.gif" WIDTH=73 HEIGHT=28></CENTER>
+<P> 
+Next suppose that the direction of signal propagation is reversed,
+so that <I>j</I> is now upstream from <I>i</I>, and define the
+voltage attenuation 
+<P>
+<CENTER><IMG SRC="ajidef.gif" WIDTH=74 HEIGHT=28></CENTER>
+<P> 
+In general these two attenuations will not be equal:  
+<P>
+<CENTER><IMG SRC="aijneaji.gif" WIDTH=60 HEIGHT=28></CENTER>
+<P> 
+They also showed that voltage attenuation in one direction is
+identical to current attenuation in the opposite direction (Carnevale
+and Johnston 1982).  Suppose current 
+<IMG SRC="ii.gif" WIDTH=12 HEIGHT=18 ALIGN=texttop> 
+enters the cell at <I>i</I>,
+and the current that is captured by a voltage clamp at <I>j</I> is 
+<IMG SRC="ij.gif" WIDTH=16 HEIGHT=22 ALIGN=texttop>,
+and define the current attenuation 
+<P>
+<CENTER><IMG SRC="aiijdef.gif" WIDTH=70 HEIGHT=28></CENTER>
+<P>
+Because of the directional reciprocity between current and voltage attenuation, 
+<P>
+<CENTER><IMG SRC="aieqav1.gif" WIDTH=58 HEIGHT=28></CENTER>
+<P>
+Similarly, if we interchange the current entry and voltage clamp sites, the
+current attenuation ratio would be 
+<P>
+<CENTER><IMG SRC="aieqav2.gif" WIDTH=61 HEIGHT=28></CENTER>
+<P>
+Finally, they found that charge and DC current attenuation in
+the same direction are identical (Carnevale and Johnston 1982). 
+Therefore the spread of electrical signals between any two points
+is completely characterized by the voltage attenuations in both
+directions.
+<P>
+<H3>2.3  THE ELECTROTONIC TRANSFORMATION</H3>
+<P>
+The basic idea of the electrotonic transformation is to remap
+the cell from anatomical space into &quot;electrotonic space,&quot;
+where the distance between points reflects the attenuation of
+an electrical signal spreading between them.  Because of the critical
+role of membrane potential in neuronal function, it is usually
+most appropriate to deal with voltage attenuations.
+<P>
+<H4>2.3.1  The Distance Metric</H4>
+<P>
+We use the logarithm of attenuation between points as the distance
+metric in electrotonic space:  
+<P>
+<CENTER><IMG SRC="lijdef.gif" WIDTH=70 HEIGHT=22></CENTER>
+<P>
+(Brown et al. 1992, Zador et al.
+1991).  To appreciate the utility of this definition, consider
+voltage spreading from point <I>i</I> to point <I>j</I>, and suppose
+that <I>k</I> is on the direct path between <I>i</I> and <I>j</I>.
+ The voltage attenuations are 
+<P>
+<CENTER><IMG SRC="aikdef.gif" WIDTH=74 HEIGHT=24></CENTER>
+<P>
+<CENTER><IMG SRC="akjdef.gif" WIDTH=77 HEIGHT=28></CENTER>
+<P>
+<CENTER>and</CENTER>
+<P>
+<CENTER><IMG SRC="aeqaxa.gif" WIDTH=134 HEIGHT=28></CENTER>
+<P>
+This last equation and our definition of <I>L</I> establish the additive property 
+of electrotonic distance 
+<P>
+<CENTER><IMG SRC="leqlpl.gif" WIDTH=94 HEIGHT=22></CENTER>
+<P>
+That is, electrotonic distances are additive
+over a path that has a consistent direction of signal propagation.
+ This justifies using the logarithm of attenuation as a metric
+for the electrical separation between points in a cell.
+<P>
+At this point several important facts should be noted.  First,
+unlike the electrotonic distance <I>X</I> of classical cable theory,
+our new definition of electrotonic distance <I>L</I> always bears
+a simple and direct logarithmic relationship to attenuation. 
+Second, because of membrane capacitance, attenuation increases
+with frequency.  Since both steady-state and transient signals
+are of interest, we evaluate attenuations at several different
+frequencies.  Third, attenuation is direction-dependent and usually
+asymmetric.  Therefore at every frequency of interest, each branch
+of the cell has two different representations in electrotonic
+space depending on the direction of signal flow.
+<P>
+<H4>2.3.2  Representing a Neuron in Electrotonic Space</H4>
+<P>
+Since attenuation depends on direction, it is necessary to construct
+transforms in pairs for each frequency of interest, one for signal
+spread away from a reference point (
+<IMG SRC="vout.gif" WIDTH=29 HEIGHT=22 ALIGN=texttop>
+) and the other for spread
+toward it (
+<IMG SRC="vin.gif" WIDTH=20 HEIGHT=22 ALIGN=texttop>
+).  The soma is often a good choice for the reference
+point, but any point in the cell could be used, and a different
+vantage point might be more appropriate for particular analyses.
+ <P>
+The only difference between using one point <I>i</I> as the reference
+instead of any other point <I>j</I> is in the direction of signal
+propagation along the direct path between <I>i</I> and <I>j</I>
+(dashed arrows in Figure 2), where 
+<IMG SRC="vout.gif" WIDTH=29 HEIGHT=22 ALIGN=texttop>
+ relative to <I>i</I> is the same as 
+<IMG SRC="vin.gif" WIDTH=20 HEIGHT=22 ALIGN=texttop>
+ relative to <I>j</I> and vice versa.  The directions
+of signal flow and therefore the attenuations along all other
+branches of the cell are unchanged.  Thus the transforms relative
+to <I>i</I> and <I>j</I> differ only along the direct path <I>ij</I>,
+and once the 
+<IMG SRC="vout.gif" WIDTH=29 HEIGHT=22 ALIGN=texttop>
+ and 
+<IMG SRC="vin.gif" WIDTH=20 HEIGHT=22 ALIGN=texttop>
+ transforms have been created for one reference
+<I>i</I>, it is easy to assemble the transforms with respect to
+any other reference <I>j</I>.
+<P>
+<CENTER><IMG SRC="fig2r.gif" WIDTH=257 HEIGHT=155></CENTER>
+<P>
+<CENTER>Figure 2:  Effect of reference point location on direction of
+signal propagation.</CENTER>
+<P>
+We have found two graphical representations of the transform to
+be particularly useful.  &quot;Neuromorphic figures,&quot; in
+which the cell is redrawn so that the relative orientation of
+branches is preserved (Figures 3 and 4), can be readily compared
+to the original anatomy for quick, &quot;big picture&quot; insights
+regarding synaptic integration and interactions.  For more quantitative
+analyses, it is helpful to plot electrotonic distance from the
+reference point as a function of anatomical distance (Tsai et
+al. 1993).
+<P>
+<H2>3  COMPUTATIONAL METHODS</H2>
+<P>
+The voltage attenuations along each segment of the cell are calculated
+from detailed, accurate morphometric data and the best available
+experimental estimates of the biophysical properties of membrane
+and cytoplasm.  Any neural simulator like NEURON (Hines 1989)
+could be used to find the attenuations for the DC 
+<IMG SRC="vout.gif" WIDTH=29 HEIGHT=22 ALIGN=texttop>
+ transform.
+ The DC 
+<IMG SRC="vin.gif" WIDTH=20 HEIGHT=22 ALIGN=texttop>
+ attenuations are more time consuming because a separate
+run must be performed for each of the dendritic terminations.
+ However, the AC attenuations impose a severe computational burden
+on time-domain simulators because many cycles are required for
+the response to settle.  For example, calculating the DC 
+<IMG SRC="vout.gif" WIDTH=29 HEIGHT=22 ALIGN=texttop>
+ attenuations
+in a hippocampal pyramidal cell relative to the soma took only
+a few iterations on a SUN Sparc 10-40, but more than 20 hours
+were required for 40 Hz (Tsai et al. 1994).  Finding the full
+set of attenuations for a 
+<IMG SRC="vin.gif" WIDTH=20 HEIGHT=22 ALIGN=texttop>
+ transform at 40 Hz would have taken
+almost three months.
+<P>
+Therefore we designed an O(N) algorithm that achieves high computational
+efficiency by operating in the frequency domain and taking advantage
+of the branched architecture of the cell.  In a series of recursive
+walks through the cell, the algorithm applies Kirchhoff's laws
+to compute the attenuations in each branch.  The electrical characteristics
+of each segment of the cell are represented by an equivalent T
+circuit.  Rather than &quot;lump&quot; the properties of cytoplasm
+and membrane into discrete resistances and capacitances, we determine
+the elements of these equivalent T circuits directly from complex
+impedance functions that we derived from the impulse response
+of a finite cable (Tsai et al. 1994).  Since each segment is treated
+as a cable rather than an isopotential compartment, the resolution
+of the spatial grid does not affect accuracy, and there is no
+need to increase the resolution of the spatial grid in order to
+preserve accuracy as frequency increases.  This is an important
+consideration for hippocampal neurons, which have long membrane
+time constants and begin to show increased attenuations at frequencies
+as low as 2 - 5 Hz (Tsai et al. 1994).  It also allows us to treat
+a long unbranched neurite of nearly constant diameter as a single
+cylinder.
+<P>
+Thus runtimes scale linearly with the number of grid points, are
+independent of frequency, and we can even reduce the number of
+grid points if the diameters of adjacent unbranched segments are
+similar enough.  A benchmark of a program that uses our algorithm
+with NEURON showed a speedup of more than four orders of magnitude
+without sacrificing accuracy (2 seconds vs. 20 hours to calculate
+the 
+<IMG SRC="vout.gif" WIDTH=29 HEIGHT=22 ALIGN=texttop>
+ attenuations at 40 Hz in a CA1 pyramidal neuron model with
+2951 grid points) (Tsai et al. 1994).
+<P>
+<H2>4  RESULTS</H2>
+<P>
+<H3>4.1  DC TRANSFORMS OF A CA1 PYRAMIDAL CELL</H3>
+<P>
+Figure 3 shows a two-dimensional projection of the anatomy of
+a rat CA1 pyramidal neuron (cell 524, left) with neuromorphic
+renderings of its DC 
+<IMG SRC="vout.gif" WIDTH=29 HEIGHT=22 ALIGN=texttop>
+ and 
+<IMG SRC="vin.gif" WIDTH=20 HEIGHT=22 ALIGN=texttop>
+ transforms (middle and right) relative
+to the soma.  The three-dimensional anatomical data were obtained
+from HRP-filled cells with a computer microscope system as described
+elsewhere (Rihn and Claiborne 1992, Claiborne 1992).  The passive
+electrical properties used to compute the attenuations were 
+<P>
+<CENTER><IMG SRC="ri.gif" WIDTH=96 HEIGHT=18></CENTER>
+<P>
+<CENTER><IMG SRC="rm.gif" WIDTH=108 HEIGHT=24></CENTER>
+<P>
+<CENTER>and </CENTER>
+<P>
+<CENTER><IMG SRC="cm.gif" WIDTH=104 HEIGHT=24></CENTER>
+<P>
+(for nonzero frequencies, not shown here) (Spruston and Johnston 1992).
+<P>
+<CENTER><IMG SRC="fig3s.gif" WIDTH=352 HEIGHT=198></CENTER>
+<P>
+<CENTER>Figure 3:  CA1 pyramidal cell anatomy (cell 524, left) with neuromorphic 
+renderings of 
+<IMG SRC="vout.gif" WIDTH=29 HEIGHT=22 ALIGN=texttop>
+ (middle) and 
+<IMG SRC="vin.gif" WIDTH=20 HEIGHT=22 ALIGN=texttop>
+ (right) transforms at DC.</CENTER>
+<P>
+The <IMG SRC="vout.gif" WIDTH=29 HEIGHT=22 ALIGN=texttop>
+ transform is very compact, indicating that voltage propagates
+from the soma into the dendrites with relatively little attenuation.
+ The basilar dendrites and the terminal branches of the primary
+apical dendrite are almost invisible, since they are nearly isopotential
+along their lengths.  Despite the fact that the primary apical
+dendrite has a larger diameter than any of its daughter branches,
+most of the voltage drop for somatofugal signaling is in the primary
+apical.  Therefore it accounts for almost all of the electrotonic
+length of the cell in the 
+<IMG SRC="vout.gif" WIDTH=29 HEIGHT=22 ALIGN=texttop>
+ transform.
+<P>
+The 
+<IMG SRC="vin.gif" WIDTH=20 HEIGHT=22 ALIGN=texttop>
+ transform is far more extensive, but most of the electrotonic
+length of the cell is now in the basilar and terminal apical branches.
+ This reflects the loading effect of downstream membrane on these
+thin dendritic branches.
+<P>
+<H3>4.2  SYNAPTIC INTERACTIONS</H3>
+<P>
+The transform can also give clues to possible effects of electrotonic
+architecture on voltage-dependent forms of associative synaptic
+plasticity and other kinds of synaptic interactions.  Suppose
+the cell of Figure 3 receives a weak or &quot;student&quot; synaptic
+input located <IMG SRC="400um.gif" WIDTH=54 HEIGHT=17 ALIGN=texttop>
+ from the soma on the primary apical dendrite,
+and a strong or &quot;teacher&quot; input is situated 
+<IMG SRC="300um.gif" WIDTH=54 HEIGHT=17 ALIGN=texttop>
+from the soma on the same dendrite.
+<P>
+<CENTER><IMG SRC="fig4ars.gif" WIDTH=302 HEIGHT=213></CENTER>
+<P>
+<CENTER>Figure 4A:  Analysis of synaptic interactions.<BR>
+Scale bars are shown in Fig. 4B.</CENTER>
+<P>
+The anatomical arrangement is depicted on the left in Figure 4A
+(&quot;student&quot; = square, &quot;teacher&quot; = circle).
+ The <IMG SRC="vin.gif" WIDTH=20 HEIGHT=22 ALIGN=texttop> 
+transform with respect to the student (right figure of this
+pair) shows that voltage spreads from the teacher to the student
+synapse with little attenuation, which would favor voltage-dependent
+associative interactions.
+<P>
+<CENTER><IMG SRC="fig4brs.gif" WIDTH=300 HEIGHT=217></CENTER>
+<P>
+<CENTER>Figure 4B:  Analysis of synaptic interactions.</CENTER>
+<P>
+Figure 4B shows a different CA1 pyramidal cell in which the apical
+dendrite bifurcates shortly after arising from the soma.  Two
+teacher synapses are indicated, one on the same branch as the
+student and the other on the opposite branch.  The 
+<IMG SRC="vin.gif" WIDTH=20 HEIGHT=22 ALIGN=texttop> 
+transform with respect to the student (right figure of this pair) shows
+clearly that the teacher synapse on the same branch is closely
+coupled to the student, but the other is electrically much more
+remote and less likely to influence the student synapse.
+<P>
+<H2>5.  SUMMARY</H2>
+<P>
+The electrotonic transformation is based on a logical, internally
+consistent conceptual approach to understanding the propagation
+of electrical signals in neurons.  In this paper we described
+two methods for graphically presenting the results of the transformation:
+ neuromorphic rendering, and plots of electrotonic distance vs.
+anatomical distance.  Using neuromorphic renderings, we illustrated
+the electrotonic properties of a previously unreported hippocampal
+CA1 pyramidal neuron as viewed from the soma (cell 524, Figure
+3).  We also extended the use of the transformation to the study
+of associative interactions between &quot;teacher&quot; and &quot;student&quot;
+synapses by analyzing this cell from the viewpoint of a &quot;student&quot;
+synapse located in the apical dendrites (Figure 4A), contrasting this result
+with a different cell that had a bifurcated primary apical dendrite
+(cell 503, Figure 4B).  This demonstrates the versatility of the
+electrotonic transformation, and shows how it can convey the electrical
+signaling properties of neurons in ways that are quickly and easily
+comprehended.
+<P>
+This understanding is important for several reasons.  First, electrotonus
+affects the integration and interaction of synaptic inputs, regulates
+voltage-dependent mechanisms of synaptic plasticity, and influences
+the interpretation of intracellular recordings.  In addition,
+phylogeny, development, aging, and response to injury and disease
+are all accompanied by alterations of neuronal morphology, some
+subtle and some profound.  The significance of these changes for
+brain function becomes clear only if their effects on neuronal
+signaling are reckoned.  Finally, there is good reason to expect
+that neuronal electrotonus is highly relevant to the design of
+artificial neural networks.
+<P>
+<H2>Acknowledgments</H2>
+<P>
+We thank R.B. Gonzales and M.P. O'Boyle for their contributions
+to the morphometric analysis, and Z.F. Mainen for assisting in
+the initial development of graphical rendering.  This work was
+supported in part by ONR, ARPA, and the Yale Center for Theoretical
+and Applied Neuroscience (CTAN).
+<P>
+<H2>References</H2>
+<P>
+Brown, T.H., Zador, A.M., Mainen, Z.F. and Claiborne, B.J.  Hebbian
+computations in hippocampal dendrites and spines.  In:  <I>Single
+Neuron Computation</I>, eds. McKenna, T., Davis, J. and Zornetzer,
+S.F., New York, Academic Press, 1992, pp. 81-116.
+<P>
+Carnevale, N.T. and Johnston, D..  Electrophysiological characterization
+of remote chemical synapses.  <I>J. Neurophysiol. 47</I>:606-621,
+1982.
+<P>
+Claiborne, B.J.  The use of computers for the quantitative, three-dimensional
+analysis of dendritic trees.  In:  <I>Methods in Neuroscience.
+ Vol. 10: Computers and Computation in the Neurosciences</I>,
+ed. Conn, P.M., New York, Academic Press, 1992, pp. 315-330.
+<P>
+Hines, M.  A program for simulation of nerve equations with branching
+geometries.  <I>Internat. J. Bio-Med. Computat.</I> 24:55-68,
+1989. 
+<P>
+Rall, W..  Core conductor theory and cable properties of neurons.
+ In:  <I>Handbook of Physiology, The Nervous System</I>, ed. Kandel,
+E.R., Bethesda, MD, Am. Physiol. Soc., 1977, pp.39-98.
+<P>
+Rihn, L.L. and Claiborne, B.J.  Dendritic growth and regression
+in rat dentate granule cells during late postnatal development.
+ <I>Brain Res. Dev.</I> 54(1):115-24, 1990.
+<P>
+Spruston, N. and Johnston, D.  Perforated patch-clamp analysis
+of the passive membrane properties of three classes of hippocampal
+neurons.  <I>J. Neurophysiol.</I> 67:508-529, 1992.
+<P>
+Tsai, K.Y., Carnevale, N.T., Claiborne, B.J. and Brown, T.H. 
+Morphoelectrotonic transforms in three classes of rat hippocampal
+neurons.  <I>Soc. Neurosci. Abst.</I> 19:1522, 1993.
+<P>
+Tsai, K.Y., Carnevale, N.T., Claiborne, B.J. and Brown, T.H. 
+Efficient mapping from neuroanatomical to electrotonic space.
+ <I>Network</I> 5:21-46, 1994.
+<P>
+Zador, A.M., Claiborne, B.J. and Brown, T.H.  Electrotonic transforms
+of hippocampal neurons.  <I>Soc. Neurosci. Abst.</I> 17:1515,
+1991.
+</BODY>
+</HTML>

@@ -1,0 +1,154 @@
+{load_file("nrngui.hoc")}
+objectvar save_window_, rvp_
+objectvar scene_vector_[4]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+
+//Begin NetReadyCellGUI[0]
+{
+load_file("netbild.hoc")
+}
+{ocbox_ = new NetReadyCellGUI(1)}
+{ocbox_.tobj = new CellBuild(1)}
+{object_push(ocbox_.tobj)}
+{
+version(5.7)
+continuous = 0
+}
+{object_push(topol)}
+{
+first = 0
+slist.remove_all()
+sname = "dend"
+objref tobj
+}
+{
+tobj = new CellBuildSection("soma",0, 0, tobj, 0) slist.append(tobj)
+  tobj.position(0,0,15,0) tobj.lx=-17.7312 tobj.ly=19.6453 tobj.i3d=0
+tobj = new CellBuildSection("dend",0, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(0)
+  tobj.position(15,0,105,0) tobj.lx=58.2778 tobj.ly=-14.9043 tobj.i3d=0
+all_init()
+}
+for i=0, slist.count-1 {slist.object(i).rdses()}
+{object_pop()}
+{
+}
+{object_push(subsets)}
+{first = 0}
+{ tobj = snlist.object(0)}
+{consist()}
+{object_pop()}
+{
+}
+{object_push(geom)}
+{
+first = 0
+tobj = new GeoSpec(7)
+tobj.value = 0.1
+bild.subsets.snlist.object(0).geo.append(tobj)
+tobj = new GeoSpec(4)
+tobj.value = 500
+bild.topol.slist.object(0).geo.append(tobj)
+tobj = new GeoSpec(2)
+tobj.value = 200
+bild.topol.slist.object(1).geo.append(tobj)
+tobj = new GeoSpec(3)
+tobj.value = 1
+bild.topol.slist.object(1).geo.append(tobj)
+set_default()
+}
+{object_pop()}
+{
+}
+{object_push(memb)}
+{first=0}
+{
+tobj = new FakeMechStan(0)
+tobj.value = 100
+tobj.set_default()
+tobj = new MStanWrap(tobj, 0)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{
+tobj = new FakeMechStan(1)
+tobj.value = 1
+tobj.set_default()
+tobj = new MStanWrap(tobj, 0)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("hh")
+tobj.set("gnabar_hh", 0.12, 0)
+tobj.set("gkbar_hh", 0.036, 0)
+tobj.set("gl_hh", 0.0003, 0)
+tobj.set("el_hh", -54.3, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(0).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("pas")
+tobj.set("g_pas", 0.001, 0)
+tobj.set("e_pas", -65, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(1).ml.append(tobj)
+}
+{object_pop()}
+{
+}
+{object_push(manage)}
+{
+first = 0
+classname = "BallStick"
+etop=1 esub=1 egeom=1 emem=1
+itop=1 isub=0 igeom=0 imem=0
+bild.topol.names_off = 0
+bild.topol.circles_off = 0
+output_index = 0  output_x = 1
+thresh = 10
+}
+{object_pop()}
+{
+cexport()
+}
+{object_pop()}
+{
+save_window_=ocbox_.tobj.gtopol
+save_window_.size(-200,200,-150,150)
+scene_vector_[3] = save_window_
+ocbox_.tobj.gtopol = save_window_
+save_window_.save_name("ocbox_.tobj.gtopol")
+}
+{object_push(ocbox_)}
+stgui = new SynTypeGUI(1)
+{object_push(stgui)}
+{
+tobj = new MechanismStandard("ExpSyn")
+tobj.set("tau", 0.1, 0)
+tobj.set("e", 0, 0)
+}
+{append(tobj, "E")}
+{
+tobj = new MechanismStandard("ExpSyn")
+tobj.set("tau", 0.5, 0)
+tobj.set("e", -80, 0)
+}
+{append(tobj, "I")}
+{object_pop()}
+nrc = new NetReadyCell(tobj, stgui.stypelist)
+nrc.name = "B"
+tobj = nrc.cb.topol.slist.object(1)
+{nrc.synlist.append(new SynTypeInstance(nrc.stype.object[0],tobj,0.8,0.5,-1))}
+tobj = nrc.cb.topol.slist.object(1)
+{nrc.synlist.append(new SynTypeInstance(nrc.stype.object[1],tobj,0.1,0.5,-1))}
+{g.size(-166.805,166.805,-125.156,125.156)}
+{object_pop()}
+{
+ocbox_.map("NetReadyCellGUI[0]", 389, 52, 404.16, 361.92)
+}
+objref ocbox_
+//End NetReadyCellGUI[0]
+
+objectvar scene_vector_[1]
+{doNotify()}

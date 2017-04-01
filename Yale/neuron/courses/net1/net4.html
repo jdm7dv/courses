@@ -1,0 +1,27 @@
+<h1> Connect the cells </h1>
+<pre><font size=+2>objref nclist
+nclist = new List()
+proc netcon() { // $o1 = source cell  $o2 = target cell
+  $o1.soma nclist.append(new NetCon(&v(.5), $o2.syn, -10, 3, .003))
+}
+
+// connect the cells together
+for j=0,3 for i=0,4 for k=-1,1 {
+  netcon(cell[i][j], cell[(i+k)%5][(j+1)%5])
+}
+
+// show the connections
+proc npan() {
+  xpanel("NetCon Info")
+  for i=0, $o1.count-1 {
+    tobj = $o1.object(i)
+    sprint(tstr, "%s -> %s -> %s", tobj.precell, tobj, tobj.postcell)
+    xlabel(tstr)
+    xpvalue("weight", &tobj.weight, 1)
+    xpvalue("delay", &tobj.delay, 1)
+  }
+  xpanel()
+}
+
+s.action("npan(cvode.netconlist(\"\", section_owner(), \"\"))")
+</pre>

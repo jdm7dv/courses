@@ -1,0 +1,13 @@
+/* hhcable.hoc
+   last modified 7/12/2000 NTC
+*/
+
+load_file("nrngui.hoc")
+
+create axon
+access axon
+nseg = 75
+diam = 100
+L = 20000
+insert hh
+

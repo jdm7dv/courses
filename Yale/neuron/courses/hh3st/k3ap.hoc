@@ -1,0 +1,18 @@
+load_file("nrngui.hoc")
+load_file("single.hoc")
+makesinglecompartment()
+SingleCompartment[0].vbox.unmap
+/*
+//best fit from k3ssfit.hoc
+gbar_khh=23.235
+k1_khh=0.18644
+d1_khh=22.086
+k2_khh=0.032852
+d2_khh=45.386
+// best fit from k3taufit2.hoc
+ta1_khh=5.4192
+tk1_khh=-0.026403
+ta2_khh=2.1355
+tk2_khh=-0.00519
+*/
+load_file("k3ap.ses")

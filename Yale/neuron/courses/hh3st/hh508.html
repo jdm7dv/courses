@@ -1,0 +1,56 @@
+<h1> Reading the data -- hh508.hoc</h2>
+<pre>
+load_file("stdgui.hoc")
+
+// read hh508.dat file and display fig 3 of HH paper (page 508)
+// also display steady state  conductance as function of clamp voltage
+
+objref vc, gss, g[12], time[12]
+strdef tstr
+
+proc readdata() {local i, n, j
+//	ropen("hh508.dat")
+	vc = new Vector(13)
+	gss = new Vector(13)
+	for i=0, 11 {
+print i
+		vc.x[i+1] = fscan()
+		n = fscan()
+		g[i] = new Vector(n)
+		time[i] = new Vector(n)
+		sprint(tstr, "%g", vc.x[i+1])
+		g[i].label(tstr)
+		for j=0, n-1 {
+			time[i].x[j] = fscan()
+			g[i].x[j] = fscan()
+		}
+		g[i].add(0.24 - g[i].x[0])
+		gss.x[i+1] = g[i].x[n-1]
+	}
+	vc.x[0] = 0  gss.x[0] = 0.24
+	ropen()
+}
+
+objref g1, g2
+g1 = new Graph()
+g1.size(0,11,0,20)
+g2 = new Graph()
+g2.size(0,120,0,25)
+{
+readdata()
+for i=0, 11 g[i].plot(g1, time[i])
+gss.line(g2, vc)
+}
+
+// following is the hh.dat file
+6
+13
+0.148767 0.280702
+0.323787 0.298246
+...
+109
+11      
+0.148767 0.310345
+...
+8.786 20.931  
+</pre>

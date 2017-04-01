@@ -1,0 +1,221 @@
+{load_file("nrngui.hoc")}
+objectvar save_window_, rvp_
+objectvar scene_vector_[9]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+
+//Begin CellBuild[0]
+{
+load_file("celbild.hoc", "CellBuild")
+}
+{ocbox_ = new CellBuild(1)}
+{object_push(ocbox_)}
+{
+version(5.7)
+continuous = 1
+}
+{object_push(topol)}
+{
+first = 0
+slist.remove_all()
+sname = "axon"
+objref tobj
+}
+{
+tobj = new CellBuildSection("axon",0, 0, tobj, 0) slist.append(tobj)
+  tobj.position(0,0,60,0) tobj.lx=33.2095 tobj.ly=-6.66196 tobj.i3d=0
+tobj = new CellBuildSection("axon",1, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(0)
+  tobj.position(60,0,105,45) tobj.lx=103.268 tobj.ly=16.3711 tobj.i3d=0
+tobj = new CellBuildSection("axon",2, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(1)
+  tobj.position(105,45,165,45) tobj.lx=137.818 tobj.ly=59.558 tobj.i3d=0
+all_init()
+}
+for i=0, slist.count-1 {slist.object(i).rdses()}
+{object_pop()}
+{
+}
+{object_push(subsets)}
+{first = 0}
+{ tobj = snlist.object(0)}
+{consist()}
+{object_pop()}
+{
+}
+{object_push(geom)}
+{
+first = 0
+tobj = new GeoSpec(2)
+tobj.value = 100
+bild.subsets.snlist.object(0).geo.append(tobj)
+tobj = new GeoSpec(3)
+tobj.value = 10
+bild.subsets.snlist.object(0).geo.append(tobj)
+tobj = new GeoSpec(6)
+tobj.value = 5
+bild.subsets.snlist.object(0).geo.append(tobj)
+set_default()
+}
+{object_pop()}
+{
+}
+{object_push(memb)}
+{first=0}
+{
+tobj = new MechanismStandard("hh")
+tobj.set("gnabar_hh", 0.12, 0)
+tobj.set("gkbar_hh", 0.036, 0)
+tobj.set("gl_hh", 0.0003, 0)
+tobj.set("el_hh", -54.3, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{
+tobj = new FakeMechStan(0)
+tobj.value = 35
+tobj.set_default()
+tobj = new MStanWrap(tobj, 0)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{
+tobj = new FakeMechStan(1)
+tobj.value = 1
+tobj.set_default()
+tobj = new MStanWrap(tobj, 0)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{object_pop()}
+{
+}
+{object_push(manage)}
+{
+first = 0
+classname = "Cell"
+etop=1 esub=1 egeom=1 emem=1
+itop=1 isub=0 igeom=0 imem=0
+bild.topol.names_off = 0
+bild.topol.circles_off = 0
+output_index = 0  output_x = 1
+thresh = 10
+}
+{object_pop()}
+{
+cexport()
+}
+{object_pop()}
+{
+save_window_=ocbox_.gtopol
+save_window_.size(-200,200,-150,150)
+scene_vector_[2] = save_window_
+ocbox_.gtopol = save_window_
+save_window_.save_name("ocbox_.gtopol")
+}
+{
+ocbox_.map("CellBuild[0]", 77, 258, 822.72, 374.4)
+}
+objref ocbox_
+//End CellBuild[0]
+
+
+//Begin LinearCircuit[0]
+{
+load_file("lincir.hoc", "LinearCircuit")
+}
+{
+ocbox_ = new LinearCircuit(1)
+}
+{object_push(ocbox_)}
+{mkelm(6, 210, 140, 2, 0)}
+100000
+0
+{mklabel(0, "Control", -5.727, 2.357)}
+{mklabel(1, "e", -0.252, 10.169)}
+{mklabel(3, "Vout", 15, 15)}
+{mkelm(1, 130, 160, 2, 0)}
+100000
+{mklabel(0, "R1", 0.428, 17.841)}
+{mkelm(5, 170, 100, 2, 0)}
+{mkelm(7, 220, 30, 2, 0)}
+{mklabel(0, "axon[2](0)", 4.413, -18.0708)}
+{sel.extra_info.set("axon[2]", 0) sel.extra_info.name(sel)}
+{mkelm(7, 120, 30, 2, 0)}
+{mklabel(0, "axon[1](0)", -0.121, -13.2757)}
+{mklabel(1, "Vm", -11.63, 12.7577)}
+{sel.extra_info.set("axon[1]", 0) sel.extra_info.name(sel)}
+{mkelm(0, 160, 160, 1, 0)}
+{mkelm(1, 150, 140, 2, -1.5708)}
+100000
+{mklabel(0, "R2", -15.736, 2.357)}
+{mkelm(3, 90, 160, 2, 3.14159)}
+{mklabel(0, "VC", 1.1077, 23.595)}
+{sel.extra_info.restore()}
+3
+1 -65
+3 10
+1e+09 -65
+{mkelm(5, 70, 140, 2, 0)}
+{mkelm(0, 135, 85, 3.80789, 1.1659)}
+{mkelm(0, 235, 95, 4.74342, -1.89255)}
+{parasitic_ = 0  noconsist_ = 0}
+{graphlist.append(new LincirGraph(this, 1))}
+1
+Control I (nA)
+1 1 0.538019 0.952611 2
+0 5 -500 500 // graph size
+486 118 308.16 261.12 // box size
+// end info
+{graphlist.append(new LincirGraph(this, 1))}
+1
+Vm (mV)
+1 1 0.579553 0.957393 2
+0 5 -80 40 // graph size
+487 421 308.16 261.12 // box size
+// end info
+{g.exec_menu("Simulate")  tool(2)}
+{sel = nil}
+{object_pop()}
+{
+{
+save_window_=ocbox_.g
+save_window_.size(0,300,0,200)
+scene_vector_[3] = save_window_
+ocbox_.g = save_window_
+save_window_.save_name("ocbox_.g")
+save_window_.label(204.273, 142.357, "Control", 1, 1, 0.5, 0.5, 1)
+save_window_.label(169.748, 170.169, "e", 1, 1, 0.5, 0.5, 1)
+save_window_.label(265, 155, "Vout", 1, 1, 0.5, 0.5, 1)
+save_window_.label(130.428, 177.841, "R1", 1, 1, 0.5, 0.5, 1)
+save_window_.label(224.413, 11.9292, "axon[2](0)", 1, 1, 0.5, 0.5, 1)
+save_window_.label(119.879, 16.7243, "axon[1](0)", 1, 1, 0.5, 0.5, 1)
+save_window_.label(108.37, 62.7577, "Vm", 1, 1, 0.5, 0.5, 1)
+save_window_.label(134.264, 142.357, "R2", 1, 1, 0.5, 0.5, 1)
+save_window_.label(91.1077, 183.595, "VC", 1, 1, 0.5, 0.5, 1)
+}
+ocbox_.map("LinearCircuit[0]", 13, 118, 438.72, 257.28)
+}
+objref ocbox_
+//End LinearCircuit[0]
+
+{
+save_window_ = new Graph(0)
+save_window_.size(0,300,-80,40)
+scene_vector_[8] = save_window_
+{save_window_.view(0, -80, 300, 120, 121, 423, 300.48, 200.32)}
+flush_list.append(save_window_)
+save_window_.save_name("flush_list.")
+objectvar rvp_
+rvp_ = new RangeVarPlot("v")
+axon[0] rvp_.begin(0)
+axon[2] rvp_.end(1)
+rvp_.origin(0)
+save_window_.addobject(rvp_, 2, 1, 0.8, 0.9)
+}
+{
+xpanel("Run", 0)
+xbutton("Init & Run","run()")
+xpanel(387,25)
+}
+objectvar scene_vector_[1]
+{doNotify()}

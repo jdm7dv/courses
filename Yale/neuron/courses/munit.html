@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+  <!-- version 2.2 10:35 AM on 7/22/99 -->
+  <TITLE>MODLUNIT : changing pump units to picomoles/cm<sup>2</sup></TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h1> MODLUNIT : changing pump units to picomoles/cm<sup>2</sup> </h1>
+
+<h2> Physical System </h2>
+Calcium pump
+
+<h2> Model </h2>
+Calcium pump in previous exercise.
+
+<h2> Simulation </h2>
+The units for the pump are inappropriate
+and should be changed from mol/cm<sup>2</sup> to pmol/cm<sup>2</sup>.
+<p>
+To make the units consistent, we will have to change the factors
+indicated below in bold type.
+<p>
+<tt>
+UNITS {<br>
+ &nbsp; ...<br>
+ &nbsp; (mol) = (1)<br>
+}<br>
+<br>
+PARAMETER {<br>
+&nbsp; width = .1 (um)<br>
+ &nbsp; tau = 1 (ms)<br>
+ &nbsp; k1 = 5e8 &nbsp; (/mM-s)<br>
+ &nbsp; k2 = .25e6 &nbsp; (/s)<br>
+ &nbsp; k3 = .5e3 &nbsp; (/s)<br>
+ &nbsp; k4 = 5e0 &nbsp; (/mM-s)<br>
+ &nbsp; cabulk = .1 (uM)<br>
+ &nbsp; cao = 10 (mM)<br>
+ &nbsp; cai = 1e-3 (mM)<br>
+ &nbsp; pump0 = <b>3e-14</b> (<b>mol/cm2</b>)<br>
+}<br>
+<br>
+STATE {<br>
+ &nbsp; cam (uM) <1e-6><br>
+ &nbsp; pump (<b>mol/cm2</b>)  <<b>1e-16</b>><br>
+ &nbsp; capump (<b>mol/cm2</b>) <<b>1e-16</b>><br>
+}<br>
+<br>
+KINETIC pmp {<br>
+ &nbsp; ~ cabulk <-> cam (width/tau, width/tau)<br>
+ &nbsp; ~ cam + pump <-> capump ((<b>1e7</b>)*k1, (<b>1e10</b>)*k2)<br>
+ &nbsp; ~ capump <-> cao + pump ((<b>1e10</b>)*k3, (<b>1e10</b>)*k4)<br>
+ &nbsp; ica_pmp = (1e-7)*2*FARADAY*(f_flux - b_flux)<br>
+<br>
+ &nbsp; ~ cam << (-(ica - ica_pmp)/(2*FARADAY)*(1e7))<br>
+<br>
+ &nbsp; CONSERVE pump + capump = (<b>1e13</b>)*pump0<br>
+ &nbsp; COMPARTMENT width {cam} &nbsp; : volume has dimensions of um<br>
+ &nbsp; COMPARTMENT (<b>1e13</b>) {pump capump} &nbsp; : area is dimensionless<br>
+ &nbsp; COMPARTMENT 1(um) {cabulk}<br>
+ &nbsp; COMPARTMENT (1e3)*1(um) {cao}<br>
+<br>
+ &nbsp; cai = (.001)*cam<br>
+}<br>
+<br>
+</tt>
+<p>
+
+<h2>Exercises</h2>
+0) In the course/capump directory, copy capump.mod to temp.mod 
+and change the SUFFIX from capmp to capmp2
+<br>
+Verify that you are starting out with
+consistent units by running "modlunit temp".
+<p>
+1) Change pump0, pump, and capump to pmol/cm2.
+You may also wish to change the default value for pump0 (from 3e-12 to 3e-2)
+as well as the default absolute error tolerance for pump and capump.
+<p>
+Run "modlunit temp"
+and notice that pmol is undefined. You can replace the UNITS definition
+<pre>
+        (mol)   =       (1)  
+</pre>
+with
+<pre>
+        (pmol)  =       (pico) 
+</pre>
+and run "modlunit temp" again.
+Don't look at this <a href="munit2.html">note</a>.
+<p>
+2) The reaction quantity for pump and cam is inconsistent when
+multiplied by their respective compartment sizes.
+<p>
+Spend at most 10 minutes fixing the units so that temp.mod is
+accepted by the modlunit command.
+<p>
+3) If you had trouble.
+<a href="munit3.html">Here is how to do it systematically.</a>
+<p>
+4) Verify that the calcium current as a function of the internal
+calcium concentration is still the same as in the previous exercise.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998, 1999 by N.T. Carnevale and M.L. Hines, all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

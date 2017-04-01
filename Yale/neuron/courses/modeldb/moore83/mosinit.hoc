@@ -1,0 +1,148 @@
+load_file("nrngui.hoc")
+load_file("init.hoc")
+secondorder=2
+
+strdef figstr
+
+proc fig1a() {
+	figstr="1A : standard parameter set"
+	standard()
+	prun()
+}
+proc fig1b() {
+	figstr="1B : cool to 6.3 DegC"
+	standard()
+	tstop = 5 tstop_changed()
+	celsius = 6.3
+	prun()
+}
+proc fig1c() {
+	figstr="1C : taper axon hillock"
+	standard()
+	taper()
+	prun()
+}
+proc fig1d() {
+	figstr="1D : extend HH in dendrite"
+	standard()
+	extrahh(100)
+	prun()
+}
+
+fig1a()
+
+xpanel("Figures")
+xvarlabel(figstr)
+//xmenu("Fig 1")
+xbutton("Figure 1A", "fig1a()")
+xbutton("Figure 1B", "fig1b()")
+xbutton("Figure 1C", "fig1c()")
+xbutton("Figure 1D", "fig1d()")
+//xmenu()
+//xmenu("Figure 2")
+xbutton("Figure 2A", "fig2a()")
+xbutton("Figure 2B", "fig2b()")
+//xmenu()
+//xmenu("Fig 3")
+xbutton("Figure 3A", "fig3a()")
+xbutton("Figure 3B", "fig3b()")
+xbutton("Figure 3C", "fig3c()")
+//xmenu()
+//xmenu("Fig 4")
+xbutton("Figure 4A", "fig4a()")
+xbutton("Figure 4B", "fig4b()")
+xbutton("Figure 4C", "fig4c()")
+//xmenu()
+//xmenu("Fig 5")
+xbutton("Figure 5A", "fig5a()")
+xbutton("Figure 5B", "fig5b()")
+xbutton("Figure 5C", "fig5c()")
+xbutton("Figure 5D", "fig5d()")
+xmenu()
+xpanel(300,100)
+
+proc fig2a() {
+	figstr="2A :extend HH to 500um"
+	standard()
+	extrahh(500)
+	prun()
+}
+proc fig2b() {
+	figstr="2B :increase HH density 5-fold"
+	standard()
+	forall if (ismembrane("hh")) { gnabar_hh *= 5  gkbar_hh *= 5  gl_hh *= 5 }
+	prun()
+}
+// paper states that 3c has amplitude of -0.15uA but at this location
+// and duration, this model requires 700 nA
+proc fig3a() {
+	figstr="3A : HH throughout dendrite"
+	standard()
+	extrahh(dend.L)
+	dend stimdef(2750/3400, .2, 700)
+	prun()
+}
+proc fig3b() {
+	figstr="3B : restrict HH to 300um in dendrite"
+	standard()
+	extrahh(300)
+	dend stimdef(2750/3400, .2, 700)
+	prun()
+}
+proc fig3c() {
+	figstr="3C : no HH in dendrite"
+	standard()
+	dend stimdef(2750/3400, .2, 700)
+	tstop = 5 tstop_changed()
+	prun()
+}
+proc fig4a() {
+	figstr="4A : stimulus amp=700 (not 150 nA)"
+	standard()
+	dend stimdef(2500/3400, .2, 700)
+	tstop = 5 tstop_changed()
+	prun()
+}
+proc fig4b() {
+	figstr="4B : stimulus amp=625 (not 133.5 nA)"
+	standard()
+	dend stimdef(2500/3400, .2, 625)
+	tstop = 5 tstop_changed()
+	prun()
+}
+proc fig4c() {
+	figstr="4C : stimulus amp=1400 (not 300 nA)"
+	standard()
+	dend stimdef(2500/3400, .2, 1400)
+	tstop = 5 tstop_changed()
+	prun()
+}
+proc fig5a() {
+	figstr="5A : taper axon hillock"
+	standard()
+	taper()
+	dend stimdef(2500/3400, .2, 700)
+	prun()
+}
+proc fig5b() {
+	figstr="5B : cool to 6.3 degC"
+	standard()
+	celsius=6.3
+	dend stimdef(2500/3400, .2, 700)
+	tstop = 5 tstop_changed()
+	prun()
+}
+proc fig5c() {
+	figstr="5C : 5*HH density"
+	standard()
+	forall if (ismembrane("hh")) { gnabar_hh *= 5  gkbar_hh *= 5  gl_hh *= 5 }
+	dend stimdef(2500/3400, .2, 700)
+	prun()
+}
+proc fig5d() {
+	figstr="5D : soma stimulated, amp=105"
+	standard()
+	soma stimdef(.25, .2, 105)
+	prun()
+}
+

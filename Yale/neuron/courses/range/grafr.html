@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+  <!-- version 3.2 12:55 AM on 7/17/2000 -->
+  <TITLE>More notes on using the Grapher</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h3>
+Using the Grapher to plot threshold gmax as a function of ion channel distribution
+</h3>
+
+The following assumes you have verified that 
+<pre>
+	threshold(&AlphaSynapse[0].gmax)
+</pre>
+sets gmax to its threshold value. ie. that you have loaded thresh.hoc,
+and created a APCount[0] and AlphaSynapse[0] (eg. from PointProcessManagers).
+<p>
+
+One goal of this exercise is to show that 
+your ability to write short (e.g. 3 line) procedures or functions 
+can greatly increase the power of the GUI.
+<p>
+Most of the Graphs you create from the NEURONMainMenu are implicitly
+connected to the RunControl, in that
+<ul>
+  <li>the RunControl determines the x-axis range and number of points 
+  <li>the variables that are plotted during a run assume values that 
+	are a natural side effect of the computations performed when
+	the Init & Run button calls fadvance()
+</ul>
+
+However, in contrast to plotting a function of time, 
+the graph for the problem in this exercise needs its own independent variable 
+(not t from 0 to tstop, 
+but channel extent along the dendrite 
+(<code>taper</code>, which ranges from 0 to 1). 
+The relation between independent variable and x-axis 
+remains the typical one, i.e. you don't want to plot 
+threshold gmax vs. log(<code>taper</code>).
+<p>
+
+NEURON Main Menu / Graph / Grapher starts a general purpose tool
+for plotting functions of an arbitrary independent variable.
+We can use either of two strategies to apply it to our problem.
+<p>
+
+<OL>
+<LI>We could plot a function that computes the threshold value of
+gmax based on <code>taper</code>.
+So the first step is to write such a function:
+<pre>
+func g_thresh_taper() {
+	// channel density declines linearly, becoming 0 at the argument
+	hhtaper($1)
+	// calculate the threshold
+	return threshold(&AlphaSynapse[0].gmax)
+} 
+</pre>
+With the Grapher it then suffices to set <code>taper</code> 
+as the independent variable,
+specify the Indep Begin and Indep End values as 0 and 1 
+(the number of Steps should be dend.nseg or an integer factor of dend.nseg), 
+and use the graph scene's PlotWhat menu item to allow you to type 
+<code>g_thresh_taper(taper)</code> as the symbol name for plotting.
+<p>
+
+<LI>Alternatively, the inconvenience of having to write 
+the <code>g_thresh_taper</code> function can be overcome by using the Grapher's 
+generator statement. 
+For each value of the independent variable, 
+the generator statement is executed prior to plotting the variables on the graph. 
+Thus the PlotWhat would be used to plot <code>AlphaSynapse[0].gmax</code>,
+and a generator of
+<pre>
+	hhtaper(taper) threshold(&AlphaSynapse[0].gmax)
+</pre>
+computes gmax as a function of taper.
+
+</OL>
+
+
+<b>Caveats</b>
+<p>
+This particular application of the Grapher does have potential drawbacks.
+For one, it can waste an enormous amount of time: 
+if Steps = 100 but the dendrite has only 25 segments, 
+threshold will be calculated 4 times for each segment!
+For another, if the independent variable ranges from 0 to 10 instead of 0 to 1, 
+the procedure that distributes the channels <em>could</em> fail when taper > 1.
+You may note that this won't happen with the <code>hhtaper()</code> function 
+provided with this exercise, which has been bulletproofed 
+so that an argument > 1 is clipped to 1; 
+however, this bulletproofing of <code>hhtaper()</code> 
+doesn't prevent the Grapher from stupidly plowing ahead 
+to compute gmax for <code>thresh</code> = 1 a zillion times.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2001 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

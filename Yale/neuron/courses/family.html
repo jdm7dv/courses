@@ -1,0 +1,257 @@
+<HTML>
+<HEAD>
+  <!-- version 3R 10:00 AM on 2/23/2015 -->
+  <TITLE>Model Control: Simulation Families</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h1> Model Control: Simulation Families</h1>
+
+Modeling projects often involve executing a series of simulation runs, 
+analyzing the output of each run, and summarizing the results.
+This exercise will have you examine how the location of an excitatory synapse 
+affects the peak depolarization at the soma.
+In doing this, you will learn:
+<ul>
+  <li>how to set and determine the position of a point process under program control
+  <li>how to use the Gather Values tool for exploratory data collection
+  <li>how to use the Vector class to collect and analyze simulation output
+  <li>more about managing models with the CellBuilder
+</ul>
+
+<h2> Model </h2>
+
+This exercise uses the ball and stick model you have already seen.
+
+<h2> Simulation </h2>
+
+In the course/family directory, start NEURON with the init.hoc argument 
+<nobr>(UNIX: nrngui init.hoc ,</nobr> 
+<nobr>MSWin: double click on init.hoc).</nobr>
+This particular init file 
+<blockquote>
+<pre>
+// start the GUI and load the ballstk cellbuilder
+load_file("nrngui.hoc")
+load_file("ballstk.ses")
+
+// load an initial starting session
+load_file("start.ses")
+</pre>
+</blockquote>
+makes NEURON read the session file for a CellBuilder that 
+contains the specification of the model.  
+You will use this CellBuilder to adjust the model parameters.
+<blockquote>
+<b>Note:</b> Make sure the CellBuilder's Continuous Create button is checked.
+Otherwise the sections of the ball and stick model will not exist.
+</blockquote>
+
+
+<h3>Using the CellBuilder to manage the spatial grid</h3>
+
+1. Geometry/Specify Strategy : select d_lambda for the all subset.
+Also make sure that no section has an overriding strategy.
+<br>
+2. toggle Specify Strategy <em>off</em>
+<br>
+3. make sure that d_lambda = 0.1 space constant at 100 Hz
+<p>
+
+How many segments were created?
+<br>
+<code>forall print secname(), " nseg = ", nseg</code>
+<br>
+Where are the nodes located?
+<br>
+<code>dend for (x) print x, " ", x*L</code>
+<p>
+
+If these locations aren't particularly "esthetic," 
+you can assign nseg a new (larger) value manually 
+(odd multiples of 5 are nice).
+You <EM>could</EM> do this with a hoc statement like<br>
+<code>dend nseg=25</code><br>
+but this would be a potential cause of confusion, 
+so you should specify nseg through the CellBuilder instead.
+<blockquote>
+Remember, you are using the CellBuilder 
+with Continuous Create <em>on</em>. 
+This means that, if you change 
+the model specification in the CellBuilder, 
+or even just toggle Continuous Create off and on, 
+what you did in hoc code could be overridden.
+</blockquote>
+
+<h3>Using the Representation</h3>
+
+<b>1. BUILD THE GUI</b>
+<p>
+Set up a graphical interface that lets you apply an 
+AlphaSynapse to the model (time constant 1.0 ms, peak conductance 0.005 umho)
+while observing Vm at the middle of the soma.
+<p>
+
+<b>2. TEST THE MODEL</b>
+<p>
+Put the synapse at the proximal end of the dendrite, 
+turn on Keep Lines in the voltage graph, and run a simulation. 
+Then reduce the peak synaptic conductance to 0 and run another.
+Use View = plot to get a better look at somatic Vm.
+<p>
+What's wrong with these responses?
+(hint: increase Tstop to 50 ms and run another simulation)
+<br>
+Change dendritic e_pas to -65 mV (use the CellBuilder's Biophysics page!) 
+and try another run. 
+Does this help?  Why?
+<p>
+
+<b>3. INITIAL EXPLORATION OF THE MODEL</b>
+<p>
+Place the synapse at several different positions along the dendrite.
+Find and plot the peak amplitude of the somatic EPSP vs. synaptic location.
+<p>
+You will need the following:
+<ul>
+  <li>A procedure that moves the synapse to a specified location.
+	I have provided <A HREF="family/putsyn.ho">putsyn.hoc</A>, 
+	which contains a procedure (<code>putsyn()</code>) 
+	that takes a single numeric argument 
+	in the range <nobr>[0, 1]</nobr> (i.e. the desired synaptic location).
+	<p>
+	<code>putsyn()</code> does these things:<br>
+	1. verifies that the requested location is actually in the range <nobr>[0, 1]</nobr>
+	<br>
+	2. places the synapse in the section (uses the Point Process .loc() function)
+	<br>
+	3. since point processes are always placed at the nearest node, 
+	and nodes are located at 0, 1, and the center of each segment, 
+	<code>putsyn()</code> must determine the actual location of the synapse 
+	(uses .get_loc()). This is assigned to a global variable called <code>synloc</code> 
+	<br>
+	4. executes the statement <code>run()</code>, 
+	which has the same effect as clicking the Init & Run button.
+	<p>
+	Load putsyn.hoc (use the statement <code>xopen("putsyn.hoc")</code>,
+	and then invoke putsyn() 
+	with a couple of different arguments to see what happens.
+	<p>
+	You might also want to append the statement <code>xopen("putsyn.hoc")</code>
+	to the end of init.hoc for future use.
+	<p>
+  <li>A Gather Values tool (NEURON Main Panel / Vector / Gather Values)
+	<br>
+	Configure this to plot points  
+	whose x values are set by synloc (Variables / X variable : synloc).
+	and whose y values come from the crosshairs y value 
+	(Variables / Crosshairs Y value). 
+</ul>
+<p>
+When you are ready to use Gather Values,
+turn off Keep Lines in the graph of Vm vs. t.
+Then:
+<br>
+1. invoke <code>putsyn(0)</code>
+<br>
+2. L click on the voltage trace and move the crosshairs to the peak of the EPSP
+<br>
+3. L click on the Record Val button of the Gather Values tool
+<p>
+
+Repeat these 3 steps a couple of times, specifying a different location each time.
+After the second iteration you can use View = plot in the Gather Values graph 
+to see how things are shaping up.
+Don't worry about the sequence of locations; 
+you can always sort them in ascending order by L clicking on the "SortX" button.
+<p>
+
+<b>4. SWITCHING TO PRODUCTION MODE</b>
+<p>
+Manual data collection may be fine for initial exploration, 
+but it's no way to pursue an extensive project 
+that involves multiple experimental conditions (e.g. channel blockers) 
+or complex cellular morphologies.
+<p>
+
+Here's an outline of one approach to automating the task:
+<blockquote>
+<DL>
+  <DT>For each node along dend
+	<DD>move the synapse to that node<br>
+	run a simulation<br>
+	determine the most depolarized somatic Vm for that location<br>
+	save this value and the location in a pair of vectors<br>
+  <DT>Plot the vector of peak values vs. the vector of locations
+</DL>
+</blockquote>
+
+Use a text editor to create a procedure that implements this approach.
+Put it in a file called myprofile.hoc, and then use the command <br>
+<code>xopen("myprofile.hoc")</code><br>
+or just use the NEURON Main Menu's "File / load hoc" button 
+to make it available to your model.
+<p>
+
+You already have <code>putsyn()</code>, 
+which takes care of the second and third items in this outline.
+<br>
+It may be helpful to know about :<br>
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/general/keywords/ockeywor.html#for">
+for (x)</a>
+&nbsp&nbsp
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/general/oop.html#objref">
+objref</a>
+&nbsp&nbsp
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/general/oop.html#new">
+new</a>
+&nbsp&nbsp
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/general/classes/vector/vect.html#Vector">
+the Vector class in general</a>
+&nbsp&nbsp
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/general/classes/vector/vect.html#record">
+Vector record()</a>
+&nbsp&nbsp
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/general/classes/vector/vect2.html#max">
+Vector max()</a>
+&nbsp&nbsp
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/general/classes/vector/vect.html#append">
+Vector append()</a>
+&nbsp&nbsp
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/general/classes/vector/vect.html#plot">
+Vector plot()</a>
+&nbsp&nbsp
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/general/classes/graph.html#Graph">
+the Graph class</a>
+<p>
+<A HREF="family/procskel.html">Here is a skeleton</A>
+of one possible implementation of such a procedure.
+<p>
+
+
+<b>5. THINGS TO TRY</b>
+<p>
+1. Compute the actual EPSP amplitudes by subtracting the -65 mV baseline 
+from the soma responses and plot the results.
+<p>
+2. Plot peak EPSP amplitude as a function of anatomical distance along dend in microns.
+<p>
+2. What would happen if the somatic HH currents were blocked? 
+Use the CellBuilder to reduce gnabar_hh and gkbar_hh to 0. 
+Make sure to change el_hh to -65 mV before running a new series of simulations 
+(why or why not? and what if you don't?).
+<p>
+Compare these results with what you saw when HH currents were not blocked.
+Do spike currents in the soma enhance all EPSPs, 
+or does the nature of the effect depend on synaptic location?
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2007 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

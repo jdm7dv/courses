@@ -1,0 +1,291 @@
+{load_file("nrngui.hoc")}
+objectvar save_window_, rvp_
+objectvar scene_vector_[7]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+
+//Begin ArtCellGUI[0]
+{
+load_file("netbild.hoc")
+}
+ocbox_ = new ArtCellGUI(1)
+{object_push(ocbox_)}
+{
+tobj = new MechanismStandard("NetStim")
+tobj.set("interval", 5, 0)
+tobj.set("number", 50, 0)
+tobj.set("start", 0, 0)
+tobj.set("noise", 0, 0)
+}
+{append(tobj, "SE")}
+{
+tobj = new MechanismStandard("NetStim")
+tobj.set("interval", 10, 0)
+tobj.set("number", 5, 0)
+tobj.set("start", 20, 0)
+tobj.set("noise", 0, 0)
+}
+{append(tobj, "SI")}
+{object_pop()}
+{
+ocbox_.map("ArtCellGUI[0]", 0, 0, 449.28, 291.84)
+}
+objref ocbox_
+//End ArtCellGUI[0]
+
+{WindowMenu[0].ses_gid(1, 0, 0, "cell types")}
+
+//Begin NetReadyCellGUI[0]
+{
+load_file("netbild.hoc")
+}
+{ocbox_ = new NetReadyCellGUI(1)}
+{ocbox_.tobj = new CellBuild(1)}
+{object_push(ocbox_.tobj)}
+{
+version(5.7)
+continuous = 0
+}
+{object_push(topol)}
+{
+first = 0
+slist.remove_all()
+sname = "dend"
+objref tobj
+}
+{
+tobj = new CellBuildSection("soma",0, 0, tobj, 0) slist.append(tobj)
+  tobj.position(0,0,15,0) tobj.lx=-17.7312 tobj.ly=19.6453 tobj.i3d=0
+tobj = new CellBuildSection("dend",0, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(0)
+  tobj.position(15,0,105,0) tobj.lx=58.2778 tobj.ly=-14.9043 tobj.i3d=0
+all_init()
+}
+for i=0, slist.count-1 {slist.object(i).rdses()}
+{object_pop()}
+{
+}
+{object_push(subsets)}
+{first = 0}
+{ tobj = snlist.object(0)}
+{consist()}
+{object_pop()}
+{
+}
+{object_push(geom)}
+{
+first = 0
+tobj = new GeoSpec(7)
+tobj.value = 0.1
+bild.subsets.snlist.object(0).geo.append(tobj)
+tobj = new GeoSpec(4)
+tobj.value = 500
+bild.topol.slist.object(0).geo.append(tobj)
+tobj = new GeoSpec(2)
+tobj.value = 200
+bild.topol.slist.object(1).geo.append(tobj)
+tobj = new GeoSpec(3)
+tobj.value = 1
+bild.topol.slist.object(1).geo.append(tobj)
+set_default()
+}
+{object_pop()}
+{
+}
+{object_push(memb)}
+{first=0}
+{
+tobj = new FakeMechStan(0)
+tobj.value = 100
+tobj.set_default()
+tobj = new MStanWrap(tobj, 0)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{
+tobj = new FakeMechStan(1)
+tobj.value = 1
+tobj.set_default()
+tobj = new MStanWrap(tobj, 0)
+bild.subsets.snlist.object(0).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("hh")
+tobj.set("gnabar_hh", 0.12, 0)
+tobj.set("gkbar_hh", 0.036, 0)
+tobj.set("gl_hh", 0.0003, 0)
+tobj.set("el_hh", -54.3, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(0).ml.append(tobj)
+}
+{
+tobj = new MechanismStandard("pas")
+tobj.set("g_pas", 0.001, 0)
+tobj.set("e_pas", -65, 0)
+tobj = new MStanWrap(tobj, 1)
+bild.topol.slist.object(1).ml.append(tobj)
+}
+{object_pop()}
+{
+}
+{object_push(manage)}
+{
+first = 0
+classname = "BallStick"
+etop=1 esub=1 egeom=1 emem=1
+itop=1 isub=0 igeom=0 imem=0
+bild.topol.names_off = 0
+bild.topol.circles_off = 0
+output_index = 0  output_x = 1
+thresh = 10
+}
+{object_pop()}
+{
+cexport()
+}
+{object_pop()}
+{
+save_window_=ocbox_.tobj.gtopol
+save_window_.size(-200,200,-150,150)
+scene_vector_[3] = save_window_
+ocbox_.tobj.gtopol = save_window_
+save_window_.save_name("ocbox_.tobj.gtopol")
+}
+{object_push(ocbox_)}
+stgui = new SynTypeGUI(1)
+{object_push(stgui)}
+{
+tobj = new MechanismStandard("ExpSyn")
+tobj.set("tau", 2, 0)
+tobj.set("e", 0, 0)
+}
+{append(tobj, "E")}
+{
+tobj = new MechanismStandard("ExpSyn")
+tobj.set("tau", 5, 0)
+tobj.set("e", -80, 0)
+}
+{append(tobj, "I")}
+{object_pop()}
+nrc = new NetReadyCell(tobj, stgui.stypelist)
+nrc.name = "B"
+tobj = nrc.cb.topol.slist.object(1)
+{nrc.synlist.append(new SynTypeInstance(nrc.stype.object[0],tobj,0.8,0.5,-1))}
+tobj = nrc.cb.topol.slist.object(1)
+{nrc.synlist.append(new SynTypeInstance(nrc.stype.object[1],tobj,0.1,0.5,-1))}
+{g.size(-167.429,167.429,-125.624,125.624)}
+{object_pop()}
+{
+ocbox_.map("NetReadyCellGUI[0]", 0, 0, 404.16, 361.92)
+}
+objref ocbox_
+//End NetReadyCellGUI[0]
+
+{WindowMenu[0].ses_gid(0, 0, 0, "cell types")}
+
+//Begin NetGUI[0]
+{
+load_file("netbild.hoc")
+}
+{ocbox_ = new NetGUI(1)}
+{object_push(ocbox_)}
+{mapold2new = new Vector()  missing = new List()}
+original_type("B")
+original_type("SE")
+original_type("SI")
+newnode(0, -52, -6)
+newnode(1, 15, 47)
+newnode(2, -51, 47)
+newedge(1, 0, 0, 0.01, 1)
+newedge(2, 0, 1, 0.01, 1)
+{create_ = 1  create1()}
+{g.size(-167.036,167.036,-125.555,125.555)}
+{set_alias(0)}
+{object_pop()}
+{
+ocbox_.map("NetGUI[0]", 322, 512, 527.04, 327.36)
+}
+objref ocbox_
+//End NetGUI[0]
+
+
+//Begin SpikePlot[0] for NetData[0]
+{
+load_file("netbild.hoc")
+}
+{ocbox_ = new SpikePlot(NetData[0],1)}
+{object_push(ocbox_)}
+mode = 1
+spikeplotstyle= 0
+marksize= 4
+markcolor= 1
+useline= 1
+fwindow = 100
+binwidth = 0.1
+build()
+subset_start=0
+subset_end = 3
+{g.size(0,5,0,4)}
+{object_pop()}
+{
+ocbox_.map("SpikePlot[0] for NetData[0]", 321, 134, 304.32, 333.12)
+}
+objref ocbox_
+//End SpikePlot[0] for NetData[0]
+
+{WindowMenu[0].ses_gid(0, 1, 1, "control")}
+{
+xpanel("RunControl", 0)
+v_init = -65
+xvalue("Init","v_init", 1,"stdinit()", 1, 1 )
+xbutton("Init & Run","run()")
+xbutton("Stop","stoprun=1")
+runStopAt = 5
+xvalue("Continue til","runStopAt", 1,"{continuerun(runStopAt) stoprun=1}", 1, 1 )
+runStopIn = 1
+xvalue("Continue for","runStopIn", 1,"{continuerun(t + runStopIn) stoprun=1}", 1, 1 )
+xbutton("Single Step","steprun()")
+t = 527.214
+xvalue("t","t", 2 )
+tstop = 500
+xvalue("Tstop","tstop", 1,"tstop_changed()", 0, 1 )
+dt = 0.025
+xvalue("dt","dt", 1,"setdt()", 0, 1 )
+steps_per_ms = 40
+xvalue("Points plotted/ms","steps_per_ms", 1,"setdt()", 0, 1 )
+xcheckbox("Quiet",&stdrun_quiet,"")
+realtime = 2
+xvalue("Real Time","realtime", 0,"", 0, 1 )
+xpanel(14,132)
+}
+{WindowMenu[0].ses_gid(0, 1, 1, "control")}
+{
+save_window_ = new Graph(0)
+save_window_.size(0,540,-80,40)
+scene_vector_[6] = save_window_
+{save_window_.view(0, -80, 540, 120, 653, 135, 300.48, 200.32)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addvar("B_BallStick[0].soma.v( 0.5 )", 1, 1, 0.266454, 1.03898, 2)
+}
+{WindowMenu[0].ses_gid(0, 1, 1, "control")}
+
+//Begin VariableTimeStep
+{
+ocbox_ = NumericalMethodPanel[0]
+}
+{object_push(ocbox_)}
+{
+atol_ = 0.001  CVode[0].atol(atol_)
+restore(1, 1)
+}
+{object_pop()}
+{
+ocbox_.map("VariableTimeStep", 11, 529, 272.64, 106.56)
+}
+objref ocbox_
+//End VariableTimeStep
+
+{WindowMenu[0].ses_gid(0, 1, 1, "control")}
+objectvar scene_vector_[1]
+{doNotify()}

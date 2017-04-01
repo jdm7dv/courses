@@ -1,0 +1,5 @@
+load_file("nrngui.hoc")
+load_file("single.hoc")
+makesinglecompartment()
+SingleCompartment[0].vbox.unmap
+load_file("k3ssfit.ses")

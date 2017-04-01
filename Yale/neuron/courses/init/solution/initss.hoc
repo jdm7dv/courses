@@ -1,0 +1,6 @@
+// load the GUI tools
+load_file("nrngui.hoc")
+// the model and user interface
+load_file("all.ses")
+// custom steady state init 
+load_file("ssprocinit.hoc")

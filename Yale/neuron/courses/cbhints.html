@@ -1,0 +1,172 @@
+<HTML>
+<HEAD>
+  <!-- version 2.2b 3:35 PM on 9/12/2000 -->
+  <TITLE>Using the CellBuilder</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300"
+vlink="#330099">
+
+<A NAME="startcb">
+<h2>Starting the CellBuilder</h2>
+</A>
+
+There are several ways to do this.
+<UL>
+  <LI>Under UNIX, go to the working directory of your choice
+and enter the command line </br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;nrngui</code></br>
+This makes NEURON open a hoc file that loads 
+the graphical user interface ($NEURONHOME/lib/hoc/nrngui.hoc) 
+and brings up the NEURON Main Menu. 
+  <LI>Under MSWin it is easiest to double-click 
+the nrngui icon on the desktop.
+Take a look at NEURONMainMenu / File / recent dir. 
+If your desired location appears in the menu list, select it.
+Otherwise, use NEURONMainMenu / File / working dir to 
+bring up a directory browser 
+that you can use to navigate to the 
+desired location.
+</UL>
+
+Then select NEURONMainMenu / Build / Cell Builder to start the CellBuilder.
+<p>
+
+<h2>Using the CellBuilder</h2>
+
+Across the top of the CellBuilder there is a row of radio buttons, 
+plus a checkbox labeled "Continuous Create".
+For now you should leave the checkbox empty.
+<p>
+Use the radio buttons to select the following pages.
+
+<DL>
+  <DT><B>About</B>
+	<DD>Scan this information, but don't worry if 
+	everything isn't immediately obvious.  
+	You can reread it any time you want.
+<p>
+  <DT><B>Topology</B>
+	<DD>This is where you change the branching architecture
+	of the cell.<br>
+	Select "Make Section" from the list of actions, 
+	and then L click in the graph panel on a blank space 
+	to the right of the soma.
+	Use the other actions as necessary to make your 
+	model look like the figure in this exercise.
+<p>
+  <DT><B>Subsets</B>
+	<DD>Subsets can simplify management of models that have many sections.  
+	The CellBuilder automatically creates the "all" subset, 
+	which contains every section in the model.
+	There is no need to define subsets for the ball and stick model, 
+	so just skip this page.  
+<p>
+  <DT><B>Geometry</B>
+	<DD>	This is for setting the dimensions and 
+	spatial grid (nseg) of the soma and dendrite. 
+	<OL>
+	  <LI>Make sure the Specify Strategy button is checked.<br>  
+
+		Choose soma from the list of subsets and section names, 
+		and then select L, diam, and nseg.<br>
+		Repeat for dend.<br>
+		Note: choosing nseg lets you 
+		set the number of segments manually.
+		The CellBuilder also offers you the option of automatically 
+		adjusting nseg according to one of its built-in 
+		compartmentalization strategies; we will return to this later.
+
+	  <LI>Clear the Specify Strategy button.<br>  
+		Use the list of section names to select the 
+		soma and dendrite individually, 
+		and enter the desired dimensions in the numeric fields 
+		for L and diam.<br>
+		For now leave nseg = 1.
+	</OL>
+<p>
+  <DT><B>Biophysics</B>
+	<DD>Use this to endow the sections with biophysical properties 
+	(ionic currents, pumps, buffers etc.).
+	<OL>
+	  <LI>Specify Strategy.
+		This is for inserting biophysical mechanisms 
+		into the sections of your model 
+		(Ra and cm for "all," hh for the soma, 
+		and pas for the dend section).
+	  <LI>To examine and adjust the parameters 
+		of the mechanisms that you inserted, 
+		clear the Specify Strategy button.
+	</OL>
+<p>
+  <DT><B>Management</B>
+	<DD>
+	This panel is not used in the ballstick exercise.
+</DL>
+
+When you are done, the CellBuilder will contain a complete 
+specification of your model cell.
+However, no sections will actually exist until you click 
+on the CellBuilder's Continuous Create button.
+
+<p>
+At this point you should turn Continuous Create ON,
+because many of NEURON's GUI tools require sections to exist 
+before they can be used
+(e.g. the PointProcessManager).
+
+<h2>Saving your work</h2>
+
+This took a lot of effort and you don't want to have to do it again.
+So save the completed CellBuilder to a session file called ballstk.ses
+in the working directory course/ballstk.
+
+<p>
+To do this, start a NEURONMainMenu / Window / GroupManager.
+In the WindowGroupManager create a new group and change its name to
+Ball Stick Model.
+
+<p>
+The CellBuilder appears as the item CellBuild[0]
+in the list of ungrouped windows in the right
+panel of the WindowGroupManager.
+Click on CellBuild[0] to add it to the "Ball Stick Model" group.
+
+<p>
+Then save the "Ball Stick Model" group to a session file (call it
+ballstk.ses) with the "Save Group" button, 
+and close the WindowGroupManager.
+
+<p>
+<a href="saveses.html">
+Why didn't we just tell you to use NEURONMainMenu / File / SaveSession?
+</a>
+
+<h3>Checking what you saved</h3>
+
+Retrieve ballstk.ses with NEURONMainMenu / File / load session.
+A new CellBuilder window called CellBuild[1] will appear.
+Since Continuous Create is ON, this new CellBuilder forces 
+the creation of new sections that will replace any pre-existing 
+sections with the same names.
+NEURON's interpreter announces that this happened :
+
+<p>
+<pre>
+oc>Previously existing soma[0] points to a section which is being deleted
+Previously existing dend[0] points to a section which is being deleted
+</pre>
+
+<p>
+Check Topology, Geometry, and Biophysics. 
+When you are sure they are correct, exit NEURON.
+
+<p>
+
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2001 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY></HTML>

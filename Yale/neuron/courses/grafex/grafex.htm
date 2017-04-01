@@ -1,0 +1,208 @@
+<HTML>
+<HEAD>
+  <!-- version 3.0 10:10 PM on 7/14/2000 -->
+  <TITLE>Making graphs for publication</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<H1>
+  Working with PostScript and idraw figures
+</H1>
+<H2>
+  Exercise
+</H2>
+
+The chief aim of this exercise is to give you practice using graph windows
+and files created by NEURON.
+
+<H3>
+  The system
+</H3>
+
+A patch of squid axon membrane with surface area 100 um<SUP>2</SUP>, 
+to which a current pulse is applied to trigger an action potential.
+
+<H3>
+  The modeling experiment
+</H3>
+
+1. Start NEURON with its standard GUI with /course/grafex as the 
+working directory, 
+and invoke NEURON Main Menu / Build / single compartment 
+to create a single section with a total surface area 
+of 100 um<sup>2</sup> and nseg = 1. 
+Then insert the hh mechanism using the Distributed Mechanism Inserter 
+(the small window with checkboxes), 
+and attach a current clamp that delivers a 0.2 nA current step 
+starting at t = 0.5 ms and lasting 0.1 ms
+(use the PointProcessManager).<BR>
+Plot Vm vs. t in one graph, 
+and I<SUB>Na</SUB>, I<SUB>K</SUB>, and I<SUB>leak</SUB> vs. t in another.
+Make the colors of the current traces red, blue, and black respectively.
+Check that Tstop = 5 ms and run a simulation.
+<P>
+Note the notch in I<SUB>Na</SUB>(t). 
+If this is real, how can it be explained?
+<p>
+<IMG SRC="currents.gif" BORDER=0 HEIGHT=287 WIDTH=366 ALT="ionic currents">
+<P>
+2. Bring up a third graph with a State axis for plotting g<SUB>Na</SUB>(t)
+and g<SUB>K</SUB>(t), and repeat the simulation. 
+Are the conductance time courses what you expected?
+<BLOCKQUOTE>
+  <SMALL>Operational hint: use View = plot to automatically rescale the axes
+  of this graph. Don't like the computer's choice of X and Y ranges &amp; tick
+  marks? <A HREF="fixaxes.htm">Try this.</A></SMALL>
+</BLOCKQUOTE>
+<P>
+3. Given the outcome of part 2, what accounts for the appearance of
+I<SUB>Na</SUB>(t)? Confirm your hypothesis, or get another clue, by bringing
+up a fourth graph window to plot the time course of something else.
+<BLOCKQUOTE>
+  <SMALL>Hint: Consider entering an algebraic expression
+  into the editing field of the Plot what? tool. <A HREF="plotwhat.htm">What
+  to plot?</A> </SMALL>
+</BLOCKQUOTE>
+
+<H3>
+  Dressing up these figures for publication
+</H3>
+
+<B>Using features of NEURON's graph windows</B>
+<DL>
+  <DT>
+    Use the Color/Brush tool
+  <DD>
+    to distinguish traces clearly from each other within a graph window, and
+    to be consistent across graph windows.
+  <DT>
+    Use Change text
+  <DD>
+    to create labels as necessary
+  <DT>
+    Use Set View
+  <DD>
+    to make sure the x and y axes have reasonable ranges &amp; tick marks, e.g.
+    0 - 1 by 0.2 instead of 0.1 - 1.05 by 0.19.
+</DL>
+<P>
+1. Save a session file that contains
+<A HREF="mygui.htm">the graphical user interface you created to explore this
+problem</A>. Hint: NEURON Main Menu / File / save session.
+<P>
+2. Use the Print & File Window Manager (PFWM) 
+to make a montage of the graphs that tell the story.
+<p>
+<IMG SRC="pfwm.gif" BORDER=0 HEIGHT=213 WIDTH=344 ALT="PFWM">
+<p>
+Then:<BR>
+a. create a hard copy printout of them (PFWM / Print / To Printer).<BR>
+b. save these results to an ASCII file (PFWM / Print / Ascii). 
+Examine the <A HREF="data.txt">contents of this file</A> 
+to see the format in which the trace data from the
+different graphs were saved. Also note the values for t in the voltage, current,
+and conductance data arrays. Why does t start at 0 for voltage, -0.0125 ms
+for current, and 0.0125 ms for conductance?<BR>
+c. save the montage as an image file (idraw for UNIX, PostScript for MSWin).
+<P>
+<B>Editing the image file</B>
+<P>
+Edit and annotate a copy of the image file you created in the previous step
+to bring it to <A HREF="finfig3.gif">publishable (?) quality</A>, and make
+a hardcopy printout.
+<UL>
+  <LI>
+    mark and label features of interest
+  <LI>
+    eliminate distracting elements
+  <LI>
+    be sure plot lines use colors and styles that are distinctive within a
+    graph yet consistent between graphs
+  <LI>
+    make sure that lines are thick enough (including axes and tick marks), and
+    that labels are large enough; avoid serif typefaces in figures that will
+    be turned into slides
+  <LI>
+    align and arrange graphs vertically and horizontally for convenient side-by-side
+    comparisons
+</UL>
+<P>
+<EM>Using idraw</EM>
+<P>
+See <A HREF="idraw-readme.txt">man pages</A> (idraw-README.txt) from Vectaport.
+Other documentation (not needed for this exercise, but maybe nice to have):
+<A HREF="http://www.mit.edu:8001/afs/athena.mit.edu/contrib/iv/">user's
+guide</A> (using.idraw.ps.Z) at MIT,
+<A HREF="http://www.cern.ch/PTTOOL/Grif/Paper.html">man pages</A> (idraw.ps.Z)
+at CERN.
+<P>
+When NEURON saves a window to an idraw file, all the elements in the window
+are grouped together. To change any one of these elements, they must first
+be ungrouped (Structure/Ungroup).
+<P>
+When NEURON saves more than one window to an idraw file, the relative locations
+of the windows are not preserved--they're piled up on top of each other like
+a stack of cards. Select and move them apart one by one.
+<H3>
+  Further comments
+</H3>
+<P>
+<B>idraw and LaTeX</B>
+<P>
+Since an idraw file is an encapsulated postscript (EPS) file, it contains
+a BoundingBox statement. This has useful information for placing these figures
+in a LaTeX file, e.g. an image file named temp1.id with
+<PRE>
+%%BoundingBox: -6 2 255 163
+</PRE>
+<P>
+would be placed by
+<PRE>
+\begin{figure}[htb]    
+\begin{center} \begin{picture}(261,161)
+\special{psfile=temp1.id hoffset=6 voffset=-2}
+\end{picture} \end{center}
+\caption{HH action potential with 0.25 nA, 0.1 ms current pulse stimulus.}
+\end{figure}
+</PRE>
+<P>
+<B>Tips and tools for MSWindows</B>
+<P>
+idraw doesn't exist for MSWin 3.1, 95, 98 or NT. However, CorelDraw 8 (perhaps
+also some earlier versions, and some other vector graphics editors) can import
+and export PostScript and EPS files, including idraw files. You may have
+to tell the Registry what to do about files that end in .id, or it might
+be easiest to save your idraw files with the extension .eps in the first
+place.
+<P>
+The basic functions of vector graphics editing programs are all pretty much
+the same as those of idraw, although some operational details will be different.
+Here are some <A HREF="diffs.htm">specific differences between idraw and
+CorelDraw</A>; most other MSWin "draw" programs are likely to be closer
+to CorelDraw in these regards.
+<P>
+Whatever draw program you use, you may also want to pick up GSVIEW and
+ghostscript (available free on the WWW). These are very good for previewing
+PS &amp; EPS files, converting PS to EPS, inserting &amp; extracting TIFF
+preview images (bitmaps). Note that GNU ghostview (for UNIX/Linux) is NOT
+the same as GSVIEW, and lacks many features of the latter! Sorry, there does
+not seem to be a UNIX/Linux implementation of GSVIEW. 
+<P>
+A word about preview bitmaps appended to PostScript or EPS files. They're
+a good way to bring out cross-platform incompatibilities. TIFF and other
+preview images, while helpful for MSWin word processing programs, are not
+particularly useful under UNIX/Linux and can substantially increase
+file size. And the TIFF image "standard" is all too flexible, with the result
+that Mac TIFFs assume a different screen resolution than PC TIFFs. This
+can have very interesting side-effects that will amaze your friends and puzzle
+your collaborators.
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2001 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

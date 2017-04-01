@@ -1,0 +1,47 @@
+begintemplate Cell
+	public soma, syn, position
+	create soma
+	objref syn
+	proc init() {
+		create soma
+		soma {
+			diam = 20
+			L = 20
+			insert hh
+			syn = new ExpSyn(.5)
+			syn.tau = 1
+		}
+	}
+
+	proc position() { local l, d
+		x = $1
+		y = $2
+		soma {
+			l = L
+			d = diam
+			pt3dclear()
+			pt3dadd(x-l/2, y, 0, d)
+			pt3dadd(x+l/2, y, 0, d)
+		}
+	}
+endtemplate Cell
+
+// create two cells
+
+objref cell[2]
+for i=0,1 cell[i] = new Cell()
+
+access cell[0].soma
+
+// connect the cells together
+
+objref nclist
+nclist = new List()
+proc netcon() { // $o1 = source cell  $o2 = target cell
+	$o1.soma nclist.append(new NetCon(&v(.5), $o2.syn, -10, 3, .003))
+}
+
+
+netcon(cell[0], cell[1])
+netcon(cell[1], cell[0])
+

@@ -1,0 +1,11 @@
+/* init.hoc for stemcell exercise
+   last modified 7/12/2000 NTC
+*/
+
+// start the GUI and load stemcell.ses
+load_file("nrngui.hoc")
+
+load_file("stemcell.ses")
+
+// load an initial starting session
+load_file("start.ses")

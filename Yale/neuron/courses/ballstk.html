@@ -1,0 +1,283 @@
+<HTML>
+<HEAD>
+  <!-- version 3R 10:00 AM on 2/23/2015 -->
+  <TITLE>Ball and stick model</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300"
+vlink="#330099">
+
+<h1> Ball - Stick model </h1>
+
+<h2> Physical System </h2>
+<img src="images/pyramid.gif">
+
+<h2> Model </h2>
+<h3>Ball-Stick approximation to cell</h3>
+<img src="images/ballstk.gif">
+
+<h2> Simulation </h2>
+
+This exercise introduces the CellBuilder, 
+a graphical tool for building and managing models of individual cells.
+First you will use the CellBuilder to create a model cell, 
+which is essentially a "virtual experimental preparation."
+Then you will set up a user interface (run control, stimulator, graphs) 
+for exercising the model cell and examining simulation results.
+This user interface is analogous to the instrumentation 
+you would use in a wet lab, 
+so you might think of it as a "virtual lab rig." 
+<p>
+You will also learn a simple but effective strategy 
+for managing the simulation environment that you have set up: 
+making a kind of software wrapper that lets you conveniently 
+recreate both the experimental preparation and the lab rig.
+One advantage of this approach is that it helps to separate 
+the specification of the model cell 
+from the specification of the instrumentation.
+This modularity makes it easier to reuse the same model cell 
+in many different kinds of experiments, 
+and to perform the same kind of experiment 
+on many different model cells.
+
+<h3>Getting started</h3>
+In this exercise you will be creating several files, 
+so you need to be in a working directory 
+for which you have file "write" permission.
+Start NEURON with course/ballstk as the working directory.
+
+<UL>
+<b>Hint</b>
+<br>
+There are several ways to do this.
+  <LI>Under UNIX it is most direct 
+to go to the course/init directory 
+and enter the command line </br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;nrngui</code></br>
+  <LI>Under MSWin it is easiest to double-click 
+the nrngui icon on the desktop.
+Take a look at NEURONMainMenu / File / recent dir. 
+If course/init appears in the menu list, select it.
+Otherwise, use NEURONMainMenu / File / working dir to 
+bring up a directory browser 
+that you can use to navigate to the 
+desired location.
+</UL>
+
+
+<h3>Making the representation</h3>
+Use the CellBuilder 
+to make a simple ball and stick model that has these properties:
+<p>
+
+<TABLE BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%">
+  <TR VALIGN=top>
+	<TD>Section</TD>
+	<TD>Anatomy</TD>
+	<TD>Compartmentalization</TD>
+	<TD>Biophysics</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>soma</TD>
+	<TD>length 20 microns<br>diameter 20 microns</TD>
+	<TD>nseg = 1</TD>
+	<TD>Ra = 160 ohm cm, Cm = 1 uf/cm<SUP>2</SUP><br>
+	    Hodgkin-Huxley channels</TD>
+  </TR>
+  <TR VALIGN=top>
+	<TD>dend</TD>
+	<TD>length 1000 microns<br>diameter 5 microns</TD>
+	<TD>nseg = 1</TD>
+	<TD>Ra = 160 ohm cm, Cm = 1 uf/cm<SUP>2</SUP><br>
+	    passive with Rm = 10,000 ohm cm<SUP>2</SUP></TD>
+  </TR>
+</TABLE>
+
+<OL>
+<b>Hints</b>
+  <LI><b>Starting the CellBuilder.</b> 
+Use the NEURONMainMenu / Build / CellBuilder.
+  <LI><b><A HREF="cboview.html">Overview of the CellBuilder.</A></b>
+  <LI><b><A HREF="cbhints.html">Hints for using the CellBuilder.</A></b>
+  <LI>It may be helpful to look up these terms in the 
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/contents.html">
+on-line Help Reference</a> :
+<br>
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/neuron/geometry.html#diam">
+diam</a>
+&nbsp&nbsp
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/neuron/geometry.html#L">
+L</a>
+&nbsp&nbsp
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/neuron/topology.html#nseg">
+nseg</a>
+&nbsp&nbsp
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/neuron/mech.html#hh">
+hh</a>
+&nbsp&nbsp
+<a href="http://www.neuron.yale.edu/neuron/static/docs/help/neuron/neuron/mech.html#pas">
+pas</a>
+</OL>
+
+
+<h3>Using the Representation</h3>
+
+<dl>
+<dt>At this point you should have :
+<dd>1. entered the specification of the ball & stick model in the CellBuilder<br>
+2. created a Window Group called Ball Stick Model and added the CellBuilder 
+(with Continuous Create ON) to this group<br>
+3. saved the Ball Stick Model window group to a session file called ballstk.ses 
+and verified what you saved<br>
+4. exited NEURON
+</dl>
+
+<p>
+In the course/ballstk directory, make an init.hoc file with the contents
+<pre>
+	// load the GUI tools
+	load_file("nrngui.hoc")
+	// your specification of the model
+	load_file("ballstk.ses")
+	// your GUI
+	load_file("start.ses")
+</pre>
+Make a beginning start.ses file with the single line
+<pre>
+	print "ready!"
+</pre>
+
+<table border=0 width=400>	<!-- begin table-->
+<tr>
+<td width=20><br></td>
+<td width=380>		<!-- total = 400 -->
+<SMALL>
+Actually you could put any innocuous statements you like 
+into the start.ses file, 
+because you'll be overwriting them with a custom user interface
+that you construct later. 
+</SMALL>
+</td>
+</tr>
+</table>			<!-- end of table-->
+<p>
+
+Start NEURON with the init.hoc argument.
+Under unix use the command
+<pre>
+	nrngui init.hoc
+</pre>
+Under MSWindows just double click on the init.hoc file in the file manager
+("Windows Explorer").
+
+
+<h2>Exercises</h2>
+
+1. Establish that the representation in the computer basically corresponds
+to the model.<br>
+Connectivity? (type <code>topology()</code>)<br>
+Soma area? (type <code>area(0.5)</code>)<br>
+Are the properties what you expect? Try
+<pre>
+	soma psection()
+	dend psection()
+</pre>
+
+<p>
+2. Use the NEURONMainMenu toolbar to construct an interface 
+that allows you to 
+inject a stimulus current at the soma and observe a plot 
+of somatic Vm vs. time.
+
+<p>
+3. When a current stimulus is injected into the soma, 
+does it flow into the dendrite properly?
+Hint: examine a space plot of membrane potential.
+
+
+<h2>Saving and Retrieving the Complete Experimental Setup</h2>
+
+You now have a complete setup for doing simulation experiments.
+The CellBuilder, which specifies your "experimental preparation," 
+is safe because you tucked it away in the Ball Stick Model window group 
+and saved that to the session file ballstk.ses.
+However, the GUI that constitutes your nicely-configured "lab rig" 
+(the RunControl, PointProcessManager, graph of v vs. t, and space plot windows) 
+could easily be lost if you exited NEURON prematurely 
+or if the computer crashed, and it would be very tedious to re-create.
+To make it easy to reconstitute the virtual lab rig, 
+you should use the WindowGroupManager to save these windows 
+to a session file.
+This will allow you to immediately begin with the current GUI.
+
+<ol>
+  <li>Bring up the WindowGroupManager (NEURONMainMenu / Window / Group Manager).
+      Note that the Ball Stick Model group already exists (left panel of WGM).
+      The names of the windows that constitute your lab rig appear in the 
+      "Ungrouped Windows" list (right panel of WGM).
+  <li>Create a new group and give it a descriptive name, e.g. Lab Rig.
+  <li>Click on each of the items in the Ungrouped Windows list 
+      to add them to the Lab Rig group.
+  <li>Save the Lab Rig group to a session file called start.ses
+</ol>
+
+<p>
+Test it by using NEURONMainMenu / File / load session to retrieve 
+the start.ses file.
+Copies of the "lab rig" windows should overlay the originals.
+If so, exit NEURON and then restart it with the init.hoc argument.
+It should start up with the windows that you saved.
+
+<h2>More exercises</h2>
+
+4. How does the number of segments in the dendrite affect your simulation?
+Turn on Keep Lines in the graph of Vm vs. t 
+so you will be able to compare runs with different nseg.<br>
+Then in the interpreter window issue the command 
+<br>
+<CODE>&nbsp&nbsp dend nseg *= 3</CODE>
+<br> 
+and run a new simulation.
+Repeat until you no longer see a significant difference between consecutive runs.<br>
+Then use the command
+<br>
+<CODE>&nbsp&nbsp dend print nseg</CODE>
+<br> 
+to see how many dendritic segments were required.
+
+<p>
+5. Is the time step (dt) short enough?
+
+<p>
+6. Here's something you should try on your own, perhaps after class tonight:
+<A HREF="cbcreate.html">
+using the CellBuilder to manage models "on the fly."
+</A>
+
+
+<h2>Footnotes and Asides</h2>
+
+<ol>
+  <li>Here are sample <a href="ballstk/init.ho">init.hoc</a> and 
+	<a href="ballstk/start.se">initial start.ses</a> files.
+<p>
+  <LI>The CellBuilder can be used to make your own "digital stem cells." 
+	If you have a model cell that you would like to return to later, 
+	save the CellBuilder to a session file.
+	To bring the model back, just retrieve the session file.  
+	This is a good way to create an "evolutionary sequence" 
+        of models that differ only in certain key points.
+<p>
+  <LI>The CellBuilder can also be used to manage models based on 
+      detailed morphometric reconstructions.
+      This is covered in a later exercise.
+</ol>
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998-2003 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY></HTML>

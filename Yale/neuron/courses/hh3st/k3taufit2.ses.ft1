@@ -1,0 +1,67 @@
+ParmFitness: k3.mod tau fits
+	FitnessGenerator: 109
+		RunConstant:	SEClamp[0].amp2 109 109
+				SEClamp[0].dur1 0.3 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	FitnessGenerator: 100
+		RunConstant:	SEClamp[0].amp2 100 109
+				SEClamp[0].dur1 0.3 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	FitnessGenerator: 88
+		RunConstant:	SEClamp[0].amp2 88 109
+				SEClamp[0].dur1 0.3 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	FitnessGenerator: 76
+		RunConstant:	SEClamp[0].amp2 76 109
+				SEClamp[0].dur1 0.3 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	FitnessGenerator: 63
+		RunConstant:	SEClamp[0].amp2 63 109
+				SEClamp[0].dur1 0.3 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	FitnessGenerator: 51
+		RunConstant:	SEClamp[0].amp2 51 109
+				SEClamp[0].dur1 0.5 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	FitnessGenerator: 38
+		RunConstant:	SEClamp[0].amp2 38 109
+				SEClamp[0].dur1 0.5 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	FitnessGenerator: 32
+		RunConstant:	SEClamp[0].amp2 32 109
+				SEClamp[0].dur1 0.9 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	FitnessGenerator: 26
+		RunConstant:	SEClamp[0].amp2 26 109
+				SEClamp[0].dur1 1.1 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	FitnessGenerator: 19
+		RunConstant:	SEClamp[0].amp2 19 109
+				SEClamp[0].dur1 1.1 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	FitnessGenerator: 10
+		RunConstant:	SEClamp[0].amp2 10 109
+				SEClamp[0].dur1 1.4 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	FitnessGenerator: 6
+		RunConstant:	SEClamp[0].amp2 6 109
+				SEClamp[0].dur1 1.5 0
+		RegionFitness:	soma.g_khh( 0.5 )
+
+	Parameters:
+		"ta1_khh", 5.4192, 1e-09, 1e+09, 1, 1
+		"tk1_khh", -0.0264034, -1e+09, -1e-09, 1, 1
+		"ta2_khh", 2.13551, 1e-09, 1e+09, 1, 1
+		"tk2_khh", -0.00519, -1e+09, -1e-09, 1, 1
+End ParmFitness

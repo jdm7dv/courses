@@ -1,0 +1,44 @@
+load_file("nrngui.hoc")
+load_file("model_ex.hoc")
+cvode_active(1)
+cvode.atol(0.001)
+
+tstop=1000
+
+objref gs, b,gf
+b = new VBox()
+b.intercept(1)
+gs = new Graph()
+graphList[0].append(gs)
+gs.size(0,tstop,-70,30)
+gs.addvar("cella.v(0.5)",1,1)
+gs.addvar("cellb.v(0.5)",2,1)
+gs.color(2)
+xpanel("",1)
+xbutton("run w=0", "run0()")
+xbutton("run w>0", "run1()")
+xvalue(" w ","wi",1)
+xpanel()
+b.intercept(0)
+b.map()
+
+proc init() {
+
+	finitialize(v_init)
+	fcurrent()
+	forall {if (ismembrane("nans")) {e_pas=v_init+(ina+ik)/g_pas}}
+	cvode.re_init()
+}
+
+
+proc run0() {
+nta.weight=0
+ntb.weight=0
+run()
+}
+
+proc run1() {
+nta.weight=wi   // adjust weigths to obtain synchronization
+ntb.weight=wi   //
+run()
+}

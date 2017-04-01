@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+  <!-- version 2.2 10:55 AM on 7/20/99 -->
+  <TITLE>Vector/matrix: reading data</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+<h1>Vector/matrix: reading data</h1>
+
+<h2>Exercises</h2>
+
+1) Run the plotdata.hoc file in the vec directory. This reads the
+contents of data4.dat and displays all the lines in a Graph.
+Look at the hoc file and the format of the data file. Notice that the
+first number is the number of rows of data (Strings like #9 are not numbers.
+Numbers are strings that start with a 0-9, ., or +-.
+Modify the plotdata.hoc file so it uses a File chooser to read the file.
+<p>
+The following hints may help with this exercise.
+For information about File.chooser, in the NEURON console, type
+<pre>
+	help File
+</pre>
+or else navigate there manually with the web browser.<br>
+Is a file open for the File referenced by f? Type <tt>f.isopen()</tt><br>
+Define the chooser to be a read type: <tt>f.chooser("r")</tt><br>
+Pop up the chooser: <tt>f.chooser()</tt> : and select data4.dat<br>
+Is a file open?
+
+<p>
+2) Save these data using the Print&FileWindowManager/PrintFile/Ascii
+menu item into the file temp1.dat . Look at the format of the
+temp1.dat file. Fix the temp1.dat file so it can be read with plotdata.hoc.
+<p>
+3) The data are in a Matrix. Prove this to yourself by typing
+<tt>m</tt> and then <tt>m.printf</tt>.
+Save the matrix by opening the file with
+<tt>f.wopen("temp2.dat")</tt> and then <tt>m.fprint(f)</tt>.
+Look at the contents of the file and verify that it can be read with
+plotdata.hoc.
+<p>
+4) Pick one of the data lines into the clipboard and save it using
+the NEURONMainMenu/Vector/SaveToFile menu item as
+temp2.dat . Verify that temp2.dat can be read correctly with the
+NEURONMainMenu/Vector/RetrieveFromFile.
+Fix the temp2.dat file so it can be read with plotdata.hoc.
+
+<h2> An observation </h2>
+There are probably more data formats than there are programs that
+write data files.  Data in ASCII can generally be
+read with a hoc program (see File.scanvar, File.gets, sscanf,
+Vector.x and Matrix.x).  Some formats are very complicated and are in
+binary, e.g. PClamp binary data files.  Cases like this can only be
+handled with model descriptions like <a href="vec/clampex.mod">clampex.mod</a>.
+After the data are in a Matrix or Vector set, they are generally fairly
+easy to display with the GUI or manipulate with simple hoc programs.
+
+<P>
+<HR>
+<FONT size = -1>
+<EM>NEURON hands-on course</EM>
+<br>
+<em>Copyright &copy; 1998, 1999 by N.T. Carnevale and M.L. Hines, 
+all rights reserved.</em>
+</FONT>
+</BODY>
+</HTML>

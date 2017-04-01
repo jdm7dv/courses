@@ -1,0 +1,5 @@
+// start the NEURONMainMenu
+load_file("nrngui.hoc")
+// create a 100micron2 compartment
+load_file("single.hoc")
+makesinglecompartment()

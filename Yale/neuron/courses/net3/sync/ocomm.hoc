@@ -1,0 +1,372 @@
+// $Id: ocomm.hoc,v 1.1 2003/07/15 13:36:15 ted Exp $
+
+// load_file("ocomm.hoc")
+//* declarations
+objref g,rdm[2],ind,XO,YO,animv[2],tmpobj,tvec,vec[10],scr[2],tmpvec,veclist,ind
+for ii=0,1 rdm[ii] = new Random()
+for ii=0,9 vec[ii]=new Vector()
+for ii=0,1 scr[ii]=new Vector()
+for ii=0,1 animv[ii]=new Vector()
+tvec=new Vector()
+ind=new Vector()
+veclist=new List()
+objref sl,gx[2],drv
+sl = new SectionList() // empty list
+drv = new Vector() // drawing vector
+Gshp=0
+tveclen=0
+
+//* wire():: full non-self connectivity
+// artificial cell templates have obj.pp
+// params: ncell
+// creates nclist: list of NetCons
+proc wire () {
+  nclist.remove_all()
+  for i=0,ncell-1 for j=0,ncell-1 if (i!=j) {
+    netcon = new NetCon(cells.object(i).pp,\
+                        cells.object(j).pp)
+    nclist.append(netcon)
+  }
+}
+
+//* weight2(WT,EXCLUDE_VEC) :: set weight to WT 
+//     unless in EXCLUDE_VEC then set wt. to 0
+proc weight2 () { local i,ww
+  w = $1
+  for i=0,nclist.count-1 {
+    if ($o2.contains(i)) ww=0 else ww=w
+    nclist.object(i).weight = ww
+  }
+}
+
+//* interval2(low,high) randomly sets cells to have periods between low and high
+proc interval2 () { local i
+  low = $1
+  high = $2
+  rdm.uniform(low,high)
+  vec.resize(ncell)
+  vec.setrand(rdm)
+  for i=0, cells.count-1 {
+    cells.object(i).pp.invl = vec.x[i]
+  }
+}
+
+//* setparams() sets weight, delay, tau and intervals
+proc setparams ()  {
+  if (numarg()>=3) {w=$1 del=$2 ta=$3}
+  if (numarg()>=5) {low=$4 high=$5}
+  weight(w)
+  delay(del)
+  tau(ta)  
+  interval(low, high)
+}
+
+//* savspks() -- save to a vector
+proc savspks () { local ii
+  for ii=0,1 animv[ii].resize(0)
+  for ii=0,cells.count-1 {
+    XO=cells.object(ii)
+    if (cvode.netconlist(XO, "", "").count==0) {
+      tmpobj=new NetCon(XO.pp, nil)
+    } else {
+      tmpobj=cvode.netconlist(XO, "", "").object(0)
+    }
+    tmpobj.record(tvec,ind)
+    animv[0].append(objnum(tmpobj))
+    animv[1].append(objnum(tmpobj.pre)) // in this case are all in a row anyway
+  }
+}
+
+//* showspks() -- show spikes on graph g
+proc showspks () { local ii,x
+  g.erase
+  ind.mark(g,tvec,"O",2,2,1)
+  for ii=0,tvec.size-1 { 
+    x=tvec.x[ii]
+    g.beginline(3,1) 
+    g.line(x,ind.min) g.line(x,ind.max) 
+  }
+  g.flush()
+}
+
+//* syncer() :: returns sync measure 0 to <1
+// measures how well spikes "fill up" the time
+// assumes spike times in tvec, tstop
+// param: width
+// syncer doesn't take account of prob of overlaps 
+// due to too many spikes stuffed into too little time
+func syncer () { local t0,tt,cnt,width
+  t0=-1 width=1 cnt=0
+  for ii=0,tvec.size-1 {
+    tt=tvec.x[ii]
+    if (tt>=t0+width) {t0=tt cnt+=1}
+  }
+  return 1-cnt/(tstop/width)
+}
+
+//* autorun() changes weights
+proc autorun () { local pij
+  veclist.remove_all()
+  rvc()
+  for (pij=0.5;pij>=0.1;pij-=0.1) {
+    distwire(pij)
+    run()
+    savevec(ind,tvec)
+    print pij,syncer()
+    vec[1].append(pij) vec[2].append(syncer())
+  }
+}
+
+//** autorun1() changes connections density
+proc autorun1 () { local ii,S,pij_inc,C
+  veclist.remove_all()
+  rvc()
+  max=-0.1  pij_inc=0.1
+  S=ncell*ncell
+  vec[3].resize(0)
+  for ii=0,9 {
+    C = (1-ii*pij_inc) // percent convergence
+    w=max/C  // scale weight up as convergence goes down
+    setparams()
+    weight2(w,vec[3])
+    run()
+    savevec(ind,tvec)
+    print S-vec[3].size,syncer()
+    vec[1].append((S-vec[3].size)/S) vec[2].append(syncer())
+    rdm.discunif(0,S-1)
+    rdmunq(vec[3],0.1*S,rdm) // increase those set to 0
+  }
+}
+
+//* Utility functions
+//** savevec(vec1,vec2,...) add vectors onto veclist
+proc savevec () { local i
+  for i=1, numarg() { 
+    tmpvec = new Vector($oi.size)
+    tmpvec.copy($oi)
+    veclist.append(tmpvec)
+    tmpvec = nil
+  }
+}
+
+//** rvc() clears vec[0..9]
+proc rvc () { for ii=0,9 vec[ii].resize(0) }
+
+//** setdensity(pij) sets connection density to 0<pij<1
+proc setdensity () { local ii,S,pij,C,max
+  max=-0.1  pij=$1
+  S=nclist.count
+  rdm.discunif(0,S-1)
+  vec[3].resize(0)
+  rdmunq(vec[3],(1-pij)*S,rdm) // number to set to 0
+  C = (1-pij) // percent convergence
+  w=max/C  // scale weight up as convergence goes down
+  setparams()
+  weight2(w,vec[3])
+}
+
+//** rdmunq(vec,n,rdm) -- augment vec1 by n unique vals from rdm
+proc rdmunq () { local n,num,flag,xx,loop
+  n=$2  num=0  flag=1 loop=0
+  scr.resize(n*4) // hopefully will get what we want
+  while (flag) {
+    scr.setrand($o3)
+    for ii=0,scr.size-1 {
+      xx=scr.x[ii]
+      if (! $o1.contains(xx)) { $o1.append(xx) num+=1 }
+      if (num==n) { flag=0 break }
+    }
+    loop+=1
+    if (loop==10) { print "rdmunq ERR; inf loop" flag=0 break }
+  }
+}
+
+//** rdmord (vec,n) randomly ordered numbers 0->n-1 in vec
+proc rdmord () { local n
+  n=$2
+  rdm.uniform(0,100)
+  scr.resize(n)
+  scr.setrand(rdm)
+  scr.sortindex($o1)
+}
+
+// vcount (num,vec)
+func vcount () {
+  scr.where($o2,"==",$1)
+  return scr.size
+}
+
+//* mapping functions
+//** objnum(OBJ) -- find object number
+func objnum () {
+  sprint(temp_string_,"%s",$o1)
+  if (sscanf(temp_string_,"%*[^[][%d]",&x) != 1) x=-1
+  return x
+}
+
+//** getcnum(CELL_OBJ) return index given cell object
+func getcnum () { 
+  sprint(tstr,"%s",$o1)
+  if (sscanf(tstr,"IntIbFire[%d]",&x) != 1) x=-1
+  return x 
+}
+
+//** fconn(PREVEC,POSTVEC) places values of 
+// pre- and post-syn cells in parallel vectors
+// only lists pairs with non-zero connections
+// getcnum() returns index of cell obj
+proc fconn () {
+  $o1.resize(0) $o2.resize(0)
+  for ii=0,nclist.count-1 {
+    XO=nclist.object(ii)
+    if (XO.weight!=0) {
+      $o1.append(getcnum(XO.pre))
+      $o2.append(getcnum(XO.syn))
+    }
+  }
+}
+
+//** showconns() -- show all the connections as line segments
+proc showconns () { local pr,po
+  g.erase
+  fconn(scr[0],scr[1])
+  for ii=0,scr.size-1 {
+    pr=scr.x[ii] po=scr[1].x[ii]
+    drawline(pr,po,10)
+  }
+  g.flush()
+}
+
+//** showconv1() -- show convergence to one cell as line seg
+proc showconv1 () { local pr,po,id,colr
+  id=$1
+  if (numarg()==2) colr=$2 else colr=2
+  fconn(scr[0],scr[1])
+  for ii=0,scr.size-1 {
+    pr=scr.x[ii] po=scr[1].x[ii]
+    if (po==id) { drawline(pr,po,10,colr,3) printf("%d ",pr)}
+  }
+  print ""
+  g.flush()
+}
+
+//** showdiv1() -- show divergence from one cell as line seg
+proc showdiv1 () { local pr,po,id,colr
+  id=$1
+  if (numarg()==2) colr=$2 else colr=2
+  fconn(scr[0],scr[1])
+  for ii=0,scr.size-1 {
+    pr=scr.x[ii] po=scr[1].x[ii]
+    if (pr==id) { drawline(pr,po,10,colr,8) printf("%d ",po) }
+  }
+  print ""
+  g.flush()
+}
+
+//*** pos (cell_ind,&xi,&yi,cols) -- sets xi, yi to location on the grid
+proc pos () { local ci,cols
+  ci=$1 cols=$4
+  $&2 = ci%cols $&3=int(ci/cols)
+  print $&2,$&3
+}
+func xpos () { return $1%$2 }
+func ypos () { return int($1/$2) }
+
+//*** func distn () calc distance
+func distn () { local c1,c2,xd,yd,cols
+  c1=$1 c2=$2 cols=$3
+  xd=xpos(c1,cols)-xpos(c2,cols)
+  yd=ypos(c1,cols)-ypos(c2,cols)
+  return sqrt(xd*xd+yd*yd)
+}
+
+//*** distwire(pij)
+proc distwire () { local syn,prob,maxdist,cnt,total,C,loop
+  pij=$1
+  allsyns = nclist.count
+  total=pij*allsyns // how many syns to set
+  rdm[1].uniform(0,1) // for flipping coin
+  // maxdist==12.728 for 10x10; mindist=1 (neighbors)
+  maxdist=0.33*distn(0,ncell-1,sqrt(ncell)) // the full dist from lower left to upper right
+  maxwt=-0.9/pij  // norm wt by convergence
+  loop=cnt=0 // counters
+  for i=0,allsyns-1 nclist.object(i).weight = 0 // clear weights
+  while (cnt<total && loop<4) {
+    rdmord(vec[3],allsyns)  // test each synapse in random order
+    for ii=0,vec[3].size-1 {
+      XO=nclist.object(vec[3].x[ii]) // pick a synapse
+      // max prob of connection is 0.8*(1-mindist/maxdist)~74% for 10x10
+      // zero prob of diag connection from corner to corner
+      prob = 1.0*(1-(distn(getcnum(XO.pre),getcnum(XO.syn),sqrt(ncell))/maxdist))
+      if (rdm[1].repick<prob) {
+        XO.weight=maxwt
+        cnt+=1
+      }
+      if (cnt>=total) break // finished
+    }
+  }
+  print cnt,total
+  if (cnt<total) printf("distwire ERR: target %d, set %d\n",total,cnt)
+}
+    
+//*** drawline(beg,end,columns[,color,line_width]) 
+proc drawline () { local beg,end,cols,clr,lwid
+  beg=$1 end=$2 cols=$3
+  if (numarg()>=4) clr=$4 else clr=4
+  if (numarg()>=5) lwid=$5 else lwid=1
+  g.beginline(clr,lwid)
+  g.line(xpos(beg,cols),ypos(beg,cols))
+  g.line(xpos(end,cols),ypos(end,cols))
+}
+
+//* ternary color map
+proc ctern () {
+  $o1.colormap(3)
+  $o1.colormap(0, 255, 0, 0)
+  $o1.colormap(1, 255, 255, 0)
+  $o1.colormap(2, 0, 0, 255)
+  $o1.scale($2, $3)
+}
+
+//* animation
+//** animplot() put up the shape plot for hinton diagram
+proc animplot () {
+  gx[Gshp] = new PlotShape(sl,0)
+  flush_list.append(gx[Gshp])
+  ctern(gx[Gshp],0,2)
+  gx[Gshp].view(1,0,1.1,1.1,500,200,100,100)
+  drawcells()
+}
+
+//** drawcells() draw squares of hinton diagram
+proc drawcells () { local i,j,ny,nx
+  if (ncell!=100) { print "ERROR: drawcells() currently written for ncell=100" return }
+  gx[Gshp].erase_all
+  drv.resize(ncell)
+  xoff=1.1 yoff=0.1 wdt=0.1
+  nx=ny=10
+  for i=0,nx-1 for j=0,ny-1 gx[Gshp].hinton(&drv.x[j*nx+i],(i+.5)*wdt+xoff,(j+.5)*wdt+yoff,wdt)
+  gx[Gshp].size(1, 2.2, 0, 1.2)
+  gx[Gshp].exec_menu("Shape Plot")
+}
+
+//** chkhint(cell#) light up a location for a single cell
+proc chkhint () { drv.fill(0) drv.x[$1]=2 gx.flush() }
+
+//** anim() animates sim stored in tvec,ind
+proc anim () { local tt,tstep,ii,jj,sz
+  tstep=0.1
+  sz = ind.size-1
+  gx[Gshp].exec_menu("Shape Plot")
+  scr.copy(tvec)
+  scr.add(5*tstep)  // how many steps to keep it illuminated
+  drv.fill(0)
+  ii=jj=0 
+  for (tt=0;tt<=tstop;tt+=tstep) {
+    for (;ii<sz && tt>tvec.x[ii];ii+=1) drv.x[animv.indwhere("==",ind.x[ii])]=2
+    for (;jj<sz && tt> scr.x[jj];jj+=1) drv.x[animv.indwhere("==",ind.x[jj])]=0
+    gx[Gshp].flush
+    doEvents()
+  }
+}
+
