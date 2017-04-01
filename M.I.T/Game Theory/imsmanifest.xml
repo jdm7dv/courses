@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+          xmlns:cwsp="http://www.dspace.org/xmlns/cwspace_imscp"
+          xmlns:ocw="https://ocw.mit.edu/xmlns/ocw_imscp"
+          xmlns:lom="https://ocw.mit.edu/xmlns/LOM"
+          identifier="urn_edu.mit.ocw_14-126-game-theory-spring-2016"
+          version="2017-2-21T9:55:49"
+          cwsp:packageType="Course"
+          xml:base="14-126-spring-2016/"
+          xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 http://www.imsglobal.org/xsd/imscp_v1p1.xsd  http://www.adlnet.org/xsd/adlcp_rootv1p2 http://www.adlnet.org/xsd/adlcp_rootv1p2.xsd http://www.dspace.org/xmlns/cwspace_imscp http://www.dspace.org/xsd/cwspace_imscp/version10/cwspace_imscpv10.xsd https://ocw.mit.edu/xmlns/ocw_imscp https://ocw.mit.edu/xsd/ocw_imscp/version10/ocw_imscpv10.xsd https://ocw.mit.edu/xmlns/LOM https://ocw.mit.edu/xsd/LOM/lomv1.0/lomv1.0.xsd">
+   	<metadata>
+   		<schema>IMS Content</schema>
+        <schemaversion>1.1</schemaversion>
+        <cwsp:packageMetadata>
+            <cwsp:sourceSystem>OCW</cwsp:sourceSystem>
+            <cwsp:profile>CWSpace</cwsp:profile>
+            <cwsp:profileVersion>0.1</cwsp:profileVersion>
+        </cwsp:packageMetadata>
+        <lom:general uniqueElementName="general">
+            <lom:title uniqueElementName="title">
+				<lom:string language="en">Game Theory</lom:string>
+			</lom:title>
+			<lom:identifier>
+				<lom:catalog uniqueElementName="catalog">OCW Master Course Number</lom:catalog>
+		      	<lom:entry uniqueElementName="entry">14.126</lom:entry>
+			</lom:identifier>
+        </lom:general>
+        <lom:lifecycle uniqueElementName="lifeCycle">
+            <lom:version uniqueElementName="version">
+				<lom:string language="en">Spring 2016</lom:string>
+			</lom:version>
+            <lom:contribute>
+	            <lom:role>
+	                <lom:source uniqueElementName="source">OCW_LOMv1.0</lom:source>
+	                <lom:value uniqueElementName="value">Author</lom:value>
+	            </lom:role>
+	            <lom:entity>Manea, Mihai</lom:entity>
+	            <lom:date uniqueElementName="date">
+	                <lom:dateTime uniqueElementName="dateTime">2017-2-21</lom:dateTime>
+	            </lom:date>
+        	</lom:contribute>
+        </lom:lifecycle>
+        <lom:taxonPath>
+            <lom:source uniqueElementName="source">
+                <lom:string language="en">OCW Course Topics</lom:string>
+            </lom:source>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Social Science</lom:string>
+                </lom:entry>
+            </lom:taxon>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Economics</lom:string>
+                </lom:entry>
+            </lom:taxon>
+            
+        </lom:taxonPath>
+        <lom:taxonPath>
+            <lom:source uniqueElementName="source">
+                <lom:string language="en">OCW Course Topics</lom:string>
+            </lom:source>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Social Science</lom:string>
+                </lom:entry>
+            </lom:taxon>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Game Theory</lom:string>
+                </lom:entry>
+            </lom:taxon>
+            
+        </lom:taxonPath>        
+        <adlcp:location>contents/index.htm.xml</adlcp:location>
+    </metadata>
+    <organizations default="ocw_14-126-game-theory-spring-2016">
+        <organization identifier="ocw_14-126-game-theory-spring-2016">
+            <title>Game Theory</title>
+            <item identifier="i_14-126-game-theory-spring-2016.CourseHome"
+                  identifierref="r_contents.index.htm"
+                  ocw:sectionTemplateType="CourseHomePage"
+                  ocw:sectionTemplateVersion="2017-2-21">
+				<title>Game Theory</title>
+				<item identifier="i_14-126-game-theory-spring-2016.14-126s16-th.jpg"
+          identifierref="r_contents.14-126s16-th.jpg">
+				<title>14-126s16-th.jpg</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.14-126s16.jpg"
+          identifierref="r_contents.14-126s16.jpg">
+				<title>14-126s16.jpg</title>
+				</item>
+			</item>
+            <item identifier="i_14-126-game-theory-spring-2016.readings"
+                  identifierref="r_contents.readings.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2017-2-21">
+				<title>Readings</title>
+			</item>
+            <item identifier="i_14-126-game-theory-spring-2016.lecture-notes"
+                  identifierref="r_contents.lecture-notes.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2017-2-21">
+				<title>Lecture Notes</title>
+				<item identifier="i_14-126-game-theory-spring-2016.lecture-notes.MIT14_126S16_bayesian.pdf"
+          identifierref="r_contents.lecture-notes.MIT14_126S16_bayesian.pdf">
+				<title>14.126 Spring 2016 Bayesian Games Slides Lecture Slides</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.lecture-notes.MIT14_126S16_globalgames.pdf"
+          identifierref="r_contents.lecture-notes.MIT14_126S16_globalgames.pdf">
+				<title>14.126 Spring 2016 Global Games Lecture Slides</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.lecture-notes.MIT14_126S16_supermodular.pdf"
+          identifierref="r_contents.lecture-notes.MIT14_126S16_supermodular.pdf">
+				<title>14.126 Spring 2016 Supermodularity Lecture Slides</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.lecture-notes.MIT14_126S16_equilib.pdf"
+          identifierref="r_contents.lecture-notes.MIT14_126S16_equilib.pdf">
+				<title>14.126 Spring 2016 Equilibrium Refinement Lecture Slides</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.lecture-notes.MIT14_126S16_Extensive.pdf"
+          identifierref="r_contents.lecture-notes.MIT14_126S16_Extensive.pdf">
+				<title>14.126 Spring 2016 Extensive Form Games Lecture Slides</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.lecture-notes.MIT14_126S16_cooperative.pdf"
+          identifierref="r_contents.lecture-notes.MIT14_126S16_cooperative.pdf">
+				<title>14.126 Spring 2016 Cooperative Games Lecture Notes</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.lecture-notes.MIT14_126S16_noncoop.pdf"
+          identifierref="r_contents.lecture-notes.MIT14_126S16_noncoop.pdf">
+				<title>14.126 S16 Non-Cooperative Games Notes</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.lecture-notes.MIT14_126S16_Repeated.pdf"
+          identifierref="r_contents.lecture-notes.MIT14_126S16_Repeated.pdf">
+				<title>14.126 Spring 2016 Repeated Games Lecture Slides</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.lecture-notes.MIT14_126S16_reputation.pdf"
+          identifierref="r_contents.lecture-notes.MIT14_126S16_reputation.pdf">
+				<title>14.126 Spring 2016 Reputation Lecture Slides</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.lecture-notes.MIT14_126S16_bargaining.pdf"
+          identifierref="r_contents.lecture-notes.MIT14_126S16_bargaining.pdf">
+				<title>14.126 Spring 2016 Single-Deviation Principle and Bargaining Lecture Slides</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.lecture-notes.MIT14_126S16_gametheory.pdf"
+          identifierref="r_contents.lecture-notes.MIT14_126S16_gametheory.pdf">
+				<title>14.126 Spring 2016 GameTheory Lecture Slides</title>
+				</item>
+			</item>
+            <item identifier="i_14-126-game-theory-spring-2016.assignments"
+                  identifierref="r_contents.assignments.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2017-2-21">
+				<title>Assignments</title>
+				<item identifier="i_14-126-game-theory-spring-2016.assignments.MIT14_126S16_ProblemSet_1.pdf"
+          identifierref="r_contents.assignments.MIT14_126S16_ProblemSet_1.pdf">
+				<title>14.126 S16 Problem Set 1</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.assignments.MIT14_126S16_ProblemSet_4.pdf"
+          identifierref="r_contents.assignments.MIT14_126S16_ProblemSet_4.pdf">
+				<title>14.126 S16 Problem Set 4</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.assignments.MIT14_126S16_ProblemSet_2.pdf"
+          identifierref="r_contents.assignments.MIT14_126S16_ProblemSet_2.pdf">
+				<title>14.126 S16 Problem Set 2</title>
+				</item>
+				<item identifier="i_14-126-game-theory-spring-2016.assignments.MIT14_126S16_ProblemSet_3.pdf"
+          identifierref="r_contents.assignments.MIT14_126S16_ProblemSet_3.pdf">
+				<title>14.126 S16 Problem Set 3</title>
+				</item>
+			</item>
+            <item identifier="i_14-126-game-theory-spring-2016.syllabus"
+                  identifierref="r_contents.syllabus.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2017-2-21">
+				<title>Syllabus</title>
+			</item>
+            <item identifier="i_terms"
+                  identifierref="r_common.terms.index.htm"
+                  ocw:sectionTemplateType="GlobalSection"
+                  ocw:sectionTemplateVersion="2017-2-21">
+				<title>Legal Notices</title>
+			</item>
+            <item identifier="i_terms"
+                  identifierref="r_common.terms.index.htm"
+                  ocw:sectionTemplateType="GlobalSection"
+                  ocw:sectionTemplateVersion="2017-2-21">
+				<title>Privacy Statement</title>
+			</item>
+            <item identifier="i_terms.trademarks"
+                  identifierref="r_common.terms.trademarks.index.htm"
+                  ocw:sectionTemplateType="GlobalSection"
+                  ocw:sectionTemplateVersion="2017-2-21">
+				<title>Trademark Notices</title>
+			</item>
+        </organization>
+    </organizations>
+    <resources>
+        <resource identifier="r_contents.assignments.index.htm"
+                  type="webcontent"
+                  href="contents/assignments/index.htm">
+            <metadata>
+                <adlcp:location>contents/assignments/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/index.htm"/>
+            <dependency identifierref="webrenderrequirements.14-126-game-theory-spring-2016"/>            
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT14_126S16_cooperative.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT14_126S16_cooperative.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT14_126S16_cooperative.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT14_126S16_cooperative.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.index.htm"
+                  type="webcontent"
+                  href="contents/index.htm">
+            <metadata>
+                <adlcp:location>contents/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/index.htm"/>
+            <dependency identifierref="webrenderrequirements.14-126-game-theory-spring-2016"/>            
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT14_126S16_noncoop.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT14_126S16_noncoop.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT14_126S16_noncoop.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT14_126S16_noncoop.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT14_126S16_gametheory.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT14_126S16_gametheory.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT14_126S16_gametheory.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT14_126S16_gametheory.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT14_126S16_bayesian.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT14_126S16_bayesian.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT14_126S16_bayesian.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT14_126S16_bayesian.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT14_126S16_reputation.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT14_126S16_reputation.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT14_126S16_reputation.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT14_126S16_reputation.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT14_126S16_bargaining.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT14_126S16_bargaining.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT14_126S16_bargaining.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT14_126S16_bargaining.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.syllabus.index.htm"
+                  type="webcontent"
+                  href="contents/syllabus/index.htm">
+            <metadata>
+                <adlcp:location>contents/syllabus/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/syllabus/index.htm"/>
+            <dependency identifierref="webrenderrequirements.14-126-game-theory-spring-2016"/>            
+        </resource>
+        <resource identifier="r_contents.14-126s16.jpg"
+                  type="other" href="contents/14-126s16.jpg">
+            <metadata>
+                <adlcp:location>contents/14-126s16.jpg.xml</adlcp:location>
+            </metadata>
+            <file href="contents/14-126s16.jpg"/>
+                        
+        </resource>
+        <resource identifier="r_contents.readings.index.htm"
+                  type="webcontent"
+                  href="contents/readings/index.htm">
+            <metadata>
+                <adlcp:location>contents/readings/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/readings/index.htm"/>
+            <dependency identifierref="webrenderrequirements.14-126-game-theory-spring-2016"/>            
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT14_126S16_Extensive.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT14_126S16_Extensive.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT14_126S16_Extensive.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT14_126S16_Extensive.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT14_126S16_Repeated.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT14_126S16_Repeated.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT14_126S16_Repeated.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT14_126S16_Repeated.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.14-126s16-th.jpg"
+                  type="other"
+                  href="contents/14-126s16-th.jpg">
+            <metadata>
+                <adlcp:location>contents/14-126s16-th.jpg.xml</adlcp:location>
+            </metadata>
+            <file href="contents/14-126s16-th.jpg"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT14_126S16_globalgames.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT14_126S16_globalgames.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT14_126S16_globalgames.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT14_126S16_globalgames.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.assignments.MIT14_126S16_ProblemSet_2.pdf"
+                  type="other"
+                  href="contents/assignments/MIT14_126S16_ProblemSet_2.pdf">
+            <metadata>
+                <adlcp:location>contents/assignments/MIT14_126S16_ProblemSet_2.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/MIT14_126S16_ProblemSet_2.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT14_126S16_equilib.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT14_126S16_equilib.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT14_126S16_equilib.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT14_126S16_equilib.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.index.htm"
+                  type="webcontent"
+                  href="contents/lecture-notes/index.htm">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/index.htm"/>
+            <dependency identifierref="webrenderrequirements.14-126-game-theory-spring-2016"/>            
+        </resource>
+        <resource identifier="r_contents.assignments.MIT14_126S16_ProblemSet_3.pdf"
+                  type="other"
+                  href="contents/assignments/MIT14_126S16_ProblemSet_3.pdf">
+            <metadata>
+                <adlcp:location>contents/assignments/MIT14_126S16_ProblemSet_3.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/MIT14_126S16_ProblemSet_3.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT14_126S16_supermodular.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT14_126S16_supermodular.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT14_126S16_supermodular.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT14_126S16_supermodular.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.assignments.MIT14_126S16_ProblemSet_4.pdf"
+                  type="other"
+                  href="contents/assignments/MIT14_126S16_ProblemSet_4.pdf">
+            <metadata>
+                <adlcp:location>contents/assignments/MIT14_126S16_ProblemSet_4.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/MIT14_126S16_ProblemSet_4.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.assignments.MIT14_126S16_ProblemSet_1.pdf"
+                  type="other"
+                  href="contents/assignments/MIT14_126S16_ProblemSet_1.pdf">
+            <metadata>
+                <adlcp:location>contents/assignments/MIT14_126S16_ProblemSet_1.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/MIT14_126S16_ProblemSet_1.pdf"/>
+                        
+        </resource>        
+        <resource identifier="r_common.search.AdvancedSearch.htm"
+                  type="webcontent"
+                  href="common/search/AdvancedSearch.htm">
+            <file href="common/search/AdvancedSearch.htm"/>
+            <dependency identifierref="webrenderrequirements.14-126-game-theory-spring-2016"/>            
+        </resource>
+        <resource identifier="r_common.jsp.feedback.htm"
+                  type="webcontent"
+                  href="common/jsp/feedback.htm">
+            <file href="common/jsp/feedback.htm"/>
+            <dependency identifierref="webrenderrequirements.14-126-game-theory-spring-2016"/>            
+        </resource>
+        <resource identifier="r_common.terms.index.htm"
+                  type="webcontent"
+                  href="common/terms/index.htm">
+            <file href="common/terms/by.png"/>
+            <file href="common/terms/nc.png"/>
+            <file href="common/terms/sa.png"/>
+            <file href="common/terms/deedheadyellow.png"/>
+            <file href="common/terms/freedomsheader.png"/>
+            <file href="common/terms/limitationsheader.png"/>
+            <file href="common/terms/understandingheader.jpg"/>
+            <file href="common/terms/deedfootyellow.png"/>
+            <dependency identifierref="webrenderrequirements.14-126-game-theory-spring-2016"/>            
+        </resource>
+        <resource identifier="r_common.terms.trademarks.index.htm"
+                  type="webcontent"
+                  href="common/terms/trademarks/index.htm">
+            <file href="common/terms/trademarks/index.htm"/>
+            <dependency identifierref="webrenderrequirements.14-126-game-theory-spring-2016"/>            
+        </resource>
+        <resource identifier="webrenderrequirements.14-126-game-theory-spring-2016"
+                  type="webcontent">
+        	<file href="common/styles/base.css"/>
+        	<file href="common/styles/courses.css"/>
+        	<file href="common/styles/courses_new.css"/>
+        	<file href="common/styles/educator.css"/>
+        	<file href="common/styles/global.css"/>
+        	<file href="common/styles/grid.css"/>
+        	<file href="common/styles/highslide.css"/>
+        	<file href="common/styles/highslide-ie6.css"/>
+        	<file href="common/styles/jquery.bubblepopup.css"/>
+        	<file href="common/styles/jquery.jscrollpane.css"/>
+        	<file href="common/styles/jquery-ui.css"/>
+        	<file href="common/styles/menu.css"/>
+        	<file href="common/styles/scholar2.css"/>
+        	<file href="common/styles/media_tabs.css"/>
+        	<file href="common/styles/three_play.css"/>
+        	<file href="common/scripts/bubble-popup-offline.js"/>
+        	<file href="common/scripts/jquery.js"/>
+        	<file href="common/scripts/ocw-media-utils.js"/>
+        	<file href="common/scripts/ocw-media-utils-offline.js"/>
+        	<file href="common/scripts/highslide-with-gallery.js"/>
+        	<file href="common/scripts/jquery.bubblepopup.min.js"/>
+        	<file href="common/scripts/jquery.jscrollpane.min.js"/>
+        	<file href="common/scripts/jquery-ui.min.js"/>
+        	<file href="common/scripts/jQuizMe-uncompressed.js"/>
+        	<file href="common/scripts/ocw-offline.js"/>
+        	<file href="common/scripts/expandy.js"/>
+        	<file href="common/scripts/chart.js"/>
+        	<file href="common/scripts/jquery.anythingslider.js"/>
+        	<file href="common/images/ocw_mast.png"/>
+        	<file href="common/images/button_subscribe.png"/>
+        	<file href="common/images/icon_fb.png"/>
+        	<file href="common/images/icon_gp.png"/>
+        	<file href="common/images/icon_pin.png"/>
+        	<file href="common/images/icon_tw.png"/>
+        	<file href="common/images/icon-question-ovt.png"/>
+        	<file href="common/images/icon-question-svt.png"/>
+        	<file href="common/images/icon-question-avt.png"/>
+        	<file href="common/images/icon-question-cl.png"/>
+        	<file href="common/images/top-nav_home.png"/>
+        	<file href="common/images/button_search.png"/>
+        	<file href="common/images/bg_top.png"/>
+        	<file href="common/images/bg_social.png"/>
+        	<file href="common/images/bg_social2.png"/>
+        	<file href="common/images/bg_mega-courses.png"/>
+        	<file href="common/images/bg_center2.png"/>
+        	<file href="common/images/bg_course-nav_current.png"/>
+        	<file href="common/images/button_donate-now.png"/>
+        	<file href="common/images/logo_mit.png"/>
+        	<file href="common/images/logo_ocwc.gif"/>
+        	<file href="common/images/cc_by-nc-sa.png"/>
+        	<file href="common/images/logo_dow.png"/>
+        	<file href="common/images/logo_lockheed.png"/>
+        	<file href="common/images/logo_mathworks.png"/>
+        	<file href="common/images/logo_abinitio.png"/>
+        	<file href="common/images/logo_sapient.png"/>
+        	<file href="common/images/bg_bottom.png"/>
+        	<file href="common/images/nav_arrow.png"/>
+        	<file href="common/images/news-subscibe_bg.png"/>
+        	<file href="common/images/3play_logo.png"/>
+        	<file href="common/images/black-arrow.gif"/>
+        	<file href="common/images/trans.gif"/>
+        	<file href="common/images/arrow-bullet.gif"/>
+        	<file href="common/images/apple-touch-icon.png"/>
+        	<file href="common/images/highslide/graphics/zoomin.cur"/>
+        	<file href="common/images/highslide/graphics/zoomout.cur"/>
+        	<file href="common/images/highslide/graphics/controlbar2.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar3.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar4.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar4-hover.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar-black-border.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar-white.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar-white-small.gif"/>
+        	<file href="common/images/highslide/graphics/fullexpand.gif"/>
+        	<file href="common/images/highslide/graphics/icon.gif"/>
+        	<file href="common/images/highslide/graphics/loader.gif"/>
+        	<file href="common/images/highslide/graphics/loader.white.gif"/>
+        	<file href="common/images/highslide/graphics/resize.gif"/>
+        	<file href="common/images/highslide/graphics/close.png"/>
+        	<file href="common/images/highslide/graphics/closeX.png"/>
+        	<file href="common/images/highslide/graphics/controlbar-text-buttons.png"/>
+        	<file href="common/images/highslide/graphics/geckodimmer.png"/>
+        	<file href="common/images/highslide/graphics/scrollarrows.png"/>
+        	<file href="common/images/highslide/graphics/outlines/beveled.png"/>
+        	<file href="common/images/highslide/graphics/outlines/drop-shadow.png"/>
+        	<file href="common/images/highslide/graphics/outlines/glossy-dark.png"/>
+        	<file href="common/images/highslide/graphics/outlines/outer-glow.png"/>
+        	<file href="common/images/highslide/graphics/outlines/rounded-black.png"/>
+        	<file href="common/images/highslide/graphics/outlines/rounded-white.png"/>
+        	<file href="common/images/highslide/graphics/outlines/Outlines.psd"/>
+        	<file href="common/images/button_continue.jpg"/>
+        	<file href="common/images/button_donate.jpg"/>
+        	<file href="common/images/button_start.jpg"/>
+        	<file href="common/images/scholar_bar_chp.png"/>
+        	<file href="common/images/scholar_bar.png"/>
+        	<file href="common/images/logo_pdf.jpg"/>
+        	<file href="common/images/h2_trigger_open_close.gif"/>
+        	<file href="common/images/bookmark.gif"/>
+        	<file href="common/images/check.png"/>
+        	<file href="common/images/lightbulb.png"/>
+        	<file href="common/images/audio_file.gif"/>
+        	<file href="common/images/audio_only_slate.gif"/>
+        	<file href="common/images/video_file.gif"/>
+        	<file href="common/images/back-5.png"/>
+        	<file href="common/images/btn_next_resource.png"/>
+        	<file href="common/images/btn_previous_resource.png"/>
+        	<file href="common/images/close.png"/>
+        	<file href="common/images/inacessible.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/bottom-left.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/bottom-middle.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/bottom-right.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/middle-left.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/middle-right.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/tail-bottom.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/tail-left.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/tail-right.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/tail-top.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/top-left.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/top-middle.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/top-right.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/bottom-left.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/bottom-middle.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/bottom-right.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/middle-left.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/middle-right.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/tail-bottom.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/tail-left.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/tail-right.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/tail-top.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/top-left.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/top-middle.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/top-right.png"/>
+        	<file href="common/images/educator/classroom_next.png"/>
+        	<file href="common/images/educator/classroom_next_dim.png"/>
+        	<file href="common/images/educator/classroom_prev.png"/>
+        	<file href="common/images/educator/classroom_prev_dim.png"/>
+        	<file href="common/images/educator/edu_b-blank.png"/>
+        	<file href="common/images/educator/edu_b-blank-key.png"/>
+        	<file href="common/images/educator/edu_b-duedate.png"/>
+        	<file href="common/images/educator/edu_b-duedate-key.png"/>
+        	<file href="common/images/educator/edu_b-exam.png"/>
+        	<file href="common/images/educator/edu_b-exam-key.png"/>
+        	<file href="common/images/educator/edu_b-lab.png"/>
+        	<file href="common/images/educator/edu_b-lab-key.png"/>
+        	<file href="common/images/educator/edu_b-lab-team.png"/>
+        	<file href="common/images/educator/edu_b-lab-duedate.png"/>
+        	<file href="common/images/educator/edu_b-leclab.png"/>
+        	<file href="common/images/educator/edu_b-leclab-key.png"/>
+        	<file href="common/images/educator/edu_b-lecture.png"/>
+        	<file href="common/images/educator/edu_b-lecture-duedate.png"/>
+        	<file href="common/images/educator/edu_b-lecture-exam.png"/>
+        	<file href="common/images/educator/edu_b-lecture-key.png"/>
+        	<file href="common/images/educator/edu_b-lecture-lunch.png"/>
+        	<file href="common/images/educator/edu_b-lecture-preslab.png"/>
+        	<file href="common/images/educator/edu_b-lecture-quiz.png"/>
+        	<file href="common/images/educator/edu_b-lecture-team.png"/>
+        	<file href="common/images/educator/edu_b-lecrec-key.png"/>
+        	<file href="common/images/educator/edu_b-leclab-duedate.png"/>
+        	<file href="common/images/educator/edu_b-lecrec.png"/>
+        	<file href="common/images/educator/edu_b-lecrec-duedate.png"/>
+        	<file href="common/images/educator/edu_b-noclass-quiz.png"/>
+        	<file href="common/images/educator/edu_b-lunch.png"/>
+        	<file href="common/images/educator/edu_b-lunch-key.png"/>
+        	<file href="common/images/educator/edu_b-noclass.png"/>
+        	<file href="common/images/educator/edu_b-noclass-duedate.png"/>
+        	<file href="common/images/educator/edu_b-noclass-exam.png"/>
+        	<file href="common/images/educator/edu_b-noclass-key.png"/>
+        	<file href="common/images/educator/edu_b-office.png"/>
+        	<file href="common/images/educator/edu_b-office-key.png"/>
+        	<file href="common/images/educator/edu_b-present.png"/>
+        	<file href="common/images/educator/edu_b-present-duedate.png"/>
+        	<file href="common/images/educator/edu_b-present-key.png"/>
+        	<file href="common/images/educator/edu_b-preslab.png"/>
+        	<file href="common/images/educator/edu_b-preslab-key.png"/>
+        	<file href="common/images/educator/edu_b-quiz-key.png"/>
+        	<file href="common/images/educator/edu_b-reclab-key.png"/>
+        	<file href="common/images/educator/edu_b-reclab-concert.png"/>
+        	<file href="common/images/educator/edu_b-reclab.png"/>
+        	<file href="common/images/educator/edu_b-noclass-concert.png"/>
+        	<file href="common/images/educator/edu_b-leclab-concert.png"/>
+        	<file href="common/images/educator/edu_b-concert-key.png"/>
+        	<file href="common/images/educator/edu_b-concert.png"/>
+        	<file href="common/images/educator/edu_b-recitation.png"/>
+        	<file href="common/images/educator/edu_b-recitation-duedate.png"/>
+        	<file href="common/images/educator/edu_b-recitation-exam.png"/>
+        	<file href="common/images/educator/edu_b-recitation-key.png"/>
+        	<file href="common/images/educator/edu_b-team.png"/>
+        	<file href="common/images/educator/edu_b-team-key.png"/>
+        	<file href="common/images/educator/edu_b-team-preslab.png"/>
+        	<file href="common/images/educator/edu_b-work.png"/>
+        	<file href="common/images/educator/edu_b-work-key.png"/>
+        	<file href="common/images/educator/icon-question-cih.png"/>
+        	<file href="common/images/educator/icon-question-cihw.png"/>
+        	<file href="common/images/educator/icon-question-cim.png"/>
+        	<file href="common/images/educator/icon-question-collab.png"/>
+        	<file href="common/images/educator/icon-question-coop.png"/>
+        	<file href="common/images/educator/icon-question-fas.png"/>
+        	<file href="common/images/educator/icon-question-gir.png"/>
+        	<file href="common/images/educator/icon-question-hass.png"/>
+        	<file href="common/images/educator/icon-question-hass-s.png"/>
+        	<file href="common/images/educator/icon-question-iap.png"/>
+        	<file href="common/images/educator/icon-question-lab.png"/>
+        	<file href="common/images/educator/icon-question-urop.png"/>
+        	<file href="common/images/educator/icon-question-active.png"/>
+        	<file href="common/images/educator/icon-question-clickq.png"/>
+        	<file href="common/images/educator/icon-question-conq.png"/>
+        	<file href="common/images/educator/icon-question-flip.png"/>
+        	<file href="common/images/educator/icon-question-form.png"/>
+        	<file href="common/images/educator/icon-question-immed.png"/>
+        	<file href="common/images/educator/icon-question-learn.png"/>
+        	<file href="common/images/educator/icon-question-ped.png"/>
+        	<file href="common/images/educator/icon-question-readq.png"/>
+        	<file href="common/images/educator/icon-question-service.png"/>
+        	<file href="common/images/educator/icon-question-sum.png"/>
+        	<file href="common/images/educator/icon-question-unrestricted-elective-credits.png"/>
+        	<file href="common/webfonts/TitilliumText22L002-webfont.woff"/>
+        	<file href="common/webfonts/TitilliumText22L002-webfont.ttf"/>
+        	<file href="common/webfonts/TitilliumText22L002-webfont.svg"/>
+        	<file href="common/webfonts/TitilliumText22L002-webfont.eot"/>
+        	<file href="common/webfonts/TitilliumText22L003-webfont.woff"/>
+        	<file href="common/webfonts/TitilliumText22L003-webfont.ttf"/>
+        	<file href="common/webfonts/TitilliumText22L003-webfont.eot"/>
+        	<file href="common/webfonts/TitilliumText22L003-webfont.svg"/>
+        	<file href="common/webfonts/TitilliumText22L005-webfont.woff"/>
+        	<file href="common/webfonts/TitilliumText22L005-webfont.ttf"/>
+        	<file href="common/webfonts/TitilliumText22L005-webfont.svg"/>
+        	<file href="common/webfonts/TitilliumText22L005-webfont.eot"/>
+        </resource>        
+  </resources>
+</manifest>
