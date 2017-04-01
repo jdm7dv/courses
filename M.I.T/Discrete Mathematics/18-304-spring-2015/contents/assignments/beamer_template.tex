@@ -1,0 +1,155 @@
+\documentclass{beamer}
+
+\usepackage{beamerthemesplit}
+\usepackage{bbm}
+\setbeamertemplate{footline}[frame number]
+\setlength{\unitlength}{\textwidth}
+\renewcommand{\figurename}{}
+
+\usepackage{ulem}
+%\usepackage{lmodern}
+\usetheme{JuanLesPins}
+%\usetheme{Rochester}
+%\usetheme{boxes}
+\beamertemplatenavigationsymbolsempty
+
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{exercise}[theorem]{Exercise}
+%\newtheorem{definition}[theorem]{Definition}
+
+
+
+\title{There is no fraction whose square is equal to two}
+\author{Anne Onymous} \date{\today}
+
+\setbeamertemplate{headline}{}
+
+\begin{document}
+\newcounter{realtotalframenumber}{\value{totalframenumber}}
+\frame{\titlepage}
+
+\setbeamertemplate{navigation symbols}{}
+
+\frame{
+  \frametitle{The square root of two}
+  \begin{itemize}
+    \item It has long been assumed that $m/n =2$ for some $m,n \in
+      \mathbb{N}$
+    \item We show that this is in fact not
+      the case!
+    \item We accordingly propose to call the square root of two an
+      {\em irrational number}.
+  \end{itemize}
+
+%  \begin{figure}[h]
+%    \centering
+%    \includegraphics{image.jpg}
+%  \end{figure}
+}
+
+\frame{
+  \frametitle{A definition}
+
+  \begin{definition}
+    The {\em natural numbers} $\mathbb{N}$ are the set $\{1,2,\ldots\}$.
+  \end{definition}
+}
+
+  
+\frame{
+  \frametitle{Main theorem}
+  \begin{theorem}
+    \label{thm:sqrt}
+    There are no two natural numbers $m$ and $n$ such that $(m/n)^2=2$.
+  \end{theorem}
+}
+
+\frame{
+  \frametitle{A lemma}
+  \begin{lemma}
+    \label{lem:sqr}
+    Let $m$ be a natural number. If $m^2$ is even then it is divisible
+    by $4$ and $m$ is even.
+  \end{lemma}
+}
+
+\frame{
+  \frametitle{Proof of lemma}
+  We prove by showing that
+  \begin{itemize}
+  \item If $m$ is odd then $m^2$ is odd, and that
+  \item if $m$ is even then $m^2$ is divisible by $4$.
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Proof of lemma}
+  \begin{itemize}
+  \item Assume first $m$ is odd.
+  \item $\Rightarrow$ there exists a $k \in \mathbb{N}$ such that $m =
+    2k-1$.
+  \item Hence
+    \begin{align*}
+      m^2 = (2k-1)^2 = 4k^2-4k+1 = 4(k^2-k) + 1.
+    \end{align*}
+  \item $\Rightarrow$ $m^2$ is odd.
+  \end{itemize}
+}
+
+
+\frame{
+  \frametitle{Proof of lemma}
+  \begin{itemize}
+  \item Assume next $m$ is even.
+  \item $\Rightarrow$ there exists a $k \in \mathbb{N}$ such that $m =
+    2k$.
+
+  \item $\Rightarrow \quad m^2=4k^2$.
+  \item $\Rightarrow \quad m^2$ is divisible by $4$.
+  \end{itemize}
+}
+
+
+\frame{
+  \frametitle{Proof of main theorem}
+  \begin{itemize}
+  \item Assume by contradiction that $\exists m',n' \in \mathbb{N}$
+    such that $(m'/n')^2 = 2$.
+  \item Let $k$ be the largest common divisor of $m'$ and $n'$.
+  \item Let $m=m'/k$ and $n=n'/k$. Then
+    \begin{align*}
+      \left(\frac{m}{n}\right)^2 &= \left(\frac{m'/k}{n'/k}\right)^2\\
+      &= \left(\frac{m'}{n'}\right)^2\\
+      &= 2.
+    \end{align*}
+  \end{itemize}
+}
+\frame{
+  \frametitle{Proof of main theorem}
+  \begin{itemize}
+  \item $\Rightarrow\quad 2n^2=m^2$, and therefore $m^2$ is even.
+  \item Applying the lemma:
+    \begin{itemize}
+    \item  $m$ is even, and
+    \item $m^2$ is divisible by $4$.
+    \end{itemize}
+  \item $\Rightarrow \quad 2n^2$ is divisible by $4$, $n^2$ is even
+    and so $n$ is even (lemma again).
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Proof of main theorem}
+  \begin{itemize}
+  \item We have shown that $m$ and $n$ are both divisible by
+    $2$.
+  \item Hence $2k$ is a divisor of both $m'$ and $n'$.
+  \item This contradicts to our assumption.
+
+  \end{itemize}
+}
+
+
+\end{document}

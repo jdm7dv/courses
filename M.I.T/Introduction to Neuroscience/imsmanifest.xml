@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+          xmlns:cwsp="http://www.dspace.org/xmlns/cwspace_imscp"
+          xmlns:ocw="https://ocw.mit.edu/xmlns/ocw_imscp"
+          xmlns:lom="https://ocw.mit.edu/xmlns/LOM"
+          identifier="urn_edu.mit.ocw_9-01-introduction-to-neuroscience-fall-2007"
+          version="2016-9-18T15:34:56"
+          cwsp:packageType="Course"
+          xml:base="9-01-fall-2007/"
+          xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 http://www.imsglobal.org/xsd/imscp_v1p1.xsd  http://www.adlnet.org/xsd/adlcp_rootv1p2 http://www.adlnet.org/xsd/adlcp_rootv1p2.xsd http://www.dspace.org/xmlns/cwspace_imscp http://www.dspace.org/xsd/cwspace_imscp/version10/cwspace_imscpv10.xsd https://ocw.mit.edu/xmlns/ocw_imscp https://ocw.mit.edu/xsd/ocw_imscp/version10/ocw_imscpv10.xsd https://ocw.mit.edu/xmlns/LOM https://ocw.mit.edu/xsd/LOM/lomv1.0/lomv1.0.xsd">
+   	<metadata>
+   		<schema>IMS Content</schema>
+        <schemaversion>1.1</schemaversion>
+        <cwsp:packageMetadata>
+            <cwsp:sourceSystem>OCW</cwsp:sourceSystem>
+            <cwsp:profile>CWSpace</cwsp:profile>
+            <cwsp:profileVersion>0.1</cwsp:profileVersion>
+        </cwsp:packageMetadata>
+        <lom:general uniqueElementName="general">
+            <lom:title uniqueElementName="title">
+				<lom:string language="en">Introduction to Neuroscience</lom:string>
+			</lom:title>
+			<lom:identifier>
+				<lom:catalog uniqueElementName="catalog">OCW Master Course Number</lom:catalog>
+		      	<lom:entry uniqueElementName="entry">9.01</lom:entry>
+			</lom:identifier>
+        </lom:general>
+        <lom:lifecycle uniqueElementName="lifeCycle">
+            <lom:version uniqueElementName="version">
+				<lom:string language="en">Fall 2007</lom:string>
+			</lom:version>
+            <lom:contribute>
+	            <lom:role>
+	                <lom:source uniqueElementName="source">OCW_LOMv1.0</lom:source>
+	                <lom:value uniqueElementName="value">Author</lom:value>
+	            </lom:role>
+	            <lom:entity>Bear, Mark</lom:entity>
+	            <lom:date uniqueElementName="date">
+	                <lom:dateTime uniqueElementName="dateTime">2016-9-18</lom:dateTime>
+	            </lom:date>
+        	</lom:contribute>
+            <lom:contribute>
+	            <lom:role>
+	                <lom:source uniqueElementName="source">OCW_LOMv1.0</lom:source>
+	                <lom:value uniqueElementName="value">Author</lom:value>
+	            </lom:role>
+	            <lom:entity>Seung, Sebastian</lom:entity>
+	            <lom:date uniqueElementName="date">
+	                <lom:dateTime uniqueElementName="dateTime">2016-9-18</lom:dateTime>
+	            </lom:date>
+        	</lom:contribute>
+        </lom:lifecycle>
+        <lom:relation uniqueElementName="relation">
+        	<lom:kind uniqueElementName="kind">
+        		<lom:source uniqueElementName="source">OCW_LOMv1.0</lom:source>
+        		<lom:value uniqueElementName="value">isbasedon</lom:value>
+        	</lom:kind>
+        	<lom:resource uniqueElementName="resource">
+        		<lom:identifier>
+        			<lom:catalog uniqueElementName="catalog">URI</lom:catalog>
+        			<lom:entry uniqueElementName="entry">http://hdl.handle.net/1721.1/49421</lom:entry>
+        		</lom:identifier>
+        		<lom:description uniqueElementName="description">
+        			<lom:string language="en">Previous version of the course</lom:string>
+        		</lom:description>
+        	</lom:resource>
+        </lom:relation>
+        <lom:taxonPath>
+            <lom:source uniqueElementName="source">
+                <lom:string language="en">OCW Course Topics</lom:string>
+            </lom:source>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Science</lom:string>
+                </lom:entry>
+            </lom:taxon>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Biology</lom:string>
+                </lom:entry>
+            </lom:taxon>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Neuroscience</lom:string>
+                </lom:entry>
+            </lom:taxon>
+        </lom:taxonPath>        
+        <adlcp:location>contents/index.htm.xml</adlcp:location>
+    </metadata>
+    <organizations default="ocw_9-01-introduction-to-neuroscience-fall-2007">
+        <organization identifier="ocw_9-01-introduction-to-neuroscience-fall-2007">
+            <title>Introduction to Neuroscience</title>
+            <item identifier="i_9-01-introduction-to-neuroscience-fall-2007.CourseHome"
+                  identifierref="r_contents.index.htm"
+                  ocw:sectionTemplateType="CourseHomePage"
+                  ocw:sectionTemplateVersion="2016-9-18">
+				<title>Introduction to Neuroscience</title>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.9-01f07.jpg"
+          identifierref="r_contents.9-01f07.jpg">
+				<title>Primary visual cortex of the brain for human and monkey</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.9-01f07-th.jpg"
+          identifierref="r_contents.9-01f07-th.jpg">
+				<title>Primary visual cortex of the brain for human and monkey</title>
+				</item>
+			</item>
+            <item identifier="i_9-01-introduction-to-neuroscience-fall-2007.syllabus"
+                  identifierref="r_contents.syllabus.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2016-9-18">
+				<title>Syllabus</title>
+			</item>
+            <item identifier="i_9-01-introduction-to-neuroscience-fall-2007.readings"
+                  identifierref="r_contents.readings.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2016-9-18">
+				<title>Readings</title>
+			</item>
+            <item identifier="i_9-01-introduction-to-neuroscience-fall-2007.lecture-notes"
+                  identifierref="r_contents.lecture-notes.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2016-9-18">
+				<title>Lecture Notes</title>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.lecture-notes.21_nondeclarativ.pdf"
+          identifierref="r_contents.lecture-notes.21_nondeclarativ.pdf">
+				<title>Learning and Memory 2</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.lecture-notes.10_vision2.pdf"
+          identifierref="r_contents.lecture-notes.10_vision2.pdf">
+				<title>Vision 2: Thalamus and V1 Cortex</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.lecture-notes.11_vision3.pdf"
+          identifierref="r_contents.lecture-notes.11_vision3.pdf">
+				<title>Vision 3: Beyond V1</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.lecture-notes.14_motor1.pdf"
+          identifierref="r_contents.lecture-notes.14_motor1.pdf">
+				<title>Movement I</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.lecture-notes.12_hearing.pdf"
+          identifierref="r_contents.lecture-notes.12_hearing.pdf">
+				<title>Hearing</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.lecture-notes.19_declarative.pdf"
+          identifierref="r_contents.lecture-notes.19_declarative.pdf">
+				<title>Declarative Memory</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.lecture-notes.15_motor2.pdf"
+          identifierref="r_contents.lecture-notes.15_motor2.pdf">
+				<title>Movement II</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.lecture-notes.17_bcs_lec_11_19.pdf"
+          identifierref="r_contents.lecture-notes.17_bcs_lec_11_19.pdf">
+				<title>Age-depedent neurodegenerative disorder with cortical dementia - Alzheimer’s disease</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.lecture-notes.09_vision1.pdf"
+          identifierref="r_contents.lecture-notes.09_vision1.pdf">
+				<title>Vision 1: The Eye</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.lecture-notes.13_tastesmell.pdf"
+          identifierref="r_contents.lecture-notes.13_tastesmell.pdf">
+				<title>Taste and Smell</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.lecture-notes.22_emotion.pdf"
+          identifierref="r_contents.lecture-notes.22_emotion.pdf">
+				<title>Emotion</title>
+				</item>
+			</item>
+            <item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations"
+                  identifierref="r_contents.recitations.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2016-9-18">
+				<title>Recitations</title>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk14_hand120507.pdf"
+          identifierref="r_contents.recitations.wk14_hand120507.pdf">
+				<title>Week 14, Recitation 3</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk09_sechand1029.pdf"
+          identifierref="r_contents.recitations.wk09_sechand1029.pdf">
+				<title>Week 9, Recitation 1</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk08_hand102407.pdf"
+          identifierref="r_contents.recitations.wk08_hand102407.pdf">
+				<title>Week 8, Recitation 3</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk07_sechand1015.pdf"
+          identifierref="r_contents.recitations.wk07_sechand1015.pdf">
+				<title>Week 7, Recitation 1</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk08_9_01_r05.pdf"
+          identifierref="r_contents.recitations.wk08_9_01_r05.pdf">
+				<title>Week 8, Recitation 2</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk03_9_01_r02.pdf"
+          identifierref="r_contents.recitations.wk03_9_01_r02.pdf">
+				<title>Week 3, Recitation 2</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk09_hand103107.pdf"
+          identifierref="r_contents.recitations.wk09_hand103107.pdf">
+				<title>Week 9, Recitation 3</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk02_sechand0910.pdf"
+          identifierref="r_contents.recitations.wk02_sechand0910.pdf">
+				<title>Week 2, Recitation 1</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk09_9_01_r06.pdf"
+          identifierref="r_contents.recitations.wk09_9_01_r06.pdf">
+				<title>Week 9, Recitation 2</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk15_9_01_r09.pdf"
+          identifierref="r_contents.recitations.wk15_9_01_r09.pdf">
+				<title>Week 15, Recitation 2</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk03_sechand0917.pdf"
+          identifierref="r_contents.recitations.wk03_sechand0917.pdf">
+				<title>Week 3, Recitation 1</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk13_9_01_r08.pdf"
+          identifierref="r_contents.recitations.wk13_9_01_r08.pdf">
+				<title>Week 13, Recitation 2</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk08_sechand1022.pdf"
+          identifierref="r_contents.recitations.wk08_sechand1022.pdf">
+				<title>Week 8, Recitation 1</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk12_sechand1119.pdf"
+          identifierref="r_contents.recitations.wk12_sechand1119.pdf">
+				<title>Week 12, Recitation 1</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk07_9_01_r04.pdf"
+          identifierref="r_contents.recitations.wk07_9_01_r04.pdf">
+				<title>Week 7, Recitation 2</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk04_sechand0924.pdf"
+          identifierref="r_contents.recitations.wk04_sechand0924.pdf">
+				<title>Week 4, Recitation 1</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk02_9_01_r01.pdf"
+          identifierref="r_contents.recitations.wk02_9_01_r01.pdf">
+				<title>Week 2, Recitation 2</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.recitations.wk04_9_01_r03.pdf"
+          identifierref="r_contents.recitations.wk04_9_01_r03.pdf">
+				<title>Week 4, Recitation 2</title>
+				</item>
+			</item>
+            <item identifier="i_9-01-introduction-to-neuroscience-fall-2007.assignments"
+                  identifierref="r_contents.assignments.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2016-9-18">
+				<title>Assignments</title>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.assignments.pset1.pdf"
+          identifierref="r_contents.assignments.pset1.pdf">
+				<title>Problem Set 1: Cellular Neurophysiology</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.assignments.pset3.pdf"
+          identifierref="r_contents.assignments.pset3.pdf">
+				<title>Problem Set 3: Learning and Memory</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.assignments.pset1_hhsim.pdf"
+          identifierref="r_contents.assignments.pset1_hhsim.pdf">
+				<title>The Simulation Program HHsim</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.assignments.pset2.pdf"
+          identifierref="r_contents.assignments.pset2.pdf">
+				<title>Problem Set 2: Visual Neuroscience</title>
+				</item>
+			</item>
+            <item identifier="i_9-01-introduction-to-neuroscience-fall-2007.exams"
+                  identifierref="r_contents.exams.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2016-9-18">
+				<title>Exams</title>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.exams.exam2_review.pdf"
+          identifierref="r_contents.exams.exam2_review.pdf">
+				<title>Chapters 9 and 10 Review</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.exams.9_01_ex1rev_al.pdf"
+          identifierref="r_contents.exams.9_01_ex1rev_al.pdf">
+				<title>Review</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.exams.ex2_comp_chrt.pdf"
+          identifierref="r_contents.exams.ex2_comp_chrt.pdf">
+				<title>Comparison Chart</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.exams.9_01_ex2rev_al.pdf"
+          identifierref="r_contents.exams.9_01_ex2rev_al.pdf">
+				<title>Chapters 9 and 10 Review</title>
+				</item>
+				<item identifier="i_9-01-introduction-to-neuroscience-fall-2007.exams.9_01_final_rev.pdf"
+          identifierref="r_contents.exams.9_01_final_rev.pdf">
+				<title>Final Exam Review</title>
+				</item>
+			</item>
+            <item identifier="i_terms"
+                  identifierref="r_common.terms.index.htm"
+                  ocw:sectionTemplateType="GlobalSection"
+                  ocw:sectionTemplateVersion="2016-9-18">
+				<title>Legal Notices</title>
+			</item>
+            <item identifier="i_terms"
+                  identifierref="r_common.terms.index.htm"
+                  ocw:sectionTemplateType="GlobalSection"
+                  ocw:sectionTemplateVersion="2016-9-18">
+				<title>Privacy Statement</title>
+			</item>
+            <item identifier="i_terms.trademarks"
+                  identifierref="r_common.terms.trademarks.index.htm"
+                  ocw:sectionTemplateType="GlobalSection"
+                  ocw:sectionTemplateVersion="2016-9-18">
+				<title>Trademark Notices</title>
+			</item>
+        </organization>
+    </organizations>
+    <resources>
+        <resource identifier="r_contents.lecture-notes.21_nondeclarativ.pdf"
+                  type="other"
+                  href="contents/lecture-notes/21_nondeclarativ.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/21_nondeclarativ.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/21_nondeclarativ.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.wk09_sechand1029.pdf"
+                  type="other"
+                  href="contents/recitations/wk09_sechand1029.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk09_sechand1029.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk09_sechand1029.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.9-01f07-th.jpg"
+                  type="other"
+                  href="contents/9-01f07-th.jpg">
+            <metadata>
+                <adlcp:location>contents/9-01f07-th.jpg.xml</adlcp:location>
+            </metadata>
+            <file href="contents/9-01f07-th.jpg"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.wk09_9_01_r06.pdf"
+                  type="other"
+                  href="contents/recitations/wk09_9_01_r06.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk09_9_01_r06.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk09_9_01_r06.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.9-01f07.jpg"
+                  type="other" href="contents/9-01f07.jpg">
+            <metadata>
+                <adlcp:location>contents/9-01f07.jpg.xml</adlcp:location>
+            </metadata>
+            <file href="contents/9-01f07.jpg"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.22_emotion.pdf"
+                  type="other"
+                  href="contents/lecture-notes/22_emotion.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/22_emotion.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/22_emotion.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.wk09_hand103107.pdf"
+                  type="other"
+                  href="contents/recitations/wk09_hand103107.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk09_hand103107.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk09_hand103107.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.assignments.pset3.pdf"
+                  type="other"
+                  href="contents/assignments/pset3.pdf">
+            <metadata>
+                <adlcp:location>contents/assignments/pset3.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/pset3.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.index.htm"
+                  type="webcontent"
+                  href="contents/recitations/index.htm">
+            <metadata>
+                <adlcp:location>contents/recitations/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/index.htm"/>
+            <dependency identifierref="webrenderrequirements.9-01-introduction-to-neuroscience-fall-2007"/>            
+        </resource>
+        <resource identifier="r_contents.assignments.pset2.pdf"
+                  type="other"
+                  href="contents/assignments/pset2.pdf">
+            <metadata>
+                <adlcp:location>contents/assignments/pset2.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/pset2.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.13_tastesmell.pdf"
+                  type="other"
+                  href="contents/lecture-notes/13_tastesmell.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/13_tastesmell.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/13_tastesmell.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.17_bcs_lec_11_19.pdf"
+                  type="other"
+                  href="contents/lecture-notes/17_bcs_lec_11_19.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/17_bcs_lec_11_19.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/17_bcs_lec_11_19.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.readings.index.htm"
+                  type="webcontent"
+                  href="contents/readings/index.htm">
+            <metadata>
+                <adlcp:location>contents/readings/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/readings/index.htm"/>
+            <dependency identifierref="webrenderrequirements.9-01-introduction-to-neuroscience-fall-2007"/>            
+        </resource>
+        <resource identifier="r_contents.exams.9_01_ex1rev_al.pdf"
+                  type="other"
+                  href="contents/exams/9_01_ex1rev_al.pdf">
+            <metadata>
+                <adlcp:location>contents/exams/9_01_ex1rev_al.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/exams/9_01_ex1rev_al.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.wk14_hand120507.pdf"
+                  type="other"
+                  href="contents/recitations/wk14_hand120507.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk14_hand120507.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk14_hand120507.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.wk08_sechand1022.pdf"
+                  type="other"
+                  href="contents/recitations/wk08_sechand1022.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk08_sechand1022.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk08_sechand1022.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.12_hearing.pdf"
+                  type="other"
+                  href="contents/lecture-notes/12_hearing.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/12_hearing.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/12_hearing.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.14_motor1.pdf"
+                  type="other"
+                  href="contents/lecture-notes/14_motor1.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/14_motor1.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/14_motor1.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.exams.exam2_review.pdf"
+                  type="other"
+                  href="contents/exams/exam2_review.pdf">
+            <metadata>
+                <adlcp:location>contents/exams/exam2_review.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/exams/exam2_review.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.exams.ex2_comp_chrt.pdf"
+                  type="other"
+                  href="contents/exams/ex2_comp_chrt.pdf">
+            <metadata>
+                <adlcp:location>contents/exams/ex2_comp_chrt.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/exams/ex2_comp_chrt.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.15_motor2.pdf"
+                  type="other"
+                  href="contents/lecture-notes/15_motor2.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/15_motor2.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/15_motor2.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.assignments.pset1.pdf"
+                  type="other"
+                  href="contents/assignments/pset1.pdf">
+            <metadata>
+                <adlcp:location>contents/assignments/pset1.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/pset1.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.09_vision1.pdf"
+                  type="other"
+                  href="contents/lecture-notes/09_vision1.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/09_vision1.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/09_vision1.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.10_vision2.pdf"
+                  type="other"
+                  href="contents/lecture-notes/10_vision2.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/10_vision2.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/10_vision2.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.wk12_sechand1119.pdf"
+                  type="other"
+                  href="contents/recitations/wk12_sechand1119.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk12_sechand1119.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk12_sechand1119.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.19_declarative.pdf"
+                  type="other"
+                  href="contents/lecture-notes/19_declarative.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/19_declarative.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/19_declarative.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.wk04_9_01_r03.pdf"
+                  type="other"
+                  href="contents/recitations/wk04_9_01_r03.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk04_9_01_r03.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk04_9_01_r03.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.exams.9_01_ex2rev_al.pdf"
+                  type="other"
+                  href="contents/exams/9_01_ex2rev_al.pdf">
+            <metadata>
+                <adlcp:location>contents/exams/9_01_ex2rev_al.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/exams/9_01_ex2rev_al.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.wk15_9_01_r09.pdf"
+                  type="other"
+                  href="contents/recitations/wk15_9_01_r09.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk15_9_01_r09.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk15_9_01_r09.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.syllabus.index.htm"
+                  type="webcontent"
+                  href="contents/syllabus/index.htm">
+            <metadata>
+                <adlcp:location>contents/syllabus/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/syllabus/index.htm"/>
+            <dependency identifierref="webrenderrequirements.9-01-introduction-to-neuroscience-fall-2007"/>            
+        </resource>
+        <resource identifier="r_contents.recitations.wk08_hand102407.pdf"
+                  type="other"
+                  href="contents/recitations/wk08_hand102407.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk08_hand102407.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk08_hand102407.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.assignments.pset1_hhsim.pdf"
+                  type="other"
+                  href="contents/assignments/pset1_hhsim.pdf">
+            <metadata>
+                <adlcp:location>contents/assignments/pset1_hhsim.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/pset1_hhsim.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.wk07_9_01_r04.pdf"
+                  type="other"
+                  href="contents/recitations/wk07_9_01_r04.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk07_9_01_r04.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk07_9_01_r04.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.index.htm"
+                  type="webcontent"
+                  href="contents/lecture-notes/index.htm">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/index.htm"/>
+            <dependency identifierref="webrenderrequirements.9-01-introduction-to-neuroscience-fall-2007"/>            
+        </resource>
+        <resource identifier="r_contents.recitations.wk03_sechand0917.pdf"
+                  type="other"
+                  href="contents/recitations/wk03_sechand0917.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk03_sechand0917.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk03_sechand0917.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.index.htm"
+                  type="webcontent"
+                  href="contents/index.htm">
+            <metadata>
+                <adlcp:location>contents/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/index.htm"/>
+            <dependency identifierref="webrenderrequirements.9-01-introduction-to-neuroscience-fall-2007"/>            
+        </resource>
+        <resource identifier="r_contents.recitations.wk02_sechand0910.pdf"
+                  type="other"
+                  href="contents/recitations/wk02_sechand0910.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk02_sechand0910.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk02_sechand0910.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.wk02_9_01_r01.pdf"
+                  type="other"
+                  href="contents/recitations/wk02_9_01_r01.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk02_9_01_r01.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk02_9_01_r01.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.wk08_9_01_r05.pdf"
+                  type="other"
+                  href="contents/recitations/wk08_9_01_r05.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk08_9_01_r05.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk08_9_01_r05.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.wk04_sechand0924.pdf"
+                  type="other"
+                  href="contents/recitations/wk04_sechand0924.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk04_sechand0924.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk04_sechand0924.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.exams.9_01_final_rev.pdf"
+                  type="other"
+                  href="contents/exams/9_01_final_rev.pdf">
+            <metadata>
+                <adlcp:location>contents/exams/9_01_final_rev.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/exams/9_01_final_rev.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.recitations.wk07_sechand1015.pdf"
+                  type="other"
+                  href="contents/recitations/wk07_sechand1015.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk07_sechand1015.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk07_sechand1015.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.assignments.index.htm"
+                  type="webcontent"
+                  href="contents/assignments/index.htm">
+            <metadata>
+                <adlcp:location>contents/assignments/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/index.htm"/>
+            <dependency identifierref="webrenderrequirements.9-01-introduction-to-neuroscience-fall-2007"/>            
+        </resource>
+        <resource identifier="r_contents.recitations.wk13_9_01_r08.pdf"
+                  type="other"
+                  href="contents/recitations/wk13_9_01_r08.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk13_9_01_r08.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk13_9_01_r08.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.11_vision3.pdf"
+                  type="other"
+                  href="contents/lecture-notes/11_vision3.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/11_vision3.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/11_vision3.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.exams.index.htm"
+                  type="webcontent"
+                  href="contents/exams/index.htm">
+            <metadata>
+                <adlcp:location>contents/exams/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/exams/index.htm"/>
+            <dependency identifierref="webrenderrequirements.9-01-introduction-to-neuroscience-fall-2007"/>            
+        </resource>
+        <resource identifier="r_contents.recitations.wk03_9_01_r02.pdf"
+                  type="other"
+                  href="contents/recitations/wk03_9_01_r02.pdf">
+            <metadata>
+                <adlcp:location>contents/recitations/wk03_9_01_r02.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/recitations/wk03_9_01_r02.pdf"/>
+                        
+        </resource>        
+        <resource identifier="r_common.search.AdvancedSearch.htm"
+                  type="webcontent"
+                  href="common/search/AdvancedSearch.htm">
+            <file href="common/search/AdvancedSearch.htm"/>
+            <dependency identifierref="webrenderrequirements.9-01-introduction-to-neuroscience-fall-2007"/>            
+        </resource>
+        <resource identifier="r_common.jsp.feedback.htm"
+                  type="webcontent"
+                  href="common/jsp/feedback.htm">
+            <file href="common/jsp/feedback.htm"/>
+            <dependency identifierref="webrenderrequirements.9-01-introduction-to-neuroscience-fall-2007"/>            
+        </resource>
+        <resource identifier="r_common.terms.index.htm"
+                  type="webcontent"
+                  href="common/terms/index.htm">
+            <file href="common/terms/by.png"/>
+            <file href="common/terms/nc.png"/>
+            <file href="common/terms/sa.png"/>
+            <file href="common/terms/deedheadyellow.png"/>
+            <file href="common/terms/freedomsheader.png"/>
+            <file href="common/terms/limitationsheader.png"/>
+            <file href="common/terms/understandingheader.jpg"/>
+            <file href="common/terms/deedfootyellow.png"/>
+            <dependency identifierref="webrenderrequirements.9-01-introduction-to-neuroscience-fall-2007"/>            
+        </resource>
+        <resource identifier="r_common.terms.trademarks.index.htm"
+                  type="webcontent"
+                  href="common/terms/trademarks/index.htm">
+            <file href="common/terms/trademarks/index.htm"/>
+            <dependency identifierref="webrenderrequirements.9-01-introduction-to-neuroscience-fall-2007"/>            
+        </resource>
+        <resource identifier="webrenderrequirements.9-01-introduction-to-neuroscience-fall-2007"
+                  type="webcontent">
+        	<file href="common/styles/base.css"/>
+        	<file href="common/styles/courses.css"/>
+        	<file href="common/styles/courses_new.css"/>
+        	<file href="common/styles/educator.css"/>
+        	<file href="common/styles/global.css"/>
+        	<file href="common/styles/grid.css"/>
+        	<file href="common/styles/highslide.css"/>
+        	<file href="common/styles/highslide-ie6.css"/>
+        	<file href="common/styles/jquery.bubblepopup.css"/>
+        	<file href="common/styles/jquery.jscrollpane.css"/>
+        	<file href="common/styles/jquery-ui.css"/>
+        	<file href="common/styles/menu.css"/>
+        	<file href="common/styles/scholar2.css"/>
+        	<file href="common/styles/media_tabs.css"/>
+        	<file href="common/styles/three_play.css"/>
+        	<file href="common/scripts/bubble-popup-offline.js"/>
+        	<file href="common/scripts/jquery.js"/>
+        	<file href="common/scripts/ocw-media-utils.js"/>
+        	<file href="common/scripts/ocw-media-utils-offline.js"/>
+        	<file href="common/scripts/highslide-with-gallery.js"/>
+        	<file href="common/scripts/jquery.bubblepopup.min.js"/>
+        	<file href="common/scripts/jquery.jscrollpane.min.js"/>
+        	<file href="common/scripts/jquery-ui.min.js"/>
+        	<file href="common/scripts/jQuizMe-uncompressed.js"/>
+        	<file href="common/scripts/ocw-offline.js"/>
+        	<file href="common/scripts/expandy.js"/>
+        	<file href="common/scripts/chart.js"/>
+        	<file href="common/scripts/jquery.anythingslider.js"/>
+        	<file href="common/images/ocw_mast.png"/>
+        	<file href="common/images/button_subscribe.png"/>
+        	<file href="common/images/icon_fb.png"/>
+        	<file href="common/images/icon_gp.png"/>
+        	<file href="common/images/icon_pin.png"/>
+        	<file href="common/images/icon_tw.png"/>
+        	<file href="common/images/icon-question-ovt.png"/>
+        	<file href="common/images/icon-question-svt.png"/>
+        	<file href="common/images/icon-question-avt.png"/>
+        	<file href="common/images/icon-question-cl.png"/>
+        	<file href="common/images/top-nav_home.png"/>
+        	<file href="common/images/button_search.png"/>
+        	<file href="common/images/bg_top.png"/>
+        	<file href="common/images/bg_social.png"/>
+        	<file href="common/images/bg_social2.png"/>
+        	<file href="common/images/bg_mega-courses.png"/>
+        	<file href="common/images/bg_center2.png"/>
+        	<file href="common/images/bg_course-nav_current.png"/>
+        	<file href="common/images/button_donate-now.png"/>
+        	<file href="common/images/logo_mit.png"/>
+        	<file href="common/images/logo_ocwc.gif"/>
+        	<file href="common/images/cc_by-nc-sa.png"/>
+        	<file href="common/images/logo_dow.png"/>
+        	<file href="common/images/logo_lockheed.png"/>
+        	<file href="common/images/logo_mathworks.png"/>
+        	<file href="common/images/logo_abinitio.png"/>
+        	<file href="common/images/logo_sapient.png"/>
+        	<file href="common/images/bg_bottom.png"/>
+        	<file href="common/images/nav_arrow.png"/>
+        	<file href="common/images/news-subscibe_bg.png"/>
+        	<file href="common/images/3play_logo.png"/>
+        	<file href="common/images/black-arrow.gif"/>
+        	<file href="common/images/trans.gif"/>
+        	<file href="common/images/arrow-bullet.gif"/>
+        	<file href="common/images/apple-touch-icon.png"/>
+        	<file href="common/images/highslide/graphics/zoomin.cur"/>
+        	<file href="common/images/highslide/graphics/zoomout.cur"/>
+        	<file href="common/images/highslide/graphics/controlbar2.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar3.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar4.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar4-hover.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar-black-border.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar-white.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar-white-small.gif"/>
+        	<file href="common/images/highslide/graphics/fullexpand.gif"/>
+        	<file href="common/images/highslide/graphics/icon.gif"/>
+        	<file href="common/images/highslide/graphics/loader.gif"/>
+        	<file href="common/images/highslide/graphics/loader.white.gif"/>
+        	<file href="common/images/highslide/graphics/resize.gif"/>
+        	<file href="common/images/highslide/graphics/close.png"/>
+        	<file href="common/images/highslide/graphics/closeX.png"/>
+        	<file href="common/images/highslide/graphics/controlbar-text-buttons.png"/>
+        	<file href="common/images/highslide/graphics/geckodimmer.png"/>
+        	<file href="common/images/highslide/graphics/scrollarrows.png"/>
+        	<file href="common/images/highslide/graphics/outlines/beveled.png"/>
+        	<file href="common/images/highslide/graphics/outlines/drop-shadow.png"/>
+        	<file href="common/images/highslide/graphics/outlines/glossy-dark.png"/>
+        	<file href="common/images/highslide/graphics/outlines/outer-glow.png"/>
+        	<file href="common/images/highslide/graphics/outlines/rounded-black.png"/>
+        	<file href="common/images/highslide/graphics/outlines/rounded-white.png"/>
+        	<file href="common/images/highslide/graphics/outlines/Outlines.psd"/>
+        	<file href="common/images/button_continue.jpg"/>
+        	<file href="common/images/button_donate.jpg"/>
+        	<file href="common/images/button_start.jpg"/>
+        	<file href="common/images/scholar_bar_chp.png"/>
+        	<file href="common/images/scholar_bar.png"/>
+        	<file href="common/images/logo_pdf.jpg"/>
+        	<file href="common/images/h2_trigger_open_close.gif"/>
+        	<file href="common/images/bookmark.gif"/>
+        	<file href="common/images/check.png"/>
+        	<file href="common/images/lightbulb.png"/>
+        	<file href="common/images/audio_file.gif"/>
+        	<file href="common/images/audio_only_slate.gif"/>
+        	<file href="common/images/video_file.gif"/>
+        	<file href="common/images/back-5.png"/>
+        	<file href="common/images/btn_next_resource.png"/>
+        	<file href="common/images/btn_previous_resource.png"/>
+        	<file href="common/images/close.png"/>
+        	<file href="common/images/inacessible.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/bottom-left.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/bottom-middle.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/bottom-right.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/middle-left.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/middle-right.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/tail-bottom.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/tail-left.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/tail-right.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/tail-top.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/top-left.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/top-middle.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/top-right.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/bottom-left.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/bottom-middle.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/bottom-right.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/middle-left.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/middle-right.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/tail-bottom.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/tail-left.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/tail-right.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/tail-top.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/top-left.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/top-middle.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/top-right.png"/>
+        	<file href="common/images/educator/classroom_next.png"/>
+        	<file href="common/images/educator/classroom_next_dim.png"/>
+        	<file href="common/images/educator/classroom_prev.png"/>
+        	<file href="common/images/educator/classroom_prev_dim.png"/>
+        	<file href="common/images/educator/edu_b-blank.png"/>
+        	<file href="common/images/educator/edu_b-blank-key.png"/>
+        	<file href="common/images/educator/edu_b-duedate.png"/>
+        	<file href="common/images/educator/edu_b-duedate-key.png"/>
+        	<file href="common/images/educator/edu_b-exam.png"/>
+        	<file href="common/images/educator/edu_b-exam-key.png"/>
+        	<file href="common/images/educator/edu_b-lab.png"/>
+        	<file href="common/images/educator/edu_b-lab-key.png"/>
+        	<file href="common/images/educator/edu_b-lab-team.png"/>
+        	<file href="common/images/educator/edu_b-lab-duedate.png"/>
+        	<file href="common/images/educator/edu_b-leclab.png"/>
+        	<file href="common/images/educator/edu_b-leclab-key.png"/>
+        	<file href="common/images/educator/edu_b-lecture.png"/>
+        	<file href="common/images/educator/edu_b-lecture-duedate.png"/>
+        	<file href="common/images/educator/edu_b-lecture-exam.png"/>
+        	<file href="common/images/educator/edu_b-lecture-key.png"/>
+        	<file href="common/images/educator/edu_b-lecture-lunch.png"/>
+        	<file href="common/images/educator/edu_b-lecture-preslab.png"/>
+        	<file href="common/images/educator/edu_b-lecture-quiz.png"/>
+        	<file href="common/images/educator/edu_b-lecture-team.png"/>
+        	<file href="common/images/educator/edu_b-lecrec-key.png"/>
+        	<file href="common/images/educator/edu_b-leclab-duedate.png"/>
+        	<file href="common/images/educator/edu_b-lecrec.png"/>
+        	<file href="common/images/educator/edu_b-lecrec-duedate.png"/>
+        	<file href="common/images/educator/edu_b-noclass-quiz.png"/>
+        	<file href="common/images/educator/edu_b-lunch.png"/>
+        	<file href="common/images/educator/edu_b-lunch-key.png"/>
+        	<file href="common/images/educator/edu_b-noclass.png"/>
+        	<file href="common/images/educator/edu_b-noclass-duedate.png"/>
+        	<file href="common/images/educator/edu_b-noclass-exam.png"/>
+        	<file href="common/images/educator/edu_b-noclass-key.png"/>
+        	<file href="common/images/educator/edu_b-office.png"/>
+        	<file href="common/images/educator/edu_b-office-key.png"/>
+        	<file href="common/images/educator/edu_b-present.png"/>
+        	<file href="common/images/educator/edu_b-present-duedate.png"/>
+        	<file href="common/images/educator/edu_b-present-key.png"/>
+        	<file href="common/images/educator/edu_b-preslab.png"/>
+        	<file href="common/images/educator/edu_b-preslab-key.png"/>
+        	<file href="common/images/educator/edu_b-quiz-key.png"/>
+        	<file href="common/images/educator/edu_b-reclab-key.png"/>
+        	<file href="common/images/educator/edu_b-reclab-concert.png"/>
+        	<file href="common/images/educator/edu_b-reclab.png"/>
+        	<file href="common/images/educator/edu_b-noclass-concert.png"/>
+        	<file href="common/images/educator/edu_b-leclab-concert.png"/>
+        	<file href="common/images/educator/edu_b-concert-key.png"/>
+        	<file href="common/images/educator/edu_b-concert.png"/>
+        	<file href="common/images/educator/edu_b-recitation.png"/>
+        	<file href="common/images/educator/edu_b-recitation-duedate.png"/>
+        	<file href="common/images/educator/edu_b-recitation-exam.png"/>
+        	<file href="common/images/educator/edu_b-recitation-key.png"/>
+        	<file href="common/images/educator/edu_b-team.png"/>
+        	<file href="common/images/educator/edu_b-team-key.png"/>
+        	<file href="common/images/educator/edu_b-team-preslab.png"/>
+        	<file href="common/images/educator/edu_b-work.png"/>
+        	<file href="common/images/educator/edu_b-work-key.png"/>
+        	<file href="common/images/educator/icon-question-cih.png"/>
+        	<file href="common/images/educator/icon-question-cihw.png"/>
+        	<file href="common/images/educator/icon-question-cim.png"/>
+        	<file href="common/images/educator/icon-question-collab.png"/>
+        	<file href="common/images/educator/icon-question-coop.png"/>
+        	<file href="common/images/educator/icon-question-fas.png"/>
+        	<file href="common/images/educator/icon-question-gir.png"/>
+        	<file href="common/images/educator/icon-question-hass.png"/>
+        	<file href="common/images/educator/icon-question-hass-s.png"/>
+        	<file href="common/images/educator/icon-question-iap.png"/>
+        	<file href="common/images/educator/icon-question-lab.png"/>
+        	<file href="common/images/educator/icon-question-urop.png"/>
+        	<file href="common/images/educator/icon-question-active.png"/>
+        	<file href="common/images/educator/icon-question-clickq.png"/>
+        	<file href="common/images/educator/icon-question-conq.png"/>
+        	<file href="common/images/educator/icon-question-flip.png"/>
+        	<file href="common/images/educator/icon-question-form.png"/>
+        	<file href="common/images/educator/icon-question-immed.png"/>
+        	<file href="common/images/educator/icon-question-learn.png"/>
+        	<file href="common/images/educator/icon-question-ped.png"/>
+        	<file href="common/images/educator/icon-question-readq.png"/>
+        	<file href="common/images/educator/icon-question-service.png"/>
+        	<file href="common/images/educator/icon-question-sum.png"/>
+        	<file href="common/webfonts/TitilliumText22L002-webfont.woff"/>
+        	<file href="common/webfonts/TitilliumText22L002-webfont.ttf"/>
+        	<file href="common/webfonts/TitilliumText22L002-webfont.svg"/>
+        	<file href="common/webfonts/TitilliumText22L002-webfont.eot"/>
+        	<file href="common/webfonts/TitilliumText22L003-webfont.woff"/>
+        	<file href="common/webfonts/TitilliumText22L003-webfont.ttf"/>
+        	<file href="common/webfonts/TitilliumText22L003-webfont.eot"/>
+        	<file href="common/webfonts/TitilliumText22L003-webfont.svg"/>
+        	<file href="common/webfonts/TitilliumText22L005-webfont.woff"/>
+        	<file href="common/webfonts/TitilliumText22L005-webfont.ttf"/>
+        	<file href="common/webfonts/TitilliumText22L005-webfont.svg"/>
+        	<file href="common/webfonts/TitilliumText22L005-webfont.eot"/>
+        </resource>        
+  </resources>
+</manifest>

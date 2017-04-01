@@ -1,0 +1,133 @@
+%------------------------------------------------------------------------------
+% Beginning of journal.tex
+%------------------------------------------------------------------------------
+%
+% AMS-LaTeX version 2 sample file for journals, based on amsart.cls.
+%
+%        ***     DO NOT USE THIS FILE AS A STARTER.      ***
+%        ***  USE THE JOURNAL-SPECIFIC *.TEMPLATE FILE.  ***
+%
+% Replace amsart by the documentclass for the target journal, e.g., tran-l.
+%
+\documentclass[12pt]{amsart}
+
+\usepackage{amsrefs}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{bbm}
+%\usepackage{refcheck}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{maintheorem}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{lemma*}{Lemma}
+\usepackage{graphicx}
+\usepackage{pstricks, enumerate, pst-node, pst-text, pst-plot}
+
+\numberwithin{equation}{section}
+\numberwithin{theorem}{section}
+
+
+\begin{document}
+
+\title[]{There is no fraction whose square is equal to two}
+
+\author[]{Anne Onymous}
+%    Address of record for the research reported here
+\address{Somewhere in ancient Greece.}
+
+%    Information for third author
+
+%\thanks{}
+\date{\today}
+
+
+\begin{abstract}
+  We show that there is no fraction whose square is equal to two.
+\end{abstract}
+
+\maketitle
+%\tableofcontents
+
+\section{Introduction}
+It has long been assumed that there is some fraction $m/n$ (where $m$
+and $n$ are natural numbers), such that $(m/n)^2=2$. In this paper we
+show that this is in fact not the case. We accordingly propose to call
+the square root of two an {\em irrational number}.
+
+
+\section{Main theorem}
+Before stating our theorem we will need the following standard definition.
+\begin{definition}
+  The {\em natural numbers} $\mathbb{N}$ are the set $\{1,2,\ldots\}$.
+\end{definition}
+
+Our main result is the following theorem.
+\begin{theorem}
+  \label{thm:sqrt}
+  There are no two natural numbers $m$ and $n$ such that $(m/n)^2=2$.
+\end{theorem}
+
+\section{Proof}
+We first state and prove a simple lemma.
+\begin{lemma}
+  \label{lem:sqr}
+  Let $m$ be a natural number. If $m^2$ is even then it is divisible
+  by $4$ and $m$ is even.
+\end{lemma}
+\begin{proof}
+  We prove this lemma by showing that if $m$ is odd then $m^2$ is odd,
+  and that if $m$ is even then $m^2$ is divisible by $4$.
+
+  Assume first that $m$ is odd. Hence there exists a $k \in \mathbb{N}$
+  such that $m = 2k-1$. Hence
+  \begin{align*}
+    m^2 = (2k-1)^2 = 4k^2-4k+1 = 4(k^2-k) + 1.
+  \end{align*}
+  Since $4(k^2=k)$ is even, it follows that $m^2$ is odd.
+
+  Assume now that $m$ is even, so that it is equal to $2k$, where $k$
+  is again some natural number. Then $m^2=4k^2$, which is
+  divisible by $4$.
+\end{proof}
+
+We are now ready to prove Theorem~\ref{thm:sqrt}.
+\begin{proof}[Proof of Theorem~\ref{thm:sqrt}]
+  Assume by contradiction that there exist $m',n' \in \mathbb{N}$ such
+  that $(m'/n')^2 = 2$. Let $k$ be the largest common divisor of $m'$ and
+  $n'$, and let $m=m'/k$ and $n=n'/k$. Then
+  \begin{align*}
+    \left(\frac{m}{n}\right)^2 &= \left(\frac{m'/k}{n'/k}\right)^2\\
+    &= \left(\frac{m'}{n'}\right)^2\\
+    &= 2.
+  \end{align*}
+  It follows that $2n^2=m^2$, and therefore $m^2$ is even. It follows
+  from Lemma~\ref{lem:sqr} that $m$ is even. It also follows from this
+  lemma that $m^2$ is divisible by $4$, and so $2n^2$ is divisible by
+  $4$. Hence $n^2$ is even, and, again by Lemma~\ref{lem:sqr}, $n$ is
+  even. We have shown that $m$ and $n$ are both divisible by
+  $2$. Hence $2k$ is a divisor of both $m'$ and $n'$, in contradiction
+  to our assumption.
+\end{proof}
+
+
+
+%\bibliography{}
+
+
+\end{document}
+

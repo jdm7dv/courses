@@ -1,0 +1,92 @@
+%------------------------------------------------------------------------------
+% Beginning of journal.tex
+%------------------------------------------------------------------------------
+%
+% AMS-LaTeX version 2 sample file for journals, based on amsart.cls.
+%
+%        ***     DO NOT USE THIS FILE AS A STARTER.      ***
+%        ***  USE THE JOURNAL-SPECIFIC *.TEMPLATE FILE.  ***
+%
+% Replace amsart by the documentclass for the target journal, e.g., tran-l.
+%
+\documentclass[12pt]{amsart}
+
+\usepackage{amsrefs}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{bbm}
+%\usepackage{refcheck}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{maintheorem}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{lemma*}{Lemma}
+\usepackage{graphicx}
+\usepackage{pstricks, enumerate, pst-node, pst-text, pst-plot}
+
+\numberwithin{equation}{section}
+\numberwithin{theorem}{section}
+
+
+\begin{document}
+
+\title[]{Every planar graph admits a six coloring}
+
+\author[]{Stu D. Ent}
+%    Address of record for the research reported here
+\address{Department of Mathematics, Massachusetts Institute of Technology}
+
+%    Information for third author
+
+%\thanks{}
+\date{\today}
+
+
+\begin{abstract}
+  We show that the vertices of every planar graph can be colored by
+  six colors with no two adjacent vertices sharing the same color.
+\end{abstract}
+
+\maketitle
+%\tableofcontents
+
+\section{Introduction}
+Let $G = (V,E)$ be a finite, undirected, planar graph. A $k$-coloring
+of $G$ is a function $f \colon V \to \{1,\ldots,k\}$ such that $f(u)
+\neq f(w)$ for all $(u,w) \in E$. We say that $G$ is $k$-colorable if
+it admits a $k$-coloring.
+
+\begin{theorem}
+  \label{thm:six-coloring}
+  Every planar graph admits a $6$-coloring.
+\end{theorem}
+
+To prove this theorem we will use the following lemma, which was
+proved in class.
+\begin{lemma}
+  \label{lemma:degree-five}
+  In every planar graph there exists a vertex with degree at most five.
+\end{lemma}
+
+
+\begin{proof}[Proof of Theorem~\ref{thm:six-coloring}]
+  {\bf Your proof goes here.}
+\end{proof}
+
+
+\end{document}
+
