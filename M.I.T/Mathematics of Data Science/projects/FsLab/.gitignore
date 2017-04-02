@@ -1,0 +1,13 @@
+.fake
+bin
+src/FsLab.Runner/obj
+temp
+packages
+*.suo
+*.bak
+*.userprefs
+.paket/paket.exe
+.DS_Store
+Google.DataTable.Net.Wrapper.XML
+nuget
+paket-files

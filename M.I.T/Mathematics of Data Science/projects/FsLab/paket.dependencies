@@ -1,0 +1,28 @@
+framework: net20, net40, net45
+source https://nuget.org/api/v2
+
+nuget FAKE
+nuget Paket.Core
+nuget Nuget.CommandLine 3.3
+nuget Deedle
+nuget Deedle.RPlugin
+nuget FSharp.Charting
+nuget FSharp.Data
+nuget FSharp.Formatting
+nuget MathNet.Numerics
+nuget MathNet.Numerics.FSharp
+nuget R.NET.Community
+nuget R.NET.Community.FSharp
+nuget RProvider
+nuget DotNetZip
+nuget XPlot.Plotly
+nuget XPlot.GoogleCharts
+nuget XPlot.GoogleCharts.Deedle
+nuget Suave
+
+// Cannot do the following, because that copies all template dependencies
+//
+//   github fslaborg/FsLab.Formatters
+//   github fslaborg/FsLab.Templates:journal
+//
+// Instead, we do this in the `DownloadDependencies` FAKE target

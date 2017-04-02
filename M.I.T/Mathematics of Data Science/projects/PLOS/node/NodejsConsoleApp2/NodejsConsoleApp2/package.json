@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-console-app2",
+  "version": "0.0.0",
+  "description": "NodejsConsoleApp2",
+  "main": "app.js",
+  "author": {
+    "name": "Jonathan_Moore"
+  },
+  "dependencies": {
+    "plos-search": "0.0.2"
+  }
+}
