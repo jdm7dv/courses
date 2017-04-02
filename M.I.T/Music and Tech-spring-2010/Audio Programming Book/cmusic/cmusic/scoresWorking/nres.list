@@ -1,0 +1,20 @@
+
+
+ins  0   {=0} test;
+{carrier}  osc  b1  p5  p6  f1  d;
+  airabsorb  b1  b1  0   {=0} 400   {=400} d  d  d  d  d  d  d  d  d  d;
+  out  b1;
+end;
+
+gen  p2   {=0} gen5  f1  1, {=1} 1, {=1} 0   {=0} 2, {=2} 1, {=1} 0   {=0} 3, {=3} 1, {=1} 0   {=0} 4, {=4} 1, {=1} 0   {=0} 5, {=5} 1, {=1} 0   {=0} 6, {=6} 1, {=1} 0   {=0} 7, {=7} 1, {=1} 0   {=0} 8, {=8} 1, {=1} 0; {=0} 
+ gen  p2   {=0} gen0  f1  1; {=1} 
+
+note  0   {=0} test  1   {=1} 0dB   {=1} 1024Hz ; {=65.536003} 
+ter;
+Terminate @1.000
+:1(0.378848)
+cmusic report: scorefile 'airabsorb.sc'
+Sound duration = 1.00s (16000 samples)
+Realtime = 0s, Realtime ratio = 0.0
+Compute time = 0.00s, Compute ratio = 0.0
+Maxamp = 0.378848,  Maxecho, = 0.000000  Maxreverb = 0.000000

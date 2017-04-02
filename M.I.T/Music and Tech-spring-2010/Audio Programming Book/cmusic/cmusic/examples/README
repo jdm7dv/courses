@@ -1,0 +1,19 @@
+README
+
+soundfiles are read from and written to:
+
+/Users/dB/soundfiles
+
+commandlines used:
+
+realtime:
+cmusic pluck.sc | todac -c2 -d2
+
+write IRCAM soundfile:
+cmusic pluck.sc | tosf -if -of -R9600 -c2 pluck.irc
+
+NOTE: soundfiles are read from and written to:
+
+/Users/dB/soundfiles  (the directory needed to be created)
+
+to play .irc files - open file in Audacity

@@ -1,0 +1,23 @@
+# Say help filterfile for info on how to use this filter
+# FIR tapped delay line filter. Design specs to fir follow:
+# Type= 1, grid density= 16, number of bands=  2
+# Band-edges follow:
+#   .0000  .0500  .0900  .5000
+# Desired function across bands follows:
+#    1.00    .00
+# Weighting function across bands follows:
+#    1.00  10.00
+# Deviation of each band in dB follows:
+#       .9742590   -38.5111198
+filter;
+NIcoeffs =     31;
+Icoeffs = 
+
+ -.108971655e-01 -.124262023e-01 -.172872072e-01 -.211957407e-01
+ -.229086924e-01 -.211978769e-01 -.150570512e-01 -.394178629e-02
+  .120902181e-01  .322161460e-01  .549651718e-01  .782610464e-01
+  .997726440e-01  .117187917e+00  .128506934e+00  .132432497e+00
+  .128506934e+00  .117187917e+00  .997726440e-01  .782610464e-01
+  .549651718e-01  .322161460e-01  .120902181e-01 -.394178629e-02
+ -.150570512e-01 -.211978769e-01 -.229086924e-01 -.211957407e-01
+ -.172872072e-01 -.124262023e-01 -.108971655e-01

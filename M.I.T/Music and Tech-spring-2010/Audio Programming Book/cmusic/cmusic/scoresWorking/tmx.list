@@ -1,0 +1,20 @@
+
+set  stereo;
+
+
+ins  0   {=0} one;
+{carrier}  osc  b1  p5  p6  f1  d;
+  space  b1  1   {=1} d  d  d  d  d  d  d  d  d  d  d  d  10   {=10} 10   {=10} 0   {=0} 1   {=1} 1 ; {=1} 
+end;
+
+gen  p2   {=0} gen5  f1  1   {=1} 1   {=1} 0; {=0} 
+
+note  0   {=0} one  1   {=1} .73   {=0.73} 440Hz; {=28.16} 
+ter ;
+Terminate @1.000
+:1(0.105881)
+cmusic report: scorefile 'tmx.sc'
+Sound duration = 1.00s (32000 samples)
+Realtime = 1s, Realtime ratio = 1.0
+Compute time = 0.02s, Compute ratio = 0.0
+Maxamp = 0.105881,  Maxecho, = 0.090516  Maxreverb = 0.057835
