@@ -1,0 +1,519 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>Readings | Introduction to Computational Neuroscience | Brain and Cognitive Sciences | MIT OpenCourseWare</title>
+<!-- Begin Automatic Metadata Insertion --><meta content="9-29j-introduction-to-computational-neuroscience-spring-2004" name="WT.cg_n">
+<meta content="Readings" name="WT.cg_s">
+<meta content="This section contains list of readings associated with the course material." name="Description">
+<meta content="Seung, Sebastian" name="Author">
+<meta content="neural coding,dynamics,convolution,correlation,linear systems,Fourier analysis,signal detection theory,probability theory,information theory,neural excitability,stochastic models,ion channels,cable theory,Neuroscience,Computational Biology,Cognitive Science" name="keywords">
+<meta content="9.29J Introduction to Computational Neuroscience | Readings" name="Search_Display">
+<meta content="Neuroscience" itemprop="about">
+<meta content="Computational Biology" itemprop="about">
+<meta content="Cognitive Science" itemprop="about">
+<!-- End Automatic Metadata Insertion --><link title="default" rel="stylesheet" type="text/css" href="../../common/styles/grid.css">
+<link title="default" rel="stylesheet" type="text/css" href="../../common/styles/base.css">
+<link title="default" rel="stylesheet" type="text/css" href="../../common/styles/menu.css">
+<link title="default" rel="stylesheet" type="text/css" href="../../common/styles/jquery.bubblepopup.css">
+<link title="default" rel="stylesheet" type="text/css" href="../../common/styles/courses.css">
+<link title="default" rel="stylesheet" type="text/css" href="../../common/styles/courses_new.css">
+<link href="https://ocw.mit.edu/xml/ocwcc.rdf" type="application/rdf+xml" rel="metadata">
+<link rel="canonical" href="https://ocw.mit.edu/courses/brain-and-cognitive-sciences/9-29j-introduction-to-computational-neuroscience-spring-2004/readings">
+<link rel="apple-touch-icon" href="../../common/images/apple-touch-icon.png">
+<script type="text/javascript" src="../../common/scripts/jquery.js"></script><script type="text/javascript" src="../../common/scripts/ocw-media-utils-offline.js"></script><script type="text/javascript" src="../../common/scripts/ocw-offline.js"></script><script type="text/javascript" src="../../common/scripts/jquery.bubblepopup.min.js"></script><script type="text/javascript" src="../../common/scripts/bubble-popup-offline.js"></script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+        
+	
+
+        <header id="top"><div id="grid">
+				
+				
+					
+<div id="portletwrapper-6f63772e746f70706f72746c65746d616e616765720a636f6e746578740a2f506c6f6e650a736974652d686561646572" class="portletWrapper kssattr-portlethash-6f63772e746f70706f72746c65746d616e616765720a636f6e746578740a2f506c6f6e650a736974652d686561646572">
+<div class="portletStaticText portlet-static-site-header">
+<!--googleoff: index-->
+<div class="grid_6 alpha" id="banner"><a href="https://ocw.mit.edu/"><img src="../../common/images/ocw_mast.png" class="logo" alt="MIT OpenCourseWare, Massachusetts Institute of Technology"></a></div>
+<div class="grid_6 omega" id="subscribe">
+<aside class="module" aria-label="Connect with OCW"><table class="social"><tbody><tr>
+<td class="socialbutton"><a aria-label="Subscribe to the OCW Newsletter" href="https://ocw.mit.edu/subscribe/index.htm?utm_source=header"><img src="../../common/images/trans.gif" alt="An icon depicting an envelope.">Subscribe to the OCW Newsletter</a></td>
+            <td>
+<a aria-label="Google+" href="https://plus.google.com/104567381989352550847/posts"><img src="../../common/images/icon_gp.png" alt="Click to visit our Google+ page."></a>                   <a aria-label="Pinterest" href="https://www.pinterest.com/mitocw/pins/"><img src="../../common/images/icon_pin.png" alt="Click to visit our Pinterest page."></a>                   <a aria-label="Facebook" href="https://facebook.com/mitocw"><img src="../../common/images/icon_fb.png" alt="Click to visit our Facebook page."></a>                   <a aria-label="Twitter" href="https://twitter.com/mitocw"><img src="../../common/images/icon_tw.png" alt="Click to visit our Twitter feed."></a>
+</td>
+        </tr></tbody></table></aside><nav aria-label="Help Links" class="helplinks"><a aria-label="OCW Site Help" href="https://ocw.mit.edu/help">Help</a><span aria-hidden="true">|</span>     <a href="../../common/jsp/feedback.htm">Contact Us</a>   </nav>
+</div>
+<div class="clear"> </div>
+<!--googleon: index-->
+</div>
+
+</div>
+
+
+
+
+
+<!--googleoff: index-->
+<nav id="mega" class="grid_8 alpha" aria-label="Site"><ul id="menu" role="presentation">
+<li id="menu_home">
+        <a href="https://ocw.mit.edu/" aria-label="Homepage"><img src="../../common/images/top-nav_home.png" class="home_icon" alt="Click for site home page."></a><!-- Begin Home Item -->
+    </li>
+<!-- End Home Item -->
+    <li id="drop_1" aria-label="Find Courses" class="selected">
+      <a href="#" aria-hidden="true">Find Courses</a><!-- Begin 5 columns Item -->
+      <div class="dropdown_5columns-a mega-courses">
+        <div class="col_1a">
+          <div class="row_1a">
+            <nav aria-labelledby="mm-find-courses-by"><span id="mm-find-courses-by" class="nav" aria-hidden="true">Find courses by:</span>
+              <ul class="find_by" role="presentation">
+<li><a href="https://ocw.mit.edu/courses/find-by-topic/">Topic</a></li>
+                <li><a href="https://ocw.mit.edu/courses/find-by-number/">MIT Course Number</a></li>
+                <li><a href="https://ocw.mit.edu/courses/find-by-department/">Department</a></li>
+								<li><a href="https://ocw.mit.edu/educator/?view=instructional&amp;utm_campaign=Educator&amp;utm_source=megamenu&amp;utm_medium=find-courses&amp;utm_content=approaches">Instructional Approach</a></li>
+								<li><a href="https://ocw.mit.edu/educator/?view=teaching&amp;utm_campaign=Educator&amp;utm_source=megamenu&amp;utm_medium=find-courses&amp;utm_content=materials">Teaching Materials</a></li>
+            		<li><a href="https://ocw.mit.edu/courses/?utm_source=ocw-megamenu&amp;utm_medium=link&amp;utm_campaign=mclstudy">View All Courses</a></li>
+							</ul></nav><nav aria-labelledby="mm-collections"><span id="mm-collections" class="nav" aria-hidden="true">Collections</span>
+              <ul role="presentation">
+<li><a href="https://ocw.mit.edu/courses/audio-video-courses/">Audio/Video Lectures</a></li>
+                <li><a href="https://ocw.mit.edu/courses/online-textbooks/">Online Textbooks</a></li>
+                <li><a href="https://ocw.mit.edu/courses/new-courses/">New Courses</a></li>
+                <li><a href="https://ocw.mit.edu/courses/most-visited-courses/">Most Visited Courses</a></li>
+                <li><a href="https://ocw.mit.edu/courses/ocw-scholar/">OCW Scholar Courses</a></li>
+                <li><a href="https://ocw.mit.edu/courses/this-course-at-mit/">This Course at MIT</a></li>
+                <li><a href="https://ocw.mit.edu/resources/">Supplemental Resources</a></li>
+              </ul></nav><nav class="col_1b" aria-labelledby="mm-translated-courses"><span id="mm-translated-courses" class="nav" aria-hidden="true">Translated Courses</span>
+							<ul role="presentation">
+<li><a href="https://ocw.mit.edu/courses/translated-courses/traditional-chinese" aria-label="Traditional Chinese">繁體字 / Traditional Chinese</a></li>
+								<li><a href="https://ocw.mit.edu/courses/translated-courses/spanish" aria-label="Spanish">Español / Spanish</a></li>
+								<li><a href="https://ocw.mit.edu/courses/translated-courses/portuguese" aria-label="Portuguese">Português / Portuguese</a></li>
+								<li><a href="https://ocw.mit.edu/courses/translated-courses/persian" aria-label="Persian">فارسی / Persian</a></li>
+								<li><a href="https://ocw.mit.edu/courses/translated-courses/turkish" aria-label="Turkish">Türkçe / Turkish</a></li>
+								<li><a href="https://ocw.mit.edu/courses/translated-courses/korean" aria-label="Korean">(비디오)한국 / Korean</a></li>
+								<li><a href="https://ocw.mit.edu/courses/translated-courses">More...</a></li>
+							</ul></nav>
+</div>
+          <div class="row_1b">
+            <nav aria-labelledby="mm-cross-disciplinary-topic-lists"><span id="mm-cross-disciplinary-topic-lists" class="nav" aria-hidden="true">Cross-Disciplinary Topic Lists</span>
+            	<ul role="presentation">
+<li><a href="https://ocw.mit.edu/courses/energy-courses">Energy</a></li>
+                <li><a href="https://ocw.mit.edu/courses/entrepreneurship">Entrepreneurship</a></li>
+                <li><a href="https://ocw.mit.edu/courses/environment-courses">Environment</a></li>
+              	<li><a href="https://ocw.mit.edu/courses/intro-programming">Introductory Programming</a></li>
+                <li><a href="https://ocw.mit.edu/courses/life-sciences">Life Sciences</a></li>
+                <li><a href="https://ocw.mit.edu/courses/transportation-courses">Transportation</a></li>
+              </ul></nav>
+</div>
+        </div>
+
+      </div>
+    </li>
+    <li id="drop_2">
+        <a href="" aria-hidden="true">About</a>
+        <div class="dropdown_1column-a">
+            <nav class="col_1" aria-label="About"><ul role="presentation">
+<li><a href="https://ocw.mit.edu/about/">About MIT OpenCourseWare</a></li>
+                    <li><a href="https://ocw.mit.edu/about/site-statistics/">Site Statistics</a></li>
+                    <li><a href="https://ocw.mit.edu/about/ocw-stories/">OCW Stories</a></li>
+                    <li><a href="https://ocw.mit.edu/about/newsletter/">News</a></li>
+                </ul></nav>
+</div>
+    </li>
+    <li id="drop_3">
+        <a href="" aria-hidden="true">Donate</a>
+        <div class="dropdown_1column-a">
+          <nav class="col_1" aria-label="Donate"><ul role="presentation">
+<li><a href="https://ocw.mit.edu/donate/">Make a Donation</a></li>
+              <li><a href="https://ocw.mit.edu/donate/why-donate/">Why Donate?</a></li>
+              <li><a href="https://ocw.mit.edu/donate/our-supporters/">Our Supporters</a></li>
+              <li><a href="https://ocw.mit.edu/donate/other-ways-to-contribute/">Other Ways to Contribute</a></li>
+              <li><a href="https://ocw.mit.edu/donate/shop-ocw">Shop OCW</a></li>
+              <li><a href="https://ocw.mit.edu/support/">Become a Corporate Sponsor</a></li>
+            </ul></nav>
+</div>
+    </li>
+    <li id="drop_4">
+      <a href="" aria-hidden="true">Featured Sites</a>
+      <div class="dropdown_1column-a">
+        <nav class="col_1" aria-labelledby="mm-featured-sites"><span id="mm-featured-sites" class="nav" aria-hidden="true">OCW Initiatives</span>
+          <ul role="presentation">
+<li><a href="https://ocw.mit.edu/high-school/">Highlights for High School</a></li>
+            <li><a href="https://ocw.mit.edu/educator/?utm_campaign=Educator&amp;utm_source=megamenu&amp;utm_medium=featured-sites">OCW Educator</a></li>
+            <li><a href="https://ocw.mit.edu/courses/crosslinks/">MIT Crosslinks and OCW</a></li>
+            <li><a href="https://ocw.mit.edu/courses/mitx-related-courseware/">MITx and Related OCW Courses</a></li>
+					</ul></nav><nav class="col_1" aria-labelledby="mm-featured-external-links"><span id="mm-featured-external-links" class="nav" aria-hidden="true">Beyond OCW</span>
+					<ul>
+<li><a href="http://k12videos.mit.edu" aria-label="External Link: MIT Plus K12 Videos">MIT+K12 Videos</a></li>
+            <li><a href="https://teachingexcellence.mit.edu/" aria-label="External Link: Teaching Excellence at MIT">Teaching Excellence at MIT</a></li>
+						<li><a href="https://outreach.mit.edu" aria-label="External Link: Outreach at MIT">Outreach @ MIT</a></li>
+						<li><a href="http://www.oeconsortium.org/" aria-label="External Link: Open Education Consortium">Open Education Consortium</a></li>
+          </ul></nav>
+</div>
+    </li>
+  </ul></nav><div id="search" role="search" class="grid_4 omega">
+  
+    <form aria-label="Advanced Search" method="get" action="../../common/search/AdvancedSearch.htm">
+		  <table class="search"><tbody><tr>
+<td class="black"><input type="text" onblur="fillSearchBox()" onfocus="clearSearchBox()" maxlength="255" value="Search" name="q" class="greytext searchField" id="terms"></td>
+            <td class="black"><input type="image" src="../../common/images/button_search.png" name="btnG" class="sub_button"></td>
+            <td class="text2"><a href="../../common/search/AdvancedSearch.htm">Advanced<br>Search</a></td>
+          </tr></tbody></table>
+</form>
+</div>
+<div class="clear"></div>
+<!--googleon: index-->
+<!-- *end header* -->
+
+				
+				
+			</div>
+<!-- top grid end -->
+		</header><!-- top end --><div id="center">
+         <div id="grid">
+		         <div id="left-section">
+                 <nav aria-label="Breadcrumb" id="breadcrumb"><p>
+
+    <a href="https://ocw.mit.edu/">Home</a>
+    
+        »
+        
+    
+    
+        
+            <a href="https://ocw.mit.edu/courses">Courses</a>
+            
+                »
+                
+            
+            
+         
+    
+    
+        
+            <a href="https://ocw.mit.edu/courses/brain-and-cognitive-sciences">Brain and Cognitive Sciences</a>
+            
+                »
+                
+            
+            
+         
+    
+    
+        
+            <a href="../../contents/index.htm">Introduction to Computational Neuroscience</a>
+            
+                »
+                
+            
+            
+         
+    
+    
+        
+            
+            
+            Readings
+         
+    
+</p>
+
+                 </nav><div class="clear"></div>
+                   <div id="section_title">
+           			     <h1 class="title" itemprop="name" property="dct:title">
+        <span class="" id="parent-fieldname-title">
+            Readings
+        </span>
+    </h1>
+             	     </div>
+             	     <div class="clear"></div>
+             	     <div id="course_wrapper_section">
+           	     	 <nav id="course_nav" aria-label="Course"><script language="javascript" type="text/javascript">
+function toggleMenu(objID) {
+  if (!document.getElementById) return;
+  var ob = document.getElementById(objID);
+  ob.className = (ob.className == 'selected')?'': 'selected';
+}
+function toggleClass(id)
+{
+  var divtoggleClass= document.getElementById(id);
+  divtoggleClass.className = (divtoggleClass.className == 'mO')?'mC': 'mO';
+  return false;
+}
+function changeAlt(id)
+{
+  id.alt = (id.alt == 'Expand Menu')?'Collapse Menu' : 'Expand Menu';
+  id.title = (id.title == 'Expand Menu')?'Collapse Menu' : 'Expand Menu';
+}
+</script><!--Left Nav Starts --><ul>
+<li class="">
+			   			<a href="../../contents/index.htm">
+		                  Course Home  			                
+	                    </a>
+		        </li>
+		    
+         	
+	
+	
+	    	
+	    	    <li class="">
+			   			<a href="../../contents/syllabus/index.htm">
+		                  Syllabus  			                
+	                    </a>
+		        </li>
+		    
+         	
+	
+	
+	    	
+	    	    <li class="">
+			   			<a href="../../contents/calendar/index.htm">
+		                  Calendar  			                
+	                    </a>
+		        </li>
+		    
+         	
+	
+	
+	    	
+	    	    <li class="selected">
+			   			<a href="../../contents/readings/index.htm">
+		                  Readings  			                
+	                    </a>
+		        </li>
+		    
+         	
+	
+	
+	    	
+	    	    <li class="">
+			   			<a href="../../contents/lecture-notes/index.htm">
+		                  Lecture Notes  			                
+	                    </a>
+		        </li>
+		    
+         	
+	
+	
+	    	
+	    	    <li class="">
+			   			<a href="../../contents/assignments/index.htm">
+		                  Assignments  			                
+	                    </a>
+		        </li>
+		    
+         	
+	
+	
+	    	
+	    	    
+		    
+         	
+	<!--second tal block close-->  
+	
+</ul>
+<!--Left Nav Ends --></nav><main id="course_inner_section" aria-labelledby="section_title"><p>Many of the readings are from the required course text:</p> <p><a href="http://www.amazon.com/exec/obidos/ASIN/0262041995/ref=nosim/mitopencourse-20"><img border="0" align="absMiddle" src="https://ocw.mit.edu/images/a_logo_17.gif" alt="Buy at Amazon"></a> Dayan, Peter, and L. F. Abbott.<em>Theoretical Neuroscience: Computational and Mathematical Modeling of Neural Systems</em>. Cambridge, MA: MIT Press, 2001. ISBN: 9780262041997.</p> <p> </p> <div class="maintabletemplate"><table summary="See table caption for summary.">
+<caption class="invisible">Course readings.</caption>     <thead><tr class="alt-row">
+<th scope="col">Lec #</th>             <th scope="col">TOPICS</th>             <th scope="col">READINGS</th>         </tr></thead>
+<tbody>
+<tr class="row">
+<td>1</td>             <td>Introduction<br><br>             Examples of Neural Coding, Simple Linear Regression</td>             <td>Dayan and Abbott, section 1.1.<br><br>             Wessel, R., C. Koch, and F. Gabbiani. "Coding of time-varying electric field amplitude modulations in a wave-type electric fish." <em>J of Neurophysiology</em> 75, no. 6 (1996): 2280-93.<br><br><a href="http://www.amazon.com/exec/obidos/ASIN/0521431085/ref=nosim/mitopencourse-20"><img border="0" align="absMiddle" src="https://ocw.mit.edu/images/a_logo_17.gif" alt="Buy at Amazon"></a> Press, William H., Brian P. Flannery, Saul A. Teukolsky, and William T. Vetterling. "Fitting Data to a Straight Line." In <em>Numerical Recipes in C: The Art of Scientific Computing.</em> New York, NY: Cambridge University Press, 1992. ISBN: 9780521431088.</td>         </tr>
+<tr class="alt-row">
+<td>2</td>             <td>Convolution and Correlation 1<br><br>             Firing Rate</td>             <td>Dayan and Abbot, section 1.2-1.3.<br><br><a href="http://www.amazon.com/exec/obidos/ASIN/0521431085/ref=nosim/mitopencourse-20"><img border="0" align="absMiddle" src="https://ocw.mit.edu/images/a_logo_17.gif" alt="Buy at Amazon"></a> Press, William H., Brian P. Flannery, Saul A. Teukolsky, and William T. Vetterling. "Convolution and Deconvolution Using the FFT." In <em>Numerical Recipes in C: The Art of Scientific Computing.</em> New York, NY: Cambridge University Press, 1992. ISBN: 9780521431088.</td>         </tr>
+<tr class="row">
+<td> </td>             <td>
+<em>Optional Lecture 1<br><br></em>Initializing and Using Vectors and Matrices in MATLAB®, Matrix Shortcuts, Plots in MATLAB®, Useful Commands<br><br>             Simple Statistics and Linear Regression</td>             <td> </td>         </tr>
+<tr class="alt-row">
+<td>3</td>             <td>Convolution and Correlation 2<br><br>             Spike-triggered Average<br><br>             Wiener-Hopf Equations and White Noise Analysis</td>             <td>Dayan and Abbot, sections 2.1-2.2.<br><br><a href="http://www.amazon.com/exec/obidos/ASIN/0521431085/ref=nosim/mitopencourse-20"><img border="0" align="absMiddle" src="https://ocw.mit.edu/images/a_logo_17.gif" alt="Buy at Amazon"></a> Press, William H., Brian P. Flannery, Saul A. Teukolsky, and William T. Vetterling. "Correlation and Autocorrelation Using the FFT." In <em>Numerical Recipes in C: The Art of Scientific Computing.</em> New York, NY: Cambridge University Press, 1992. ISBN: 9780521431088.</td>         </tr>
+<tr class="row">
+<td>4</td>             <td>Visual Receptive Fields 1<br><br>             Basics of the Visual System, Center-surround Receptive Fields, Simple and Complex Cortical Cells</td>             <td>
+<a href="http://www.amazon.com/exec/obidos/ASIN/0262161834/ref=nosim/mitopencourse-20"><img border="0" align="absMiddle" src="https://ocw.mit.edu/images/a_logo_17.gif" alt="Buy at Amazon"></a> Palmer, Stephen E. <em>Vision Science - Photons to Phenomenology</em><em>.</em> Cambridge, MA: MIT Press, 1999, pp. 146-154. ISBN: 9780262161831.<br><br>             Dayan and Abbot, sections 2.3-2.6.<br><br>             Web site: <a href="http://www.bpe.es.osaka-u.ac.jp/">Space-Time Receptive Fields of Visual Neurons</a>.</td>         </tr>
+<tr class="alt-row">
+<td> </td>             <td>
+<em>Optional Lecture 2<br></em><br>             Probability Theory</td>             <td> </td>         </tr>
+<tr class="row">
+<td>5</td>             <td>Visual Receptive Fields 2</td>             <td> </td>         </tr>
+<tr class="alt-row">
+<td> </td>             <td>
+<em>Optional Lecture 3<br><br></em>Markov Processes</td>             <td> </td>         </tr>
+<tr class="row">
+<td>6</td>             <td>Operant Matching 1</td>             <td>Gallistel, C., T. Mark, A. King, and P. Latham. "The Rat Approximates an Ideal Detector of Changes in Rates of Reward." <em>Journal of Experimental Psychology: Animal Behavior Processes</em> 27 (2001): 354-372.<br><br>             Herrnstein, R. "On the Law of Effect." <em>Journal of the Experimental Analysis of Behavior</em> 13, no. 2 (March 1970): 243-266.</td>         </tr>
+<tr class="alt-row">
+<td>7</td>             <td>Operant Matching 2</td>             <td>Seung, H. S. "Matching and maximizing are two ends of a spectrum of policy search algorithms." <em>Manuscript</em> (January 2, 2004.) (<a href="../../contents/readings/hss_spectrum2.pdf">PDF</a>)<br><br>             Herrnstein, R., and D. Prelec. <em>Melioration: A Theory of Distributed Choice. The Journal of Economic Perspectives</em> 5, no. 3 (Summer, 1991): 137-156.</td>         </tr>
+<tr class="row">
+<td>8</td>             <td>Games 1</td>             <td>
+<a href="http://www.amazon.com/exec/obidos/ASIN/0691090394/ref=nosim/mitopencourse-20"><img border="0" align="absMiddle" src="https://ocw.mit.edu/images/a_logo_17.gif" alt="Buy at Amazon"></a> Camerer, Colin F. <em>Behavioral Game Theory.</em> Princeton, NJ: Princeton University Press, 2003. ISBN: 9780691090399.</td>         </tr>
+<tr class="alt-row">
+<td> </td>             <td>
+<em>Optional Lecture 4<br></em><br>             Linear Stability Analysis</td>             <td> </td>         </tr>
+<tr class="row">
+<td>9</td>             <td>Games 2</td>             <td>Sanfey, A., J. Rilling, J. Aronson, L. Nystrom, and J. Cohen. "The Neural Basis of Economic Decision-Making in the Ultimatum Game." <em>Science</em> 300, no. 5626 (June 13, 2003): 1755-8.<br><br>             Camerer, C. "Strategizing in the Brain." <em>Science</em> 300, no. 5626 (June 13, 2003): 1673-5.</td>         </tr>
+<tr class="alt-row">
+<td>10</td>             <td>Project Meeting 1<br><br>             Discussion of Topics, Choice of Projects, Work Begins</td>             <td> </td>         </tr>
+<tr class="row">
+<td>11</td>             <td>Project Meeting 2</td>             <td> </td>         </tr>
+<tr class="alt-row">
+<td>12</td>             <td>Project Meeting 3</td>             <td> </td>         </tr>
+<tr class="row">
+<td>13</td>             <td>Project Meeting 4</td>             <td> </td>         </tr>
+<tr class="alt-row">
+<td>14</td>             <td>Project Presentations 1</td>             <td> </td>         </tr>
+<tr class="row">
+<td>15</td>             <td>Project Presentations 2</td>             <td> </td>         </tr>
+<tr class="alt-row">
+<td>16</td>             <td>Ion Channels, Nernst Equation, Passive Electrical Properties of Neurons</td>             <td>Dayan and Abbott, section 5.2.<br><br><a href="http://www.amazon.com/exec/obidos/ASIN/0262100533/ref=nosim/mitopencourse-20"><img border="0" align="absMiddle" src="https://ocw.mit.edu/images/a_logo_17.gif" alt="Buy at Amazon"></a> Johnston, Daniel, and Samuel Miao-Sin Wu. <em>Foundations of Cellular Neurophysiology</em><em>.</em> Cambridge, MA: MIT Press, 1994, chapter 2. ISBN: 9780262161831.</td>         </tr>
+<tr class="row">
+<td>17</td>             <td>The Action Potential, Hodgkin-Huxley Model 1</td>             <td>Dayan and Abbot, sections 5.3, 5.5, and 5.6.<br><br><a href="http://www.amazon.com/exec/obidos/ASIN/0195181999/ref=nosim/mitopencourse-20"><img border="0" align="absMiddle" src="https://ocw.mit.edu/images/a_logo_17.gif" alt="Buy at Amazon"></a> Koch, Christof. <em>Biophysics of Computation, Information Processing in Single Neurons.</em> New York, NY: Oxford University Press, 2004, chapter 6. ISBN: 9780195181999.</td>         </tr>
+<tr class="alt-row">
+<td>18</td>             <td>Hodgkin-Huxley Model 2</td>             <td> </td>         </tr>
+<tr class="row">
+<td>19</td>             <td>A-type Potassium Channels, Calcium-Dependent Potassium Channels</td>             <td>Dayan, and Abbott. Section 6.2.</td>         </tr>
+<tr class="alt-row">
+<td>20</td>             <td>Synapses</td>             <td>Dayan, and Abbott. Section 5.8.</td>         </tr>
+<tr class="row">
+<td> </td>             <td>
+<em>Optional Lecture 5<br></em><br>             Numerical Methods for Differential Equations</td>             <td>Dayan, and Abbott. Section 5.11. (Appendices A and B)<br><br>             Sherman, A. "Lecture Notes and Lab Problems on Numerical Methods." (<a href="../../contents/readings/whnotes.pdf">PDF</a>) (Courtesy of Dr. Arthur Sherman, NIDDK, National Institutes of Health. This work is in the public domain.)<br><br>             Arthur Sherman's Web page on <a target="_blank" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.28.3083">Numerical Methods in Neuronal Modeling</a>.</td>         </tr>
+<tr class="alt-row">
+<td>21</td>             <td>Associative Memory 1</td>             <td>Professor Seung's notes on the Hopfield Model (<a href="../../contents/readings/hss_assocmem1.pdf">PDF</a>)<br><br>             Hopfield, J. J. "Neural networks and physical systems with emergent collective computational abilities." <em>Proc Natl Acad Sci U.S.A.</em> 79: 2554-58.</td>         </tr>
+<tr class="row">
+<td>22</td>             <td>Associative Memory 2</td>             <td>More of Professor Seung's notes on Associative Memory (<a href="../../contents/readings/hss_assocmem2.pdf">PDF</a>)<br><br>             Miyashita, Y. "Neuronal correlate of visual associative long-term memory in the primate temporal cortex." <em>Nature</em> 335 (1988): 817-20.<br><br>             Griniasty, M., M. V. Tsodyks, and D. J. Amit. "Conversion of temporal correlations between stimuli to spatial correlations between attractors." <em>Neural Comput</em> 5 (1993): 1-17.<br><br>             Amit, D. J. "The Hebbian paradigm reintegrated: local reverberations as internal representations." <em>Behav</em> <em>Brain Sci</em> 18 (1995): 617-26.<br><br>             Nakazawa, K., M. C. Quirk, R. A. Chitwood, et al. "Requirement for Hippocampal CA3 NMDA Receptors in Associative Memory Recall." <em>Science</em> 297 (2002): 211-218.</td>         </tr>
+<tr class="alt-row">
+<td>23</td>             <td>Decisionmaking</td>             <td> </td>         </tr>
+<tr class="row">
+<td>24</td>             <td>Projects</td>             <td> </td>         </tr>
+<tr class="alt-row">
+<td>25</td>             <td>
+<br>             Projects (cont.)</td>             <td> </td>         </tr>
+<tr class="row">
+<td>26</td>             <td>Review</td>             <td> </td>         </tr>
+<tr class="alt-row">
+<td> </td>             <td>Final Exam</td>             <td> </td>         </tr>
+</tbody>
+</table></div>
+	                    
+
+	        			
+	                    
+	                    
+	                    	
+	                    
+
+            		 </main><!--Course_inner_section tag close --><div class="clear"></div>
+ 				 </div>
+<!--Course_wrapper tag close -->             
+ 			 </div>
+<!--left tag close -->
+ 			
+         </div>
+<!--grid tag close -->
+      </div>
+		
+		<footer id="bottom"><div id="grid">
+				
+<div id="portletwrapper-6f63772e626f74746f6d706f72746c65746d616e616765720a636f6e746578740a2f506c6f6e650a736974652d666f6f746572" class="portletWrapper kssattr-portlethash-6f63772e626f74746f6d706f72746c65746d616e616765720a636f6e746578740a2f506c6f6e650a736974652d666f6f746572">
+<div class="portletStaticText portlet-static-site-footer">
+<!--googleoff: index-->
+<div id="footer">
+<nav aria-label="Footer"><nav id="foot-c1" class="grid_2 alpha" aria-labelledby="f-find-courses"><span class="footer" id="f-find-courses" aria-hidden="true">Find Courses</span>
+<ul class="foot-bullet" role="presentation">
+<li><a href="https://ocw.mit.edu/courses/find-by-topic/">Find by Topic</a></li>
+    <li><a href="https://ocw.mit.edu/courses/find-by-number/">Find by Course Number</a></li>
+    <li><a href="https://ocw.mit.edu/courses/find-by-department/">Find by Department</a></li>
+    <li><a href="https://ocw.mit.edu/educator/?view=instructional&amp;utm_campaign=Educator&amp;utm_source=footer&amp;utm_medium=find-courses&amp;utm_content=approaches">Instructional Approach</a></li>
+    <li><a href="https://ocw.mit.edu/educator/?view=teaching&amp;utm_campaign=Educator&amp;utm_source=footer&amp;utm_medium=find-courses&amp;utm_content=materials">Teaching Materials</a></li>
+    <li><a href="https://ocw.mit.edu/courses/audio-video-courses/">Audio/Video Courses</a></li>
+    <li><a href="https://ocw.mit.edu/courses/subtitled/">Courses with Subtitles</a></li>
+    <li><a href="https://ocw.mit.edu/courses/online-textbooks/">Online Textbooks</a></li>
+    <li><a href="https://ocw.mit.edu/courses/new-courses/">New Courses</a></li>
+    <li><a href="https://ocw.mit.edu/courses/most-visited-courses/">Most Visited Courses</a></li>
+    <li><a href="https://ocw.mit.edu/courses/ocw-scholar/">OCW Scholar Courses</a></li>
+    <li><a href="https://ocw.mit.edu/courses/this-course-at-mit/">This Course at MIT</a></li>
+    <li><a href="https://ocw.mit.edu/resources/">Supplemental Resources</a></li>
+    <li><a href="https://ocw.mit.edu/courses/translated-courses/">Translated Courses</a></li>
+    <li><a href="https://ocw.mit.edu/courses/?utm_source=ocw-footer&amp;utm_medium=link&amp;utm_campaign=mclstudy">View All Courses</a></li>
+</ul></nav><div id="foot-c2" class="grid_2">
+<nav aria-labelledby="f-about"><span id="f-about" class="footer" aria-hidden="true">About</span>
+<ul class="foot-bullet" role="presentation">
+<li><a href="https://ocw.mit.edu/about/">About OpenCourseWare</a></li>
+    <li><a href="https://ocw.mit.edu/about/site-statistics/">Site Statistics</a></li>
+    <li><a href="https://ocw.mit.edu/about/ocw-stories/">OCW Stories</a></li>
+    <li><a href="https://ocw.mit.edu/about/newsletter/">News</a></li>
+    <li><a href="https://ocw.mit.edu/about/media-coverage/press-releases/">Press Releases</a></li>
+</ul></nav><!--about--><nav aria-labelledby="f-tools"><span id="f-tools" class="footer" aria-hidden="true">Tools</span>
+<ul class="foot-bullet" role="presentation">
+<li><a href="https://ocw.mit.edu/help/">Help &amp; FAQs</a></li>
+    <li><a href="../../common/jsp/feedback.htm">Contact Us</a></li>
+    <li><a href="../../common/search/AdvancedSearch.htm">Advanced Search</a></li>
+    <li><a href="https://ocw.mit.edu/help/site-map/">Site Map</a></li>
+    <li><a href="../../common/terms/index.htm">Privacy &amp; Terms of Use</a></li>
+    <li><a href="https://ocw.mit.edu/help/rss/">RSS Feeds</a></li>
+</ul></nav><!--tools-->
+</div>
+<nav class="grid_2" id="foot-c3" aria-labelledby="f-donate"><span id="f-donate" class="footer" aria-hidden="true">Donate</span>
+<ul class="foot-bullet" role="presentation">
+<li><a href="https://ocw.mit.edu/donate">Make a Donation</a></li>
+    <li><a href="https://ocw.mit.edu/donate/why-donate/">Why Donate?</a></li>
+    <li><a href="https://ocw.mit.edu/donate/our-supporters/">Our Supporters</a></li>
+    <li><a href="https://ocw.mit.edu/donate/other-ways-to-contribute/">Other Ways to Contribute</a></li>
+    <li><a href="https://ocw.mit.edu/donate/shop-ocw/">Shop OCW</a></li>
+    <li><a href="https://ocw.mit.edu/support/">Become a Corporate Sponsor</a></li>
+</ul></nav><div class="grid_2" id="foot-c4"><nav aria-labelledby="f-featured-sites"><span id="f-featured-sites" class="footer" aria-hidden="true">Featured Sites</span>
+<ul class="foot-bullet" role="presentation">
+<li><a href="https://ocw.mit.edu/high-school/">Highlights for High School</a></li>
+    <li><a href="https://ocw.mit.edu/educator/?utm_campaign=Educator&amp;utm_source=footer&amp;utm_medium=featured-sites">OCW Educator</a></li>
+    <li><a href="https://ocw.mit.edu/courses/crosslinks/">MIT Crosslinks and OCW</a></li>
+    <li><a href="https://ocw.mit.edu/courses/mitx-related-courseware/">MITx and Related OCW Courses</a></li>
+    <li><a href="http://k12videos.mit.edu" aria-label="External Link: MIT+K12 Videos">MIT+K12 Videos</a></li>
+    <li><a href="https://teachingexcellence.mit.edu/" aria-label="External Link: Teaching Excellence at MIT">Teaching Excellence at MIT</a></li>
+    <li><a href="https://outreach.mit.edu/" aria-label="External Link: Outreach at MIT">Outreach@MIT</a></li>
+    <li><a href="http://www.oeconsortium.org/" aria-label="External Link: Open Education Consortium">Open Education Consortium</a></li>
+</ul></nav></div>
+</nav><!--Footer Nav>--><aside id="foot-c5" class="grid_4 omega" aria-labelledby="f-our-corporate-supporters" style="min-height: 289px;"><span id="f-our-corporate-supporters" class="footer" aria-hidden="true">Our Corporate Supporters</span>           <!-- HOME_CORP_LOGO_1 -->
+<div class="sponsors_google_ads_even" id="div-gpt-ad-1388181177156-0"><script type="text/javascript">
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388181177156-0'); });
+            </script></div>
+<!-- HOME_CORP_LOGO_2 -->
+<div class="sponsors_google_ads_odd" id="div-gpt-ad-1388181177156-1"><script type="text/javascript">
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388181177156-1'); });
+            </script></div>
+<!-- HOME_CORP_LOGO_3 -->
+<div class="sponsors_google_ads_even" id="div-gpt-ad-1388181177156-2"><script type="text/javascript">
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388181177156-2'); });
+            </script></div>
+<!-- HOME_CORP_LOGO_4 -->
+<div class="sponsors_google_ads_odd" id="div-gpt-ad-1388181177156-3"><script type="text/javascript">
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388181177156-3'); });
+            </script></div>
+<!-- HOME_CORP_LOGO_5 -->
+<div class="sponsors_google_ads_even" id="div-gpt-ad-1388181177156-4"><script type="text/javascript">
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388181177156-4'); });
+              </script></div>
+<!-- HOME_CORP_LOGO_6 -->
+<div class="sponsors_google_ads_odd" id="div-gpt-ad-1388181177156-5"><script type="text/javascript">
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388181177156-5'); });
+              </script></div>
+</aside><aside class="grid_12 alpha omega" aria-label="OCW 15th Anniversary" style="border-top: thin solid #d5c9ba; padding-top: 24px; margin-bottom: 10px; text-align: center;"><p style="font-family: TitilliumText22LRegular,Verdana; text-align: center; font-size: 1.1em;">Support for <span style="letter-spacing: 0.5px; font-weight: bold;"><span style="text-transform: uppercase;">MIT OpenCourseWare's</span> 15th anniversary</span> is provided by <a href="http://www.sapientnitro.com/en-us.html#home"><img style="width: 145px; height: 35px; vertical-align: middle; margin-left: 7px;" alt="SapientNitro" src="../../common/images/logo_sapient.png"></a></p>
+</aside><aside class="grid_12 alpha omega" aria-labelledby="f-about-ocw" itemtype="http://schema.org/CollegeOrUniversity" itemscope="" itemprop="publisher" style="border-top: thin solid #d5c9ba; padding-top: 10px; margin-bottom: 10px;"><span id="f-about-ocw" class="footer" aria-hidden="true">             About <span itemprop="name">MIT OpenCourseWare</span></span>
+<p itemprop="description" style="color: #999; font-size: 1em; line-height: 1.5em; margin-top: 10px;">OCW is a free and open publication of material from thousands of MIT courses, covering the entire MIT curriculum. <a href="https://ocw.mit.edu/about/">Learn more »</a></p>
+<div id="foot-copy" class="grid_12 alpha omega" style="border-top: none;">
+<a href="http://web.mit.edu">               <img style="width: 195; height: 44;" alt="Massachusetts Institute of Technology" src="../../common/images/logo_mit.png"></a>             <a href="http://odl.mit.edu">               <img style="width: 289; height: 54; vertical-align: top;" alt="MIT Office of Digital Learning" src="https://ocw.mit.edu/images/logo_odl.png"></a>             <a href="http://www.oeconsortium.org/">               <img style="width: 219px; height: 59px; vertical-align: top;" alt="Open Education Consortium" src="https://ocw.mit.edu/images/logo_oec.png"></a>             <a itemprop="useRightsUrl" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">               <img style="width: 126px; height: 44px; margin-right: 0; margin-left: 13px;" alt="Creative Commons" src="../../common/images/cc_by-nc-sa.png"></a>
+</div>
+<div id="f-legal" class="grid_12 alpha omega" style="border-top: none;">
+<p class="copyright">© 2001–2015<br>
+Massachusetts Institute of Technology</p>
+<p style="font-size: 0.9em; margin-bottom: 15px;">Your use of the MIT OpenCourseWare site and materials is subject to our <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons License</a> and other <a rel="cc:morePermissions" href="../../common/terms/index.htm">terms of use</a>.</p>
+</div>
+</aside>
+</div>
+<!--footer-->   <!--googleon: index-->
+</div>
+
+</div>
+
+
+
+
+
+                
+			</div> <!-- bottom grid end -->
+		</footer><!-- footer bottom end -->
+</body>
+</html>
