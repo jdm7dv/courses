@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n#Copyright Jonathan Moore 2017\n\n# List all available installed packages on your machine.\ninstalled.packages()\n\n# List all \"attached\" or loaded packages.\nsearch()\n\n# install rplos package\ninstall.packages(\"rplos\")\n#load the rplos library\nlibrary('rplos')\nsearch()\n\ninstall.packages(\"fulltext\")\nlibrary('fulltext')\nsearch()\n\nsearchplos('genetics', 'id,journal,title,publication_date', limit = 40)\n\n",
+    "created" : 1492455253174.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "661701223",
+    "id" : "A5E12060",
+    "lastKnownWriteTime" : 1484870387,
+    "last_content_update" : 1484870387,
+    "path" : "D:/portfolio/jdm7dv/courses/M.I.T/Mathematics of Data Science/projects/PLOS/R/PLOS/Genetics.R",
+    "project_path" : "Genetics.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
