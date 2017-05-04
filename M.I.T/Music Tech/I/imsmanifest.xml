@@ -5,10 +5,10 @@
           xmlns:cwsp="http://www.dspace.org/xmlns/cwspace_imscp"
           xmlns:ocw="https://ocw.mit.edu/xmlns/ocw_imscp"
           xmlns:lom="https://ocw.mit.edu/xmlns/LOM"
-          identifier="urn_edu.mit.ocw_21m-380-music-and-technology-sound-design-spring-2016"
-          version="2017-4-15T10:59:52"
+          identifier="urn_edu.mit.ocw_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012"
+          version="2017-4-16T22:53:9"
           cwsp:packageType="Course"
-          xml:base="21m-380-spring-2016/"
+          xml:base="21m-380-spring-2012/"
           xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 http://www.imsglobal.org/xsd/imscp_v1p1.xsd  http://www.adlnet.org/xsd/adlcp_rootv1p2 http://www.adlnet.org/xsd/adlcp_rootv1p2.xsd http://www.dspace.org/xmlns/cwspace_imscp http://www.dspace.org/xsd/cwspace_imscp/version10/cwspace_imscpv10.xsd https://ocw.mit.edu/xmlns/ocw_imscp https://ocw.mit.edu/xsd/ocw_imscp/version10/ocw_imscpv10.xsd https://ocw.mit.edu/xmlns/LOM https://ocw.mit.edu/xsd/LOM/lomv1.0/lomv1.0.xsd">
    	<metadata>
    		<schema>IMS Content</schema>
@@ -20,7 +20,7 @@
         </cwsp:packageMetadata>
         <lom:general uniqueElementName="general">
             <lom:title uniqueElementName="title">
-				<lom:string language="en">Music and Technology: Sound Design</lom:string>
+				<lom:string language="en">Music and Technology: Recording Techniques and Audio Production</lom:string>
 			</lom:title>
 			<lom:identifier>
 				<lom:catalog uniqueElementName="catalog">OCW Master Course Number</lom:catalog>
@@ -29,55 +29,19 @@
         </lom:general>
         <lom:lifecycle uniqueElementName="lifeCycle">
             <lom:version uniqueElementName="version">
-				<lom:string language="en">Spring 2016</lom:string>
+				<lom:string language="en">Spring 2012</lom:string>
 			</lom:version>
             <lom:contribute>
 	            <lom:role>
 	                <lom:source uniqueElementName="source">OCW_LOMv1.0</lom:source>
 	                <lom:value uniqueElementName="value">Author</lom:value>
 	            </lom:role>
-	            <lom:entity>Hollerweger, Florian</lom:entity>
+	            <lom:entity>Ariza, Christopher</lom:entity>
 	            <lom:date uniqueElementName="date">
-	                <lom:dateTime uniqueElementName="dateTime">2017-4-15</lom:dateTime>
+	                <lom:dateTime uniqueElementName="dateTime">2017-4-16</lom:dateTime>
 	            </lom:date>
         	</lom:contribute>
         </lom:lifecycle>
-        <lom:taxonPath>
-            <lom:source uniqueElementName="source">
-                <lom:string language="en">OCW Course Topics</lom:string>
-            </lom:source>
-            <lom:taxon>
-                <lom:entry uniqueElementName="entry">
-                    <lom:string language="en">Engineering</lom:string>
-                </lom:entry>
-            </lom:taxon>
-            <lom:taxon>
-                <lom:entry uniqueElementName="entry">
-                    <lom:string language="en">Electrical Engineering</lom:string>
-                </lom:entry>
-            </lom:taxon>
-            <lom:taxon>
-                <lom:entry uniqueElementName="entry">
-                    <lom:string language="en">Signal Processing</lom:string>
-                </lom:entry>
-            </lom:taxon>
-        </lom:taxonPath>
-        <lom:taxonPath>
-            <lom:source uniqueElementName="source">
-                <lom:string language="en">OCW Course Topics</lom:string>
-            </lom:source>
-            <lom:taxon>
-                <lom:entry uniqueElementName="entry">
-                    <lom:string language="en">Fine Arts</lom:string>
-                </lom:entry>
-            </lom:taxon>
-            <lom:taxon>
-                <lom:entry uniqueElementName="entry">
-                    <lom:string language="en">Game Design</lom:string>
-                </lom:entry>
-            </lom:taxon>
-            
-        </lom:taxonPath>
         <lom:taxonPath>
             <lom:source uniqueElementName="source">
                 <lom:string language="en">OCW Course Topics</lom:string>
@@ -105,12 +69,12 @@
             </lom:taxon>
             <lom:taxon>
                 <lom:entry uniqueElementName="entry">
-                    <lom:string language="en">Visual Arts</lom:string>
+                    <lom:string language="en">Media Studies</lom:string>
                 </lom:entry>
             </lom:taxon>
             <lom:taxon>
                 <lom:entry uniqueElementName="entry">
-                    <lom:string language="en">Film and Video</lom:string>
+                    <lom:string language="en">Digital Media</lom:string>
                 </lom:entry>
             </lom:taxon>
         </lom:taxonPath>
@@ -120,1178 +84,234 @@
             </lom:source>
             <lom:taxon>
                 <lom:entry uniqueElementName="entry">
-                    <lom:string language="en">Fine Arts</lom:string>
+                    <lom:string language="en">Engineering</lom:string>
                 </lom:entry>
             </lom:taxon>
             <lom:taxon>
                 <lom:entry uniqueElementName="entry">
-                    <lom:string language="en">Performance Arts</lom:string>
+                    <lom:string language="en">Electrical Engineering</lom:string>
                 </lom:entry>
             </lom:taxon>
             <lom:taxon>
                 <lom:entry uniqueElementName="entry">
-                    <lom:string language="en">Theatrical Design</lom:string>
+                    <lom:string language="en">Signal Processing</lom:string>
                 </lom:entry>
             </lom:taxon>
         </lom:taxonPath>        
         <adlcp:location>contents/index.htm.xml</adlcp:location>
     </metadata>
-    <organizations default="ocw_21m-380-music-and-technology-sound-design-spring-2016">
-        <organization identifier="ocw_21m-380-music-and-technology-sound-design-spring-2016">
-            <title>Music and Technology: Sound Design</title>
-            <item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.CourseHome"
+    <organizations default="ocw_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012">
+        <organization identifier="ocw_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012">
+            <title>Music and Technology: Recording Techniques and Audio Production</title>
+            <item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.CourseHome"
                   identifierref="r_contents.index.htm"
                   ocw:sectionTemplateType="CourseHomePage"
-                  ocw:sectionTemplateVersion="2017-4-15">
-				<title>Music and Technology: Sound Design</title>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.21m-380s16.jpg"
-          identifierref="r_contents.21m-380s16.jpg">
-				<title>21m-380s16.jpg</title>
+                  ocw:sectionTemplateVersion="2017-4-16">
+				<title>Music and Technology: Recording Techniques and Audio Production</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.21m-380s12.jpg"
+          identifierref="r_contents.21m-380s12.jpg">
+				<title>21m-380s12.jpg</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.21m-380s16-th.jpg"
-          identifierref="r_contents.21m-380s16-th.jpg">
-				<title>21m-380s16-th.jpg</title>
-				</item>
-			</item>
-            <item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.this-course-at-mit"
-                  identifierref="r_contents.this-course-at-mit.index.htm"
-                  ocw:sectionTemplateType="ThisCourseAtMITSection"
-                  ocw:sectionTemplateVersion="2017-4-15">
-				<title>This Course at MIT</title>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.this-course-at-mit.teaching-with-technology-and-without"
-          identifierref="r_contents.this-course-at-mit.teaching-with-technology-and-without.index.htm">
-				<title>Teaching with Technology (and Without)</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.this-course-at-mit.learning-actively-in-groups"
-          identifierref="r_contents.this-course-at-mit.learning-actively-in-groups.index.htm">
-				<title>Learning Actively in Groups</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.this-course-at-mit.this-course-at-mit.learning-actively-in-groups.steam_train.png"
-          identifierref="r_contents.this-course-at-mit.learning-actively-in-groups.steam_train.png">
-				<title>steam train</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.this-course-at-mit.using-surveys-to-get-to-know-students"
-          identifierref="r_contents.this-course-at-mit.using-surveys-to-get-to-know-students.index.htm">
-				<title>Using Surveys to Get to Know Students</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.this-course-at-mit.assessing-student-learning-in-creative-contexts"
-          identifierref="r_contents.this-course-at-mit.assessing-student-learning-in-creative-contexts.index.htm">
-				<title>Assessing Student Learning in Creative Contexts</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.this-course-at-mit.engaging-deeply-in-the-design-process"
-          identifierref="r_contents.this-course-at-mit.engaging-deeply-in-the-design-process.index.htm">
-				<title>Engaging Deeply in the Design Process</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.this-course-at-mit.this-course-at-mit.engaging-deeply-in-the-design-process.design_stages.png"
-          identifierref="r_contents.this-course-at-mit.engaging-deeply-in-the-design-process.design_stages.png">
-				<title>design stages</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.this-course-at-mit.16.png"
-          identifierref="r_contents.this-course-at-mit.16.png">
-				<title>16 students enrolled</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.this-course-at-mit.course-inspiration-and-design"
-          identifierref="r_contents.this-course-at-mit.course-inspiration-and-design.index.htm">
-				<title>Course Inspiration and Design</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.21m-380s12th.jpg"
+          identifierref="r_contents.21m-380s12th.jpg">
+				<title>21m-380s12th.jpg</title>
 				</item>
 			</item>
-            <item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments"
-                  identifierref="r_contents.readings-and-assignments.index.htm"
+            <item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.readings"
+                  identifierref="r_contents.readings.index.htm"
                   ocw:sectionTemplateType="CourseSection"
-                  ocw:sectionTemplateVersion="2017-4-15">
-				<title>Readings and Assignments</title>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_pd3.zip"
-          identifierref="r_contents.readings-and-assignments.assn_pd3.zip">
-				<title>assn_pd3.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_rd2.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd2.pdf">
-				<title>RD2: The Art of Foley and Product Sound Design</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_ed.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_ed.pdf">
-				<title>ED: Radio Play Scene</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_rd1.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd1.pdf">
-				<title>RD10: Granular Synthesis</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_rd8.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd8.pdf">
-				<title>RD8: Waveshaping and Wavetable Synthesis</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_rd10.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd10.pdf">
-				<title>RD10: Granular Synthesis</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_ex1.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_ex1.pdf">
-				<title>EX1 Everyday Sound Objects: Compiled Samples</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_wr.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_wr.pdf">
-				<title>WR: Soundwalk Reflection</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_fp3.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp3.pdf">
-				<title>FP3: Method Selection and Implementation</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_rd4.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd4.pdf">
-				<title>RD4: Physics of Sound</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_ex2.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_ex2.pdf">
-				<title>EX2: Steam Train Whistle</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_rd6.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd6.pdf">
-				<title>RD6: Digital Audio</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_pd2.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_pd2.pdf">
-				<title>PD2: Abstractions</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_fp1.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp1.pdf">
-				<title>FP1: Requirements Specification Document</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_fp2.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp2.pdf">
-				<title>FP2: Research and Model</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_rd5.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd5.pdf">
-				<title>RD5: Perception of Sound and Soundwalking</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_rd7.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd7.pdf">
-				<title>RD7: Additive Synthesis</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_pd1.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_pd1.pdf">
-				<title>PD1: Sequencer</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_rd3.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd3.pdf">
-				<title>RD3: Starting with Pure Data (Pd)</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_rd9.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd9.pdf">
-				<title>RD9: AM and FM Synthesis</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_wr_s1.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_wr_s1.pdf">
-				<title>WR Soundwalk Reflection: Sample 1</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_fp2_pop.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp2_pop.pdf">
-				<title>Popcorn in a Microwave Oven: FP2</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_ex1_stu.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_ex1_stu.pdf">
-				<title>Compiled EX1 Samples</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_wr_s2.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_wr_s2.pdf">
-				<title>WR Soundwalk Reflection: Sample 2</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_wr_s3.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_wr_s3.pdf">
-				<title>WR Soundwalk Reflection: Sample 3</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp1_swit.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp1_swit.zip">
-				<title>assn_fp1_swit.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_ex3.zip"
-          identifierref="r_contents.readings-and-assignments.assn_ex3.zip">
-				<title>assn_ex3.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp1_dice.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp1_dice.zip">
-				<title>assn_fp1_dice.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp4_dice.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp4_dice.zip">
-				<title>assn_fp4_dice.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp4_sail.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp4_sail.zip">
-				<title>assn_fp4_sail.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp3_motr.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp3_motr.zip">
-				<title>assn_fp3_motr.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp4_popc.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp4_popc.zip">
-				<title>assn_fp4_popc.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp4_motr.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp4_motr.zip">
-				<title>assn_fp4_motr.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp3_popc.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp3_popc.zip">
-				<title>assn_fp3_popc.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp2_motr.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp2_motr.zip">
-				<title>assn_fp2_motr.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp4_quad.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp4_quad.zip">
-				<title>assn_fp4_quad.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp4_swit.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp4_swit.zip">
-				<title>assn_fp4_swit.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp1_motr.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp1_motr.zip">
-				<title>assn_fp1_motr.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp3_sail.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp3_sail.zip">
-				<title>assn_fp3_sail.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp3_dice.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp3_dice.zip">
-				<title>assn_fp3_dice.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp3_swit.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp3_swit.zip">
-				<title>assn_fp3_swit.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_fp1_popc.zip"
-          identifierref="r_contents.readings-and-assignments.assn_fp1_popc.zip">
-				<title>assn_fp1_popc.zip</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_asn_fp4.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_asn_fp4.pdf">
-				<title>MIT21M_380S16_asn_fp4.pdf</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.assn_ed_reif.wav"
-          identifierref="r_contents.readings-and-assignments.assn_ed_reif.wav">
-				<title>assn_ed_reif.wav</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_fp1sail.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp1sail.pdf">
-				<title>Laser Sailboat Soundscape: FP1</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_fp2dice.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp2dice.pdf">
-				<title>Rolling Dice: FP2</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_fp2sail.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp2sail.pdf">
-				<title>Laser Sailboat Soundscape: FP2</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.readings-and-assignments.MIT21M_380S16_assn_fp2swit.pdf"
-          identifierref="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp2swit.pdf">
-				<title>5-Way Pickup Selector Switch: FP2</title>
-				</item>
+                  ocw:sectionTemplateVersion="2017-4-16">
+				<title>Readings</title>
 			</item>
-            <item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.quizzes"
-                  identifierref="r_contents.quizzes.index.htm"
-                  ocw:sectionTemplateType="CourseSection"
-                  ocw:sectionTemplateVersion="2017-4-15">
-				<title>Quizzes</title>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.quizzes.MIT21M_380S16_quiz2_sol.pdf"
-          identifierref="r_contents.quizzes.MIT21M_380S16_quiz2_sol.pdf">
-				<title>Quiz 2 Solutions : Sound Synthesis Techniques</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.quizzes.MIT21M_380S16_quiz1.pdf"
-          identifierref="r_contents.quizzes.MIT21M_380S16_quiz1.pdf">
-				<title>Quiz 1: Physics and Perception of Sound; Digital Audio</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.quizzes.MIT21M_380S16_quiz1_sol.pdf"
-          identifierref="r_contents.quizzes.MIT21M_380S16_quiz1_sol.pdf">
-				<title>Quiz 1 Solutions : Physics and Perception of Sound; Digital Audio</title>
-				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.quizzes.quiz2.zip"
-          identifierref="r_contents.quizzes.quiz2.zip">
-				<title>quiz2.zip</title>
-				</item>
-			</item>
-            <item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes"
+            <item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes"
                   identifierref="r_contents.lecture-notes.index.htm"
                   ocw:sectionTemplateType="CourseSection"
-                  ocw:sectionTemplateVersion="2017-4-15">
+                  ocw:sectionTemplateVersion="2017-4-16">
 				<title>Lecture Notes</title>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec16.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec16.pdf">
-				<title>Waveshaping and Wavetable Synthesis</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec08.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec08.pdf">
+				<title>Lecture 8: Interconnections, signal flow, busses, and patch bays</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec03.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec03.pdf">
-				<title>Everyday Sound Objects</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec10.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec10.pdf">
+				<title>Lecture 10: Compression and limiting</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec25.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec25.pdf">
-				<title>Music Synthesizers</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec18.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec18.pdf">
+				<title>Lecture 18: Delay and reverb</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec11.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec11.pdf">
-				<title>Sound Recording and Editing Techniques</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec13.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec13.pdf">
+				<title>Lecture: 13 Microphones, directionality, and monophonic microphone techniques</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec06.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec06.pdf">
-				<title>Pd Programming Concepts</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec19.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec19.pdf">
+				<title>Lecture 19: Workshop: recording session 2</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec14.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec14.pdf">
-				<title>Additive Synthesis</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec_toc.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec_toc.pdf">
+				<title>Cover and table of contents</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_LecInstruct.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_LecInstruct.pdf">
-				<title>Lecture Slide Instructions</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec02.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec02.pdf">
+				<title>Lecture 2: Measures and visualizations of sounds and signals</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec02.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec02.pdf">
-				<title>The Sound Design Process</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec12.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec12.pdf">
+				<title>Lecture: 12 Approaching a mix</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec07.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec07.pdf">
-				<title>Perception of Sound</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec23.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec23.pdf">
+				<title>Lecture 23:  Workshop: recording session 5</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec13.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec13.pdf">
-				<title>Analysis and Requirements Specification</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec15.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec15.pdf">
+				<title>Lecture 15: Workshop: microphone positioning and recording sessions</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec15.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec15.pdf">
-				<title>Research and Model Making</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec17.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec17.pdf">
+				<title>Lecture 17:  Workshop: recording session 1</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec21.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec21.pdf">
-				<title>Granular Synthesis</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec_refs.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec_refs.pdf">
+				<title>References</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec10.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec10.pdf">
-				<title>Digital Audio Theory</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec14.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec14.pdf">
+				<title>Lecture 14: Stereophonic microphone techniques</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec09.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec09.pdf">
-				<title>Shaping Sound with Pd</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec20.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec20.pdf">
+				<title>Lecture 20:  Workshop: recording session 3</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec05.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec05.pdf">
-				<title>Physics of Sound</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec16.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec16.pdf">
+				<title>Lecture 16 : Ensemble microphone techniques</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec04.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec04.pdf">
-				<title>Introduction to Pure Data (Pd)</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec09.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec09.pdf">
+				<title>Lecture 9:  Workshop: preamps and level setting</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_Lec24.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_Lec24.pdf">
-				<title>Thunder</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec11.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec11.pdf">
+				<title>Lecture 11: Expansion, gating, and sidechaining</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.21M_380S16_playicon.png"
-          identifierref="r_contents.lecture-notes.21M_380S16_playicon.png">
-				<title>21M_380S16_playicon</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec22.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec22.pdf">
+				<title>Lecture 22: Workshop: recording session 4</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.21m380_examples.zip"
-          identifierref="r_contents.lecture-notes.21m380_examples.zip">
-				<title>21m380_examples.zip</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec06.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec06.pdf">
+				<title>Lecture 6: Controlling gain and processing signals</title>
 				</item>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.lecture-notes.MIT21M_380S16_lec_slides.pdf"
-          identifierref="r_contents.lecture-notes.MIT21M_380S16_lec_slides.pdf">
-				<title>21M.380 Sound Design: Lecture Slides</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec01.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec01.pdf">
+				<title>Lecture 1: The tools of audio engineering</title>
+				</item>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec07.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec07.pdf">
+				<title>Lecture 7: Filters and filter parameters</title>
+				</item>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec05.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec05.pdf">
+				<title>Lecture 5:  No class today</title>
+				</item>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec24.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec24.pdf">
+				<title>Lecture 24: Dithering and mastering</title>
+				</item>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec25.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec25.pdf">
+				<title>Lecture 25: Formats and distribution</title>
+				</item>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec03.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec03.pdf">
+				<title>Lecture 3: Psychoacoustics, hearing, and reflections</title>
+				</item>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec21.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec21.pdf">
+				<title>Lecture 21: Analog and digital audio fundamentals and mediums</title>
+				</item>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec04.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec04.pdf">
+				<title>Lecture 4: Workshop: amplitudes and recording hardware</title>
+				</item>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_lec26.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_lec26.pdf">
+				<title>Lecture 26 : Studios</title>
+				</item>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.lecture-notes.MIT21M_380S12_CompLecNot.pdf"
+          identifierref="r_contents.lecture-notes.MIT21M_380S12_CompLecNot.pdf">
+				<title>Complete lecture notes</title>
 				</item>
 			</item>
-            <item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.tools"
+            <item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.assignments"
+                  identifierref="r_contents.assignments.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2017-4-16">
+				<title>Assignments</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.assignments.MIT21M_380S12_assn_trksht.pdf"
+          identifierref="r_contents.assignments.MIT21M_380S12_assn_trksht.pdf">
+				<title>Blank track sheet</title>
+				</item>
+			</item>
+            <item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.tools"
                   identifierref="r_contents.tools.index.htm"
                   ocw:sectionTemplateType="CourseSection"
-                  ocw:sectionTemplateVersion="2017-4-15">
-				<title>Tools</title>
+                  ocw:sectionTemplateVersion="2017-4-16">
+				<title>Tools</title>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.tools.MIT21M_380S12_tools_moss.pdf"
+          identifierref="r_contents.tools.MIT21M_380S12_tools_moss.pdf">
+				<title>Schematic diagrams of Mobile Sound System (MOSS)</title>
+				</item>
+				<item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.tools.tools_moss.jpg"
+          identifierref="r_contents.tools.tools_moss.jpg">
+				<title>tools_moss.jpg</title>
+				</item>
 			</item>
-            <item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.syllabus"
+            <item identifier="i_21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012.syllabus"
                   identifierref="r_contents.syllabus.index.htm"
                   ocw:sectionTemplateType="CourseSection"
-                  ocw:sectionTemplateVersion="2017-4-15">
-				<title>Syllabus</title>
-				<item identifier="i_21m-380-music-and-technology-sound-design-spring-2016.syllabus.MIT21M_380S16_survey.pdf"
-          identifierref="r_contents.syllabus.MIT21M_380S16_survey.pdf">
-				<title>Student Enrollment Questionnaire</title>
-				</item>
+                  ocw:sectionTemplateVersion="2017-4-16">
+				<title>Syllabus</title>
 			</item>
             <item identifier="i_terms"
                   identifierref="r_common.terms.index.htm"
                   ocw:sectionTemplateType="GlobalSection"
-                  ocw:sectionTemplateVersion="2017-4-15">
+                  ocw:sectionTemplateVersion="2017-4-16">
 				<title>Legal Notices</title>
 			</item>
             <item identifier="i_terms"
                   identifierref="r_common.terms.index.htm"
                   ocw:sectionTemplateType="GlobalSection"
-                  ocw:sectionTemplateVersion="2017-4-15">
+                  ocw:sectionTemplateVersion="2017-4-16">
 				<title>Privacy Statement</title>
 			</item>
             <item identifier="i_terms.trademarks"
                   identifierref="r_common.terms.trademarks.index.htm"
                   ocw:sectionTemplateType="GlobalSection"
-                  ocw:sectionTemplateVersion="2017-4-15">
+                  ocw:sectionTemplateVersion="2017-4-16">
 				<title>Trademark Notices</title>
 			</item>
         </organization>
     </organizations>
     <resources>
-        <resource identifier="r_contents.syllabus.index.htm"
-                  type="webcontent"
-                  href="contents/syllabus/index.htm">
-            <metadata>
-                <adlcp:location>contents/syllabus/index.htm.xml</adlcp:location>
-            </metadata>
-            <file href="contents/syllabus/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp1_swit.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp1_swit.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp1_swit.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp1_swit.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp3.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_fp3.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_fp3.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_fp3.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp2.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_fp2.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_fp2.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_fp2.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec21.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec21.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec21.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec21.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.quizzes.MIT21M_380S16_quiz1_sol.pdf"
-                  type="other"
-                  href="contents/quizzes/MIT21M_380S16_quiz1_sol.pdf">
-            <metadata>
-                <adlcp:location>contents/quizzes/MIT21M_380S16_quiz1_sol.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/quizzes/MIT21M_380S16_quiz1_sol.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.quizzes.MIT21M_380S16_quiz1.pdf"
-                  type="other"
-                  href="contents/quizzes/MIT21M_380S16_quiz1.pdf">
-            <metadata>
-                <adlcp:location>contents/quizzes/MIT21M_380S16_quiz1.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/quizzes/MIT21M_380S16_quiz1.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp2sail.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_fp2sail.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_fp2sail.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_fp2sail.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp2_pop.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_fp2_pop.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_fp2_pop.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_fp2_pop.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd8.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_rd8.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_rd8.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_rd8.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_pd1.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_pd1.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_pd1.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_pd1.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd9.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_rd9.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_rd9.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_rd9.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp3_swit.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp3_swit.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp3_swit.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp3_swit.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec15.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec15.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec15.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec15.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_wr_s3.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_wr_s3.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_wr_s3.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_wr_s3.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.syllabus.MIT21M_380S16_survey.pdf"
-                  type="other"
-                  href="contents/syllabus/MIT21M_380S16_survey.pdf">
-            <metadata>
-                <adlcp:location>contents/syllabus/MIT21M_380S16_survey.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/syllabus/MIT21M_380S16_survey.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.this-course-at-mit.engaging-deeply-in-the-design-process.design_stages.png"
-                  type="other"
-                  href="contents/this-course-at-mit/engaging-deeply-in-the-design-process/design_stages.png">
-            <metadata>
-                <adlcp:location>contents/this-course-at-mit/engaging-deeply-in-the-design-process/design_stages.png.xml</adlcp:location>
-            </metadata>
-            <file href="contents/this-course-at-mit/engaging-deeply-in-the-design-process/design_stages.png"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp1_motr.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp1_motr.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp1_motr.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp1_motr.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.this-course-at-mit.16.png"
-                  type="other"
-                  href="contents/this-course-at-mit/16.png">
-            <metadata>
-                <adlcp:location>contents/this-course-at-mit/16.png.xml</adlcp:location>
-            </metadata>
-            <file href="contents/this-course-at-mit/16.png"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec10.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec10.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec10.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec10.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp3_popc.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp3_popc.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp3_popc.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp3_popc.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_ex2.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_ex2.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_ex2.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_ex2.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp3_motr.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp3_motr.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp3_motr.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp3_motr.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp4_motr.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp4_motr.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp4_motr.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp4_motr.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_pd3.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_pd3.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_pd3.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_pd3.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp2_motr.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp2_motr.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp2_motr.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp2_motr.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.this-course-at-mit.engaging-deeply-in-the-design-process.index.htm"
-                  type="webcontent"
-                  href="contents/this-course-at-mit/engaging-deeply-in-the-design-process/index.htm">
-            <metadata>
-                <adlcp:location>contents/this-course-at-mit/engaging-deeply-in-the-design-process/index.htm.xml</adlcp:location>
-            </metadata>
-            <file href="contents/this-course-at-mit/engaging-deeply-in-the-design-process/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_wr_s2.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_wr_s2.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_wr_s2.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_wr_s2.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp2swit.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_fp2swit.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_fp2swit.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_fp2swit.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd3.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_rd3.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_rd3.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_rd3.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.this-course-at-mit.teaching-with-technology-and-without.index.htm"
-                  type="webcontent"
-                  href="contents/this-course-at-mit/teaching-with-technology-and-without/index.htm">
-            <metadata>
-                <adlcp:location>contents/this-course-at-mit/teaching-with-technology-and-without/index.htm.xml</adlcp:location>
-            </metadata>
-            <file href="contents/this-course-at-mit/teaching-with-technology-and-without/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
-        </resource>
-        <resource identifier="r_contents.index.htm"
-                  type="webcontent"
-                  href="contents/index.htm">
-            <metadata>
-                <adlcp:location>contents/index.htm.xml</adlcp:location>
-            </metadata>
-            <file href="contents/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec06.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec06.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec06.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec06.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd1.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_rd1.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_rd1.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_rd1.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp1_dice.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp1_dice.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp1_dice.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp1_dice.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.21m-380s16-th.jpg"
-                  type="other"
-                  href="contents/21m-380s16-th.jpg">
-            <metadata>
-                <adlcp:location>contents/21m-380s16-th.jpg.xml</adlcp:location>
-            </metadata>
-            <file href="contents/21m-380s16-th.jpg"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec09.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec09.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec09.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec09.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.this-course-at-mit.using-surveys-to-get-to-know-students.index.htm"
-                  type="webcontent"
-                  href="contents/this-course-at-mit/using-surveys-to-get-to-know-students/index.htm">
-            <metadata>
-                <adlcp:location>contents/this-course-at-mit/using-surveys-to-get-to-know-students/index.htm.xml</adlcp:location>
-            </metadata>
-            <file href="contents/this-course-at-mit/using-surveys-to-get-to-know-students/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_wr.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_wr.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_wr.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_wr.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_ex3.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_ex3.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_ex3.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_ex3.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.21M_380S16_playicon.png"
-                  type="other"
-                  href="contents/lecture-notes/21M_380S16_playicon.png">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/21M_380S16_playicon.png.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/21M_380S16_playicon.png"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec13.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec13.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec13.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec13.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.quizzes.quiz2.zip"
-                  type="other"
-                  href="contents/quizzes/quiz2.zip">
-            <metadata>
-                <adlcp:location>contents/quizzes/quiz2.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/quizzes/quiz2.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp3_sail.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp3_sail.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp3_sail.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp3_sail.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.this-course-at-mit.course-inspiration-and-design.index.htm"
-                  type="webcontent"
-                  href="contents/this-course-at-mit/course-inspiration-and-design/index.htm">
-            <metadata>
-                <adlcp:location>contents/this-course-at-mit/course-inspiration-and-design/index.htm.xml</adlcp:location>
-            </metadata>
-            <file href="contents/this-course-at-mit/course-inspiration-and-design/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_ex1_stu.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_ex1_stu.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_ex1_stu.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_ex1_stu.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp4_popc.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp4_popc.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp4_popc.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp4_popc.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.21m380_examples.zip"
-                  type="other"
-                  href="contents/lecture-notes/21m380_examples.zip">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/21m380_examples.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/21m380_examples.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp1sail.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_fp1sail.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_fp1sail.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_fp1sail.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec14.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec14.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec14.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec14.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp3_dice.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp3_dice.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp3_dice.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp3_dice.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_ex1.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_ex1.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_ex1.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_ex1.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec05.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec05.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec05.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec05.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp4_quad.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp4_quad.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp4_quad.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp4_quad.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.this-course-at-mit.index.htm"
-                  type="webcontent"
-                  href="contents/this-course-at-mit/index.htm">
-            <metadata>
-                <adlcp:location>contents/this-course-at-mit/index.htm.xml</adlcp:location>
-            </metadata>
-            <file href="contents/this-course-at-mit/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec25.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec25.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec25.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec25.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.this-course-at-mit.assessing-student-learning-in-creative-contexts.index.htm"
-                  type="webcontent"
-                  href="contents/this-course-at-mit/assessing-student-learning-in-creative-contexts/index.htm">
-            <metadata>
-                <adlcp:location>contents/this-course-at-mit/assessing-student-learning-in-creative-contexts/index.htm.xml</adlcp:location>
-            </metadata>
-            <file href="contents/this-course-at-mit/assessing-student-learning-in-creative-contexts/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec11.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec11.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec11.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec11.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_asn_fp4.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_asn_fp4.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_asn_fp4.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_asn_fp4.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_ed.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_ed.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_ed.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_ed.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec07.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec07.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec07.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec07.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_wr_s1.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_wr_s1.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_wr_s1.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_wr_s1.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_pd2.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_pd2.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_pd2.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_pd2.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_ed_reif.wav"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_ed_reif.wav">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_ed_reif.wav.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_ed_reif.wav"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd10.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_rd10.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_rd10.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_rd10.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd6.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_rd6.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_rd6.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_rd6.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp1.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_fp1.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_fp1.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_fp1.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd5.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_rd5.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_rd5.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_rd5.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec04.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec04.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec04.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec04.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec03.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec03.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec03.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec03.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.quizzes.MIT21M_380S16_quiz2_sol.pdf"
-                  type="other"
-                  href="contents/quizzes/MIT21M_380S16_quiz2_sol.pdf">
-            <metadata>
-                <adlcp:location>contents/quizzes/MIT21M_380S16_quiz2_sol.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/quizzes/MIT21M_380S16_quiz2_sol.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.tools.index.htm"
-                  type="webcontent"
-                  href="contents/tools/index.htm">
-            <metadata>
-                <adlcp:location>contents/tools/index.htm.xml</adlcp:location>
-            </metadata>
-            <file href="contents/tools/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp4_sail.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp4_sail.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp4_sail.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp4_sail.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec02.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec02.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec02.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec02.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.this-course-at-mit.learning-actively-in-groups.index.htm"
-                  type="webcontent"
-                  href="contents/this-course-at-mit/learning-actively-in-groups/index.htm">
-            <metadata>
-                <adlcp:location>contents/this-course-at-mit/learning-actively-in-groups/index.htm.xml</adlcp:location>
-            </metadata>
-            <file href="contents/this-course-at-mit/learning-actively-in-groups/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd4.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_rd4.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_rd4.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_rd4.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.quizzes.index.htm"
-                  type="webcontent"
-                  href="contents/quizzes/index.htm">
-            <metadata>
-                <adlcp:location>contents/quizzes/index.htm.xml</adlcp:location>
-            </metadata>
-            <file href="contents/quizzes/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp4_swit.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp4_swit.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp4_swit.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp4_swit.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp1_popc.zip"
-                  type="other"
-                  href="contents/readings-and-assignments/assn_fp1_popc.zip">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp1_popc.zip.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/assn_fp1_popc.zip"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec16.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec16.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec16.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec16.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_Lec24.pdf"
-                  type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_Lec24.pdf">
-            <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_Lec24.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_Lec24.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_fp2dice.pdf"
-                  type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_fp2dice.pdf">
-            <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_fp2dice.pdf.xml</adlcp:location>
-            </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_fp2dice.pdf"/>
-                        
-        </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd2.pdf"
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec24.pdf"
                   type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_rd2.pdf">
+                  href="contents/lecture-notes/MIT21M_380S12_lec24.pdf">
             <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_rd2.pdf.xml</adlcp:location>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec24.pdf.xml</adlcp:location>
             </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_rd2.pdf"/>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec24.pdf"/>
                         
         </resource>
-        <resource identifier="r_contents.readings-and-assignments.MIT21M_380S16_assn_rd7.pdf"
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec26.pdf"
                   type="other"
-                  href="contents/readings-and-assignments/MIT21M_380S16_assn_rd7.pdf">
+                  href="contents/lecture-notes/MIT21M_380S12_lec26.pdf">
             <metadata>
-                <adlcp:location>contents/readings-and-assignments/MIT21M_380S16_assn_rd7.pdf.xml</adlcp:location>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec26.pdf.xml</adlcp:location>
             </metadata>
-            <file href="contents/readings-and-assignments/MIT21M_380S16_assn_rd7.pdf"/>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec26.pdf"/>
                         
         </resource>
         <resource identifier="r_contents.lecture-notes.index.htm"
@@ -1301,73 +321,352 @@
                 <adlcp:location>contents/lecture-notes/index.htm.xml</adlcp:location>
             </metadata>
             <file href="contents/lecture-notes/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
+            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012"/>            
         </resource>
-        <resource identifier="r_contents.21m-380s16.jpg"
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec25.pdf"
                   type="other"
-                  href="contents/21m-380s16.jpg">
+                  href="contents/lecture-notes/MIT21M_380S12_lec25.pdf">
             <metadata>
-                <adlcp:location>contents/21m-380s16.jpg.xml</adlcp:location>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec25.pdf.xml</adlcp:location>
             </metadata>
-            <file href="contents/21m-380s16.jpg"/>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec25.pdf"/>
                         
         </resource>
-        <resource identifier="r_contents.this-course-at-mit.learning-actively-in-groups.steam_train.png"
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec02.pdf"
                   type="other"
-                  href="contents/this-course-at-mit/learning-actively-in-groups/steam_train.png">
+                  href="contents/lecture-notes/MIT21M_380S12_lec02.pdf">
             <metadata>
-                <adlcp:location>contents/this-course-at-mit/learning-actively-in-groups/steam_train.png.xml</adlcp:location>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec02.pdf.xml</adlcp:location>
             </metadata>
-            <file href="contents/this-course-at-mit/learning-actively-in-groups/steam_train.png"/>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec02.pdf"/>
                         
         </resource>
-        <resource identifier="r_contents.readings-and-assignments.index.htm"
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec20.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec20.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec20.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec20.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec11.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec11.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec11.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec11.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.tools.index.htm"
                   type="webcontent"
-                  href="contents/readings-and-assignments/index.htm">
+                  href="contents/tools/index.htm">
             <metadata>
-                <adlcp:location>contents/readings-and-assignments/index.htm.xml</adlcp:location>
+                <adlcp:location>contents/tools/index.htm.xml</adlcp:location>
             </metadata>
-            <file href="contents/readings-and-assignments/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
+            <file href="contents/tools/index.htm"/>
+            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012"/>            
         </resource>
-        <resource identifier="r_contents.readings-and-assignments.assn_fp4_dice.zip"
+        <resource identifier="r_contents.tools.MIT21M_380S12_tools_moss.pdf"
                   type="other"
-                  href="contents/readings-and-assignments/assn_fp4_dice.zip">
+                  href="contents/tools/MIT21M_380S12_tools_moss.pdf">
             <metadata>
-                <adlcp:location>contents/readings-and-assignments/assn_fp4_dice.zip.xml</adlcp:location>
+                <adlcp:location>contents/tools/MIT21M_380S12_tools_moss.pdf.xml</adlcp:location>
             </metadata>
-            <file href="contents/readings-and-assignments/assn_fp4_dice.zip"/>
+            <file href="contents/tools/MIT21M_380S12_tools_moss.pdf"/>
                         
         </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_LecInstruct.pdf"
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec13.pdf"
                   type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_LecInstruct.pdf">
+                  href="contents/lecture-notes/MIT21M_380S12_lec13.pdf">
             <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_LecInstruct.pdf.xml</adlcp:location>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec13.pdf.xml</adlcp:location>
             </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_LecInstruct.pdf"/>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec13.pdf"/>
                         
         </resource>
-        <resource identifier="r_contents.lecture-notes.MIT21M_380S16_lec_slides.pdf"
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec04.pdf"
                   type="other"
-                  href="contents/lecture-notes/MIT21M_380S16_lec_slides.pdf">
+                  href="contents/lecture-notes/MIT21M_380S12_lec04.pdf">
             <metadata>
-                <adlcp:location>contents/lecture-notes/MIT21M_380S16_lec_slides.pdf.xml</adlcp:location>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec04.pdf.xml</adlcp:location>
             </metadata>
-            <file href="contents/lecture-notes/MIT21M_380S16_lec_slides.pdf"/>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec04.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec01.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec01.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec01.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec01.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec_refs.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec_refs.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec_refs.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec_refs.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.readings.index.htm"
+                  type="webcontent"
+                  href="contents/readings/index.htm">
+            <metadata>
+                <adlcp:location>contents/readings/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/readings/index.htm"/>
+            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012"/>            
+        </resource>
+        <resource identifier="r_contents.index.htm"
+                  type="webcontent"
+                  href="contents/index.htm">
+            <metadata>
+                <adlcp:location>contents/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/index.htm"/>
+            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012"/>            
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec18.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec18.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec18.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec18.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec_toc.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec_toc.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec_toc.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec_toc.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.tools.tools_moss.jpg"
+                  type="other"
+                  href="contents/tools/tools_moss.jpg">
+            <metadata>
+                <adlcp:location>contents/tools/tools_moss.jpg.xml</adlcp:location>
+            </metadata>
+            <file href="contents/tools/tools_moss.jpg"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec16.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec16.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec16.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec16.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec09.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec09.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec09.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec09.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec14.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec14.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec14.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec14.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec08.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec08.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec08.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec08.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec07.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec07.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec07.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec07.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec21.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec21.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec21.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec21.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec10.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec10.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec10.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec10.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec19.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec19.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec19.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec19.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec22.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec22.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec22.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec22.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec06.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec06.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec06.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec06.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.21m-380s12th.jpg"
+                  type="other"
+                  href="contents/21m-380s12th.jpg">
+            <metadata>
+                <adlcp:location>contents/21m-380s12th.jpg.xml</adlcp:location>
+            </metadata>
+            <file href="contents/21m-380s12th.jpg"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec15.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec15.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec15.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec15.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.assignments.index.htm"
+                  type="webcontent"
+                  href="contents/assignments/index.htm">
+            <metadata>
+                <adlcp:location>contents/assignments/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/index.htm"/>
+            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012"/>            
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec23.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec23.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec23.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec23.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec12.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec12.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec12.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec12.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec03.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec03.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec03.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec03.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.assignments.MIT21M_380S12_assn_trksht.pdf"
+                  type="other"
+                  href="contents/assignments/MIT21M_380S12_assn_trksht.pdf">
+            <metadata>
+                <adlcp:location>contents/assignments/MIT21M_380S12_assn_trksht.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/MIT21M_380S12_assn_trksht.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.21m-380s12.jpg"
+                  type="other"
+                  href="contents/21m-380s12.jpg">
+            <metadata>
+                <adlcp:location>contents/21m-380s12.jpg.xml</adlcp:location>
+            </metadata>
+            <file href="contents/21m-380s12.jpg"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec17.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec17.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec17.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec17.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_CompLecNot.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_CompLecNot.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_CompLecNot.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_CompLecNot.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.syllabus.index.htm"
+                  type="webcontent"
+                  href="contents/syllabus/index.htm">
+            <metadata>
+                <adlcp:location>contents/syllabus/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/syllabus/index.htm"/>
+            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012"/>            
+        </resource>
+        <resource identifier="r_contents.lecture-notes.MIT21M_380S12_lec05.pdf"
+                  type="other"
+                  href="contents/lecture-notes/MIT21M_380S12_lec05.pdf">
+            <metadata>
+                <adlcp:location>contents/lecture-notes/MIT21M_380S12_lec05.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/lecture-notes/MIT21M_380S12_lec05.pdf"/>
                         
         </resource>        
         <resource identifier="r_common.search.AdvancedSearch.htm"
                   type="webcontent"
                   href="common/search/AdvancedSearch.htm">
             <file href="common/search/AdvancedSearch.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
+            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012"/>            
         </resource>
         <resource identifier="r_common.jsp.feedback.htm"
                   type="webcontent"
                   href="common/jsp/feedback.htm">
             <file href="common/jsp/feedback.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
+            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012"/>            
         </resource>
         <resource identifier="r_common.terms.index.htm"
                   type="webcontent"
@@ -1380,15 +679,15 @@
             <file href="common/terms/limitationsheader.png"/>
             <file href="common/terms/understandingheader.jpg"/>
             <file href="common/terms/deedfootyellow.png"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
+            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012"/>            
         </resource>
         <resource identifier="r_common.terms.trademarks.index.htm"
                   type="webcontent"
                   href="common/terms/trademarks/index.htm">
             <file href="common/terms/trademarks/index.htm"/>
-            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"/>            
+            <dependency identifierref="webrenderrequirements.21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012"/>            
         </resource>
-        <resource identifier="webrenderrequirements.21m-380-music-and-technology-sound-design-spring-2016"
+        <resource identifier="webrenderrequirements.21m-380-music-and-technology-recording-techniques-and-audio-production-spring-2012"
                   type="webcontent">
         	<file href="common/styles/base.css"/>
         	<file href="common/styles/courses.css"/>
