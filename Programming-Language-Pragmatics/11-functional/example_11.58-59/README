@@ -1,0 +1,3 @@
+Streams (Examples 11.58 and 11.59) don't work as shown in the book in
+Scheme because Scheme uses applicative order evaluation.  They can be
+made to work with delay and force; this is the subject of Exercise 11.11.

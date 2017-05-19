@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- Examples 14.76 (Figure 14.20), 14.77, and 14.78
+
+    This file should work in any JavaScript-enabled browser, whether
+    loaded from an http:// URI or a file:// URI.
+-->
+<html lang="en">
+<head><meta charset="utf-8" />
+<title>Object Orientation</title>
+<script type="text/javascript">
+
+function Integer(n) {
+    this.val = n || 0;      // use 0 if n is missing (undefined)
+}
+
+function Integer_set(n) {
+    this.val = n;
+}
+
+function Integer_get() {
+    return this.val;
+}
+
+Integer.prototype.set = Integer_set;
+Integer.prototype.get = Integer_get;
+
+function Tally(n) {
+    this.base(n);                   // call to base constructor
+}
+function Tally_inc() {
+    this.val++;
+}
+Tally.prototype = new Integer;      // inherit methods
+Tally.prototype.base = Integer;     // make base constructor available
+Tally.prototype.inc = Tally_inc;    // new method
+
+function foo() {
+    x = document.getElementById('line1');
+    y = document.getElementById('line2');
+
+    c2 = new Integer(3);
+    c3 = new Integer;
+
+    document.write(c2.get() + "&nbsp;&nbsp;&nbsp;" + c3.get() + "<br>");
+    c2.set(4);  c3.set(5);
+    document.write(c2.get() + "&nbsp;&nbsp;&nbsp;" + c3.get() + "<br>");
+
+    c2.set = new Function("n", "this.val = n * n;");
+        // anonymous function constructor
+    c2.set(3);  c3.set(4);      // these call different methods!
+    document.write(c2.get() + "&nbsp;&nbsp;&nbsp;" + c3.get() + "<br>");
+
+    t1 = new Tally(3);
+    t1.inc();  t1.inc();
+    document.write(t1.get() + "<br>");
+}
+
+</script>
+</head>
+<body>
+<p><SPAN id="line1"></SPAN></p>
+<p><SPAN id="line2"></SPAN></p>
+<p><script type="text/javascript"> foo(); </script>
+</body>
+</html>

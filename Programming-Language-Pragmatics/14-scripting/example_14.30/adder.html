@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- Example 14.30 (Figure 14.11)
+
+    To work, this file must be installed in a directory visible to a web
+    browser, with a "http://" URL.  A "file://" URL will *not* suffice
+
+    The companion file, add.perl, must be in the web server's cgi-bin
+    directory.
+-->
+<html lang="en">
+<head><meta charset="utf-8"><title>Adder</title></head>
+<body>
+<form action="/cgi-bin/add.perl" method="post">
+<p><input name="argA" size=3>First addend<br>
+   <input name="argB" size=3>Second addend</p>
+<p><input type="submit"></p>
+</form>
+</body>
+</html>

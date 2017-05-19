@@ -1,0 +1,47 @@
+# Example 6.99
+
+resource silly_resource
+    type name = int
+    type description = int
+
+    # declarations of request types:
+    op A()
+    op B()
+    op C()
+
+body silly_resource()
+
+    var count : int := 0
+
+    process silly
+        do true ->              # loop forever
+            in A() st count % 2 = 1 -> write("A called")
+            [] B() -> write("B called")
+            [] C() -> write("C called")
+            ni
+            count++
+        od
+    end
+
+    process A_proc
+        fa i := 1 to 50 ->
+            call A()
+            nap(int(random() * 5))
+        af
+    end
+
+    process B_proc
+        fa i := 1 to 50 ->
+            call B()
+            nap(int(random() * 5))
+        af
+    end
+
+    process C_proc
+        fa i := 1 to 50 ->
+            call C()
+            nap(int(random() * 5))
+        af
+    end
+
+end

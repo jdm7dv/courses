@@ -1,0 +1,56 @@
+# Examples 6.89 through 6.92
+
+procedure main(args)
+    local i, first, last, step, s, t
+    first := 1
+    last := 20
+    step := 3
+    every i := first to last by step do {
+        write(i)
+    }                   # 1 4 7 10 13 16 19
+
+    write("")
+
+    s := "now is the time"
+    every i := 1 + upto(' ', s) do {
+        write(i)
+    }                   # 5 8 12
+
+    write("")
+
+    every write(1 + upto(' ', s))
+
+    write("")
+
+    if (i := find("abc", s)) > 6 then {
+        write("You should not see this.")
+    }
+    s := "abcdef"
+    if (i := find("abc", s)) > 6 then {
+        write("You shouldn't see this either.")
+    }
+    s := "123456abcdef"
+    if (i := find("abc", s)) > 6 then {
+        write("But you should see this.")
+    }
+
+    write("")
+
+    s := "abcxefg"
+    t := "gfexcba"
+    if (i := find("x", s)) = find("x", t) then {
+        write("Match found at position ", i)
+    }
+    s := "abcdefgx"
+    t := "gfedcba"
+    i := 1
+    if (i := find("x", s)) = find("x", t) then {
+        write("You shouldn't see this.")
+    }
+    write("i is now ", i)
+    i := 1
+    if (i <- find("x", s)) = find("x", t) then {
+        write("You shouldn't see this either.")
+    }
+    write("i is still ", i)
+end

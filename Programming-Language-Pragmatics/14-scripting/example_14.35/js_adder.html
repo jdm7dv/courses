@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- Example 14.35 (Figure 14.15)
+
+    This file should work in any JavaScript-enabled browser, whether
+    loaded from an http:// URI or a file:// URI.
+-->
+<html lang="en">
+<head><meta charset="utf-8" /><title>Adder</title>
+<script type="text/javascript">
+function doAdd() {
+    argA = parseInt(document.adder.argA.value)
+    argB = parseInt(document.adder.argB.value)
+    x = document.getElementById('sum')
+    while (x.hasChildNodes())
+        x.removeChild(x.lastChild)  // delete old content
+    t = document.createTextNode(argA + " plus "
+        + argB + " is " + (argA + argB))
+    x.appendChild(t)
+}
+</script>
+</head>
+<body>
+<form name="adder" onsubmit="return false">
+<p><INPUT name="argA" size=3> First addend<br />
+   <INPUT name="argB" size=3> Second addend</p>
+<p><input type="button" onclick="doAdd()" value="Calculate" /></p>
+</form>
+<p><span id="sum"></span></p>
+</body>
+</html>

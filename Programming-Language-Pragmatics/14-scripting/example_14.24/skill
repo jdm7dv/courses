@@ -1,0 +1,27 @@
+#! /usr/bin/perl
+# Example 14.24 (Figure 14.5)
+
+# To use, start a bunch of process you don't care about (loop.c in this
+# directory makes a good candidate) then run: ./skill <pattern>
+
+$#ARGV == 0 || die "usage: $0 pattern\n";
+open(PS, "ps -w -w -x -o'pid,command' |");
+
+<PS>;    # discard header line
+while (<PS>) {
+    @words = split;
+    if (/$ARGV[0]/i && $words[0] ne $$) {
+        chomp;
+        print;
+        do {
+            print "? ";
+            $answer = <STDIN>;
+        } until $answer =~ /^[yn]/i;
+        if ($answer =~ /^y/i) {
+            kill 9, $words[0];
+            # system "kill -9 $words[0]";
+            sleep 1;
+            die "unsuccessful; sorry\n" if kill 0, $words[0];
+        }
+    }
+}

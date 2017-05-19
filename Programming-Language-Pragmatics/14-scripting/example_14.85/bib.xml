@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="bib.xsl"?>
+
+<!-- Example 14.85 (Figure 14.23)
+    
+    To work correctly, this page must be loaded by an XSLT processor,
+    e.g. the one embedded in some recent web servers and browsers.
+    The companion file, bib.xsl, must be in the same directory.
+-->
+
+<bibliography>
+  <book>
+    <author>Guido van Rossum</author>
+    <editor>Fred L. Drake, Jr.</editor>
+    <title>The Python Language Reference Manual (version 3.2)</title>
+    <publisher>Network Theory, Ltd.</publisher>
+    <address>Bristol, UK</address>
+    <year>2011</year>
+    <note>Available at <uri>http://www.network-theory.co.uk/python/language/</uri></note>
+  </book>
+  <article>
+    <author>John K. Ousterhout</author>
+    <title>Scripting: Higher-Level Programming for the 21st Century</title>
+    <journal>Computer</journal>
+    <volume>31</volume>
+    <number>3</number>
+    <month>March</month>
+    <year>1998</year>
+    <pages>23&#8211;30</pages>
+  </article>
+  <inproceedings>
+    <author>Theodor Holm Nelson</author>
+    <title>Complex Information Processing: A File Structure for the
+        Complex, the Changing, and the Indeterminate</title>
+    <booktitle>Proceedings of the Twentieth ACM National Conference</booktitle>
+    <month>August</month>
+    <year>1965</year>
+    <address>Cleveland, OH</address>
+    <pages>84&#8211;100</pages>
+  </inproceedings>
+  <inproceedings>
+    <author>Stephan Kepser</author>
+    <title>A Simple Proof for the Turing-Completeness of XSLT and XQuery</title>
+    <booktitle>Proceedings, Extreme Markup Languages 2004</booktitle>
+    <address>Montr&#233;al, Canada</address>
+    <year>2004</year>
+    <month>August</month>
+    <note>Available at <uri>http://conferences.idealliance.org/extreme/html/2004/Kepser01/
+        EML2004Kepser01.html</uri></note>
+  </inproceedings>
+  <inproceedings>
+    <author>David G. Korn</author>
+    <title><code>ksh</code>: An Extensible High Level Language</title>
+    <booktitle>Proceedings of the USENIX Very High Level Languages Symposium</booktitle>
+    <address>Santa Fe, NM</address>
+    <year>1994</year>
+    <month>October</month>
+    <pages>129&#8211;146</pages>
+  </inproceedings>
+  <book>
+    <author>Tom Christiansen</author>
+    <author>brian d foy</author>
+    <author>Larry Wall</author>
+    <author>Jon Orwant</author>
+    <title>Programming Perl</title>
+    <edition>fourth</edition>
+    <publisher>O&#8217;Reilly Media</publisher>
+    <address>Sebastopol, CA</address>
+    <year>2012</year>
+  </book>
+</bibliography>

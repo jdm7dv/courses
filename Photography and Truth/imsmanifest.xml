@@ -1,0 +1,1227 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+          xmlns:cwsp="http://www.dspace.org/xmlns/cwspace_imscp"
+          xmlns:ocw="https://ocw.mit.edu/xmlns/ocw_imscp"
+          xmlns:lom="https://ocw.mit.edu/xmlns/LOM"
+          identifier="urn_edu.mit.ocw_21a-348-photography-and-truth-spring-2008"
+          version="2017-4-15T20:51:57"
+          cwsp:packageType="Course"
+          xml:base="21a-348-spring-2008/"
+          xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 http://www.imsglobal.org/xsd/imscp_v1p1.xsd  http://www.adlnet.org/xsd/adlcp_rootv1p2 http://www.adlnet.org/xsd/adlcp_rootv1p2.xsd http://www.dspace.org/xmlns/cwspace_imscp http://www.dspace.org/xsd/cwspace_imscp/version10/cwspace_imscpv10.xsd https://ocw.mit.edu/xmlns/ocw_imscp https://ocw.mit.edu/xsd/ocw_imscp/version10/ocw_imscpv10.xsd https://ocw.mit.edu/xmlns/LOM https://ocw.mit.edu/xsd/LOM/lomv1.0/lomv1.0.xsd">
+   	<metadata>
+   		<schema>IMS Content</schema>
+        <schemaversion>1.1</schemaversion>
+        <cwsp:packageMetadata>
+            <cwsp:sourceSystem>OCW</cwsp:sourceSystem>
+            <cwsp:profile>CWSpace</cwsp:profile>
+            <cwsp:profileVersion>0.1</cwsp:profileVersion>
+        </cwsp:packageMetadata>
+        <lom:general uniqueElementName="general">
+            <lom:title uniqueElementName="title">
+				<lom:string language="en">Photography and Truth</lom:string>
+			</lom:title>
+			<lom:identifier>
+				<lom:catalog uniqueElementName="catalog">OCW Master Course Number</lom:catalog>
+		      	<lom:entry uniqueElementName="entry">21A.348</lom:entry>
+			</lom:identifier>
+			<lom:identifier>
+				<lom:catalog uniqueElementName="catalog">OCW Linked Course Number</lom:catalog>
+		      	<lom:entry uniqueElementName="entry">CMS.835</lom:entry>
+			</lom:identifier>
+        </lom:general>
+        <lom:lifecycle uniqueElementName="lifeCycle">
+            <lom:version uniqueElementName="version">
+				<lom:string language="en">Spring 2008</lom:string>
+			</lom:version>
+            <lom:contribute>
+	            <lom:role>
+	                <lom:source uniqueElementName="source">OCW_LOMv1.0</lom:source>
+	                <lom:value uniqueElementName="value">Author</lom:value>
+	            </lom:role>
+	            <lom:entity>Howe, James</lom:entity>
+	            <lom:date uniqueElementName="date">
+	                <lom:dateTime uniqueElementName="dateTime">2017-4-15</lom:dateTime>
+	            </lom:date>
+        	</lom:contribute>
+        </lom:lifecycle>
+        <lom:relation uniqueElementName="relation">
+        	<lom:kind uniqueElementName="kind">
+        		<lom:source uniqueElementName="source">OCW_LOMv1.0</lom:source>
+        		<lom:value uniqueElementName="value">isbasedon</lom:value>
+        	</lom:kind>
+        	<lom:resource uniqueElementName="resource">
+        		<lom:identifier>
+        			<lom:catalog uniqueElementName="catalog">URI</lom:catalog>
+        			<lom:entry uniqueElementName="entry">http://hdl.handle.net/1721.1/58673</lom:entry>
+        		</lom:identifier>
+        		<lom:description uniqueElementName="description">
+        			<lom:string language="en">Previous version of the course</lom:string>
+        		</lom:description>
+        	</lom:resource>
+        </lom:relation>
+        <lom:taxonPath>
+            <lom:source uniqueElementName="source">
+                <lom:string language="en">OCW Course Topics</lom:string>
+            </lom:source>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Social Science</lom:string>
+                </lom:entry>
+            </lom:taxon>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Anthropology</lom:string>
+                </lom:entry>
+            </lom:taxon>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Ethnography</lom:string>
+                </lom:entry>
+            </lom:taxon>
+        </lom:taxonPath>
+        <lom:taxonPath>
+            <lom:source uniqueElementName="source">
+                <lom:string language="en">OCW Course Topics</lom:string>
+            </lom:source>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Fine Arts</lom:string>
+                </lom:entry>
+            </lom:taxon>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Visual Arts</lom:string>
+                </lom:entry>
+            </lom:taxon>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Photography</lom:string>
+                </lom:entry>
+            </lom:taxon>
+        </lom:taxonPath>
+        <lom:taxonPath>
+            <lom:source uniqueElementName="source">
+                <lom:string language="en">OCW Course Topics</lom:string>
+            </lom:source>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Social Science</lom:string>
+                </lom:entry>
+            </lom:taxon>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Anthropology</lom:string>
+                </lom:entry>
+            </lom:taxon>
+            <lom:taxon>
+                <lom:entry uniqueElementName="entry">
+                    <lom:string language="en">Cultural Anthropology</lom:string>
+                </lom:entry>
+            </lom:taxon>
+        </lom:taxonPath>        
+        <adlcp:location>contents/index.htm.xml</adlcp:location>
+    </metadata>
+    <organizations default="ocw_21a-348-photography-and-truth-spring-2008">
+        <organization identifier="ocw_21a-348-photography-and-truth-spring-2008">
+            <title>Photography and Truth</title>
+            <item identifier="i_21a-348-photography-and-truth-spring-2008.CourseHome"
+                  identifierref="r_contents.index.htm"
+                  ocw:sectionTemplateType="CourseHomePage"
+                  ocw:sectionTemplateVersion="2017-4-15">
+				<title>Photography and Truth</title>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.21a-348f08.jpg"
+          identifierref="r_contents.21a-348f08.jpg">
+				<title>The short cut from home to holy land</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.21a-348f08-th.jpg"
+          identifierref="r_contents.21a-348f08-th.jpg">
+				<title>The short cut from home to holy land</title>
+				</item>
+			</item>
+            <item identifier="i_21a-348-photography-and-truth-spring-2008.syllabus"
+                  identifierref="r_contents.syllabus.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2017-4-15">
+				<title>Syllabus</title>
+			</item>
+            <item identifier="i_21a-348-photography-and-truth-spring-2008.readings"
+                  identifierref="r_contents.readings.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2017-4-15">
+				<title>Readings</title>
+			</item>
+            <item identifier="i_21a-348-photography-and-truth-spring-2008.photos"
+                  identifierref="r_contents.photos.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2017-4-15">
+				<title>Photos</title>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_dani.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_dani.pdf">
+				<title>"The Grand Valley Dani." Selections from Gardens of War and New Guinea Photographs, 1961.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_portraits19.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_portraits19.pdf">
+				<title>Nineteenth-Century Portraits and Society</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_evolution.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_evolution.pdf">
+				<title>Very Brief History of Photographic Technology</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_ambulantes.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_ambulantes.pdf">
+				<title>"Guatemalan Itinerant Photographers." Selections from Los Ambulantes.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_pamplona.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_pamplona.pdf">
+				<title>Selections from "Pamplona Bullfight."</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_szarkowski.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_szarkowski.pdf">
+				<title>Selections from The Photographer's Eye.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_portraitsL.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_portraitsL.pdf">
+				<title>"A Lebanese Portrait Studio." Selections from Hashem El Madani and Mapping Sitting.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_village.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_village.pdf">
+				<title>Selections from "Spanish Village."</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_doctor.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_doctor.pdf">
+				<title>Selections from "A Country Doctor."</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_natgeo.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_natgeo.pdf">
+				<title>Pictures from the National Geographic</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_chambi.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_chambi.pdf">
+				<title>Selections from Martín Chambi.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_portraits20.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_portraits20.pdf">
+				<title>"20th Century Portrait Photography." Selections from Theatre of the Face.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_environment.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_environment.pdf">
+				<title>"Environmental Propaganda." Selections from This is the American Earth and The Hand of Man on America.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_curtis.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_curtis.pdf">
+				<title>Selections from The Vanishing Race.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_chiapas.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_chiapas.pdf">
+				<title>"Weaving in Chiapas." Selections from Weaving Generations Together.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_nyt.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_nyt.pdf">
+				<title>A Day in the New York Times." Selections from The New York Times, December 30, 2007.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_forest.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_forest.pdf">
+				<title>Selections from The Edge of the Forest.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_manipulation.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_manipulation.pdf">
+				<title>Photo-Manipulation</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_snapshotsF.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_snapshotsF.pdf">
+				<title>A selection of J. H. Lartigue’s boyhood photographs</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_cristina.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_cristina.pdf">
+				<title>Selections from My Little Sister Cristina.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_spirits.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_spirits.pdf">
+				<title>"Spirit Photography."</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_snapshotsR.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_snapshotsR.pdf">
+				<title>"Royal Snaps." Selections from Queen Alexandra's Christmas Gift Book and p. 548 in Lenman, Oxford Companion.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_enemy.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_enemy.pdf">
+				<title>Selections from Living with the Enemy.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_trobriand.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_trobriand.pdf">
+				<title>"Trobriand Islanders." Selections from Malinowski's Kiriwina.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_faces.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_faces.pdf">
+				<title>Selections from You Have Seen Their Faces.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_nuba.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_nuba.pdf">
+				<title>Selections from Last of the Nuba.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_jordan.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_jordan.pdf">
+				<title>Selections from Roll Jordan Roll.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_portraitsG.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_portraitsG.pdf">
+				<title>"August Sander, German Portraits." Selections from Men Without Masks.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_death.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_death.pdf">
+				<title>Selections from Death in the Making.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_bondage.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_bondage.pdf">
+				<title>Selections from House of Bondage.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_afghan.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_afghan.pdf">
+				<title>"The Afghan Girl."</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_guards.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_guards.pdf">
+				<title>"Death Camp Guards Have Fun." Selections from Wilkinson, Alec. "Picturing Auschwitz." New Yorker, March 17, 2008.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_greece.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_greece.pdf">
+				<title>"Mourning in Greece." Selections from The Death Rituals of Rural Greece.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_physiognomy.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_physiognomy.pdf">
+				<title>"Physiognomy." Selections from New Physiognomy.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_exodus.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_exodus.pdf">
+				<title>Selections from An American Exodus</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_corn.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_corn.pdf">
+				<title>"Indigenous Photography: Corn." Selections from Ixim; Maíz; Corn.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_memento.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_memento.pdf">
+				<title>"Memento Mori: Recording the Dead." Selections from Forget Me Not.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_depression_2.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_depression_2.pdf">
+				<title>"Documenting the Depression." Selections from Documenting America. Part Two.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_gender.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_gender.pdf">
+				<title>"Gender in Advertising." Selections from Gender Advertisements.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_expression_2.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_expression_2.pdf">
+				<title>Photography, Social Classification &amp; Social Control</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_expression_1.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_expression_1.pdf">
+				<title>Facial Expression &amp; Evolution</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_depression_1.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_depression_1.pdf">
+				<title>"Documenting the Depression." Selections from Documenting America. Part One.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_minamata.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_minamata.pdf">
+				<title>"Minamata." Selections from Minamata.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_salgado.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_salgado.pdf">
+				<title>"Sebastião Salgado." Selections from An Uncertain Grace.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_praise.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_praise.pdf">
+				<title>Selections from Let Us Now Praise Famous Men.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_genocide.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_genocide.pdf">
+				<title>"Genocide in Paraguay?" Selections from The Indian Peoples of Paraguay.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_fruit.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_fruit.pdf">
+				<title>Selections from Fruit Tramps.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_postcards.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_postcards.pdf">
+				<title>"American Postcards." Selections from Real Photo Postcard Guide.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_memorials.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_memorials.pdf">
+				<title>"Jewish Memorial Books." Selections from From a Ruined Garden.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_balinese.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_balinese.pdf">
+				<title>Selections from Balinese Character.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_schools.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_schools.pdf">
+				<title>Photography &amp; Art</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_muckraking.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_muckraking.pdf">
+				<title>"Muckraking."</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_landfree.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_landfree.pdf">
+				<title>Selections from Land of the Free.</title>
+				</item>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.photos.MIT21A_348S08_snapshotsA.pdf"
+          identifierref="r_contents.photos.MIT21A_348S08_snapshotsA.pdf">
+				<title>"American Snapshots." Selections from Art of the American Snapshot.</title>
+				</item>
+			</item>
+            <item identifier="i_21a-348-photography-and-truth-spring-2008.assignments"
+                  identifierref="r_contents.assignments.index.htm"
+                  ocw:sectionTemplateType="CourseSection"
+                  ocw:sectionTemplateVersion="2017-4-15">
+				<title>Assignments</title>
+				<item identifier="i_21a-348-photography-and-truth-spring-2008.assignments.MIT21A_348S08_mini.pdf"
+          identifierref="r_contents.assignments.MIT21A_348S08_mini.pdf">
+				<title>First Assignment Sheet: Mini-essays/Reports </title>
+				</item>
+			</item>
+            <item identifier="i_terms"
+                  identifierref="r_common.terms.index.htm"
+                  ocw:sectionTemplateType="GlobalSection"
+                  ocw:sectionTemplateVersion="2017-4-15">
+				<title>Legal Notices</title>
+			</item>
+            <item identifier="i_terms"
+                  identifierref="r_common.terms.index.htm"
+                  ocw:sectionTemplateType="GlobalSection"
+                  ocw:sectionTemplateVersion="2017-4-15">
+				<title>Privacy Statement</title>
+			</item>
+            <item identifier="i_terms.trademarks"
+                  identifierref="r_common.terms.trademarks.index.htm"
+                  ocw:sectionTemplateType="GlobalSection"
+                  ocw:sectionTemplateVersion="2017-4-15">
+				<title>Trademark Notices</title>
+			</item>
+        </organization>
+    </organizations>
+    <resources>
+        <resource identifier="r_contents.photos.MIT21A_348S08_pamplona.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_pamplona.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_pamplona.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_pamplona.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_portraits20.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_portraits20.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_portraits20.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_portraits20.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.assignments.MIT21A_348S08_mini.pdf"
+                  type="other"
+                  href="contents/assignments/MIT21A_348S08_mini.pdf">
+            <metadata>
+                <adlcp:location>contents/assignments/MIT21A_348S08_mini.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/MIT21A_348S08_mini.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_manipulation.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_manipulation.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_manipulation.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_manipulation.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_afghan.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_afghan.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_afghan.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_afghan.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_evolution.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_evolution.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_evolution.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_evolution.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_spirits.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_spirits.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_spirits.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_spirits.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_muckraking.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_muckraking.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_muckraking.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_muckraking.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_portraits19.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_portraits19.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_portraits19.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_portraits19.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_forest.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_forest.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_forest.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_forest.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_faces.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_faces.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_faces.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_faces.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_dani.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_dani.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_dani.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_dani.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_salgado.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_salgado.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_salgado.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_salgado.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_snapshotsF.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_snapshotsF.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_snapshotsF.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_snapshotsF.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_guards.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_guards.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_guards.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_guards.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_memento.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_memento.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_memento.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_memento.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.index.htm"
+                  type="webcontent"
+                  href="contents/photos/index.htm">
+            <metadata>
+                <adlcp:location>contents/photos/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/index.htm"/>
+            <dependency identifierref="webrenderrequirements.21a-348-photography-and-truth-spring-2008"/>            
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_curtis.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_curtis.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_curtis.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_curtis.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_death.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_death.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_death.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_death.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_depression_1.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_depression_1.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_depression_1.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_depression_1.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_nuba.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_nuba.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_nuba.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_nuba.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_depression_2.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_depression_2.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_depression_2.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_depression_2.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_schools.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_schools.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_schools.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_schools.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_chiapas.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_chiapas.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_chiapas.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_chiapas.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_postcards.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_postcards.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_postcards.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_postcards.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_greece.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_greece.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_greece.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_greece.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_cristina.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_cristina.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_cristina.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_cristina.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.21a-348f08.jpg"
+                  type="other"
+                  href="contents/21a-348f08.jpg">
+            <metadata>
+                <adlcp:location>contents/21a-348f08.jpg.xml</adlcp:location>
+            </metadata>
+            <file href="contents/21a-348f08.jpg"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_chambi.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_chambi.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_chambi.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_chambi.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_genocide.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_genocide.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_genocide.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_genocide.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_environment.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_environment.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_environment.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_environment.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_corn.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_corn.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_corn.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_corn.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.assignments.index.htm"
+                  type="webcontent"
+                  href="contents/assignments/index.htm">
+            <metadata>
+                <adlcp:location>contents/assignments/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/assignments/index.htm"/>
+            <dependency identifierref="webrenderrequirements.21a-348-photography-and-truth-spring-2008"/>            
+        </resource>
+        <resource identifier="r_contents.21a-348f08-th.jpg"
+                  type="other"
+                  href="contents/21a-348f08-th.jpg">
+            <metadata>
+                <adlcp:location>contents/21a-348f08-th.jpg.xml</adlcp:location>
+            </metadata>
+            <file href="contents/21a-348f08-th.jpg"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_nyt.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_nyt.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_nyt.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_nyt.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_fruit.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_fruit.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_fruit.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_fruit.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_expression_2.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_expression_2.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_expression_2.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_expression_2.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.index.htm"
+                  type="webcontent"
+                  href="contents/index.htm">
+            <metadata>
+                <adlcp:location>contents/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/index.htm"/>
+            <dependency identifierref="webrenderrequirements.21a-348-photography-and-truth-spring-2008"/>            
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_expression_1.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_expression_1.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_expression_1.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_expression_1.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_portraitsG.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_portraitsG.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_portraitsG.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_portraitsG.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_natgeo.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_natgeo.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_natgeo.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_natgeo.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.syllabus.index.htm"
+                  type="webcontent"
+                  href="contents/syllabus/index.htm">
+            <metadata>
+                <adlcp:location>contents/syllabus/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/syllabus/index.htm"/>
+            <dependency identifierref="webrenderrequirements.21a-348-photography-and-truth-spring-2008"/>            
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_landfree.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_landfree.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_landfree.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_landfree.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_physiognomy.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_physiognomy.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_physiognomy.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_physiognomy.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_snapshotsA.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_snapshotsA.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_snapshotsA.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_snapshotsA.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_village.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_village.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_village.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_village.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_praise.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_praise.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_praise.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_praise.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_memorials.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_memorials.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_memorials.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_memorials.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_jordan.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_jordan.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_jordan.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_jordan.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_portraitsL.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_portraitsL.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_portraitsL.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_portraitsL.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_doctor.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_doctor.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_doctor.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_doctor.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_gender.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_gender.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_gender.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_gender.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_szarkowski.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_szarkowski.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_szarkowski.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_szarkowski.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_enemy.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_enemy.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_enemy.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_enemy.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_exodus.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_exodus.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_exodus.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_exodus.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_snapshotsR.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_snapshotsR.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_snapshotsR.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_snapshotsR.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.readings.index.htm"
+                  type="webcontent"
+                  href="contents/readings/index.htm">
+            <metadata>
+                <adlcp:location>contents/readings/index.htm.xml</adlcp:location>
+            </metadata>
+            <file href="contents/readings/index.htm"/>
+            <dependency identifierref="webrenderrequirements.21a-348-photography-and-truth-spring-2008"/>            
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_bondage.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_bondage.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_bondage.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_bondage.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_ambulantes.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_ambulantes.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_ambulantes.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_ambulantes.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_minamata.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_minamata.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_minamata.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_minamata.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_trobriand.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_trobriand.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_trobriand.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_trobriand.pdf"/>
+                        
+        </resource>
+        <resource identifier="r_contents.photos.MIT21A_348S08_balinese.pdf"
+                  type="other"
+                  href="contents/photos/MIT21A_348S08_balinese.pdf">
+            <metadata>
+                <adlcp:location>contents/photos/MIT21A_348S08_balinese.pdf.xml</adlcp:location>
+            </metadata>
+            <file href="contents/photos/MIT21A_348S08_balinese.pdf"/>
+                        
+        </resource>        
+        <resource identifier="r_common.search.AdvancedSearch.htm"
+                  type="webcontent"
+                  href="common/search/AdvancedSearch.htm">
+            <file href="common/search/AdvancedSearch.htm"/>
+            <dependency identifierref="webrenderrequirements.21a-348-photography-and-truth-spring-2008"/>            
+        </resource>
+        <resource identifier="r_common.jsp.feedback.htm"
+                  type="webcontent"
+                  href="common/jsp/feedback.htm">
+            <file href="common/jsp/feedback.htm"/>
+            <dependency identifierref="webrenderrequirements.21a-348-photography-and-truth-spring-2008"/>            
+        </resource>
+        <resource identifier="r_common.terms.index.htm"
+                  type="webcontent"
+                  href="common/terms/index.htm">
+            <file href="common/terms/by.png"/>
+            <file href="common/terms/nc.png"/>
+            <file href="common/terms/sa.png"/>
+            <file href="common/terms/deedheadyellow.png"/>
+            <file href="common/terms/freedomsheader.png"/>
+            <file href="common/terms/limitationsheader.png"/>
+            <file href="common/terms/understandingheader.jpg"/>
+            <file href="common/terms/deedfootyellow.png"/>
+            <dependency identifierref="webrenderrequirements.21a-348-photography-and-truth-spring-2008"/>            
+        </resource>
+        <resource identifier="r_common.terms.trademarks.index.htm"
+                  type="webcontent"
+                  href="common/terms/trademarks/index.htm">
+            <file href="common/terms/trademarks/index.htm"/>
+            <dependency identifierref="webrenderrequirements.21a-348-photography-and-truth-spring-2008"/>            
+        </resource>
+        <resource identifier="webrenderrequirements.21a-348-photography-and-truth-spring-2008"
+                  type="webcontent">
+        	<file href="common/styles/base.css"/>
+        	<file href="common/styles/courses.css"/>
+        	<file href="common/styles/courses_new.css"/>
+        	<file href="common/styles/educator.css"/>
+        	<file href="common/styles/global.css"/>
+        	<file href="common/styles/grid.css"/>
+        	<file href="common/styles/highslide.css"/>
+        	<file href="common/styles/highslide-ie6.css"/>
+        	<file href="common/styles/jquery.bubblepopup.css"/>
+        	<file href="common/styles/jquery.jscrollpane.css"/>
+        	<file href="common/styles/jquery-ui.css"/>
+        	<file href="common/styles/menu.css"/>
+        	<file href="common/styles/scholar2.css"/>
+        	<file href="common/styles/media_tabs.css"/>
+        	<file href="common/styles/three_play.css"/>
+        	<file href="common/scripts/bubble-popup-offline.js"/>
+        	<file href="common/scripts/jquery.js"/>
+        	<file href="common/scripts/ocw-media-utils.js"/>
+        	<file href="common/scripts/ocw-media-utils-offline.js"/>
+        	<file href="common/scripts/highslide-with-gallery.js"/>
+        	<file href="common/scripts/jquery.bubblepopup.min.js"/>
+        	<file href="common/scripts/jquery.jscrollpane.min.js"/>
+        	<file href="common/scripts/jquery-ui.min.js"/>
+        	<file href="common/scripts/jQuizMe-uncompressed.js"/>
+        	<file href="common/scripts/ocw-offline.js"/>
+        	<file href="common/scripts/expandy.js"/>
+        	<file href="common/scripts/chart.js"/>
+        	<file href="common/scripts/jquery.anythingslider.js"/>
+        	<file href="common/images/ocw_mast.png"/>
+        	<file href="common/images/button_subscribe.png"/>
+        	<file href="common/images/icon_fb.png"/>
+        	<file href="common/images/icon_gp.png"/>
+        	<file href="common/images/icon_pin.png"/>
+        	<file href="common/images/icon_tw.png"/>
+        	<file href="common/images/icon-question-ovt.png"/>
+        	<file href="common/images/icon-question-svt.png"/>
+        	<file href="common/images/icon-question-avt.png"/>
+        	<file href="common/images/icon-question-cl.png"/>
+        	<file href="common/images/top-nav_home.png"/>
+        	<file href="common/images/button_search.png"/>
+        	<file href="common/images/bg_top.png"/>
+        	<file href="common/images/bg_social.png"/>
+        	<file href="common/images/bg_social2.png"/>
+        	<file href="common/images/bg_mega-courses.png"/>
+        	<file href="common/images/bg_center2.png"/>
+        	<file href="common/images/bg_course-nav_current.png"/>
+        	<file href="common/images/button_donate-now.png"/>
+        	<file href="common/images/logo_mit.png"/>
+        	<file href="common/images/logo_ocwc.gif"/>
+        	<file href="common/images/cc_by-nc-sa.png"/>
+        	<file href="common/images/logo_dow.png"/>
+        	<file href="common/images/logo_lockheed.png"/>
+        	<file href="common/images/logo_mathworks.png"/>
+        	<file href="common/images/logo_abinitio.png"/>
+        	<file href="common/images/logo_sapient.png"/>
+        	<file href="common/images/bg_bottom.png"/>
+        	<file href="common/images/nav_arrow.png"/>
+        	<file href="common/images/news-subscibe_bg.png"/>
+        	<file href="common/images/3play_logo.png"/>
+        	<file href="common/images/black-arrow.gif"/>
+        	<file href="common/images/trans.gif"/>
+        	<file href="common/images/arrow-bullet.gif"/>
+        	<file href="common/images/apple-touch-icon.png"/>
+        	<file href="common/images/highslide/graphics/zoomin.cur"/>
+        	<file href="common/images/highslide/graphics/zoomout.cur"/>
+        	<file href="common/images/highslide/graphics/controlbar2.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar3.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar4.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar4-hover.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar-black-border.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar-white.gif"/>
+        	<file href="common/images/highslide/graphics/controlbar-white-small.gif"/>
+        	<file href="common/images/highslide/graphics/fullexpand.gif"/>
+        	<file href="common/images/highslide/graphics/icon.gif"/>
+        	<file href="common/images/highslide/graphics/loader.gif"/>
+        	<file href="common/images/highslide/graphics/loader.white.gif"/>
+        	<file href="common/images/highslide/graphics/resize.gif"/>
+        	<file href="common/images/highslide/graphics/close.png"/>
+        	<file href="common/images/highslide/graphics/closeX.png"/>
+        	<file href="common/images/highslide/graphics/controlbar-text-buttons.png"/>
+        	<file href="common/images/highslide/graphics/geckodimmer.png"/>
+        	<file href="common/images/highslide/graphics/scrollarrows.png"/>
+        	<file href="common/images/highslide/graphics/outlines/beveled.png"/>
+        	<file href="common/images/highslide/graphics/outlines/drop-shadow.png"/>
+        	<file href="common/images/highslide/graphics/outlines/glossy-dark.png"/>
+        	<file href="common/images/highslide/graphics/outlines/outer-glow.png"/>
+        	<file href="common/images/highslide/graphics/outlines/rounded-black.png"/>
+        	<file href="common/images/highslide/graphics/outlines/rounded-white.png"/>
+        	<file href="common/images/highslide/graphics/outlines/Outlines.psd"/>
+        	<file href="common/images/button_continue.jpg"/>
+        	<file href="common/images/button_donate.jpg"/>
+        	<file href="common/images/button_start.jpg"/>
+        	<file href="common/images/scholar_bar_chp.png"/>
+        	<file href="common/images/scholar_bar.png"/>
+        	<file href="common/images/logo_pdf.jpg"/>
+        	<file href="common/images/h2_trigger_open_close.gif"/>
+        	<file href="common/images/bookmark.gif"/>
+        	<file href="common/images/check.png"/>
+        	<file href="common/images/lightbulb.png"/>
+        	<file href="common/images/audio_file.gif"/>
+        	<file href="common/images/audio_only_slate.gif"/>
+        	<file href="common/images/video_file.gif"/>
+        	<file href="common/images/back-5.png"/>
+        	<file href="common/images/btn_next_resource.png"/>
+        	<file href="common/images/btn_previous_resource.png"/>
+        	<file href="common/images/close.png"/>
+        	<file href="common/images/inacessible.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/bottom-left.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/bottom-middle.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/bottom-right.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/middle-left.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/middle-right.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/tail-bottom.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/tail-left.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/tail-right.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/tail-top.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/top-left.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/top-middle.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/ie/top-right.gif"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/bottom-left.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/bottom-middle.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/bottom-right.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/middle-left.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/middle-right.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/tail-bottom.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/tail-left.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/tail-right.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/tail-top.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/top-left.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/top-middle.png"/>
+        	<file href="common/images/jquerybubblepopup-theme/grey/top-right.png"/>
+        	<file href="common/images/educator/classroom_next.png"/>
+        	<file href="common/images/educator/classroom_next_dim.png"/>
+        	<file href="common/images/educator/classroom_prev.png"/>
+        	<file href="common/images/educator/classroom_prev_dim.png"/>
+        	<file href="common/images/educator/edu_b-blank.png"/>
+        	<file href="common/images/educator/edu_b-blank-key.png"/>
+        	<file href="common/images/educator/edu_b-duedate.png"/>
+        	<file href="common/images/educator/edu_b-duedate-key.png"/>
+        	<file href="common/images/educator/edu_b-exam.png"/>
+        	<file href="common/images/educator/edu_b-exam-key.png"/>
+        	<file href="common/images/educator/edu_b-lab.png"/>
+        	<file href="common/images/educator/edu_b-lab-key.png"/>
+        	<file href="common/images/educator/edu_b-lab-team.png"/>
+        	<file href="common/images/educator/edu_b-lab-duedate.png"/>
+        	<file href="common/images/educator/edu_b-leclab.png"/>
+        	<file href="common/images/educator/edu_b-leclab-key.png"/>
+        	<file href="common/images/educator/edu_b-lecture.png"/>
+        	<file href="common/images/educator/edu_b-lecture-duedate.png"/>
+        	<file href="common/images/educator/edu_b-lecture-exam.png"/>
+        	<file href="common/images/educator/edu_b-lecture-key.png"/>
+        	<file href="common/images/educator/edu_b-lecture-lunch.png"/>
+        	<file href="common/images/educator/edu_b-lecture-preslab.png"/>
+        	<file href="common/images/educator/edu_b-lecture-quiz.png"/>
+        	<file href="common/images/educator/edu_b-lecture-team.png"/>
+        	<file href="common/images/educator/edu_b-lecrec-key.png"/>
+        	<file href="common/images/educator/edu_b-leclab-duedate.png"/>
+        	<file href="common/images/educator/edu_b-lecrec.png"/>
+        	<file href="common/images/educator/edu_b-lecrec-duedate.png"/>
+        	<file href="common/images/educator/edu_b-noclass-quiz.png"/>
+        	<file href="common/images/educator/edu_b-lunch.png"/>
+        	<file href="common/images/educator/edu_b-lunch-key.png"/>
+        	<file href="common/images/educator/edu_b-noclass.png"/>
+        	<file href="common/images/educator/edu_b-noclass-duedate.png"/>
+        	<file href="common/images/educator/edu_b-noclass-exam.png"/>
+        	<file href="common/images/educator/edu_b-noclass-key.png"/>
+        	<file href="common/images/educator/edu_b-office.png"/>
+        	<file href="common/images/educator/edu_b-office-key.png"/>
+        	<file href="common/images/educator/edu_b-present.png"/>
+        	<file href="common/images/educator/edu_b-present-duedate.png"/>
+        	<file href="common/images/educator/edu_b-present-key.png"/>
+        	<file href="common/images/educator/edu_b-preslab.png"/>
+        	<file href="common/images/educator/edu_b-preslab-key.png"/>
+        	<file href="common/images/educator/edu_b-quiz-key.png"/>
+        	<file href="common/images/educator/edu_b-reclab-key.png"/>
+        	<file href="common/images/educator/edu_b-reclab-concert.png"/>
+        	<file href="common/images/educator/edu_b-reclab.png"/>
+        	<file href="common/images/educator/edu_b-noclass-concert.png"/>
+        	<file href="common/images/educator/edu_b-leclab-concert.png"/>
+        	<file href="common/images/educator/edu_b-concert-key.png"/>
+        	<file href="common/images/educator/edu_b-concert.png"/>
+        	<file href="common/images/educator/edu_b-recitation.png"/>
+        	<file href="common/images/educator/edu_b-recitation-duedate.png"/>
+        	<file href="common/images/educator/edu_b-recitation-exam.png"/>
+        	<file href="common/images/educator/edu_b-recitation-key.png"/>
+        	<file href="common/images/educator/edu_b-team.png"/>
+        	<file href="common/images/educator/edu_b-team-key.png"/>
+        	<file href="common/images/educator/edu_b-team-preslab.png"/>
+        	<file href="common/images/educator/edu_b-work.png"/>
+        	<file href="common/images/educator/edu_b-work-key.png"/>
+        	<file href="common/images/educator/icon-question-cih.png"/>
+        	<file href="common/images/educator/icon-question-cihw.png"/>
+        	<file href="common/images/educator/icon-question-cim.png"/>
+        	<file href="common/images/educator/icon-question-collab.png"/>
+        	<file href="common/images/educator/icon-question-coop.png"/>
+        	<file href="common/images/educator/icon-question-fas.png"/>
+        	<file href="common/images/educator/icon-question-gir.png"/>
+        	<file href="common/images/educator/icon-question-hass.png"/>
+        	<file href="common/images/educator/icon-question-hass-s.png"/>
+        	<file href="common/images/educator/icon-question-iap.png"/>
+        	<file href="common/images/educator/icon-question-lab.png"/>
+        	<file href="common/images/educator/icon-question-urop.png"/>
+        	<file href="common/images/educator/icon-question-active.png"/>
+        	<file href="common/images/educator/icon-question-clickq.png"/>
+        	<file href="common/images/educator/icon-question-conq.png"/>
+        	<file href="common/images/educator/icon-question-flip.png"/>
+        	<file href="common/images/educator/icon-question-form.png"/>
+        	<file href="common/images/educator/icon-question-immed.png"/>
+        	<file href="common/images/educator/icon-question-learn.png"/>
+        	<file href="common/images/educator/icon-question-ped.png"/>
+        	<file href="common/images/educator/icon-question-readq.png"/>
+        	<file href="common/images/educator/icon-question-service.png"/>
+        	<file href="common/images/educator/icon-question-sum.png"/>
+        	<file href="common/images/educator/icon-question-unrestricted-elective-credits.png"/>
+        	<file href="common/webfonts/TitilliumText22L002-webfont.woff"/>
+        	<file href="common/webfonts/TitilliumText22L002-webfont.ttf"/>
+        	<file href="common/webfonts/TitilliumText22L002-webfont.svg"/>
+        	<file href="common/webfonts/TitilliumText22L002-webfont.eot"/>
+        	<file href="common/webfonts/TitilliumText22L003-webfont.woff"/>
+        	<file href="common/webfonts/TitilliumText22L003-webfont.ttf"/>
+        	<file href="common/webfonts/TitilliumText22L003-webfont.eot"/>
+        	<file href="common/webfonts/TitilliumText22L003-webfont.svg"/>
+        	<file href="common/webfonts/TitilliumText22L005-webfont.woff"/>
+        	<file href="common/webfonts/TitilliumText22L005-webfont.ttf"/>
+        	<file href="common/webfonts/TitilliumText22L005-webfont.svg"/>
+        	<file href="common/webfonts/TitilliumText22L005-webfont.eot"/>
+        </resource>        
+  </resources>
+</manifest>

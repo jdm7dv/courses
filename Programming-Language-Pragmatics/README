@@ -1,0 +1,75 @@
+The files beneath this directory contain source code for almost all of
+the nontrivial code fragments in Programming Language Pragmatics, 4e.
+In most cases the code in the book does not constitute a complete and
+runnable program, so these have been extended.  In general the goal has
+been to create as small a program as possible that illustrates the
+feature in question.  The result is not always good programming style.
+
+In a few cases (generally when the point is to observe the behavior of
+the compiler itself), the example is just a single module, and will not
+produce runnable code.  These must typically be compiled with a "-c"
+command-line switch.
+
+Comments at the top of the source indicate the corresponding Example,
+Figure, or Exercise in the book.  Code that appears both as an Example
+or Exercise and as a Figure is provided in a directory named after the
+Example or Exercise.
+
+Code has been compiled and tested using the following compilers and
+interpreters.  For languages that are still actively evolving, these
+were up-to-date implementations as of the time of printing.  Some
+historic languages may not compile and run on recent OS releases.
+
+Ada: gnat (gcc) version 4.9 on MacOS 10.10
+        available from libre.adacore.com/download/
+awk: version 20070501 on MacOS 10.10
+C and C++: Apple LLVM version 6.1.0 on MacOS 10.10
+        NB: run with --std=c11 or --std=c++11)
+C#: mono mcs version 4.0.1 on MacOS 10.10
+        available from www.mono-project.com/
+Common Lisp: CMU Common Lisp 19e on Fedora Core Linux 2.6.23
+elisp: emacs version 24.4.1 on MacOS 10.10
+Erlang: erl shell version 7.0 (Erland/OTP release 18.0) on MacOS 10.10
+        available from erlang.org/
+F#: mono fsharpc version 3.1 on mono 4.0.1 on MacOS 10.10
+        available from mono-project.com
+Fortran: gfortran 5.1.0 on MacOS 10.10
+        available from gcc.gnu.org/fortran/
+Go: version 1.4.2 on MacOS 10.10
+        available from golang.org
+Haskell: ghc version 7.8.3 on MacOS 10.10
+        available from www.haskell.org
+Icon: version 9.4.2 on MacOS 10.5
+        available from www.cs.arizona.edu/icon/
+Java: Sun javac 1.8.0_20 on MacOS 10.10
+        available from oracle.com/technetwork/java/
+JavaScript: version embedded in Safari 8.0.7 browser on MacOS 10.10
+Modula-3: cm3 compiler, version 5.4.0 on Fedora Core Linux 2.6.23
+        available from modula3.elegosoft.com/
+OCaml: version 4.02.1 on MacOS 10.10
+        available from ocaml.org
+Pascal: gpc version 20070904, based on gcc-3.4.6, on MacOS 10.10
+        available from www.microbizz.nl/gpc.html
+Perl: version 5.16.3 on MacOS 10.10
+PHP: version 5.5.24 under Apache 2.4.10 on MacOS 10.10
+Prolog: swipl (SWI-Prolog) version 7.2.3 on MacOS 10.10
+        available from www.swi-prolog.org/
+Python: version 3.4.3 on MacOS 10.10
+        available from python.org
+Ruby: version 2.0.0p647 on MacOS 10.10
+        available from ruby-lang.org
+Scheme: DrRacket version 6.2 on MacOS 10.10, in R5RS mode
+        available from download.racket-lang.org
+sed: version 4.1.4 on MacOS 10.10
+Smalltalk: GNU Smalltalk (gst) version 3.1 on MacOS 10.10
+        available from smalltalk.gnu.org
+SML: Standard ML of New Jersey (sml) version 110.78 on MacOS 10.10
+        available from www.smlnj.org/
+SR: version 2.3.3 on Fedora Core Linux 2.6.23
+        available from www.cs.arizona.edu/sr
+Swift: version 1.2 on MacOS 10.10
+        available from www.apple.com/swift/
+XSLT: version embedded in Safari 8.0.7 browser on MacOS 10.10
+
+
+

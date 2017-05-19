@@ -1,0 +1,5 @@
+% Example 1.6 (Figure 1.2)
+
+gcd(A,B,G) :- A = B, G = A.
+gcd(A,B,G) :- A > B, C is A-B, gcd(C,B,G).
+gcd(A,B,G) :- B > A, C is B-A, gcd(C,A,G).

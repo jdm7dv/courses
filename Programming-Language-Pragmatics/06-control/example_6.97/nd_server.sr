@@ -1,0 +1,49 @@
+# Example 6.97
+
+resource nd_server
+    type name = int
+    type description = int
+
+    # declarations of request types:
+    op read_data(n : name) returns d : description
+    op write_data(n : name; d : description)
+
+body nd_server()
+    var desc := 0
+
+    # local subroutines:
+    procedure lookup(n : int) returns rtn : int
+        rtn := desc
+    end
+    procedure update(n, m : int)
+        desc := n
+    end
+
+    # code for server:
+    process server
+        do true ->              # loop forever
+            in read_data(n) returns d -> d := lookup(n)
+            [] write_data(n, d) ->
+                update(n, d)
+                if n = 0 -> exit fi
+            ni
+        od
+    end
+
+    process writer
+        fa i := 1 to 20 ->
+            call write_data(i, i)
+            nap(int(random() * 5))
+        af
+        nap(100)                # give reader time to finish
+        call write_data(0, 0)   # kill server
+    end
+
+    process reader
+        fa i := 1 to 20 ->
+            write(read_data(i))
+            nap(int(random() * 5))
+        af
+    end
+
+end

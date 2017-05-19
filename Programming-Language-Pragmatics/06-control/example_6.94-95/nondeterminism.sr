@@ -1,0 +1,23 @@
+# Examples 6.94 and 6.95
+
+resource nondeterminism()
+
+procedure max(a, b : int) returns rtn : int
+    if a >= b -> rtn := a
+    [] b >= a -> rtn := b
+    fi
+end
+
+procedure gcd(a, b : int) returns rtn : int
+    do a > b -> a := a - b
+    [] b > a -> b := b - a
+    od
+    rtn := a
+end
+
+var x : int := 20,
+    y : int := 30;
+
+write(max(x, y))
+write(gcd(x, y))
+end
