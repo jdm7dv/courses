@@ -1,0 +1,262 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Default style, feel free to remove if not needed. */
+body, body * {
+	vertical-align: baseline;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	background-repeat:no-repeat;
+}
+
+/* Div layer for the entire banner. */
+#container_dc {
+	display:block;
+	position: absolute;
+	width: 300px;
+	height: 600px;
+	background-color: #FFFFFF;
+	top: 0px;
+	left: 0px;
+	margin: auto;
+	overflow:hidden;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	border:1px solid #000000;
+}
+#bigButton{
+	display:block;
+	position: absolute;
+	width: 300px;
+	height:600px;
+	top: 0px;
+	left: 0px;
+	z-index:9990;
+	cursor:pointer;
+}
+#content_dc {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background-color: #FFFFFF;
+}
+#prc{
+	visibility:visible;
+	position:absolute;
+	background-image:url(jannssen-prc.jpg);
+	left:5px;
+	top:5px;
+	width:230px;
+	height:7px;
+
+}
+#background
+{
+	visibility:visible;
+	position:absolute;
+	background-image:url(background.jpg);
+	right:0px;
+	top:0px;
+	width:6px;
+	height:600px;
+}
+#blueAngle{
+	visibility:visible;
+	position:absolute;
+	background-image:url(blueAngle.jpg);
+	left:0px;
+	top:600px;
+	width:300px;
+	height:346px;
+
+}
+#logo{
+	width:243px;
+	height:62px;
+	visibility:visible;
+	position:absolute;
+	background-image:url(logo.jpg);
+	left:58px;
+	top:55px;
+
+}
+#text1
+{
+	visibility:visible;
+	opacity:0;
+	position:absolute;
+	background-image: url("text1.jpg");
+	background-repeat:no-repeat;
+	background-position:0px 0px;
+	left:24px;
+	top:88px;
+	width:252px;
+	height:86px;
+}
+
+#text2
+{
+	visibility:visible;
+	opacity:0;
+	position:absolute;
+	background-image: url("text2.jpg");
+	background-repeat:no-repeat;
+	background-position:-0px -0px;
+	left:16px;
+	top:56px;
+	width:266px;
+	height:135px;
+}
+#text3
+{
+	visibility:visible;
+	opacity:0;
+	position:absolute;
+	background-image: url("text3.jpg");
+	background-repeat:no-repeat;
+	background-position:-0px -0px;
+	left:17px;
+	top:120px;
+	width:266px;
+	height:40px;
+}
+#text4
+{
+	visibility:visible;
+	opacity:0;
+	position:absolute;
+	background-image: url("text4.jpg");
+	background-repeat:no-repeat;
+	background-position:-0px -0px;
+	left:33px;
+	top:54px;
+	width:230px;
+	height:86px;
+}
+#text5
+{
+	visibility:visible;
+	opacity:0;
+	position:absolute;
+	background-image: url("text5.jpg");
+	background-repeat:no-repeat;
+	background-position:-0px -0px;
+	left:35px;
+	top:160px;
+	width:123px;
+	height:59px;
+}
+#text6
+{
+	visibility:visible;
+	opacity:0;
+	position:absolute;
+	background-image: url("text6.jpg");
+	background-repeat:no-repeat;
+	background-position:-0px -0px;
+	left:180px;
+	top:163px;
+	width:70px;
+	height:50px;
+}
+#scrolling_isi
+{
+	font-family:Arial, sans-serif;
+	font-size:11px;
+	line-height:13px;
+	color:#000000;
+	position:absolute;
+	background-repeat:no-repeat;
+	left:3px;
+	top:120px;
+	width:278px;
+	height:200px;
+	overflow-x: hidden;
+	overflow-y: scroll;	
+	padding:0px 6px 0 8px;
+	z-index: 9998;	
+	background-color:#ffffff;
+	border-top:#c1c9cb 1px solid;
+}
+
+#isi
+{
+	
+	background-repeat:no-repeat;
+	width:265px;
+	height:11px;
+}
+#isi h2{
+	color:#008aad;
+	font-size:12px;
+	padding:2px 0px 0px 0px;
+	margin:5px 0px;
+}
+#isi h3{
+	color:#000000;
+	font-weight: normal;
+	font-size:11px;
+	margin-top:10px;
+}
+#isi p{
+	padding:5px 0px 0px 0px;
+}
+#isi p#blackBox{
+	border:1px solid #000000;
+	padding:5px 2px;
+	margin-bottom:5px;
+	font-weight:bold;
+}
+#isi ul{
+	margin:5px 0px 5px 12px;
+}
+#isi ul li{
+	list-style-type: disc;
+}
+#isi ul li ul li{
+	list-style-type: circle;
+	padding:2px 0px;
+}
+#prescribing_info
+{
+	
+	background-repeat:no-repeat;
+	width:192px;
+	height:36px;
+	cursor:pointer;
+}
+#bottomISILinks{
+	color:#008aad;
+	background-color: #ffffff;
+	position:absolute;
+	left:3px;
+	width:276px;
+	text-align: left;
+	bottom:5px;
+	height:16px;
+	padding:2px 8px;
+	font-family:Arial, sans-serif;
+	font-size:8px;
+	font-weight:bold;
+	line-height:11px;
+	z-index: 9999;
+	cursor: pointer;
+}
+
+
+#ctaButton
+{
+	position:absolute;
+	left:-98px;
+	top:237px;
+	width:98px;
+	height:22px;
+	overflow:hidden;
+	background: url('cta.png') 0px 0px no-repeat;
+	cursor:pointer;
+}
