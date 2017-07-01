@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF 
+//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A 
+//// PARTICULAR PURPOSE. 
+//// 
+//// Copyright (c) Microsoft Corporation. All rights reserved     
+////
+//// To see the topic that inspired this sample app, go to http://msdn.microsoft.com/en-us/library/windows/apps/dn163530
+-->
+
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="fa7b0cf5-8dc8-46a0-b95b-93aed108cef3" Version="1.0.0.0" Publisher="CN=Scott" />
+  <Properties>
+    <DisplayName>SunGard</DisplayName>
+    <PublisherDisplayName>Contoso</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="SunGard" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="SunGard" ForegroundText="light" BackgroundColor="#010223">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="images\splashscreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>

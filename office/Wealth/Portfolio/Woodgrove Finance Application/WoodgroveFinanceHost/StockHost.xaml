@@ -1,0 +1,1107 @@
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/interactivedesigner/2006"
+	mc:Ignorable="d" 
+	Background="sc#1, 1, 1, 1" 
+	x:Name="DocumentRoot"
+	x:Class="WoodgroveFinanceHost.StockHost" 
+xmlns:System="clr-namespace:System;assembly=mscorlib"
+  Loaded="OnLoaded" 
+	 xmlns:WoodgroveFinanceStockChartFrame="clr-namespace:WoodgroveFinanceStockChartFrame;assembly=WoodgroveFinanceStockChartFrame"  >
+
+  <Grid.Resources>
+
+
+
+
+
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="StockHostResourceDictionary.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+
+      <WoodgroveFinanceStockChartFrame:StockImageConverter x:Key="stockImageConverter"  />
+      <WoodgroveFinanceStockChartFrame:IsNegativeConverter x:Key="IsNegativeConverterReference" />
+
+      <ControlTemplate x:Key="CustomExpander2" TargetType="{x:Type Expander}">
+
+
+        <Border Background="{TemplateBinding Background}" x:Name="Border"  >
+          <DockPanel x:Name="DockPanel">
+            <ToggleButton IsChecked="{Binding Path=IsExpanded,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" 
+                          DockPanel.Dock="Top" x:Name="HeaderSite" 
+                          Content="{TemplateBinding Header}" >
+              <ToggleButton.Style>
+                <Style TargetType="{x:Type ToggleButton}">
+                  <Setter Property="Template">
+                    <Setter.Value>
+                      <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="Border" Padding="{TemplateBinding Padding}">
+                          <Grid Background="white" Height="20"  x:Name="Grid" SnapsToDevicePixels="False">
+                            <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="19"/>
+                              <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Path Stroke="black" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="arrow" SnapsToDevicePixels="False" Data="M1,1.5 L4.5,5 8,1.5"/>
+                            <ContentPresenter DataContext="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0,0,0" Grid.Column="1" x:Name="ContentSite" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" RecognizesAccessKey="True"/>
+                          </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                          <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Data" Value="M1,4.5 L4.5,1 8,4.5" TargetName="arrow"/>
+                          </Trigger>
+                          <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="Stroke" Value="#FF222222" TargetName="arrow"/>
+
+                          </Trigger>
+                        </ControlTemplate.Triggers>
+                      </ControlTemplate>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+              </ToggleButton.Style>
+            </ToggleButton>
+            <ContentPresenter    DockPanel.Dock="Bottom" x:Name="ExpandSite" RenderTransformOrigin="0.5,0.5"  >
+              <ContentPresenter.LayoutTransform>
+                <TransformGroup >
+                  <ScaleTransform x:Name="LayoutScaleTransform" ScaleX="1" ScaleY="1" />
+                </TransformGroup>
+              </ContentPresenter.LayoutTransform>
+            </ContentPresenter>
+          </DockPanel>
+        </Border>
+        <ControlTemplate.Triggers>
+          <Trigger Property="IsExpanded" Value="False">
+            <Trigger.EnterActions>
+              <BeginStoryboard>
+                <Storyboard>
+                  <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(ScaleTransform.ScaleY)" Storyboard.TargetName="LayoutScaleTransform" AccelerationRatio="1">
+                    <SplineDoubleKeyFrame d:KeyEase="Linear;Linear;0.5;0.5;0.5;0.5" KeySpline="0.5,0.5,0.5,0.5" Value="0" KeyTime="00:00:00"/>
+                    <SplineDoubleKeyFrame d:KeyEase="Linear;Linear;0.5;0.5;0.5;0.5" KeySpline="0.5,0.5,0.5,0.5" Value="1" KeyTime="00:00:00.25"/>
+                  </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+              </BeginStoryboard>
+            </Trigger.EnterActions>
+            <Trigger.ExitActions>
+              <BeginStoryboard>
+                <Storyboard>
+                  <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(ScaleTransform.ScaleY)" Storyboard.TargetName="LayoutScaleTransform" DecelerationRatio="1">
+                    <SplineDoubleKeyFrame d:KeyEase="Linear;Linear;0.5;0.5;0.5;0.5" KeySpline="0.5,0.5,0.5,0.5" Value="1" KeyTime="00:00:00"/>
+                    <SplineDoubleKeyFrame d:KeyEase="Linear;Linear;0.5;0.5;0.5;0.5" KeySpline="0.5,0.5,0.5,0.5" Value="00" KeyTime="00:00:00.25"/>
+                  </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+              </BeginStoryboard>
+            </Trigger.ExitActions>
+          </Trigger>
+        </ControlTemplate.Triggers>
+
+      </ControlTemplate>
+      <ControlTemplate x:Key="CustomExpander" TargetType="{x:Type Expander}">
+        <Border Background="{TemplateBinding Background}" x:Name="Border" SnapsToDevicePixels="True" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" CornerRadius="3,3,3,3">
+          <DockPanel x:Name="DockPanel">
+            <ToggleButton IsChecked="{Binding Path=IsExpanded,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}" FontStyle="{TemplateBinding FontStyle}" FontWeight="{TemplateBinding FontWeight}" Margin="1,1,1,1" DockPanel.Dock="Top" MinWidth="0" MinHeight="0" x:Name="HeaderSite" Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" FontStretch="{TemplateBinding FontStretch}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" Foreground="{TemplateBinding Foreground}" Padding="{TemplateBinding Padding}">
+              <ToggleButton.Style>
+                <Style TargetType="{x:Type ToggleButton}">
+                  <Setter Property="Template">
+                    <Setter.Value>
+                      <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="Border" Padding="{TemplateBinding Padding}">
+                          <Grid Background="{DynamicResource HeaderBackgroundGradient1}" Height="20"  x:Name="Grid" SnapsToDevicePixels="False">
+                            <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="19"/>
+                              <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Path Stroke="white" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="arrow" SnapsToDevicePixels="False" Data="M1,1.5 L4.5,5 8,1.5"/>
+                            <ContentPresenter DataContext="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0,0,0" Grid.Column="1" x:Name="ContentSite" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" RecognizesAccessKey="True"/>
+                          </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                          <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Data" Value="M1,4.5 L4.5,1 8,4.5" TargetName="arrow"/>
+                          </Trigger>
+                          <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="Stroke" Value="#FF222222" TargetName="arrow"/>
+
+                          </Trigger>
+                        </ControlTemplate.Triggers>
+                      </ControlTemplate>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+              </ToggleButton.Style>
+
+            </ToggleButton>
+            <Grid>
+              <ContentPresenter Visibility="Collapsed" DataContext="{x:Null}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}" Focusable="False" DockPanel.Dock="Bottom" x:Name="ExpandSite" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"/>
+            </Grid>
+          </DockPanel>
+        </Border>
+        <ControlTemplate.Triggers>
+          <Trigger Property="IsExpanded" Value="True">
+            <Setter Property="Visibility" Value="Visible" TargetName="ExpandSite"/>
+          </Trigger>
+
+
+
+        </ControlTemplate.Triggers>
+      </ControlTemplate>
+
+      <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" x:Name="Grid" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Rectangle  Fill="#cccccc" RadiusX="3" RadiusY="3" Margin="0,0,0,0" x:Name="StrokeRectangle" RenderTransformOrigin="0.5,0.5" StrokeThickness="2">
+                  <Rectangle.Stroke>
+                    <LinearGradientBrush StartPoint="0,0.499999" EndPoint="1,0.499999">
+                      <LinearGradientBrush.GradientStops>
+                        <GradientStopCollection>
+                          <GradientStop Color="#FFCBCED0" Offset="0"/>
+                          <GradientStop Color="#FFE6E7E9" Offset="0.365168"/>
+                          <GradientStop Color="#FFB9BBBD" Offset="1"/>
+                        </GradientStopCollection>
+                      </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                  </Rectangle.Stroke>
+                </Rectangle>
+                <Rectangle  Stroke="transparent" RadiusX="3" RadiusY="3" VerticalAlignment="Stretch" Margin="2.25,3,2.25,3" Width="Auto" Height="Auto" x:Name="FillRectangle" RenderTransformOrigin="0.5,0.5">
+                  <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0.499999" EndPoint="1,0.499999">
+                      <LinearGradientBrush.GradientStops>
+                        <GradientStopCollection>
+                          <GradientStop Color="#FF7C848A" Offset="0"/>
+                          <GradientStop Color="#FFC0C2C7" Offset="0.365168"/>
+                          <GradientStop Color="#FF505559" Offset="1"/>
+                        </GradientStopCollection>
+                      </LinearGradientBrush.GradientStops>
+                      <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                          <TranslateTransform X="-0.5" Y="-0.499999"/>
+                          <ScaleTransform ScaleX="1" ScaleY="1"/>
+                          <SkewTransform AngleX="0" AngleY="0"/>
+                          <RotateTransform Angle="90"/>
+                          <TranslateTransform X="0.5" Y="0.499999"/>
+                          <TranslateTransform X="0" Y="-5.5511151231257827E-17"/>
+                        </TransformGroup>
+                      </LinearGradientBrush.RelativeTransform>
+                    </LinearGradientBrush>
+                  </Rectangle.Fill>
+                </Rectangle>
+
+                <TextBlock Text="{TemplateBinding Content}" TextAlignment="center" VerticalAlignment="center" Foreground="black" Margin="0,0,-1.5,-1.5"  />
+                <TextBlock Text="{TemplateBinding Content}" TextAlignment="center" VerticalAlignment="center" Foreground="white"  />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsFocused" Value="True"/>
+                <Trigger Property="IsDefaulted" Value="True"/>
+                <Trigger Property="IsMouseOver" Value="True">
+                  <Setter Property="Shape.Fill" TargetName="FillRectangle">
+                    <Setter.Value>
+                      <LinearGradientBrush StartPoint="0,0.499999" EndPoint="1,0.499999">
+                        <LinearGradientBrush.RelativeTransform>
+                          <TransformGroup>
+                            <TranslateTransform X="-0.5" Y="-0.499999"/>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            <SkewTransform AngleX="0" AngleY="0"/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform X="0.5" Y="0.499999"/>
+                            <TranslateTransform X="0" Y="-5.5511151231257827E-17"/>
+                          </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <LinearGradientBrush.GradientStops>
+                          <GradientStop Color='#FF103148' Offset='0'/>
+                          <GradientStop Color='#FF3E9FC4' Offset='0.52809'/>
+                          <GradientStop Color='#FF6CE7FD' Offset='1'/>
+                        </LinearGradientBrush.GradientStops>
+                      </LinearGradientBrush>
+                    </Setter.Value>
+                  </Setter>
+                  <Setter Property="Shape.Fill" TargetName="StrokeRectangle" Value="#FF3E9FC4">
+
+                  </Setter>
+                  <Setter Property="Shape.Stroke" TargetName="StrokeRectangle">
+                    <Setter.Value>
+                      <LinearGradientBrush StartPoint="0,0.499999" EndPoint="1,0.499999">
+                        <LinearGradientBrush.RelativeTransform>
+                          <TransformGroup>
+                            <TranslateTransform X="-0.5" Y="-0.499999"/>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            <SkewTransform AngleX="0" AngleY="0"/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform X="0.5" Y="0.499999"/>
+                            <TranslateTransform X="0" Y="-5.5511151231257827E-17"/>
+                          </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <LinearGradientBrush.GradientStops>
+                          <GradientStop Color='#FF103148' Offset='0'/>
+                          <GradientStop Color='#FF3E9FC4' Offset='0.52809'/>
+                          <GradientStop Color='#FF6CE7FD' Offset='1'/>
+                        </LinearGradientBrush.GradientStops>
+                      </LinearGradientBrush>
+                    </Setter.Value>
+                  </Setter>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True"/>
+                <Trigger Property="IsEnabled" Value="False"/>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Storyboard x:Key="OnLoaded"/>
+      <ToolTip x:Key="Label3DToolTip">
+        <Grid VerticalAlignment="Stretch"   Background="#FFFFFFFF" >
+          <Image  Source="2dgraphmsft.gif" RenderTransformOrigin="0.5,0.5"/>
+        </Grid>
+      </ToolTip>
+      <!-- <XmlDataProvider x:Key="StockNewsDataSource" d:IsDataSource="True" Source="http://finance.yahoo.com/rss/headline?s=MSFT"/> -->
+      <DataTemplate x:Key="itemTemplate">
+        <StackPanel Margin="10,5,0,5" Width="207.72" x:Name="StackPanel">
+
+          <TextBlock FontSize="12" FontWeight="Normal" x:Name="TextBlock1" Text="{Binding Mode=OneWay, XPath=title}" TextTrimming="WordEllipsis" Foreground="#253C85" FontFamily="Segoe UI"/>
+          <TextBlock x:Name="TextBlock" Text="{Binding Mode=OneWay, XPath=pubDate}" Foreground="#A3A4A6" FontSize="10" FontFamily="Segoe UI"/>
+        </StackPanel>
+      </DataTemplate>
+      <LinearGradientBrush x:Key="HeaderBackgroundGradient1" StartPoint='0.5,0' EndPoint='0.5,1'>
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Color='#FF828487' Offset='0.365168'/>
+          <GradientStop Color='#FF505559' Offset='1'/>
+        </LinearGradientBrush.GradientStops>
+      </LinearGradientBrush>
+      <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="NoWrap"/>
+        <Setter Property="TextTrimming" Value="None"/>
+        <Setter Property="FontFamily" Value="Segoe UI" />
+      </Style>
+
+      <XmlDataProvider x:Key="PortfolioDataSource" d:IsDataSource="True" Source="pack://application:,,,//FinanceExplorer//Equity.xml"/>
+
+      <Style x:Key="StockListBoxItem" TargetType="{x:Type WoodgroveFinanceStockChartFrame:StockListBoxItem}">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Padding" Value="0" />
+        <Style.Triggers>
+          <DataTrigger Binding="{Binding XPath=Summary/Change, Converter={StaticResource IsNegativeConverterReference}}" Value="True">
+            <Setter Property="Foreground" Value="Red" />
+            <Setter Property="WoodgroveFinanceStockChartFrame:StockListBoxItem.IsNegative" Value="True" />
+          </DataTrigger>
+          <DataTrigger Binding="{Binding XPath=Summary/Change, Converter={StaticResource IsNegativeConverterReference}}" Value="False">
+            <Setter Property="Foreground" Value="Green" />
+            <Setter Property="WoodgroveFinanceStockChartFrame:StockListBoxItem.IsNegative" Value="False" />
+          </DataTrigger>
+
+          <Trigger Property="WoodgroveFinanceStockChartFrame:StockListBoxItem.IsEven" Value="True">
+            <Setter Property="Background" Value="#e4e4e4" />
+          </Trigger>
+          <Trigger Property="WoodgroveFinanceStockChartFrame:StockListBoxItem.IsEven" Value="False">
+            <Setter Property="Background" Value="white" />
+          </Trigger>
+
+          <Trigger Property="WoodgroveFinanceStockChartFrame:StockListBoxItem.IsMouseHoverSelected" Value="True">
+            <Setter Property="Background" >
+              <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="1" >
+                  <GradientBrush.GradientStops>
+                    <GradientStopCollection >
+                      <GradientStop Color="DarkGreen" Offset="0" />
+                      <GradientStop Color="Green" Offset="1" />
+                    </GradientStopCollection>
+                  </GradientBrush.GradientStops>
+                </LinearGradientBrush>
+              </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground"
+        Value="White"/>
+          </Trigger>
+
+          <Trigger Property="WoodgroveFinanceStockChartFrame:StockListBoxItem.IsItemSelected" Value="True">
+            <Setter Property="Background" >
+              <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="1" >
+                  <GradientBrush.GradientStops>
+                    <GradientStopCollection >
+                      <GradientStop Color="Black" Offset="0" />
+                      <GradientStop Color="Green" Offset="1" />
+                    </GradientStopCollection>
+                  </GradientBrush.GradientStops>
+                </LinearGradientBrush>
+              </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground"
+        Value="White"/>
+          </Trigger>
+
+          <MultiTrigger>
+            <MultiTrigger.Conditions>
+              <Condition Property="WoodgroveFinanceStockChartFrame:StockListBoxItem.IsMouseHoverSelected"
+                         Value="True"/>
+              <Condition Property="WoodgroveFinanceStockChartFrame:StockListBoxItem.IsNegative"
+                         Value="True"/>
+            </MultiTrigger.Conditions>
+            <Setter Property="Background">
+              <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="1" >
+                  <GradientBrush.GradientStops>
+                    <GradientStopCollection >
+                      <GradientStop Color="Maroon" Offset="0" />
+                      <GradientStop Color="Red" Offset="1" />
+                    </GradientStopCollection>
+                  </GradientBrush.GradientStops>
+                </LinearGradientBrush>
+              </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground"
+        Value="White"/>
+          </MultiTrigger>
+          <MultiTrigger>
+            <MultiTrigger.Conditions>
+              <Condition Property="WoodgroveFinanceStockChartFrame:StockListBoxItem.IsItemSelected"
+                         Value="True"/>
+              <Condition Property="WoodgroveFinanceStockChartFrame:StockListBoxItem.IsNegative"
+                         Value="True"/>
+            </MultiTrigger.Conditions>
+            <Setter Property="Background">
+              <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="1" >
+                  <GradientBrush.GradientStops>
+                    <GradientStopCollection >
+                      <GradientStop Color="Black" Offset="0" />
+                      <GradientStop Color="Red" Offset="1" />
+                    </GradientStopCollection>
+                  </GradientBrush.GradientStops>
+                </LinearGradientBrush>
+              </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground"
+                    Value="White"/>
+          </MultiTrigger>
+        </Style.Triggers>
+
+
+      </Style>
+
+
+      <DataTemplate x:Key="EquityTemplate">
+        <Grid>
+          <Rectangle Margin="2" >
+            <Rectangle.Fill>
+              <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <LinearGradientBrush.GradientStops>
+                  <GradientStopCollection>
+                    <GradientStop Color="#aaffffff" Offset="0"/>
+                    <GradientStop Color="transparent" Offset="1"/>
+                  </GradientStopCollection>
+                </LinearGradientBrush.GradientStops>
+              </LinearGradientBrush>
+            </Rectangle.Fill>
+          </Rectangle>
+          <Grid x:Name="StackPanel1" Height="29.1333333333334" Margin="5" >
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="71"/>
+              <ColumnDefinition Width="56"/>
+              <ColumnDefinition Width="50.2107754545661"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock FontFamily="Segoe UI"    x:Name="TextBlock1" Grid.Column="0"  Width="Auto"  Text="{Binding Mode=OneWay, XPath=Symbol}" Margin="-0.5,0,15.5,12.4666666666666" FontSize="12" FontWeight="Bold" VerticalAlignment="Stretch" Height="Auto"/>
+            <TextBlock  FontFamily="Segoe UI" x:Name="TextBlock2"  Grid.Column="1" Width="20"  Text="{Binding Mode=OneWay, XPath=Shares}" d:LayoutOverrides="None" FontSize="10" VerticalAlignment="Stretch" Margin="0,0,3.9902809169099,14.4666666666666" Height="Auto" Grid.ColumnSpan="1"/>
+            <TextBlock  FontFamily="Segoe UI" x:Name="TextBlock" Grid.Column="2"  Width="28"  Text="{Binding Mode=OneWay, XPath=TotalValue}" FontSize="10" TextAlignment="Left" FontStyle="Normal" FontWeight="Bold" VerticalAlignment="Bottom" Margin="0,0,0,0" Height="15.6666666666668" HorizontalAlignment="Right"/>
+            <TextBlock  FontFamily="Segoe UI" Margin="0,0,0,0" Width="Auto" Height="16.6666666666668" Grid.Column="0" Grid.ColumnSpan="1" x:Name="TextBlock1_Copy" Text="{Binding Mode=OneWay, XPath=Name}"  d:LayoutOverrides="GridBox" FontSize="10" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextTrimming="WordEllipsis"/>
+            <TextBlock FontFamily="Segoe UI"  d:LayoutOverrides="None" FontSize="10"  FontWeight="Bold" VerticalAlignment="Stretch" Margin="0,14.401028277635,0,0.065638389031637" Width="26" Height="Auto" Grid.Column="1" Grid.ColumnSpan="1" x:Name="TextBlock2_Copy" Text="{Binding Mode=OneWay, XPath=Summary/LastTrade}"  HorizontalAlignment="Center"/>
+          </Grid>
+        </Grid>
+      </DataTemplate>
+
+      <Style x:Key="SummaryHorizontalStack1" TargetType="{x:Type StackPanel}">
+        <Setter Property="Height" Value="20" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="Background" Value="#ffffff" />
+      </Style>
+      <Style x:Key="SummaryHorizontalStack2" TargetType="{x:Type StackPanel}">
+        <Setter Property="Height" Value="20" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="Background" Value="#e4e4e4" />
+      </Style>
+      <Style x:Key="SummaryTextLable" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+      </Style>
+      <Style x:Key="SummaryDataTextLable" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextTrimming" Value="WordEllipsis" />
+        <Setter Property="Width" Value="75" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+      </Style>
+
+
+      <DataTemplate x:Key="SelectedSummaryTemplate">
+
+        <StackPanel>
+          <DockPanel d:LayoutOverrides="Height" VerticalAlignment="Top" Margin="0,0,0,0" Width="Auto" Height="25" Background="{DynamicResource HeaderBackgroundGradient1}" x:Name="SummaryStockNameGrid">
+
+            <Grid Height="18" Width="18" DockPanel.Dock="right" Margin="0,0,5,0" >
+              <Ellipse    x:Name="StatusPearl" >
+                <Ellipse.Stroke>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStopCollection>
+                      <GradientStop Color="black" Offset="0"/>
+                      <GradientStop Color="white" Offset="1"/>
+                    </GradientStopCollection>
+                  </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+              </Ellipse.Stroke>
+            </Ellipse>
+              <Ellipse Height="10" VerticalAlignment="Top" Margin="3,1,3,0"  >
+                <Ellipse.Fill>
+                  <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <LinearGradientBrush.GradientStops>
+                      <GradientStopCollection>
+                        <GradientStop Color="#ccffffff" Offset="0"/>
+                        <GradientStop Color="transparent" Offset="1"/>
+                      </GradientStopCollection>
+                    </LinearGradientBrush.GradientStops>
+                  </LinearGradientBrush>
+                </Ellipse.Fill>
+              </Ellipse>
+          </Grid>
+            <TextBlock   Text="{Binding XPath=Symbol}" FontSize="13" FontFamily="Segoe UI" FontWeight="Normal" Margin="5,4,2,5" RenderTransformOrigin="0.5,0.5" Foreground="#ffffff" TextWrapping="Wrap" TextAlignment="Right" />
+            <TextBlock   Text="-" FontSize="13" FontFamily="Segoe UI" FontWeight="Bold" Margin="0,5,2,5" RenderTransformOrigin="0.5,0.5" Foreground="#ffffff" TextWrapping="Wrap" Width="5" Height="15" />
+            <TextBlock Width="Auto"  Margin="0,3,5,5" Text="{Binding XPath=../Name}" FontSize="13" FontFamily="Segoe UI" FontWeight="Normal"  TextTrimming="WordEllipsis"  Foreground="#ffffff"  Height="15"  />
+          </DockPanel>
+          <Grid d:LayoutOverrides="Height" VerticalAlignment="Stretch" Margin="0,0,0,5"  Background="#FFFFFFFF" x:Name="StockChart2DGrid" RenderTransformOrigin="0.5,0.5">
+
+            <TextBlock TextAlignment="Center" VerticalAlignment="center" FontSize="20pt"  Foreground="#999999">No Chart</TextBlock>
+            <Image x:Name="Chart2DImage" Source="{Binding XPath=../Chart2D/@SmallPic,Converter={StaticResource stockImageConverter}}" RenderTransformOrigin="0.5,0.5" Margin="5,10,5,5">
+              <Image.ToolTip>
+                <Image x:Name="Chart2DToolTipImage" Source="{Binding XPath=../Chart2D/@LargePic,Converter={StaticResource stockImageConverter}}" />
+              </Image.ToolTip>
+            </Image>
+            <Rectangle d:LayoutOverrides="Height, Margin" Stroke="{x:Null}" VerticalAlignment="Top" Width="Auto" Height="7" x:Name="Rectangle" RenderTransformOrigin="0.5,0.5">
+              <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStopCollection>
+                      <GradientStop Color="#FF828487" Offset="0"/>
+                      <GradientStop Color="sc#0, 0.08021982, 0.09084171, 0.0998987257" Offset="1"/>
+                    </GradientStopCollection>
+                  </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+              </Rectangle.Fill>
+            </Rectangle>
+          </Grid>
+
+          <Expander Template="{StaticResource CustomExpander2}"   d:LayoutOverrides="None" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="Auto" Height="Auto" Header="More details..."   IsExpanded="True" Margin="0,0,0,5" >
+            <StackPanel x:Name="StackPanel" >
+              <StackPanel  Style="{StaticResource SummaryHorizontalStack1}">
+                <TextBlock Text="Last Trade:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}"  Text="{Binding Mode=OneWay, XPath=LastTrade}" />
+              </StackPanel>
+              <StackPanel Style="{StaticResource SummaryHorizontalStack2}">
+                <TextBlock Text="Trade Time:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock2" Text="{Binding Mode=OneWay, XPath=TradeTime}"/>
+              </StackPanel>
+
+              <StackPanel Style="{StaticResource SummaryHorizontalStack1}">
+                <TextBlock Text="Change:" x:Name="ChangeLabel"  Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="ChangeText" Text="{Binding Mode=OneWay, XPath=Change}"/>
+              </StackPanel>
+              <StackPanel Style="{StaticResource SummaryHorizontalStack2}">
+                <TextBlock Text="Previous Close:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock4" Text="{Binding Mode=OneWay, XPath=PrevClose}"/>
+              </StackPanel>
+              <StackPanel Style="{StaticResource SummaryHorizontalStack1}">
+                <TextBlock Text="Open:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock5" Text="{Binding Mode=OneWay, XPath=Open}"/>
+              </StackPanel>
+              <StackPanel Style="{StaticResource SummaryHorizontalStack2}">
+                <TextBlock Text="Bid:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock6" Text="{Binding Mode=OneWay, XPath=Bid}"/>
+              </StackPanel>
+              <StackPanel Style="{StaticResource SummaryHorizontalStack1}">
+                <TextBlock Text="Ask:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock7" Text="{Binding Mode=OneWay, XPath=Ask}"/>
+              </StackPanel>
+              <!--<StackPanel Style="{StaticResource SummaryHorizontalStack2}">
+                <TextBlock Text="1yr Target Est:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock8" Text="{Binding Mode=OneWay, XPath=_1YTargetEst}"/>
+              </StackPanel>-->
+              <!--<StackPanel Style="{StaticResource SummaryHorizontalStack1}">
+                <TextBlock Text="Days Range:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock9" Text="{Binding Mode=OneWay, XPath=DaysRange}"/>
+              </StackPanel>
+              <StackPanel Style="{StaticResource SummaryHorizontalStack2}">
+                <TextBlock Text="52wk Range:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock10" Text="{Binding Mode=OneWay, XPath=_52WeekRange}"/>
+              </StackPanel>-->
+              <StackPanel Style="{StaticResource SummaryHorizontalStack1}">
+                <TextBlock Text="Volume:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock11" Text="{Binding Mode=OneWay, XPath=Volume}"/>
+              </StackPanel>
+              <!--<StackPanel Style="{StaticResource SummaryHorizontalStack2}">
+                <TextBlock Text="Average Volume:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock12" Text="{Binding Mode=OneWay, XPath=AvgVol}"/>
+              </StackPanel>-->
+              <StackPanel Style="{StaticResource SummaryHorizontalStack1}">
+                <TextBlock Text="Last Trade:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock13" Text="{Binding Mode=OneWay, XPath=MarketCap}"/>
+              </StackPanel>
+              <StackPanel Style="{StaticResource SummaryHorizontalStack2}">
+                <TextBlock Text="PE:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock14" Text="{Binding Mode=OneWay, XPath=PE}"/>
+              </StackPanel>
+              <StackPanel Style="{StaticResource SummaryHorizontalStack1}">
+                <TextBlock Text="EPS:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock15" Text="{Binding Mode=OneWay, XPath=EPS}"/>
+              </StackPanel>
+              <!--<StackPanel Style="{StaticResource SummaryHorizontalStack2}">
+                <TextBlock Text="Div and Yield:" Style="{StaticResource SummaryTextLable}"/>
+                <TextBlock Style="{StaticResource SummaryDataTextLable}" x:Name="TextBlock" Text="{Binding Mode=OneWay, XPath=DivYield}"/>
+              </StackPanel>-->
+
+            </StackPanel>
+
+          </Expander>
+        </StackPanel>
+        <DataTemplate.Triggers>
+          <DataTrigger Binding="{Binding XPath=Change, Converter={StaticResource IsNegativeConverterReference}}" Value="True">
+            <Setter TargetName="ChangeText"  Property="Foreground" Value="Red" />
+            <Setter TargetName="ChangeLabel"  Property="Foreground" Value="Red" />
+            <Setter TargetName="StatusPearl" Property="Fill">
+              <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="1" >
+                  <GradientBrush.GradientStops>
+                    <GradientStopCollection >
+                      <GradientStop Color="Maroon" Offset="0" />
+                      <GradientStop Color="Red" Offset="1" />
+                    </GradientStopCollection>
+                  </GradientBrush.GradientStops>
+                </LinearGradientBrush>
+              </Setter.Value>
+            </Setter>
+          </DataTrigger>
+          <DataTrigger Binding="{Binding XPath=Change, Converter={StaticResource IsNegativeConverterReference}}" Value="False">
+            <Setter TargetName="ChangeText"  Property="Foreground" Value="Green" />
+            <Setter TargetName="ChangeLabel"  Property="Foreground" Value="Green" />
+            <Setter TargetName="StatusPearl" Property="Fill">
+              <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="1" >
+                  <GradientBrush.GradientStops>
+                    <GradientStopCollection >
+                      <GradientStop Color="DarkGreen" Offset="0" />
+                      <GradientStop Color="Lime" Offset="1" />
+                    </GradientStopCollection>
+                  </GradientBrush.GradientStops>
+                </LinearGradientBrush>
+              </Setter.Value>
+            </Setter>
+          </DataTrigger>
+        </DataTemplate.Triggers>
+      </DataTemplate>
+      
+			<Storyboard x:Key="ShowFullScreen" d:StoryboardName="ShowFullScreen">
+				<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="LeftColumnGrid">
+					<SplineDoubleKeyFrame d:KeyEase="Linear;Linear;0.5;0.5;0.5;0.5" KeySpline="0.5,0.5,0.5,0.5" Value="0" KeyTime="00:00:00.5000000"/>
+				</DoubleAnimationUsingKeyFrames>
+				<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="RightColumnGrid">
+					<SplineDoubleKeyFrame d:KeyEase="Linear;Linear;0.5;0.5;0.5;0.5" KeySpline="0.5,0.5,0.5,0.5" Value="0" KeyTime="00:00:00.5000000"/>
+				</DoubleAnimationUsingKeyFrames>
+				<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="RecentNewsGrid">
+					<SplineDoubleKeyFrame d:KeyEase="Linear;Linear;0.5;0.5;0.5;0.5" KeySpline="0.5,0.5,0.5,0.5" Value="0" KeyTime="00:00:00.5000000"/>
+				</DoubleAnimationUsingKeyFrames>
+			</Storyboard>
+			<Storyboard x:Key="ExitFullScreen" d:StoryboardName="ExitFullScreen">
+				<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="LeftColumnGrid">
+					<SplineDoubleKeyFrame d:KeyEase="Linear;Linear;0.5;0.5;0.5;0.5" KeySpline="0.5,0.5,0.5,0.5" Value="205" KeyTime="00:00:00.4580000"/>
+				</DoubleAnimationUsingKeyFrames>
+				<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="RightColumnGrid">
+					<SplineDoubleKeyFrame d:KeyEase="Linear;Linear;0.5;0.5;0.5;0.5" KeySpline="0.5,0.5,0.5,0.5" Value="200" KeyTime="00:00:00.4580000"/>
+				</DoubleAnimationUsingKeyFrames>
+				<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="RecentNewsGrid">
+					<SplineDoubleKeyFrame d:KeyEase="Linear;Linear;0.5;0.5;0.5;0.5" KeySpline="0.5,0.5,0.5,0.5" Value="200" KeyTime="00:00:00.4580000"/>
+				</DoubleAnimationUsingKeyFrames>
+			</Storyboard>
+
+		<Style x:Key="FullScreenToggleButtonStyle2" TargetType="{x:Type ToggleButton}" BasedOn="{x:Null}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ToggleButton}">
+
+
+						<Viewbox >
+							<Canvas Width="350.681152" Height="72.762207">
+
+								<Canvas>
+
+									<!-- Layer 1/<Path> -->
+									<Path Fill="#ff698b3c" Data="F1 M 0.666504,5.370117 L 0.666504,53.325684 L 54.017578,53.325684 L 54.017578,53.321777 L 282.412598,53.321777 L 282.412598,53.325684 L 317.379395,53.325684 L 317.379395,53.321777 L 350.682129,53.321777 L 350.682129,5.370117 L 0.666504,5.370117 Z"/>
+
+									<!-- Layer 1/<Path> -->
+									<Path StrokeThickness="0.855900" Stroke="#ff698b3c" StrokeMiterLimit="1.000000" Data="F1 M 0.371582,58.750488 L 131.423340,58.750488"/>
+
+									<!-- Layer 1/<Path> -->
+									<Path StrokeThickness="0.985500" Stroke="#ff698b3c" StrokeMiterLimit="1.000000" Data="F1 M 0.000000,0.492676 L 350.015137,0.492676"/>
+
+									<!-- Layer 1/<Path> -->
+									<Path StrokeThickness="0.985500" Stroke="#ff698b3c" StrokeMiterLimit="1.000000" Data="F1 M 195.158691,58.638184 L 350.015137,58.638184"/>
+
+									<!-- Layer 1/<Path> -->
+									<Path Fill="#ffffffff" Data="F1 M 50.965332,16.124512 C 48.855957,16.918457 47.035156,19.200684 45.507324,22.977051 L 36.791504,44.389160 C 36.752930,44.468262 36.711914,44.468262 36.672852,44.389160 L 29.711426,25.255371 L 21.511230,44.447754 C 21.511230,44.526855 21.472656,44.489746 21.393066,44.329590 L 12.680176,22.977051 C 11.620117,20.416504 10.616699,18.630859 9.674805,17.623535 C 8.732910,16.619141 7.477539,16.036621 5.908203,15.878418 C 5.804199,15.604004 5.804199,15.465332 5.908203,15.465332 C 7.640137,15.719727 9.449707,15.844727 11.341797,15.844727 C 15.082031,15.844727 17.658203,15.719727 19.076660,15.465332 C 19.209961,15.505859 19.209961,15.643066 19.076660,15.878418 C 16.713379,16.077148 15.532715,16.767578 15.532715,17.949707 C 15.532715,19.291016 15.965332,21.008301 16.833008,23.100098 L 23.150879,38.363770 L 29.233887,23.810547 L 28.937988,22.980469 C 28.032227,20.495605 27.107910,18.730957 26.163574,17.685547 C 25.218262,16.640625 23.978027,16.039063 22.443359,15.878418 C 22.402344,15.841309 22.384277,15.761230 22.384277,15.643066 C 22.384277,15.524902 22.402344,15.465332 22.443359,15.465332 C 24.096680,15.719727 25.888672,15.844727 27.815918,15.844727 C 31.831055,15.844727 34.529297,15.719727 35.906250,15.465332 C 36.119141,15.544434 36.119141,15.685059 35.906250,15.878418 C 33.320801,16.039063 32.029785,16.788086 32.029785,18.125977 C 32.029785,19.429199 32.385254,21.087891 33.092773,23.100098 L 38.470215,38.363770 L 44.375488,22.920898 C 45.242676,20.674316 45.675781,19.057129 45.675781,18.067871 C 45.675781,16.767578 44.543945,16.039063 42.284180,15.878418 C 42.246094,15.841309 42.226074,15.761230 42.226074,15.643066 C 42.226074,15.524902 42.246094,15.465332 42.284180,15.465332 C 43.937500,15.719727 45.630859,15.844727 47.363770,15.844727 C 48.618652,15.844727 49.809570,15.742188 50.965332,15.581055 L 50.965332,16.124512 Z"/>
+
+									<!-- Layer 1/Compound Shape/<Compound Path> -->
+									<Path Fill="#ffffffff" Data="F1 M 80.050293,40.283691 C 78.020996,42.392090 75.354980,43.442871 72.049316,43.442871 C 68.819824,43.442871 66.043457,42.185059 63.721191,39.663574 C 61.163086,36.831543 59.884277,33.051758 59.884277,28.326660 C 59.884277,24.349121 60.925781,21.260254 63.014160,19.053711 C 64.941895,17.007324 67.560059,15.982910 70.866699,15.982910 C 74.095215,15.982910 76.870605,17.262695 79.193848,19.820801 C 81.791504,22.696289 83.091309,26.495605 83.091309,31.218750 C 83.091309,35.156738 82.077637,38.178223 80.050293,40.283691 Z M 82.573730,19.293457 C 79.638184,16.427246 76.044434,14.992188 71.788574,14.992188 C 67.337402,14.992188 63.535156,16.547363 60.384277,19.648926 C 57.389648,22.634277 55.893066,26.152832 55.893066,30.196777 C 55.893066,34.012207 57.360840,37.339355 60.295410,40.189941 C 63.230469,43.037598 66.804199,44.462402 71.020996,44.462402 C 75.511230,44.462402 79.332520,42.909668 82.483887,39.808105 C 85.479004,36.821777 86.975098,33.325195 86.975098,29.314941 C 86.975098,25.502930 85.508301,22.164063 82.573730,19.293457 Z"/>
+
+									<!-- Layer 1/<Compound Path> -->
+									<Path Fill="#ffffffff" Data="F1 M 119.792480,40.283691 C 117.763184,42.392090 115.098145,43.442871 111.791504,43.442871 C 108.562012,43.442871 105.784668,42.185059 103.464355,39.663574 C 100.905762,36.831543 99.626465,33.051758 99.626465,28.326660 C 99.626465,24.349121 100.668457,21.260254 102.755371,19.053711 C 104.685059,17.007324 107.302246,15.982910 110.609863,15.982910 C 113.837402,15.982910 116.613770,17.262695 118.937012,19.820801 C 121.534668,22.696289 122.834473,26.495605 122.834473,31.218750 C 122.834473,35.156738 121.819824,38.178223 119.792480,40.283691 Z M 122.315918,19.293457 C 119.380371,16.427246 115.786621,14.992188 111.530762,14.992188 C 107.079590,14.992188 103.277832,16.547363 100.126465,19.648926 C 97.132324,22.634277 95.636230,26.152832 95.636230,30.196777 C 95.636230,34.012207 97.103027,37.339355 100.038574,40.189941 C 102.972168,43.037598 106.547363,44.462402 110.763184,44.462402 C 115.253418,44.462402 119.074707,42.909668 122.228027,39.808105 C 125.221191,36.821777 126.718262,33.325195 126.718262,29.314941 C 126.718262,25.502930 125.250488,22.164063 122.315918,19.293457 Z"/>
+
+									<!-- Layer 1/<Compound Path> -->
+									<Path Fill="#ffffffff" Data="F1 M 159.188965,39.843262 C 157.104004,41.770996 154.606934,42.734863 151.698730,42.734863 C 148.589355,42.734863 146.624512,42.380371 145.796387,41.673340 C 145.168457,41.160645 144.854004,39.940918 144.854004,38.009277 L 144.854004,23.069336 C 144.854004,20.159180 144.972168,18.112793 145.208496,16.930664 C 146.034668,16.773438 147.548340,16.693359 149.751465,16.693359 C 153.878418,16.693359 157.065918,17.922363 159.308105,20.382813 C 161.548340,22.844727 162.669434,26.416016 162.669434,31.102051 C 162.669434,34.803711 161.509277,37.716309 159.188965,39.843262 Z M 162.603027,19.694824 C 159.772949,17.063477 155.918457,15.749023 151.043457,15.749023 C 150.493652,15.749023 149.331543,15.767090 147.562988,15.797363 C 145.793457,15.828613 144.750488,15.844727 144.437012,15.844727 C 140.466309,15.844727 137.751465,15.734375 136.298340,15.512695 C 136.113770,15.591309 136.113770,15.729980 136.298340,15.923340 C 138.594238,16.160645 140.015137,16.889160 140.560059,18.110352 C 140.832520,18.778320 140.969238,20.429199 140.969238,23.063965 L 140.969238,36.399902 C 140.969238,39.312012 140.696777,41.179199 140.151855,42.008301 C 139.606934,42.833496 138.302246,43.347168 136.237793,43.540527 C 136.120605,43.776855 136.140137,43.893066 136.298340,43.893066 C 138.065918,43.673340 140.642090,43.562012 144.022949,43.562012 C 144.337402,43.562012 145.360840,43.585449 147.090332,43.632324 C 148.819824,43.681152 149.940918,43.702637 150.452637,43.702637 C 155.093262,43.702637 158.966309,42.292480 162.073730,39.467285 C 165.060059,36.721191 166.556152,33.348633 166.556152,29.344238 C 166.556152,25.382813 165.237793,22.166504 162.603027,19.694824 Z"/>
+
+									<!-- Layer 1/<Path> -->
+									<Path Fill="#ffffffff" Data="F1 M 205.624512,31.681152 C 203.449707,31.959961 202.105957,32.688477 201.593262,33.869141 C 201.395996,34.385254 201.297363,35.962891 201.297363,38.604980 C 201.297363,39.983887 201.440918,40.932129 201.727051,41.444824 C 198.145020,43.458496 194.542480,44.462402 190.922363,44.462402 C 186.236816,44.462402 182.437012,43.050293 179.525879,40.219238 C 176.729980,37.547363 175.333496,34.266113 175.333496,30.375488 C 175.333496,26.287598 176.828613,22.753418 179.818848,19.765625 C 183.008301,16.584473 186.924316,14.992188 191.569824,14.992188 C 193.340332,14.992188 195.247559,15.346191 197.294434,16.053711 C 199.026855,16.643066 200.148926,17.173828 200.661621,17.645996 C 201.051270,17.920410 201.170410,20.084961 201.013184,24.133301 C 200.895020,24.173828 200.779785,24.191895 200.661621,24.191895 C 200.543457,22.133789 199.599121,20.294434 197.830566,18.672852 C 195.825684,16.852051 193.388184,15.938965 190.519043,15.938965 C 187.137207,15.938965 184.424316,17.063477 182.381348,19.309082 C 180.334473,21.553711 179.313965,24.686523 179.313965,28.705566 C 179.313965,33.435059 180.532715,37.136230 182.976074,39.815918 C 185.182129,42.220215 187.998535,43.419434 191.424316,43.419434 C 194.810059,43.419434 196.740723,42.729980 197.214355,41.347168 C 197.409668,40.754395 197.507324,39.765137 197.507324,38.382324 C 197.507324,35.498535 197.190918,33.697266 196.556152,32.986328 C 196.082520,32.433105 194.676270,31.998047 192.340332,31.681152 C 192.103027,31.486328 192.081543,31.385254 192.280762,31.385254 C 194.326660,31.639160 196.864746,31.764160 199.896973,31.764160 C 202.257324,31.764160 204.167480,31.639160 205.624512,31.385254 C 205.795410,31.385254 205.795410,31.486328 205.624512,31.681152 Z"/>
+
+									<!-- Layer 1/<Compound Path> -->
+									<Path Fill="#ffffffff" Data="F1 M 222.918457,30.248535 C 222.130371,30.248535 221.464355,30.230469 220.913574,30.188965 L 220.913574,22.682617 C 220.913574,19.252930 221.010254,17.203125 221.207520,16.530273 C 221.682129,16.454102 222.308105,16.412598 223.096191,16.412598 C 228.526855,16.412598 231.243652,18.799805 231.243652,23.566406 C 231.243652,28.021973 228.468262,30.248535 222.918457,30.248535 Z M 241.822754,44.261230 C 239.422363,43.552246 237.041504,41.698730 234.677246,38.702637 C 232.552246,35.945313 230.897949,32.850586 229.718262,29.421875 C 233.323730,27.843262 235.127441,25.476074 235.127441,22.323730 C 235.127441,17.751465 231.311035,15.465332 223.682129,15.465332 C 217.585449,15.465332 213.752441,15.731934 212.181152,16.264160 C 211.982910,16.348145 211.943848,16.472168 212.062988,16.635254 C 213.003418,16.485352 213.591309,16.412598 213.826660,16.412598 C 214.964355,16.412598 215.788574,16.844238 216.300293,17.708984 C 216.847168,18.692871 217.122559,20.484375 217.122559,23.078613 L 217.122559,36.403809 C 217.122559,39.354980 216.847168,41.231934 216.300293,42.037598 C 215.749512,42.843262 214.437988,43.347168 212.358887,43.540527 C 212.160645,43.776855 212.139160,43.893066 212.298340,43.893066 C 214.147949,43.642090 216.548340,43.514160 219.501465,43.514160 C 221.783691,43.514160 223.830566,43.642090 225.642090,43.893066 C 225.855957,43.893066 225.855957,43.776855 225.642090,43.540527 C 223.552246,43.384277 222.231934,42.854004 221.682129,41.952637 C 221.167480,41.169434 220.913574,39.325684 220.913574,36.419434 L 220.913574,31.006348 L 222.981934,31.006348 C 224.318848,31.006348 225.479980,30.902832 226.466309,30.687988 C 228.868652,39.149902 233.986816,43.772949 241.822754,44.556152 C 242.036621,44.556152 242.036621,44.460449 241.822754,44.261230 Z"/>
+
+									<!-- Layer 1/Compound Shape/<Compound Path> -->
+									<Path Fill="#ffffffff" Data="F1 M 271.087402,40.283691 C 269.059082,42.392090 266.391113,43.442871 263.086426,43.442871 C 259.854980,43.442871 257.081543,42.185059 254.759277,39.663574 C 252.198730,36.831543 250.920410,33.051758 250.920410,28.326660 C 250.920410,24.349121 251.962402,21.260254 254.052246,19.053711 C 255.978027,17.007324 258.597168,15.982910 261.905762,15.982910 C 265.131348,15.982910 267.907715,17.262695 270.231934,19.820801 C 272.828613,22.696289 274.128418,26.495605 274.128418,31.218750 C 274.128418,35.156738 273.113770,38.178223 271.087402,40.283691 Z M 273.610840,19.293457 C 270.676270,16.427246 267.079590,14.992188 262.826660,14.992188 C 258.373535,14.992188 254.572754,16.547363 251.420410,19.648926 C 248.428223,22.634277 246.929199,26.152832 246.929199,30.196777 C 246.929199,34.012207 248.396973,37.339355 251.331543,40.189941 C 254.267090,43.037598 257.840332,44.462402 262.059082,44.462402 C 266.546387,44.462402 270.367676,42.909668 273.521973,39.808105 C 276.515137,36.821777 278.010254,33.325195 278.010254,29.314941 C 278.010254,25.502930 276.544434,22.164063 273.610840,19.293457 Z"/>
+
+									<!-- Layer 1/<Path> -->
+									<Path Fill="#ffffffff" Data="F1 M 315.520996,15.747559 C 315.494629,15.788086 315.456543,15.831543 315.405762,15.878418 C 313.949707,16.036621 312.768066,16.568848 311.860840,17.476074 C 310.836426,18.502930 309.753418,20.335938 308.610840,22.977051 L 299.274902,44.389160 C 299.234863,44.507324 299.175293,44.489746 299.098145,44.329590 L 290.007324,22.977051 C 288.867676,20.297363 287.862793,18.502930 286.998535,17.594238 C 286.028809,16.621582 284.672363,16.056641 282.937988,15.889160 L 282.937988,15.472656 C 284.726074,15.720215 286.611816,15.844727 288.594238,15.844727 C 292.097168,15.844727 294.579590,15.719727 296.036621,15.465332 C 296.246582,15.544434 296.246582,15.685059 296.036621,15.878418 C 293.773926,16.116699 292.643066,16.750977 292.643066,17.775391 C 292.643066,19.035645 293.135254,20.810547 294.120605,23.100098 L 300.869629,38.661621 L 307.437988,23.100098 C 308.503418,20.576660 309.036621,18.821289 309.036621,17.831543 C 309.036621,16.687988 307.911621,16.039063 305.661621,15.878418 C 305.622559,15.841309 305.601074,15.761230 305.601074,15.643066 C 305.601074,15.524902 305.622559,15.465332 305.661621,15.465332 C 307.473145,15.719727 309.125488,15.844727 310.622559,15.844727 C 312.352051,15.844727 313.949707,15.719727 315.405762,15.465332 C 315.456543,15.484375 315.494629,15.507813 315.520996,15.534180 L 315.520996,15.747559 Z"/>
+
+									<!-- Layer 1/<Path> -->
+									<Path Fill="#ffffffff" Data="F1 M 342.889160,43.149902 C 342.712402,43.646973 342.428223,43.893066 342.036621,43.893066 C 341.644043,43.893066 340.589355,43.845215 338.876465,43.751465 C 337.163574,43.655762 335.717285,43.608887 334.536621,43.608887 C 328.673340,43.608887 324.421387,43.702637 321.783691,43.893066 C 321.640137,43.893066 321.640137,43.774902 321.783691,43.538574 C 324.092285,43.342285 325.521973,42.851074 326.070801,42.063965 C 326.617676,41.274902 326.894043,39.384277 326.894043,36.390137 L 326.894043,23.032227 C 326.894043,19.999512 326.630371,18.085449 326.100098,17.298340 C 325.571777,16.510254 324.149902,16.036621 321.841309,15.878418 C 321.565918,15.604004 321.544434,15.465332 321.783691,15.465332 C 324.184082,15.719727 328.377441,15.844727 334.358887,15.844727 C 336.760254,15.844727 339.495605,15.719727 342.567871,15.465332 C 342.413574,16.180664 342.339355,17.075684 342.339355,18.148438 L 342.339355,20.294434 C 342.301270,20.333496 342.221191,20.354004 342.106934,20.354004 C 341.987793,20.354004 341.931152,20.315430 341.931152,20.235840 C 341.812988,19.053711 341.366699,18.245117 340.586426,17.810059 C 339.612793,17.259277 337.784668,16.982422 335.100098,16.982422 L 331.070801,16.982422 C 330.876465,18.435547 330.777832,20.378418 330.777832,22.808594 L 330.777832,28.636719 L 334.019043,28.636719 C 336.139160,28.636719 337.358887,28.599609 337.672363,28.521973 C 338.927246,28.252441 339.694824,27.495605 339.970215,26.258789 C 340.166504,26.258789 340.284668,26.279785 340.323730,26.318359 C 340.127441,27.028809 340.029785,28.210938 340.029785,29.862793 C 340.029785,30.059570 340.048340,30.510254 340.089355,31.218750 C 340.103027,31.968750 340.103027,32.400879 340.089355,32.518555 C 340.021973,32.599609 339.917480,32.577148 339.780762,32.460449 C 339.542480,31.011719 338.872559,30.115723 337.767090,29.761230 C 337.331543,29.644531 336.088379,29.584961 334.036621,29.584961 L 330.777832,29.584961 L 330.777832,35.850586 C 330.777832,38.334473 330.799316,39.735840 330.836426,40.049316 C 331.152832,41.666504 332.016113,42.472168 333.432129,42.472168 L 335.671387,42.472168 C 338.815918,42.472168 340.879395,42.138184 341.862793,41.462402 C 342.527832,41.024902 343.040527,39.951660 343.393066,38.245605 C 343.550293,38.169434 343.690918,38.187012 343.808105,38.306152 C 343.372559,41.042480 343.067871,42.655762 342.889160,43.149902 Z"/>
+
+									<!-- Layer 1/<Compound Path> -->
+									<Path Fill="#ffffffff" Data="F1 M 194.847168,58.073730 C 194.458496,56.528809 193.825684,54.862793 192.824707,52.862793 L 192.760254,52.732910 L 193.089355,52.862793 C 194.893066,53.593262 196.735840,55.581543 197.962402,58.073730 L 194.847168,58.073730 Z M 169.818848,55.886230 L 169.356934,55.886230 L 169.356934,55.755371 C 170.408691,55.690918 171.329590,55.690918 172.380371,55.690918 C 175.735840,55.690918 180.204590,56.544434 182.769043,57.530762 L 183.032715,57.660645 L 182.965332,57.400879 C 182.635254,55.229980 181.388184,52.927246 179.348145,51.747559 L 179.088379,51.679199 L 179.218262,51.548340 L 179.416504,51.548340 C 181.487793,51.548340 185.140137,54.546387 187.180176,58.073730 L 179.074707,58.073730 C 176.234863,57.077637 173.152832,56.329590 169.818848,55.886230 Z M 163.140625,58.073730 C 164.106934,57.937988 165.163086,57.858887 166.333496,57.858887 C 167.492676,57.858887 168.580566,57.937988 169.605469,58.073730 L 163.140625,58.073730 Z M 213.599121,62.591309 C 212.349121,62.591309 211.428223,63.315918 211.099121,64.696777 L 211.033691,64.960449 C 212.020996,65.155762 212.678223,65.879395 212.678223,66.933105 C 212.678223,68.179199 211.692871,69.299316 209.983887,69.299316 C 208.604004,69.299316 206.368652,68.312012 203.344238,65.155762 L 202.816895,64.631348 L 203.015137,64.233887 C 203.607910,63.120605 204.132324,61.409668 204.132324,59.765137 C 204.132324,59.674316 204.121582,59.584473 204.118652,59.493652 L 204.338379,59.493652 L 204.338379,58.073730 L 203.980957,58.073730 C 203.169434,53.269043 198.753418,48.788574 188.158691,48.788574 L 187.765137,48.788574 L 188.354004,51.679199 L 188.024902,51.548340 C 185.857910,50.433105 182.833496,49.575684 179.416504,49.575684 C 174.353027,49.575684 169.292480,51.548340 166.203613,55.690918 L 166.005371,55.952637 L 165.610840,56.020996 C 162.867676,56.342285 160.176270,56.991699 157.943848,58.073730 L 157.243652,58.073730 L 157.243652,58.434082 C 154.397949,60.009277 152.462402,62.390137 152.462402,65.879395 C 152.462402,69.888184 155.354980,71.270996 156.999512,71.270996 C 159.101074,71.270996 160.087402,70.021973 160.087402,68.771973 C 160.087402,67.852051 159.693848,67.325684 158.971191,67.325684 C 158.511230,67.325684 157.919434,67.720215 157.327637,67.720215 C 156.405762,67.720215 154.829590,66.800293 154.829590,64.761230 C 154.829590,63.039551 155.868164,60.926270 158.516113,59.493652 L 174.805176,59.493652 C 178.074707,60.958496 179.875488,63.163574 179.875488,65.091309 C 179.875488,66.340332 179.088379,67.392090 178.033691,67.984863 L 178.231934,68.179199 C 180.402832,69.888184 183.950684,71.270996 187.895020,71.270996 C 190.918457,71.270996 193.681152,70.613770 195.455566,69.229980 L 195.650879,69.036621 L 192.760254,66.142090 L 192.627441,66.274902 C 190.983887,67.522949 188.288574,68.509277 185.923340,68.509277 C 184.083496,68.509277 183.097168,68.113770 182.241699,67.720215 L 182.241699,67.587402 L 182.374512,67.587402 C 185.265137,66.864746 187.302246,66.012207 189.274902,64.040527 L 189.604004,63.711426 L 188.354004,62.854980 C 186.613770,61.583496 184.688965,60.462402 182.603027,59.493652 L 188.618652,59.493652 C 190.696777,60.325684 193.493652,61.796387 195.390137,63.120605 L 195.390137,62.724121 C 195.390137,61.624512 195.317871,60.573730 195.141113,59.493652 L 198.575684,59.493652 C 199.091309,60.897949 199.399902,62.404785 199.399902,63.905762 C 199.399902,64.498535 199.267090,65.091309 199.006348,65.683105 L 200.779785,66.864746 C 206.233887,70.480957 208.534668,71.270996 210.706543,71.270996 C 214.849121,71.270996 217.016113,68.771973 217.016113,66.340332 C 217.016113,64.233887 215.503418,62.591309 213.599121,62.591309 Z"/>
+
+									<!-- Layer 1/<Compound Path> -->
+									<Path Fill="#ff33201c" Data="F1 M 199.140137,67.174316 C 199.400879,66.582520 199.533691,65.989746 199.533691,65.396973 C 199.533691,60.534668 196.312012,55.604980 193.223145,54.354004 L 192.894043,54.224121 L 192.958496,54.354004 C 194.997559,58.428223 195.523926,61.123535 195.523926,64.215332 L 195.523926,64.611816 C 193.353027,63.096191 190.000488,61.387207 187.898926,60.665527 L 187.765137,60.402832 C 185.860840,56.524902 181.783691,53.039551 179.550293,53.039551 L 179.352051,53.039551 L 179.222168,53.170410 L 179.481934,53.238770 C 181.521973,54.418457 182.769043,56.721191 183.099121,58.892090 L 183.166504,59.151855 L 182.902832,59.021973 C 180.338379,58.035645 175.869629,57.182129 172.514160,57.182129 C 171.463379,57.182129 170.542480,57.182129 169.490723,57.246582 L 169.490723,57.377441 L 169.952637,57.377441 C 177.379395,58.364746 183.625488,60.794434 188.487793,64.346191 L 189.737793,65.202637 L 189.408691,65.531738 C 187.436035,67.503418 185.398926,68.355957 182.508301,69.078613 L 182.375488,69.078613 L 182.375488,69.211426 C 183.230957,69.604980 184.217285,70.000488 186.057129,70.000488 C 188.422363,70.000488 191.117676,69.014160 192.761230,67.766113 L 192.894043,67.633301 L 195.784668,70.527832 L 195.589355,70.721191 C 193.814941,72.104980 191.052246,72.762207 188.028809,72.762207 C 184.084473,72.762207 180.536621,71.379395 178.365723,69.670410 L 178.167480,69.476074 C 179.222168,68.883301 180.009277,67.831543 180.009277,66.582520 C 180.009277,63.360840 175.014160,59.350098 166.467285,59.350098 C 157.854004,59.350098 154.963379,63.360840 154.963379,66.252441 C 154.963379,68.291504 156.539551,69.211426 157.461426,69.211426 C 158.053223,69.211426 158.645020,68.816895 159.104980,68.816895 C 159.827637,68.816895 160.221191,69.343262 160.221191,70.263184 C 160.221191,71.513184 159.234863,72.762207 157.133301,72.762207 C 155.488770,72.762207 152.596191,71.379395 152.596191,67.370605 C 152.596191,60.993652 159.039551,58.298340 165.744629,57.512207 L 166.139160,57.443848 L 166.337402,57.182129 C 169.426270,53.039551 174.486816,51.066895 179.550293,51.066895 C 182.967285,51.066895 185.991699,51.924316 188.158691,53.039551 L 188.487793,53.170410 L 187.898926,50.279785 L 188.292480,50.279785 C 200.126465,50.279785 204.266113,55.867676 204.266113,61.256348 C 204.266113,62.900879 203.741699,64.611816 203.148926,65.725098 L 202.950684,66.122559 L 203.478027,66.646973 C 206.502441,69.803223 208.737793,70.790527 210.117676,70.790527 C 211.826660,70.790527 212.812012,69.670410 212.812012,68.424316 C 212.812012,67.370605 212.154785,66.646973 211.167480,66.451660 L 211.232910,66.187988 C 211.562012,64.807129 212.482910,64.082520 213.732910,64.082520 C 215.637207,64.082520 217.149902,65.725098 217.149902,67.831543 C 217.149902,70.263184 214.982910,72.762207 210.840332,72.762207 C 208.668457,72.762207 206.367676,71.972168 200.913574,68.355957 L 199.140137,67.174316 Z"/>
+
+									<Canvas>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 89.512207,64.916504 L 89.512207,66.428223 L 92.008301,66.428223 L 92.008301,68.408691 L 89.512207,68.408691 L 89.512207,71.338379 L 86.980957,71.338379 L 86.980957,62.936035 L 92.248535,62.936035 L 92.248535,64.916504 L 89.512207,64.916504 Z"/>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 94.673340,71.338379 L 94.673340,62.936035 L 97.204590,62.936035 L 97.204590,71.338379 L 94.673340,71.338379 Z"/>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 105.933594,71.338379 L 102.968750,67.283691 C 102.843750,67.111816 102.734375,66.954590 102.640625,66.812012 C 102.546875,66.669434 102.464844,66.537598 102.394531,66.416504 L 102.371094,66.416504 C 102.382813,66.623535 102.391602,66.840332 102.397461,67.066895 C 102.403320,67.293457 102.406250,67.541504 102.406250,67.811035 L 102.406250,71.338379 L 100.062500,71.338379 L 100.062500,62.936035 L 102.453125,62.936035 L 105.294922,66.791504 C 105.330078,66.842285 105.373047,66.902832 105.423828,66.973145 C 105.474609,67.043457 105.525391,67.115723 105.576172,67.189941 C 105.626953,67.264160 105.674805,67.336426 105.719727,67.406738 C 105.764648,67.477051 105.798828,67.539551 105.822266,67.594238 L 105.845703,67.594238 C 105.826172,67.449707 105.815430,67.296387 105.813477,67.134277 C 105.811523,66.972168 105.810547,66.828613 105.810547,66.703613 L 105.810547,62.936035 L 108.154297,62.936035 L 108.154297,71.338379 L 105.933594,71.338379 Z"/>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 114.850586,65.707520 C 114.827148,65.613770 114.805664,65.519043 114.786133,65.423340 C 114.766602,65.327637 114.749023,65.237793 114.733398,65.153809 C 114.717773,65.069824 114.706055,64.993652 114.698242,64.925293 C 114.690430,64.856934 114.684570,64.803223 114.680664,64.764160 L 114.622070,64.764160 C 114.614258,64.842285 114.593750,64.963379 114.560547,65.127441 C 114.527344,65.291504 114.487305,65.469238 114.440430,65.660645 L 113.831055,67.992676 L 115.436523,67.992676 L 114.850586,65.707520 Z M 116.274414,71.338379 L 115.905273,69.791504 L 113.397461,69.791504 L 112.999023,71.338379 L 110.262695,71.338379 L 113.157227,62.936035 L 116.297852,62.936035 L 119.022461,71.338379 L 116.274414,71.338379 Z"/>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 127.077637,71.338379 L 124.112793,67.283691 C 123.987793,67.111816 123.878418,66.954590 123.784668,66.812012 C 123.690918,66.669434 123.608887,66.537598 123.538574,66.416504 L 123.515137,66.416504 C 123.526855,66.623535 123.535645,66.840332 123.541504,67.066895 C 123.547363,67.293457 123.550293,67.541504 123.550293,67.811035 L 123.550293,71.338379 L 121.206543,71.338379 L 121.206543,62.936035 L 123.597168,62.936035 L 126.438965,66.791504 C 126.474121,66.842285 126.517090,66.902832 126.567871,66.973145 C 126.618652,67.043457 126.669434,67.115723 126.720215,67.189941 C 126.770996,67.264160 126.818848,67.336426 126.863770,67.406738 C 126.908691,67.477051 126.942871,67.539551 126.966309,67.594238 L 126.989746,67.594238 C 126.970215,67.449707 126.959473,67.296387 126.957520,67.134277 C 126.955566,66.972168 126.954590,66.828613 126.954590,66.703613 L 126.954590,62.936035 L 129.298340,62.936035 L 129.298340,71.338379 L 127.077637,71.338379 Z"/>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 138.024902,71.229980 C 137.870605,71.274902 137.691895,71.315918 137.488770,71.353027 C 137.285645,71.390137 137.059082,71.421387 136.809082,71.446777 C 136.559082,71.472168 136.287598,71.484863 135.994629,71.484863 C 135.248535,71.484863 134.604004,71.373535 134.061035,71.150879 C 133.518066,70.928223 133.070801,70.627441 132.719238,70.248535 C 132.367676,69.869629 132.106934,69.429199 131.937012,68.927246 C 131.767090,68.425293 131.682129,67.893066 131.682129,67.330566 C 131.682129,66.666504 131.789551,66.057129 132.004395,65.502441 C 132.219238,64.947754 132.526855,64.469238 132.927246,64.066895 C 133.327637,63.664551 133.812012,63.352051 134.380371,63.129395 C 134.948730,62.906738 135.586426,62.795410 136.293457,62.795410 C 136.781738,62.795410 137.202637,62.825684 137.556152,62.886230 C 137.909668,62.946777 138.191895,63.004395 138.402832,63.059082 L 138.402832,65.396973 C 138.316895,65.346191 138.212402,65.294434 138.089355,65.241699 C 137.966309,65.188965 137.827637,65.141113 137.673340,65.098145 C 137.519043,65.055176 137.350098,65.020020 137.166504,64.992676 C 136.982910,64.965332 136.787598,64.951660 136.580566,64.951660 C 136.287598,64.951660 136.006348,64.993652 135.736816,65.077637 C 135.467285,65.161621 135.230957,65.293457 135.027832,65.473145 C 134.824707,65.652832 134.662598,65.881348 134.541504,66.158691 C 134.420410,66.436035 134.359863,66.766113 134.359863,67.148926 C 134.359863,67.473145 134.408691,67.769043 134.506348,68.036621 C 134.604004,68.304199 134.746582,68.532715 134.934082,68.722168 C 135.121582,68.911621 135.351074,69.059082 135.622559,69.164551 C 135.894043,69.270020 136.201660,69.322754 136.545410,69.322754 C 136.744629,69.322754 136.935059,69.308105 137.116699,69.278809 C 137.298340,69.249512 137.467285,69.211426 137.623535,69.164551 C 137.779785,69.117676 137.923340,69.066895 138.054199,69.012207 C 138.185059,68.957520 138.301270,68.904785 138.402832,68.854004 L 138.402832,71.109863 C 138.305176,71.145020 138.179199,71.185059 138.024902,71.229980 Z"/>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 140.909668,71.338379 L 140.909668,62.936035 L 146.142090,62.936035 L 146.142090,64.916504 L 143.440918,64.916504 L 143.440918,66.141113 L 145.978027,66.141113 L 145.978027,68.121582 L 143.440918,68.121582 L 143.440918,69.357910 L 146.335449,69.357910 L 146.335449,71.338379 L 140.909668,71.338379 Z"/>
+
+									</Canvas>
+
+									<Canvas>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 221.563965,71.528809 L 221.563965,63.126465 L 226.796387,63.126465 L 226.796387,65.106934 L 224.095215,65.106934 L 224.095215,66.331543 L 226.632324,66.331543 L 226.632324,68.312012 L 224.095215,68.312012 L 224.095215,69.548340 L 226.989746,69.548340 L 226.989746,71.528809 L 221.563965,71.528809 Z"/>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 234.008301,71.528809 L 232.965332,69.226074 C 232.898926,69.081543 232.854980,68.939941 232.833496,68.801270 C 232.812012,68.662598 232.795410,68.548340 232.783691,68.458496 L 232.760254,68.458496 C 232.736816,68.552246 232.709473,68.675293 232.678223,68.827637 C 232.646973,68.979980 232.602051,69.128418 232.543457,69.272949 L 231.570801,71.528809 L 228.559082,71.528809 L 231.078613,67.339355 L 228.787598,63.126465 L 231.846191,63.126465 L 232.660645,65.347168 C 232.715332,65.495605 232.758301,65.642090 232.789551,65.786621 C 232.820801,65.931152 232.846191,66.058105 232.865723,66.167480 L 232.889160,66.167480 C 232.896973,66.120605 232.906738,66.062988 232.918457,65.994629 C 232.930176,65.926270 232.945801,65.853027 232.965332,65.774902 C 232.984863,65.696777 233.006348,65.618652 233.029785,65.540527 C 233.053223,65.462402 233.078613,65.394043 233.105957,65.335449 L 234.055176,63.126465 L 236.873535,63.126465 L 234.512207,67.292480 L 236.984863,71.528809 L 234.008301,71.528809 Z"/>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 243.200684,65.985840 C 243.200684,65.786621 243.169434,65.620605 243.106934,65.487793 C 243.044434,65.354980 242.958496,65.248535 242.851074,65.168457 C 242.743652,65.088379 242.618652,65.030762 242.476074,64.995605 C 242.333496,64.960449 242.183105,64.942871 242.022949,64.942871 L 241.542480,64.942871 L 241.542480,67.017090 L 242.110840,67.017090 C 242.313965,67.017090 242.483887,66.991699 242.622559,66.940918 C 242.761230,66.890137 242.874512,66.818848 242.960449,66.727051 C 243.046387,66.635254 243.106934,66.525879 243.144043,66.398926 C 243.181152,66.271973 243.200684,66.134277 243.200684,65.985840 Z M 245.878418,65.897949 C 245.878418,66.323730 245.796387,66.716309 245.634277,67.075684 C 245.472168,67.435059 245.237793,67.744629 244.931152,68.004395 C 244.624512,68.264160 244.251465,68.466309 243.812012,68.610840 C 243.372559,68.755371 242.874512,68.827637 242.315918,68.827637 L 241.542480,68.827637 L 241.542480,71.528809 L 239.011230,71.528809 L 239.011230,63.126465 L 242.456543,63.126465 C 243.007324,63.126465 243.493652,63.175293 243.917480,63.272949 C 244.341309,63.370605 244.698730,63.529785 244.989746,63.750488 C 245.280762,63.971191 245.501465,64.257324 245.651855,64.608887 C 245.802246,64.960449 245.878418,65.390137 245.878418,65.897949 Z"/>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 248.079590,71.528809 L 248.079590,63.126465 L 250.610840,63.126465 L 250.610840,69.548340 L 253.505371,69.548340 L 253.505371,71.528809 L 248.079590,71.528809 Z"/>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 260.781738,67.374512 C 260.781738,67.015137 260.745605,66.696777 260.673340,66.419434 C 260.601074,66.142090 260.499512,65.908691 260.368652,65.719238 C 260.237793,65.529785 260.081543,65.386230 259.899902,65.288574 C 259.718262,65.190918 259.516113,65.142090 259.293457,65.142090 C 259.008301,65.142090 258.764160,65.200684 258.561035,65.317871 C 258.357910,65.435059 258.191895,65.593262 258.062988,65.792480 C 257.934082,65.991699 257.840332,66.224121 257.781738,66.489746 C 257.723145,66.755371 257.693848,67.038574 257.693848,67.339355 C 257.693848,67.729980 257.736816,68.062988 257.822754,68.338379 C 257.908691,68.613770 258.023926,68.838379 258.168457,69.012207 C 258.312988,69.186035 258.479004,69.312988 258.666504,69.393066 C 258.854004,69.473145 259.049316,69.513184 259.252441,69.513184 C 259.447754,69.513184 259.637207,69.471191 259.820801,69.387207 C 260.004395,69.303223 260.167480,69.174316 260.310059,69.000488 C 260.452637,68.826660 260.566895,68.604980 260.652832,68.335449 C 260.738770,68.065918 260.781738,67.745605 260.781738,67.374512 Z M 263.465332,67.304199 C 263.465332,67.972168 263.355957,68.574707 263.137207,69.111816 C 262.918457,69.648926 262.616699,70.107910 262.231934,70.488770 C 261.847168,70.869629 261.395996,71.162598 260.878418,71.367676 C 260.360840,71.572754 259.803223,71.675293 259.205566,71.675293 C 258.627441,71.675293 258.083496,71.577637 257.573730,71.382324 C 257.063965,71.187012 256.618652,70.906738 256.237793,70.541504 C 255.856934,70.176270 255.556152,69.731934 255.335449,69.208496 C 255.114746,68.685059 255.004395,68.095215 255.004395,67.438965 C 255.004395,66.782715 255.109863,66.181152 255.320801,65.634277 C 255.531738,65.087402 255.826660,64.617676 256.205566,64.225098 C 256.584473,63.832520 257.038574,63.527832 257.567871,63.311035 C 258.097168,63.094238 258.680176,62.985840 259.316895,62.985840 C 259.918457,62.985840 260.473145,63.086426 260.980957,63.287598 C 261.488770,63.488770 261.926270,63.775879 262.293457,64.148926 C 262.660645,64.521973 262.947754,64.975098 263.154785,65.508301 C 263.361816,66.041504 263.465332,66.640137 263.465332,67.304199 Z"/>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 269.974121,65.792480 C 269.974121,65.511230 269.888184,65.288574 269.716309,65.124512 C 269.544434,64.960449 269.274902,64.878418 268.907715,64.878418 L 268.386230,64.878418 L 268.386230,66.800293 L 268.843262,66.800293 C 269.038574,66.800293 269.207520,66.770020 269.350098,66.709473 C 269.492676,66.648926 269.609863,66.570801 269.701660,66.475098 C 269.793457,66.379395 269.861816,66.271973 269.906738,66.152832 C 269.951660,66.033691 269.974121,65.913574 269.974121,65.792480 Z M 270.214355,71.528809 L 269.587402,69.718262 C 269.517090,69.511230 269.437012,69.334473 269.347168,69.187988 C 269.257324,69.041504 269.164551,68.923340 269.068848,68.833496 C 268.973145,68.743652 268.875488,68.678223 268.775879,68.637207 C 268.676270,68.596191 268.579590,68.575684 268.485840,68.575684 L 268.386230,68.575684 L 268.386230,71.528809 L 265.854980,71.528809 L 265.854980,63.126465 L 269.218262,63.126465 C 270.394043,63.126465 271.262207,63.318848 271.822754,63.703613 C 272.383301,64.088379 272.663574,64.665527 272.663574,65.435059 C 272.663574,65.751465 272.616699,66.034668 272.522949,66.284668 C 272.429199,66.534668 272.297363,66.754395 272.127441,66.943848 C 271.957520,67.133301 271.752441,67.293457 271.512207,67.424316 C 271.271973,67.555176 271.007324,67.659668 270.718262,67.737793 L 270.718262,67.761230 C 270.917480,67.823730 271.093262,67.903809 271.245605,68.001465 C 271.397949,68.099121 271.534668,68.215332 271.655762,68.350098 C 271.776855,68.484863 271.884277,68.639160 271.978027,68.812988 C 272.071777,68.986816 272.159668,69.179199 272.241699,69.390137 L 273.067871,71.528809 L 270.214355,71.528809 Z"/>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 275.240723,71.528809 L 275.240723,63.126465 L 280.473145,63.126465 L 280.473145,65.106934 L 277.771973,65.106934 L 277.771973,66.331543 L 280.309082,66.331543 L 280.309082,68.312012 L 277.771973,68.312012 L 277.771973,69.548340 L 280.666504,69.548340 L 280.666504,71.528809 L 275.240723,71.528809 Z"/>
+
+										<!-- Layer 1/<Group>/<Compound Path> -->
+										<Path Fill="#ff221e1f" Data="F1 M 287.181152,65.792480 C 287.181152,65.511230 287.095215,65.288574 286.923340,65.124512 C 286.751465,64.960449 286.481934,64.878418 286.114746,64.878418 L 285.593262,64.878418 L 285.593262,66.800293 L 286.050293,66.800293 C 286.245605,66.800293 286.414551,66.770020 286.557129,66.709473 C 286.699707,66.648926 286.816895,66.570801 286.908691,66.475098 C 287.000488,66.379395 287.068848,66.271973 287.113770,66.152832 C 287.158691,66.033691 287.181152,65.913574 287.181152,65.792480 Z M 287.421387,71.528809 L 286.794434,69.718262 C 286.724121,69.511230 286.644043,69.334473 286.554199,69.187988 C 286.464355,69.041504 286.371582,68.923340 286.275879,68.833496 C 286.180176,68.743652 286.082520,68.678223 285.982910,68.637207 C 285.883301,68.596191 285.786621,68.575684 285.692871,68.575684 L 285.593262,68.575684 L 285.593262,71.528809 L 283.062012,71.528809 L 283.062012,63.126465 L 286.425293,63.126465 C 287.601074,63.126465 288.469238,63.318848 289.029785,63.703613 C 289.590332,64.088379 289.870605,64.665527 289.870605,65.435059 C 289.870605,65.751465 289.823730,66.034668 289.729980,66.284668 C 289.636230,66.534668 289.504395,66.754395 289.334473,66.943848 C 289.164551,67.133301 288.959473,67.293457 288.719238,67.424316 C 288.479004,67.555176 288.214355,67.659668 287.925293,67.737793 L 287.925293,67.761230 C 288.124512,67.823730 288.300293,67.903809 288.452637,68.001465 C 288.604980,68.099121 288.741699,68.215332 288.862793,68.350098 C 288.983887,68.484863 289.091309,68.639160 289.185059,68.812988 C 289.278809,68.986816 289.366699,69.179199 289.448730,69.390137 L 290.274902,71.528809 L 287.421387,71.528809 Z"/>
+
+									</Canvas>
+
+								</Canvas>
+							</Canvas>
+						</Viewbox>
+
+
+						<ControlTemplate.Triggers>
+
+
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+	</ResourceDictionary>
+
+  </Grid.Resources>
+  <Grid.DataContext>
+    <Binding Mode="Default" Source="{StaticResource PortfolioDataSource}" XPath="/Portfolio/Equity"/>
+  </Grid.DataContext>
+  <Grid.Triggers>
+    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+      <BeginStoryboard x:Name="OnLoaded_BeginStoryboard" Storyboard="{DynamicResource OnLoaded}"/>
+    </EventTrigger>
+		<EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="FullScreenToggleButton">
+			<BeginStoryboard Storyboard="{StaticResource ShowFullScreen}" x:Name="ShowFullScreen_BeginStoryboard1"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="ToggleButton.Unchecked" SourceName="FullScreenToggleButton">
+			<BeginStoryboard Storyboard="{StaticResource ExitFullScreen}" x:Name="ExitFullScreen_BeginStoryboard"/>
+		</EventTrigger>
+  </Grid.Triggers>
+
+  <Grid.ColumnDefinitions>
+    <ColumnDefinition Width="Auto"/>
+    <ColumnDefinition Width="0.8*"/>
+		<ColumnDefinition Width="0.2*"/>
+    <ColumnDefinition Width="Auto"/>
+  </Grid.ColumnDefinitions>
+
+  <Grid Width="200"  Grid.Column="3" x:Name="RightColumnGrid"  RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="0" HorizontalAlignment="Stretch" Margin="5,0,0,0" Grid.ColumnSpan="1">
+      <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" DockPanel.Dock="Top" VerticalScrollBarVisibility="Hidden">
+        <ItemsControl HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="Auto"   x:Name="SummaryItemsControl" BorderBrush="Transparent" ItemTemplate="{DynamicResource SelectedSummaryTemplate}"   >
+        <ItemsControl.ItemsSource>
+          <Binding x:Name="SummaryItemsControlBinding" Mode="Default" XPath="/Portfolio/Equity[Symbol='COKE']"/>
+        </ItemsControl.ItemsSource>
+      </ItemsControl>
+      </ScrollViewer>
+  </Grid>
+
+  <Grid Margin="0,0,0,0" Grid.Column="1" x:Name="MiddleColumnGrid" RenderTransformOrigin="0.5,0.5" MinWidth="450" Grid.ColumnSpan="2">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+
+    <WoodgroveFinanceStockChartFrame:StockChart3D d:LayoutOverrides="GridBox"  Margin="0,0,0,0" Width="Auto" Height="Auto" x:Name="StockChart3D" RenderTransformOrigin="0.5,0.5" />
+
+
+    <ToggleButton  x:Name="FullScreenToggleButton" Style="{StaticResource FullScreenToggleButtonStyle2}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,0,0"  Height="65" RenderTransformOrigin="0.5,0.5"/>
+
+
+    <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="350" Height="85" x:Name="StockChartControls" RenderTransformOrigin="0.5,0.5" Margin="10,0,0,10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition/>
+      </Grid.RowDefinitions>
+      <Slider HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="11,35,0,24" Width="270" Height="Auto" x:Name="Slider" RenderTransformOrigin="0.5,0.5" Value="2"  Minimum="0" Maximum="2"  TickFrequency="0.25" TickPlacement="BottomRight" ValueChanged="OnHistorySlider_ValueChanged" Grid.ColumnSpan="1"/>
+      <TextBlock d:LayoutOverrides="Width" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,9.2766666666666,0,0" Width="192" Height="17.1833333333366" x:Name="TextBlock_Copy" RenderTransformOrigin="0.5,0.5" Text="Performance History" TextWrapping="Wrap" FontWeight="Bold" Grid.ColumnSpan="1"/>
+			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="2,0,0,3.0000000000004" Width="350" Height="20.0933333333301" Orientation="Horizontal" x:Name="StackPanel" RenderTransformOrigin="0.5,0.5">
+				<TextBlock d:LayoutOverrides="HorizontalAlignment, Height" FontSize="12" FontFamily="Segoe UI" Width="43.2933333333332" Height="13" Grid.ColumnSpan="1" x:Name="TextBlock_Copy1" RenderTransformOrigin="0.5,0.5" Text="-6 mos" TextWrapping="Wrap"/>
+				<TextBlock d:LayoutOverrides="HorizontalAlignment, Height" FontSize="12" FontFamily="Segoe UI" Width="43.2933333333332" Height="13" Grid.ColumnSpan="1" x:Name="TextBlock_Copy2" RenderTransformOrigin="0.5,0.5" Text="-3 mos" TextWrapping="Wrap"/>
+				<TextBlock d:LayoutOverrides="HorizontalAlignment, Height" FontSize="12" FontFamily="Segoe UI" Width="43.2933333333332" Height="13" Grid.ColumnSpan="1" x:Name="TextBlock_Copy3" RenderTransformOrigin="0.5,0.5" Text="-1 mos" TextWrapping="Wrap"/>
+				<TextBlock d:LayoutOverrides="HorizontalAlignment, Height" FontSize="12" FontFamily="Segoe UI" Width="43.2933333333332" Height="13" Grid.ColumnSpan="1" x:Name="TextBlock_Copy4" RenderTransformOrigin="0.5,0.5" Text="-2 wks" TextWrapping="Wrap"/>
+				<TextBlock d:LayoutOverrides="HorizontalAlignment, Height" FontSize="12" FontFamily="Segoe UI" Width="43.2933333333332" Height="13" Grid.ColumnSpan="1" x:Name="TextBlock_Copy5" RenderTransformOrigin="0.5,0.5" Text="-1 wk" TextWrapping="Wrap"/>
+				<TextBlock d:LayoutOverrides="HorizontalAlignment, Height" FontSize="12" FontFamily="Segoe UI" Width="43.2933333333332" Height="13" Grid.ColumnSpan="1" x:Name="TextBlock_Copy6" RenderTransformOrigin="0.5,0.5" Text="-2 days" TextWrapping="Wrap"/>
+				<TextBlock d:LayoutOverrides="HorizontalAlignment, Height" FontSize="12" FontFamily="Segoe UI" Width="43.2933333333332" Height="13" Grid.ColumnSpan="1" x:Name="TextBlock_Copy8" RenderTransformOrigin="0.5,0.5" Text="Today" TextWrapping="Wrap"/>
+			</StackPanel>
+    </Grid>
+    <GridSplitter HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0,0,0,0" Height="6" Grid.RowSpan="1" x:Name="MiddleColumnHorizontalGridSplitter" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="VerticalAlignment" Grid.Row="0">
+      <GridSplitter.Background>
+        <LinearGradientBrush StartPoint="0.648671,0.0233834" EndPoint="0.648671,0.219123">
+          <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+              <TranslateTransform X="-0.648671" Y="-0.1212532"/>
+              <ScaleTransform ScaleX="3.7908886642915109" ScaleY="3.7908886642915109"/>
+              <SkewTransform AngleX="0" AngleY="0"/>
+              <RotateTransform Angle="-0.029507163359209273"/>
+              <TranslateTransform X="0.648671" Y="0.1212532"/>
+              <TranslateTransform X="-0.15689696237749742" Y="0.36582550071823511"/>
+            </TransformGroup>
+          </LinearGradientBrush.RelativeTransform>
+          <LinearGradientBrush.GradientStops>
+            <GradientStopCollection>
+              <GradientStop Color="sc#1, 0.694037557, 0.694037557, 0.694037557" Offset="0"/>
+              <GradientStop Color="sc#1, 0.637699544, 0.637699544, 0.637699544" Offset="1"/>
+              <GradientStop Color="sc#1, 1, 1, 1" Offset="0.46794871794871795"/>
+              <GradientStop Color="#FFECECEC" Offset="0.66025641025641024"/>
+            </GradientStopCollection>
+          </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+      </GridSplitter.Background>
+    </GridSplitter>
+    <Grid Height="200"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto"  Grid.Row="1" x:Name="RecentNewsGrid" RenderTransformOrigin="0.5,0.5">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition/>
+      </Grid.RowDefinitions>
+      <ItemsControl Margin="5,22,0,0" x:Name="NewsItemsControl" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Mode=Default,  XPath=NewsFeed/rss/channel/item}" ItemTemplate="{DynamicResource itemTemplate}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  >
+        <ItemsControl.Template>
+          <ControlTemplate TargetType="{x:Type ItemsControl}">
+            <ScrollViewer  >
+              <WrapPanel IsItemsHost="True" />
+            </ScrollViewer>
+          </ControlTemplate>
+        </ItemsControl.Template>
+      </ItemsControl>
+      <Grid d:LayoutOverrides="Height" VerticalAlignment="Top" Margin="0,0,0,0" Width="Auto" Height="21.61" Background="{DynamicResource HeaderBackgroundGradient1}" x:Name="Grid_Copy1">
+        <TextBlock FontSize="14" FontFamily="Segoe UI" FontWeight="Bold" Margin="15,3,0,0" RenderTransformOrigin="0.5,0.5" Text="News and Reports" Foreground="#ffffff" TextWrapping="Wrap"/>
+      </Grid>
+    </Grid>
+    <ComboBox d:LayoutOverrides="Height" d:IsPopupOpen="False" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,70,8,0" Width="120" Height="29" x:Name="StochChart3DComboBox" RenderTransformOrigin="0.5,0.5" IsSynchronizedWithCurrentItem="True" SelectedIndex="0" SelectionChanged="OnGraphTypeComboBox">
+      <ComboBoxItem FontSize="14" FontFamily="Segoe UI" x:Name="ComboBoxItem1" RenderTransformOrigin="0.5,0.5" Content="Day % Change" Padding="5,5,5,5"/>
+      <ComboBoxItem FontSize="14" FontFamily="Segoe UI" x:Name="ComboBoxItem2" RenderTransformOrigin="0.5,0.5" Content="Dollar Change" Padding="5,5,5,5"/>
+    </ComboBox>
+	
+		<Grid HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0,0,0" Width="97" Height="192.5" x:Name="DayChangeScale" RenderTransformOrigin="0.5,0.5">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<TextBlock FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-29.5,78,46.5,83" Height="Auto" x:Name="TextBlock1" RenderTransformOrigin="0.5,0.5" Text="Day % Change" TextWrapping="Wrap">
+				<TextBlock.RenderTransform>
+					<TransformGroup>
+						<TranslateTransform X="0" Y="0"/>
+						<ScaleTransform ScaleX="1" ScaleY="1"/>
+						<SkewTransform AngleX="0" AngleY="0"/>
+						<RotateTransform Angle="-90"/>
+						<TranslateTransform X="0" Y="0"/>
+						<TranslateTransform X="0" Y="0"/>
+					</TransformGroup>
+				</TextBlock.RenderTransform>
+			</TextBlock>
+			<TextBlock FontSize="9" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,0,0,0" Width="30" x:Name="TextBlock2" Foreground="sc#1, 0, 0.190066755, 0.022818638" RenderTransformOrigin="0.5,0.5" Text="+3%" TextWrapping="Wrap"/>
+			<TextBlock d:LayoutOverrides="Height" FontSize="9" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,29,0,0" Width="30" Height="10.91" x:Name="TextBlock2_Copy" Foreground="sc#1, 0, 0.190066755, 0.022818638" RenderTransformOrigin="0.5,0.5" Text="+2%" TextWrapping="Wrap"/>
+			<TextBlock d:LayoutOverrides="Height" FontSize="9" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,59,0,0" Width="30" Height="10.91" x:Name="TextBlock2_Copy1" Foreground="sc#1, 0, 0.190066755, 0.022818638" RenderTransformOrigin="0.5,0.5" Text="+1%" TextWrapping="Wrap"/>
+			<TextBlock d:LayoutOverrides="None" FontSize="9" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="22,89,0,1" Width="30" Height="Auto" x:Name="TextBlock2_Copy2" RenderTransformOrigin="0.5,0.5" Text="+0%" TextWrapping="Wrap"/>
+			<TextBlock d:LayoutOverrides="Height" FontSize="9" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,119,0,0" Width="30" Height="10.91" x:Name="TextBlock2_Copy3" Foreground="sc#1, 0.6277969, 0, 0" RenderTransformOrigin="0.5,0.5" Text="+1%" TextWrapping="Wrap"/>
+			<TextBlock d:LayoutOverrides="Height" FontSize="9" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,149,0,0" Width="30" Height="10.91" x:Name="TextBlock2_Copy4" Foreground="sc#1, 0.6277969, 0, 0" RenderTransformOrigin="0.5,0.5" Text="+2%" TextWrapping="Wrap"/>
+			<TextBlock d:LayoutOverrides="None" FontSize="9" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="22,179,46.1666666666668,0" Width="Auto" Height="12.91" x:Name="TextBlock2_Copy5" Foreground="sc#1, 0.6277969, 0, 0" RenderTransformOrigin="0.5,0.5" Text="+3%" TextWrapping="Wrap"/>
+			<Path Stroke="#FF000000" Fill="#FFFFFFFF" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="46.5,6,34.4916687011719,0" Width="Auto" Height="1" x:Name="Path" Data="M42,5 L57.008331,5" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<TranslateTransform X="0" Y="0"/>
+						<ScaleTransform ScaleX="1" ScaleY="1"/>
+						<SkewTransform AngleX="0" AngleY="0"/>
+						<RotateTransform Angle="0"/>
+						<TranslateTransform X="0" Y="0"/>
+						<TranslateTransform X="0" Y="0"/>
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+			<Path d:LayoutOverrides="Height" Stroke="#FF000000" Fill="#FFFFFFFF" VerticalAlignment="Top" Margin="46.5,35,34.4916687011719,0" Width="16.0083312988281" Height="1" x:Name="Path_Copy" Data="M42,5 L57.008331,5" RenderTransformOrigin="0.5,0.5" Stretch="Fill"/>
+			<Path d:LayoutOverrides="Height" Stroke="#FF000000" Fill="#FFFFFFFF" VerticalAlignment="Top" Margin="46.5,65,34.4916687011719,0" Width="Auto" Height="1" x:Name="Path_Copy1" Data="M42,5 L57.008331,5" RenderTransformOrigin="0.5,0.5" Stretch="Fill"/>
+			<Path d:LayoutOverrides="Height" Stroke="#FF000000" Fill="#FFFFFFFF" VerticalAlignment="Top" Margin="46.5,95,34.4916687011719,0" Width="Auto" Height="1" x:Name="Path_Copy2" Data="M42,5 L57.008331,5" RenderTransformOrigin="0.5,0.5" Stretch="Fill"/>
+			<Path d:LayoutOverrides="Height" Stroke="#FF000000" Fill="#FFFFFFFF" VerticalAlignment="Top" Margin="46.5,125,34.4916687011719,0" Width="16.0083312988281" Height="1" x:Name="Path_Copy3" Data="M42,5 L57.008331,5" RenderTransformOrigin="0.5,0.5" Stretch="Fill"/>
+			<Path d:LayoutOverrides="Height" Stroke="#FF000000" Fill="#FFFFFFFF" VerticalAlignment="Top" Margin="46.5,155,34.4916687011719,0" Width="16.0083312988281" Height="1" x:Name="Path_Copy4" Data="M42,5 L57.008331,5" RenderTransformOrigin="0.5,0.5" Stretch="Fill"/>
+			<Path d:LayoutOverrides="Height" Stroke="#FF000000" Fill="#FFFFFFFF" VerticalAlignment="Top" Margin="46.5,185,34.4916687011719,0" Width="16.0083312988281" Height="1" x:Name="Path_Copy5" Data="M42,5 L57.008331,5" RenderTransformOrigin="0.5,0.5" Stretch="Fill"/>
+			<Path Stroke="#FF000000" Fill="#FFFFFFFF" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,5.96578550338745,34.5,6.5" Width="1" Height="Auto" x:Name="Path1" Data="M61,185.5 L61,6.4657854" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<TranslateTransform X="0" Y="0"/>
+						<ScaleTransform ScaleX="1" ScaleY="1"/>
+						<SkewTransform AngleX="0" AngleY="0"/>
+						<RotateTransform Angle="0"/>
+						<TranslateTransform X="0" Y="0"/>
+						<TranslateTransform X="0" Y="0"/>
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+			<Path d:LastTangent="0,0" Stroke="#FF000000" Fill="sc#1, 0.212245151, 0.3080104, 0.781463742" HorizontalAlignment="Right" Margin="0,91.796666666665,19.4434666666643,91.796666666665" Width="12.1130666666711" x:Name="DayScalePointer" Data="M69,96 L76,103 76,90 z" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<TranslateTransform x:Name="DayScalePointerTranslate" X="0" Y="0"/>
+						<ScaleTransform ScaleX="1" ScaleY="1"/>
+						<SkewTransform AngleX="0" AngleY="0"/>
+						<RotateTransform Angle="0"/>
+						<TranslateTransform X="0" Y="0"/>
+						<TranslateTransform X="0" Y="0"/>
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+      <Path d:LastTangent="0,0" Stroke="#FF000000" Fill="Gold" HorizontalAlignment="Right" Margin="0,91.796666666665,19.4434666666643,91.796666666665" Width="12.1130666666711" x:Name="DayScalePointerSelected" Data="M69,96 L76,103 76,90 z" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+        <Path.RenderTransform>
+          <TransformGroup>
+            <TranslateTransform x:Name="DayScalePointerSelectedTranslate" X="0" Y="0"/>
+            <ScaleTransform ScaleX="1" ScaleY="1"/>
+            <SkewTransform AngleX="0" AngleY="0"/>
+            <RotateTransform Angle="0"/>
+            <TranslateTransform X="0" Y="0"/>
+            <TranslateTransform X="0" Y="0"/>
+          </TransformGroup>
+        </Path.RenderTransform>
+      </Path>
+		</Grid>
+		<Grid d:LayoutOverrides="None" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,10" Width="190" Height="65" Grid.Column="0" x:Name="Grid1" RenderTransformOrigin="0.5,0.5">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.5*"/>
+				<ColumnDefinition Width="0.5*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="35"/>
+				<RowDefinition Height="32"/>
+			</Grid.RowDefinitions>
+			<ToggleButton VerticalAlignment="Stretch" Margin="3,5,3,2" Height="Auto" x:Name="Button" Content="DJIA" RenderTransformOrigin="0.5,0.5" Click="OnDJIA"/>
+			<Button Click="OnGraph3DTrackballReset" VerticalAlignment="Stretch" Margin="3,4,3,3" Width="Auto" Height="Auto" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" x:Name="Button_Copy" Content="NASDAQ" RenderTransformOrigin="0.5,0.5"/>
+      <Button Click="OnGraph3DTrackballReset" VerticalAlignment="Stretch" Margin="3,2,3,3" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" x:Name="Button_Copy1" Content="S&amp;P 500" RenderTransformOrigin="0.5,0.5"/>
+      <Button Click="OnGraph3DTrackballReset" VerticalAlignment="Stretch" Margin="3,2,3,3" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" x:Name="Button_Copy2" Content="My Portfolio" RenderTransformOrigin="0.5,0.5"/>
+		</Grid>
+		<TextBlock d:LayoutOverrides="Width, Height" FontSize="14" FontFamily="Segoe UI" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,30,75" Width="167.893333333333" Height="22.1833333333366" Grid.Column="0" x:Name="TextBlock" RenderTransformOrigin="0.5,0.5" Text="Show Performance Benchmarks" TextWrapping="Wrap"/>
+  </Grid>
+  <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="205" Height="Auto" x:Name="LeftColumnGrid" RenderTransformOrigin="0.5,0.5" 
+      >
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <DockPanel LastChildFill="true" x:Name="EquityDockPanel">
+      <Grid Background="#ffffff" DockPanel.Dock="Bottom" x:Name="TotalEquityValueResults">
+        <TextBlock  Foreground="#548D34" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" Margin="5,5,10,5" FontSize="16" FontFamily="Segoe UI" FontWeight="Bold" TextAlignment="Right" x:Name="TotalEquityValueResultsTextBlock">$119,672</TextBlock>
+      </Grid>
+      <Grid Background="{DynamicResource HeaderBackgroundGradient1}" DockPanel.Dock="Bottom" x:Name="TotalEquityValueHeader">
+        <TextBlock  Foreground="#ffffff" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" Margin="5" FontSize="10" FontFamily="Segoe UI" FontWeight="Bold" x:Name="TotalEquityValueTextBlock">Total Equity Value</TextBlock>
+      </Grid>
+      <ComboBox d:IsPopupOpen="False" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" Width="Auto" Height="29" x:Name="ComboBox" RenderTransformOrigin="0.5,0.5" IsSynchronizedWithCurrentItem="True" SelectedIndex="0" d:LayoutOverrides="Height" DockPanel.Dock="Top">
+        <ComboBoxItem FontSize="14" FontFamily="Segoe UI"  RenderTransformOrigin="0.5,0.5" Content="Equities" Padding="5,5,5,5"/>
+        <ComboBoxItem FontSize="14" FontFamily="Segoe UI"  RenderTransformOrigin="0.5,0.5" Content="Mutual Funds" Padding="5,5,5,5"/>
+        <ComboBoxItem FontSize="14" FontFamily="Segoe UI"  RenderTransformOrigin="0.5,0.5" Content="Bonds/Fixed Income" Padding="5,5,5,5"/>
+        <ComboBoxItem FontSize="14" FontFamily="Segoe UI"  RenderTransformOrigin="0.5,0.5" Content="Options" Padding="5,5,5,5"/>
+        <ComboBoxItem FontSize="14" FontFamily="Segoe UI"  RenderTransformOrigin="0.5,0.5" Content="Exchanged/Traded Funds" Padding="5,5,5,5"/>
+      </ComboBox>
+      <Grid x:Name="StockHeaders" Margin="5,5,5,5" DockPanel.Dock="Top">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.302564102564103*"/>
+            <ColumnDefinition Width="0.388157546920433*"/>
+            <ColumnDefinition Width="0.309278350515464*"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock  Grid.Column="0"  Width="60" TextTrimming="WordEllipsis" Text="Symbol"/>
+          <TextBlock   Grid.Column="1" Width="40" TextTrimming="WordEllipsis"  Text="Shares"/>
+          <TextBlock  Grid.Column="2"  Width="60" TextTrimming="WordEllipsis" Text="Total Value"/>
+        </Grid>
+
+      <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"  Width="Auto" Padding="0" Margin="0">
+        <StackPanel x:Name="HighLevelStockDataStackPanel" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Stretch" >
+
+
+          <Expander Foreground="white" Template="{StaticResource CustomExpander}" d:LayoutOverrides="None" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="Auto" Height="Auto" x:Name="Expander1" Header="Small Cap" IsExpanded="True" >
+            <DockPanel LastChildFill="True">
+              <DockPanel Background="#ffffff" DockPanel.Dock="Bottom" x:Name="SmallCapEquityValueResults" LastChildFill="True">
+                <TextBlock Width="70"  Foreground="Black" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" Margin="5,5,10,5" FontSize="11" FontFamily="Segoe UI" FontWeight="Bold" TextAlignment="Left" x:Name="SmallCapSubTotalTextBlock">Subtotal</TextBlock>
+                <TextBlock  Foreground="#548D34" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" Margin="5,5,10,5" FontSize="11" FontFamily="Segoe UI" FontWeight="Bold" TextAlignment="Right" x:Name="SmallCapEquityValueResultsTextBlock">$15,462</TextBlock>
+              </DockPanel>
+              <WoodgroveFinanceStockChartFrame:StockListBox  ItemContainerStyle="{StaticResource StockListBoxItem}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  ItemTemplate="{StaticResource EquityTemplate}"   ItemHilight="ListView_ItemHilight" SelectionChanged="ListView_SelectionChanged" BorderBrush="Transparent" HorizontalAlignment="Stretch" Width="Auto" x:Name="ListView2"  >
+                <WoodgroveFinanceStockChartFrame:StockListBox.ItemsSource>
+                <Binding Mode="Default" XPath="/Portfolio/Equity[Valuation='Small Cap']"/>
+              </WoodgroveFinanceStockChartFrame:StockListBox.ItemsSource>
+              </WoodgroveFinanceStockChartFrame:StockListBox>
+            </DockPanel>
+          </Expander>
+          <Expander  Foreground="white" Template="{StaticResource CustomExpander}" d:LayoutOverrides="None" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="Auto" Height="Auto" x:Name="Expander" Header="Mid Cap" IsExpanded="True" >
+            <DockPanel LastChildFill="True">
+              <DockPanel Background="#ffffff" DockPanel.Dock="Bottom" x:Name="MidCapEquityValueResults" LastChildFill="True">
+                <TextBlock Width="70"  Foreground="Black" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" Margin="5,5,10,5" FontSize="11" FontFamily="Segoe UI" FontWeight="Bold" TextAlignment="Left" x:Name="MidCapSubTotalTextBlock">Subtotal</TextBlock>
+                <TextBlock  Foreground="#548D34" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" Margin="5,5,10,5" FontSize="11" FontFamily="Segoe UI" FontWeight="Bold" TextAlignment="Right" x:Name="MidCapEquityValueResultsTextBlock">$90,123</TextBlock>
+              </DockPanel>
+              <WoodgroveFinanceStockChartFrame:StockListBox ItemContainerStyle="{StaticResource StockListBoxItem}"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"   ItemTemplate="{StaticResource EquityTemplate}"  ItemHilight="ListView_ItemHilight"  SelectionChanged="ListView_SelectionChanged" HorizontalAlignment="Stretch"  BorderBrush="Transparent" Width="Auto" x:Name="ListView1"   MaxHeight="Infinity">
+                <WoodgroveFinanceStockChartFrame:StockListBox.ItemsSource>
+                  <Binding Mode="Default" XPath="/Portfolio/Equity[Valuation='Mid Cap']"/>
+                </WoodgroveFinanceStockChartFrame:StockListBox.ItemsSource>
+              </WoodgroveFinanceStockChartFrame:StockListBox>
+            </DockPanel>
+          </Expander>
+          <Expander  Foreground="white" Template="{StaticResource CustomExpander}" Header="Large Cap" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="Auto" Height="Auto" IsExpanded="True" x:Name="Expander2">
+            <DockPanel LastChildFill="True">
+              <DockPanel Background="#ffffff" DockPanel.Dock="Bottom" x:Name="LargeCapEquityValueResults" LastChildFill="True">
+                <TextBlock Width="70"  Foreground="Black" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" Margin="5,5,10,5" FontSize="11" FontFamily="Segoe UI" FontWeight="Bold" TextAlignment="Left" x:Name="LargeCapSubTotalTextBlock">Subtotal</TextBlock>
+                <TextBlock  Foreground="Green" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" Margin="5,5,10,5" FontSize="11" FontFamily="Segoe UI" FontWeight="Bold" TextAlignment="Right" x:Name="LargeCapEquityValueResultsTextBlock">$456,789</TextBlock>
+              </DockPanel>
+              <WoodgroveFinanceStockChartFrame:StockListBox ItemContainerStyle="{StaticResource StockListBoxItem}"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderBrush="Transparent" SelectionChanged="ListView_SelectionChanged"   ItemTemplate="{StaticResource EquityTemplate}"  HorizontalAlignment="Stretch" Width="Auto" x:Name="ListView" ItemHilight="ListView_ItemHilight"   >
+                <WoodgroveFinanceStockChartFrame:StockListBox.ItemsSource>
+                  <Binding Mode="Default" XPath="/Portfolio/Equity[Valuation='Large Cap']"/>
+                </WoodgroveFinanceStockChartFrame:StockListBox.ItemsSource>
+              </WoodgroveFinanceStockChartFrame:StockListBox>
+            </DockPanel>
+          </Expander>
+
+
+
+        </StackPanel>
+      </ScrollViewer>
+    </DockPanel>
+  </Grid>
+  <GridSplitter HorizontalAlignment="Left" Margin="0,0,0,0" Width="7" Grid.Column="3" x:Name="VerticalGridSplitterRight" RenderTransformOrigin="0.5,0.5">
+    <GridSplitter.Background>
+      <LinearGradientBrush StartPoint="0.648671,0.0233834" EndPoint="0.648671,0.219123">
+
+        <LinearGradientBrush.GradientStops>
+          <GradientStopCollection>
+            <GradientStop Color="sc#1, 0.694037557, 0.694037557, 0.694037557" Offset="0"/>
+            <GradientStop Color="sc#1, 0.637699544, 0.637699544, 0.637699544" Offset="1"/>
+            <GradientStop Color="sc#1, 1, 1, 1" Offset="0.46794871794871795"/>
+            <GradientStop Color="#FFECECEC" Offset="0.66025641025641024"/>
+          </GradientStopCollection>
+        </LinearGradientBrush.GradientStops>
+        <LinearGradientBrush.RelativeTransform>
+          <TransformGroup>
+            <TranslateTransform X="-0.648671" Y="-0.1212532"/>
+            <ScaleTransform ScaleX="3.2058730430916134" ScaleY="3.2058730430916134"/>
+            <SkewTransform AngleX="0" AngleY="0"/>
+            <RotateTransform Angle="-90.016994459216193"/>
+            <TranslateTransform X="0.648671" Y="0.1212532"/>
+            <TranslateTransform X="-0.15174623927222233" Y="0.00030301370694321456"/>
+          </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+      </LinearGradientBrush>
+    </GridSplitter.Background>
+  </GridSplitter>
+  <GridSplitter HorizontalAlignment="Left" Margin="0,0,0,0" Width="7" Height="Auto" Grid.Column="1" Grid.ColumnSpan="1" x:Name="VerticalGridSplitterLeft" RenderTransformOrigin="0.5,0.5">
+    <GridSplitter.Background>
+      <LinearGradientBrush StartPoint="0.648671,0.0233834" EndPoint="0.648671,0.219123">
+        <LinearGradientBrush.RelativeTransform>
+          <TransformGroup>
+            <TranslateTransform X="-0.648671" Y="-0.1212532"/>
+            <ScaleTransform ScaleX="3.2058730430916134" ScaleY="3.2058730430916134"/>
+            <SkewTransform AngleX="0" AngleY="0"/>
+            <RotateTransform Angle="-90.016994459216193"/>
+            <TranslateTransform X="0.648671" Y="0.1212532"/>
+            <TranslateTransform X="-0.15174623927222233" Y="0.00030301370694321456"/>
+          </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <LinearGradientBrush.GradientStops>
+          <GradientStopCollection>
+            <GradientStop Color="sc#1, 0.694037557, 0.694037557, 0.694037557" Offset="0"/>
+            <GradientStop Color="sc#1, 0.637699544, 0.637699544, 0.637699544" Offset="1"/>
+            <GradientStop Color="sc#1, 1, 1, 1" Offset="0.46794871794871795"/>
+            <GradientStop Color="#FFECECEC" Offset="0.66025641025641024"/>
+          </GradientStopCollection>
+        </LinearGradientBrush.GradientStops>
+      </LinearGradientBrush>
+    </GridSplitter.Background>
+  </GridSplitter>
+</Grid>

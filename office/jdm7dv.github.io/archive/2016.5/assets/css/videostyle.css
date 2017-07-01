@@ -1,0 +1,28 @@
+<style>
+
+video#bgvideo{
+
+postion:fixed;
+right:0;
+bottom:0;
+min-width:100%;
+min-hieght:100%;
+width:auto;
+height: auto;
+background:url(bg.png) no-repeat;
+background-size cover;
+}
+
+video{display: block;}
+
+p{
+text-align center;
+}
+</style>
+
+
+
+<video autoplay loop poster="bg.png" id="bgvid">
+<source src =".mp4" type="video/mp4">
+</video>
+

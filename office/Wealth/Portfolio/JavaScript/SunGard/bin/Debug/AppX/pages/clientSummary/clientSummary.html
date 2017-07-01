@@ -1,0 +1,35 @@
+﻿<!--
+//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF 
+//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A 
+//// PARTICULAR PURPOSE. 
+//// 
+//// Copyright (c) Microsoft Corporation. All rights reserved     
+////
+//// To see the topic that inspired this sample app, go to http://msdn.microsoft.com/en-us/library/windows/apps/dn163530
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Client Summary</title>
+    <link href="/pages/clientSummary/clientSummary.css" rel="stylesheet" />
+    <script src="/pages/clientSummary/clientSummary.js"></script>
+</head>
+<body>
+
+    <!-- The content that will be loaded and displayed. -->
+    <div class="fragment clientSummaryPage">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle"></span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div class="clientSummaryList" aria-label="List of groups" data-win-control="WinJS.UI.ListView"></div>
+        </section>
+    </div>
+</body>
+</html>

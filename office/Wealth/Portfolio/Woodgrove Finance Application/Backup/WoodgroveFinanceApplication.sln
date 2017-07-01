@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodgroveFinanceApplication", "WoodgroveFinanceApplication\WoodgroveFinanceApplication.csproj", "{D2CA5B52-E69D-41F6-B073-C248ED789CC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodgroveFinanceHost", "WoodgroveFinanceHost\WoodgroveFinanceHost.csproj", "{D57DD88D-4D9D-42EB-95BD-4D88CA501952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodgroveFinanceStockChartFrame", "WoodgroveFinanceStockChartFrame\WoodgroveFinanceStockChartFrame.csproj", "{F23547AE-E260-4F65-9157-C901622EF82C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodgroveFinanceStockChart3D", "WoodgroveStockChart3D\WoodgroveFinanceStockChart3D.csproj", "{31F94111-26B9-427C-A641-8199998BDF52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2CA5B52-E69D-41F6-B073-C248ED789CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2CA5B52-E69D-41F6-B073-C248ED789CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2CA5B52-E69D-41F6-B073-C248ED789CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2CA5B52-E69D-41F6-B073-C248ED789CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D57DD88D-4D9D-42EB-95BD-4D88CA501952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D57DD88D-4D9D-42EB-95BD-4D88CA501952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D57DD88D-4D9D-42EB-95BD-4D88CA501952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D57DD88D-4D9D-42EB-95BD-4D88CA501952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F23547AE-E260-4F65-9157-C901622EF82C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F23547AE-E260-4F65-9157-C901622EF82C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F23547AE-E260-4F65-9157-C901622EF82C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F23547AE-E260-4F65-9157-C901622EF82C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F94111-26B9-427C-A641-8199998BDF52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F94111-26B9-427C-A641-8199998BDF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F94111-26B9-427C-A641-8199998BDF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F94111-26B9-427C-A641-8199998BDF52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

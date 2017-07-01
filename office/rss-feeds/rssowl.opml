@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml xmlns:rssowl="http://www.rssowl.org" version="1.1">
+  <head>
+    <title>RSSOwl Subscriptions</title>
+    <dateModified>Mon, 29 May 2017 09:57:02 EDT</dateModified>
+  </head>
+  <body>
+    <outline text="My Feeds" rssowl:isSet="true" rssowl:id="7">
+      <outline text="Associated Press." rssowl:isSet="false" rssowl:id="83">
+        <outline text="Science Headlines" xmlUrl="http://hosted2.ap.org/atom/APDEFAULT/b2f0ca3a594644ee9e50a8ec4ce2d6de" rssowl:id="84" />
+        <outline text="Top Headlines" xmlUrl="http://hosted2.ap.org/atom/APDEFAULT/3d281c11a96b4ad082fe88aa0db04305" rssowl:id="85" />
+        <outline text="U.S. Headlines" xmlUrl="http://hosted2.ap.org/atom/APDEFAULT/386c25518f464186bf7a2ac026580ce7" rssowl:id="86" />
+        <outline text="World Headlines" xmlUrl="http://hosted2.ap.org/atom/APDEFAULT/cae69a7523db45408eeb2b3a98c0c9c5" rssowl:id="87" />
+        <outline text="Politics Headlines" xmlUrl="http://hosted2.ap.org/atom/APDEFAULT/89ae8247abe8493fae24405546e9a1aa" rssowl:id="88" />
+        <outline text="Business Headlines" xmlUrl="http://hosted2.ap.org/atom/APDEFAULT/f70471f764144b2fab526d39972d37b3" rssowl:id="89" />
+        <outline text="Technology Headlines" xmlUrl="http://hosted2.ap.org/atom/APDEFAULT/495d344a0d10421e9baa8ee77029cfbd" rssowl:id="90" />
+        <outline text="Sports Headlines" xmlUrl="http://hosted2.ap.org/atom/APDEFAULT/347875155d53465d95cec892aeb06419" rssowl:id="91">
+          <rssowl:pref id="org.rssowl.pref.NMSelectedNews" value="1804" type="3" />
+        </outline>
+        <outline text="Entertainment Headlines" xmlUrl="http://hosted2.ap.org/atom/APDEFAULT/4e67281c3f754d0696fbfdee0f3f1469" rssowl:id="92" />
+        <outline text="Health Headlines" xmlUrl="http://hosted2.ap.org/atom/APDEFAULT/bbd825583c8542898e6fa7d440b9febc" rssowl:id="93" />
+        <outline text="Offbeat Headlines" xmlUrl="http://hosted2.ap.org/atom/APDEFAULT/aa9398e6757a46fa93ed5dea7bd3729e" rssowl:id="94" />
+      </outline>
+      <outline text="EurekAlert!" rssowl:isSet="false" rssowl:id="95">
+        <outline text="EurekAlert! - Breaking News" xmlUrl="https://www.eurekalert.org/rss.xml" rssowl:id="96">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+        </outline>
+        <outline text="EurekAlert! - Agriculture" xmlUrl="https://www.eurekalert.org/rss/agriculture.xml" rssowl:id="97">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+        </outline>
+        <outline text="EurekAlert! - Archaeology" xmlUrl="https://www.eurekalert.org/rss/archaeology.xml" rssowl:id="98">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+        </outline>
+        <outline text="EurekAlert! - Atmospheric Science" xmlUrl="https://www.eurekalert.org/rss/atmospheric_science.xml" rssowl:id="99">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+        </outline>
+        <outline text="EurekAlert! - Biology" xmlUrl="https://www.eurekalert.org/rss/biology.xml" rssowl:id="100">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+        </outline>
+        <outline text="EurekAlert! - Business and Economics" xmlUrl="https://www.eurekalert.org/rss/business.xml" rssowl:id="101">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+        </outline>
+        <outline text="EurekAlert! - Cancer Research News" xmlUrl="https://www.eurekalert.org/rss/cancer.xml" rssowl:id="102">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+          <rssowl:pref id="org.rssowl.pref.NMSelectedNews" value="1000" type="3" />
+        </outline>
+        <outline text="EurekAlert! - Chemistry, Physics and Materials Sciences" xmlUrl="https://www.eurekalert.org/rss/chemistry_physics.xml" rssowl:id="103">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+        </outline>
+        <outline text="EurekAlert! - Climate Change" xmlUrl="https://www.eurekalert.org/rss/climate_change.xml" rssowl:id="104">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+          <rssowl:pref id="org.rssowl.pref.NMSelectedNews" value="1071" type="3" />
+        </outline>
+        <outline text="EurekAlert! - Earth Science" xmlUrl="https://www.eurekalert.org/rss/earth_science.xml" rssowl:id="105" />
+        <outline text="EurekAlert! - Education" xmlUrl="https://www.eurekalert.org/rss/education.xml" rssowl:id="106" />
+        <outline text="EurekAlert! - Infectious and Emerging Diseases" xmlUrl="https://www.eurekalert.org/rss/infectious_emerging_diseases.xml" rssowl:id="107" />
+        <outline text="EurekAlert! - Mathematics and Statistics" xmlUrl="https://www.eurekalert.org/rss/mathematics.xml" rssowl:id="108" />
+        <outline text="EurekAlert! - Medicine and Health" xmlUrl="https://www.eurekalert.org/rss/medicine_health.xml" rssowl:id="109" />
+        <outline text="EurekAlert! - Nanotechnology" xmlUrl="https://www.eurekalert.org/rss/nanotechnology.xml" rssowl:id="110">
+          <rssowl:pref id="org.rssowl.pref.NMSelectedNews" value="1241" type="3" />
+        </outline>
+        <outline text="EurekAlert! - Oceanography" xmlUrl="https://www.eurekalert.org/rss/oceanography.xml" rssowl:id="111" />
+        <outline text="EurekAlert! - Policy and Ethics" xmlUrl="https://www.eurekalert.org/rss/policy_ethics.xml" rssowl:id="112" />
+        <outline text="EurekAlert! - Social and Behavioral Science" xmlUrl="https://www.eurekalert.org/rss/social_behavioral.xml" rssowl:id="113" />
+        <outline text="EurekAlert! - Space and Planetary Science" xmlUrl="https://www.eurekalert.org/rss/space_planetary.xml" rssowl:id="114" />
+        <outline text="EurekAlert! - Technology, Engineering and Computer Science" xmlUrl="https://www.eurekalert.org/rss/technology_engineering.xml" rssowl:id="115">
+          <rssowl:pref id="org.rssowl.pref.NMSelectedNews" value="1382" type="3" />
+        </outline>
+      </outline>
+      <outline text="MIT News" rssowl:isSet="false" rssowl:id="6153">
+        <outline text="MIT News" xmlUrl="https://news.mit.edu/rss/feed" rssowl:id="6157">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+        </outline>
+        <outline text="MIT Research News" xmlUrl="https://news.mit.edu/rss/research" rssowl:id="6204">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+        </outline>
+        <outline text="MIT News - School of Architecture + Planning" xmlUrl="https://news.mit.edu/rss/school/architecture-and-planning" rssowl:id="6236">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+        </outline>
+        <outline text="MIT News - School of Engineering" xmlUrl="https://news.mit.edu/rss/school/engineering" rssowl:id="6262">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+        </outline>
+        <outline text="MIT News - School of Humanities, Arts, and Social Sciences" xmlUrl="https://news.mit.edu/rss/school/humanities-arts-and-social-sciences" rssowl:id="6294" />
+        <outline text="MIT News - Sloan School of Management" xmlUrl="https://news.mit.edu/rss/school/management" rssowl:id="6326" />
+        <outline text="MIT News - School of Science" xmlUrl="https://news.mit.edu/rss/school/science" rssowl:id="6355" />
+        <outline text="MIT News - Aeronautical and astronautical engineering" xmlUrl="https://news.mit.edu/rss/topic/aeronautics" rssowl:id="9711">
+          <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="true" type="0" />
+        </outline>
+      </outline>
+      <outline text="Science Daily" rssowl:isSet="false" rssowl:id="116">
+        <outline text="Latest Science News -- ScienceDaily" xmlUrl="https://rss.sciencedaily.com/all.xml" rssowl:id="117" />
+        <outline text="Latest Science News -- ScienceDaily" xmlUrl="https://rss.sciencedaily.com/top.xml" rssowl:id="118" />
+        <outline text="All Top News -- ScienceDaily" xmlUrl="https://rss.sciencedaily.com/top/science.xml" rssowl:id="119" />
+        <outline text="Top Health News -- ScienceDaily" xmlUrl="https://rss.sciencedaily.com/top/health.xml" rssowl:id="120" />
+        <outline text="Top Technology News -- ScienceDaily" xmlUrl="https://rss.sciencedaily.com/top/technology.xml" rssowl:id="121" />
+        <outline text="Top Environment News -- ScienceDaily" xmlUrl="https://rss.sciencedaily.com/top/environment.xml" rssowl:id="122" />
+        <outline text="Top Society News -- ScienceDaily" xmlUrl="https://rss.sciencedaily.com/top/society.xml" rssowl:id="123" />
+        <outline text="Strange &amp; Offbeat News -- ScienceDaily" xmlUrl="https://rss.sciencedaily.com/strange_offbeat.xml" rssowl:id="124" />
+        <outline text="Latest Science News -- ScienceDaily" xmlUrl="https://rss.sciencedaily.com/most_popular.xml" rssowl:id="125" />
+      </outline>
+      <outline text="Smithsonian" rssowl:isSet="false" rssowl:id="126">
+        <outline text="Latest articles | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/latest_articles" rssowl:id="127" />
+        <outline text="Articles | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/articles" rssowl:id="128" />
+        <outline text="Design | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/design" rssowl:id="129" />
+        <outline text="Food | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/food" rssowl:id="130">
+          <rssowl:pref id="org.rssowl.pref.NMSelectedNews" value="4915" type="3" />
+        </outline>
+        <outline text="At the Smithsonian | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/smithsonian-institution" rssowl:id="131" />
+        <outline text="Ask Smithsonian | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/ask-smithsonian" rssowl:id="132" />
+        <outline text="Curators' Corner | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/curators-corner" rssowl:id="133" />
+        <outline text="Attractions | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/attractions-listings" rssowl:id="134" />
+        <outline text="History | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/history" rssowl:id="135" />
+        <outline text="Today in History | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/today-2" rssowl:id="136" />
+        <outline text="Innovation | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/innovation" rssowl:id="137" />
+        <outline text="Technology | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/technology" rssowl:id="138" />
+        <outline text="Magazine | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/magazine" rssowl:id="139" />
+        <outline text="Photos | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/multimedia" rssowl:id="140" />
+        <outline text="Science | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/science-nature" rssowl:id="141" />
+        <outline text="Smart News | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/smart-news" rssowl:id="142">
+          <rssowl:pref id="org.rssowl.pref.NMSelectedNews" value="4835" type="3" />
+        </outline>
+        <outline text="Smart News Arts &amp; Culture | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/smartnews-arts-culture" rssowl:id="143" />
+        <outline text="Smart News History &amp; Archaeology | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/smartnews-history-archaeology" rssowl:id="144" />
+        <outline text="Smart News Ideas &amp; Innovations | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/smartnews-ideas-innovations" rssowl:id="145" />
+        <outline text="Smart News Science | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/smartnews-science" rssowl:id="146" />
+        <outline text="Smart News Science | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/smartnews-science" rssowl:id="147" />
+        <outline text="Travel | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/travel" rssowl:id="148" />
+        <outline text="Cultural Traveler | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/cultural-traveler" rssowl:id="149" />
+        <outline text="National Parks | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/national-parks" rssowl:id="150" />
+        <outline text="Outdoors | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/outdoors" rssowl:id="151" />
+        <outline text="Videos | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/video-2" rssowl:id="152" />
+        <outline text="Photos | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/photos" rssowl:id="153" />
+        <outline text="Videos | Smithsonian" xmlUrl="feed://www.smithsonianmag.com/rss/videos" rssowl:id="154" />
+      </outline>
+      <outline text="BBC News - Science &amp; Environment" xmlUrl="feed://feeds.bbci.co.uk/news/science_and_environment/rss.xml?edition=uk" rssowl:id="155">
+        <rssowl:pref id="org.rssowl.pref.NMSelectedNews" value="1703" type="3" />
+      </outline>
+      <outline text="L.A. Times - Science" xmlUrl="feed://feeds.latimes.com/latimes/news/science?format=xml" rssowl:id="156" />
+      <outline text="NYT &gt; Science" xmlUrl="feed://rss.nytimes.com/services/xml/rss/nyt/Science.xml" rssowl:id="157" />
+      <outline text="Scientific American News" xmlUrl="feed://rss.sciam.com/ScientificAmerican-News?format=xml" rssowl:id="158" />
+      <outline text="Science" rssowl:isSet="false" rssowl:id="159">
+        <outline text="Google News on 'iPS Stem Cells'" xmlUrl="http://news.google.com/news?q=iPS+Stem+Cells&amp;output=rss&amp;num=25" rssowl:id="160">
+          <rssowl:pref id="org.rssowl.pref.NMSelectedNews" value="174" type="3" />
+        </outline>
+        <outline text="Google News on '&quot;blue brain&quot;'" xmlUrl="http://news.google.com/news?q=%22blue+brain%22&amp;output=rss&amp;num=25" rssowl:id="220">
+          <rssowl:pref id="org.rssowl.pref.NMSelectedNews" value="229" type="3" />
+        </outline>
+        <outline text="Google News on 'Higgs Boson'" xmlUrl="http://news.google.com/news?q=Higgs+Boson&amp;output=rss&amp;num=25" rssowl:id="249">
+          <rssowl:pref id="org.rssowl.pref.NMSelectedNews" value="273" type="3" />
+        </outline>
+      </outline>
+    </outline>
+    <rssowl:label id="1" name="Important" order="0" color="163,21,2" />
+    <rssowl:label id="2" name="Work" order="1" color="200,118,10" />
+    <rssowl:label id="3" name="Personal" order="2" color="82,92,58" />
+    <rssowl:label id="4" name="To Do" order="3" color="92,101,126" />
+    <rssowl:label id="5" name="Later" order="4" color="82,16,0" />
+    <rssowl:pref id="org.rssowl.ui.FirstStartToken" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.UseMasterPassword" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.UseOSPassword" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.RememberPassword" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.MarkNewsReadOnMinimize" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.MarkNewsReadOnScrolling" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.MarkFeedReadOnChange" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.MarkNewsReadOnTabClose" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.MarkDuplicateNewsRead" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.DisableJavaScript" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.UseExternalBrowser" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.UseCustomExternalBrowser" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.ReopenBrowserTabs" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.UseSystemTray" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.TrayOnExit" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.TrayOnStart" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.RestoreTrayDoubleclick" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.MarkReadState" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.MarkReadInMillis" value="0" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.DelNewsByCountState" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.DelNewsByCountValue" value="200" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.DelNewsByAgeState" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.DelNewsByAgeValue" value="30" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.DelReadNewsState" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.NeverDelUnreadNewsState" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.NeverDelLabeledNewsState" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.BMNewsColumns" value="0,1,5,6,9" type="2" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.BMNewsSortColumn" value="1" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.BMNewsSortAscending" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.BMUpdateInterval" value="1800" type="3" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.BMUpdateIntervalState" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.BMOpenOnStartup" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.BMReloadOnStartup" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.editors.feed.SearchTarget" value="1" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.editors.feed.GroupType" value="0" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.editors.feed.FilterType" value="0" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.editors.feed.SashFormWeights" value="844,151" type="2" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.editors.feed.Layout" value="0" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.editors.feed.HighlightSearchResults" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.editors.feed.FeedToolBarHidden" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.editors.feed.BrowserToolBarHidden" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.views.explorer.BeginSearchOnTyping" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.views.explorer.AlwaysShowSearch" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.views.explorer.SortByName" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.views.explorer.FilterType" value="0" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.views.explorer.GroupingType" value="0" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.views.explorer.EnableLinking" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.ui.internal.views.explorer.DisableFavicons" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.BMNewsFiltering" value="-1" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.BMNewsGrouping" value="-1" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.BMLoadImages" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.EnableImages" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.EnableMedia" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.BMOpenSiteForNews" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.OpenSiteForEmptyNews" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.UseTransformer" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.TransformerIdentifier" value="org.rssowl.ui.InstapaperTransformer" type="5" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.ShowNotificationPoup" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.ShowNotificationPoupOnlyWhenMinimized" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.StickyNotificationPoup" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.AutoCloseNotificationPoupValue" value="8" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.LimitNotificationPoup" value="5" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.LimitNotifierToSelection" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CloseNotifierOnOpen" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.FadeNotifier" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.ShowExcerptInNotifier" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.AlwaysReuseFeedView" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.AlwaysReuseBrowser" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.OpenLinksInNewTab" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpBMByLastVisitState" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpBMByLastVisitValue" value="30" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpBMByLastUpdateState" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpBMByLastUpdateValue" value="30" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpBMByConError" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpBMBySynchronization" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpBMByDuplicates" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpNewsByCountState" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpNewsByCountValue" value="200" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpNewsByAgeState" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpNewsByAgeValue" value="30" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpReadNewsState" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpNeverDelUnreadNewsState" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpNeverDelLabeledNewsState" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpReminderDateMillies" value="1496355128443" type="3" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpReminderState" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpReminderDaysValue" value="30" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.CleanUpIndex" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.SearchDialogPreviewVisible" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.SearchDialogNewsColumns" value="12,0,11,1,5,6,9" type="2" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.SearchDialogNewsSortColumn" value="12" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.SearchDialogNewsSortAscending" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.ShowToolbar" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.ShowStatus" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.BMLoadTitleFromFeed" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.LastKeywordFeed" value="org.rssowl.ui.GoogleNewsKeywordFeed" type="5" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.OpenBrowserInBackground" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.ShareProviderState" value="3,5,1,6,7,24,-8,-19,-9,-10,-12,-13,-4,-14,-15,-16,-17,-11,-18,-20,-21,-2,-22,-23,-25,-26" type="2" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.HideCompletedDownloads" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.ImportResources" value="D:\M.I.T\jdm7dv\projects\office\Journal\rss-feeds\rssowl.opml" type="6" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.ToolbarItems" value="2,0,5,6,0,7,8,0,10,0,11,12,0,39,0,13,14,0,20,0,15,16" type="2" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.ToolbarMode" value="0" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.DefaultNextAction" value="1" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.DefaultPreviousAction" value="5" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.BMMenuFilter" value="0" type="1" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.UpdateOnStartup" value="true" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.RememberAggregateNewsOption" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.AggregateNewsAsSearch" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.LocalizedFeedSearch" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.JSInfobarClosed" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.EnableIEPopupBlocker" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.ArchiveBinMarker" value="false" type="0" kind="0" />
+    <rssowl:pref id="org.rssowl.pref.NewsBrowserPageSize" value="50" type="1" kind="0" />
+    <rssowl:pref id="instance/org.eclipse.ui.workbench/OPEN_ON_SINGLE_CLICK" value="true" type="0" kind="1" />
+    <rssowl:pref id="instance/org.eclipse.ui.workbench/USE_IPERSISTABLE_EDITORS" value="true" type="0" kind="1" />
+    <rssowl:pref id="instance/org.eclipse.ui/SHOW_MULTIPLE_EDITOR_TABS" value="true" type="0" kind="1" />
+    <rssowl:pref id="instance/org.eclipse.ui.workbench/REUSE_OPEN_EDITORS_BOOLEAN" value="false" type="0" kind="1" />
+    <rssowl:pref id="instance/org.eclipse.ui.workbench/REUSE_OPEN_EDITORS" value="5" type="1" kind="1" />
+    <rssowl:pref id="/configuration/org.eclipse.core.net/proxiesEnabled" value="false" type="0" kind="1" />
+    <rssowl:pref id="/configuration/org.eclipse.core.net/systemProxiesEnabled" value="false" type="0" kind="1" />
+    <rssowl:pref id="/configuration/org.eclipse.core.net/proxyData/HTTP/hasAuth" value="false" type="0" kind="1" />
+    <rssowl:pref id="/configuration/org.eclipse.core.net/proxyData/HTTPS/hasAuth" value="false" type="0" kind="1" />
+    <rssowl:pref id="/configuration/org.eclipse.core.net/proxyData/SOCKS/hasAuth" value="false" type="0" kind="1" />
+  </body>
+</opml>
+

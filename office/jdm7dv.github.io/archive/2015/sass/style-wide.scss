@@ -1,0 +1,13 @@
+
+@import 'vars';
+@import 'mixins';
+
+/* Basic */
+
+	body, input, select, textarea {
+		font-size: 13pt;
+	}
+
+/* BG */
+
+	@include bg($bg-width);

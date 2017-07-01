@@ -1,0 +1,91 @@
+<!-- The Infobox_Biography entries are examples only-->
+{{Infobox person
+| name   = Jonathan Moore
+| image     = Jonathan_Moore.jpg
+| image_size     = 300px
+| caption  = Scholar, Software and Audio Engineer
+| birth_date  = April 24, 1978
+| birth_place =Atlanta Ga 
+| death_date  = 
+| death_place = 
+| residence = Abingdon, Va
+| occupation     = [[Engineer]]
+| spouse         = 
+| children       =
+| parents        =
+| website = http://www.jonathanmoore.net
+}}
+
+==Biography==
+Jonathan Moore born ''Jonathan David Allen Moore'' on (April 24,1978) 
+
+==Early Years and Education==
+
+     He is German and and Mediterranean from the Tuscany region and has the klotho gene variant in all probable cases which helps with anti- aging and keeping the mind sharp. [http://www.techtimes.com/articles/6765/20140509/klotho-gene-variant-not-only-helps-slow-aging-but-also-helps-old-people-stay-sharp.htm An article on that].  He is an only child. He started Sullins Academy at the age of five. At the age of six he began to pick up computers. His first one was a Tandy. At the age of eight he stated catholic school which he disliked. During his Junior High and High School years his grades were average. It’s not only until College that his grades began to improve. At Tenn. Tech. he received a 4.0 GPA straight A's in 2001. After a brief stint in the software industry he came back to college in 2008. And started majoring in software engineering at UVa.The colleges have been [[Tennessee College of Applied Technology - Shelbyville|recognized]] by the Bill and Melinda Gates Foundation, Harvard’s Graduate School of Education, the New York Times, EcoSouth and other leading organizations for job placement and completion rates. The colleges were also credited for completion and placement rates in the New York Times. He has been a member of the Virginia And National Associations for the gifted for 5 years and scored a 140 IQ once on the Mensa mobile app test. And is in the Mensa international community on G+ and LinkedIn Mensa group And he does support gene theft laws if any. His mother had is IQ tested in Atlanta as a child but died before ever telling him. Ever since 2013 in Abingdon, Va he has undergone past regression therapy and cognitive therapy.
+
+==Career and Achievements==
+
+Jonathan began his professional career at age 20 when he started working for Macromedia in technical support. Later Macromedia merged with Adobe. He has been involved with anti-aging and is a former Foresight Institute member since 2000. He has been a FreeBSD contributor for about 15 years starting around 2001. He left in 2016. In 2006 he left to become a Microsoft Partner and Microsoft MVP. Thanks to Jason Gayler a Microsoft employee for the nomination. Now with Amazon. In his own labs he has built Stanford’s Webbase in 2001-03. Which is search engine technology. And many other software libraries. In 2012 he built a UCSC Genome Browser mirror in CentOS including ENCODE for UVa-Wise but the science department was blind to its significance and turned it down. There are really too many things that he has built, compiled or wrote over the years to list here. And download the completed projects document. Since round 2002 he has been volunteering in  Berkeley open Infrastructure. On team UC Berkeley. [http://wiki.bc-team.org/index.php?title=Asteroids@home/en Asteroids@home] on team Stanford. Rosetta@home on team Microsoft. And World Community Grid which is clean energy which is on team IBM. Also [http://lhcathome.web.cern.ch/projects/atlas Atlas@home] which is on team BIONC. In 2012 Peter Higgs and his colleague’s won a Nobel Prize for the Higgs Boson discovered at CERN with the Atlas detector. Jonathan and fellow engineers around the world helped in this discovery with Atlas@home. By gathering data and running simulations. [https://www.youtube.com/watch?v=tcHz3o4t6Rk&feature=youtu.be Here is a video on You Tube]. That same year another Nobel Prize was won in Chemistry with help from the World Community Grid. In 2014 Jonathan released his third instrumental ambient album worldwide entitled “Four point zero” in iTunes, but later re titled it "Opponent Process Theory" on Bandcamp. In 2016 [https://einsteinathome.org/ Einstein@home] LIGO participated in discovering gravitational waves. [https://www.independent.co.uk/news/science/gravitational-waves-albert-einstein-science-discovery-of-century-explained-perfectly-in-one-a6869091.html Which is one of the greatest discoveries this century] He would like to finish his masters at some point in systems biology online and for credit. After reentering college via independent study.  Again in 2016 IBM’s World Community Grid won a people’s choice [http://www.webbyawards.com/winners/2016/websites/general-website/corporate-social-responsibility/ibms-world-community-grid/ Webby Award] which I was and am a part of on team IBM. [https://www.youtube.com/watch?v=hn6QiCyPOuM Here is a link] to the entire 2016 Webby Awards. He thanks the Webby's for this honor. [https://www.worldcommunitygrid.org/about_us/viewNewsArticle.do?articleId=481 And here is a five word speech].He is right brain dominant. And can be found on his [[GitHub|github]] "jdm7dv" , through the IEEE Computer Society and the MIDI association
+
+'''Legal Issues and Fiance''':
+
+In 2017 he claimed borrowers defense against UVa-Wise claiming bulling, harassment by fraternities and lack of dignity. Due to off campus and maybe on campus social media in 2008-2013. He wants to starts a small S-Corp.
+
+'''Relationships:'''
+
+He has just been denied by women since the age of 19.
+
+==Berkeley Open Infrastructure Contributions==
+
+[[SETI@home]] 2003- present Team Berkeley
+
+[http://wiki.bc-team.org/index.php?title=Asteroids@home/en Asteroids@home] Team Stanford
+
+[[LHC@home|Atlas@home]] 
+
+==Ambient Discography==
+Early Rebirth Demos
+
+Imago (unreleased)
+
+Four Point Zero
+
+Opponent Process Theory
+
+Simple Arrangement (Single)
+
+Ambient Moments Vol. 1
+
+NBIC (Single)
+
+From The 'Opponent Process Theory' Sessions
+
+NAD+ (Single)
+
+Cafe (Single)
+
+DNA (Single)
+
+More of the Truth (E.P.)
+
+Pinus Aristata (forthcoming)
+
+Der Schwan (E.P.) (forthcoming)
+
+==Honours, decorations, awards and distinctions==
+Microsoft MVP Award
+
+Webby Award (World Community Grid)
+
+==Bibliography==
+Include a [[bibliography]] listed in [[The MLA style manual|MLA]] format. Use [http://www.easybib.com/ EasyBib.com] for assisted MLA-formatted bibliography entries, or [[OttoBib]] for automatic bibliography creation from a list of [[ISBN]] numbers. See [[Reference management software]] for additional tools. 
+
+[[Wikipedia:Cite_sources|Always cite your sources!]] [[Wikipedia:No original research|No original research!]]<ref>Last, first (date).  [http://URL Name of page].  Page xx.  Publisher: xxxx</ref>
+
+==Notes/Further reading==
+
+==References==
+{{reflist}}
+
+==External links==
+List official websites, organizations named after the subject, and other interesting yet relevant websites. No spam.

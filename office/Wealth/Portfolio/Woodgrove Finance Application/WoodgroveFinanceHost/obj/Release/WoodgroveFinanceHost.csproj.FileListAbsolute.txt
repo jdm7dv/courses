@@ -1,0 +1,12 @@
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceHost\bin\Release\WoodgroveFinanceHost.dll
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceHost\bin\Release\WoodgroveFinanceStockChart3D.dll
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceHost\bin\Release\WoodgroveFinanceStockChartFrame.dll
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceHost\obj\Release\WoodgroveFinanceHost.csprojResolveAssemblyReference.cache
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceHost\obj\Release\StockHost.baml
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceHost\obj\Release\StockHostResourceDictionary.baml
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceHost\obj\Release\StockHost.g.cs
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceHost\obj\Release\WoodgroveFinanceHost_MarkupCompile.cache
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceHost\obj\Release\WoodgroveFinanceHost.g.resources
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceHost\obj\Release\WoodgroveFinanceHost.Properties.Resources.resources
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceHost\obj\Release\WoodgroveFinanceHost.csproj.GenerateResource.Cache
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceHost\obj\Release\WoodgroveFinanceHost.dll

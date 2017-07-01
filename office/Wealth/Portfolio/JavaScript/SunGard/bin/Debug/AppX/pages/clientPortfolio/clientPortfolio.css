@@ -1,0 +1,186 @@
+﻿/*
+//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF 
+//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A 
+//// PARTICULAR PURPOSE. 
+//// 
+//// Copyright (c) Microsoft Corporation. All rights reserved     
+////
+//// To see the topic that inspired this sample app, go to http://msdn.microsoft.com/en-us/library/windows/apps/dn163530
+*/
+
+.clientPortfolioList .win-groupheader:nth-child(0) {
+    display: none;
+}
+
+.fragment :not(.win-footprint).win-container .win-item.portfolio-item {
+    background-color: transparent;
+    overflow: visible;
+}
+
+.clientPortfolioPage .win-groupheader.active::before,
+.clientPortfolioPage .win-groupheader.active::after {
+    display: none;
+}
+
+.clientPortfolioPage .win-groupheader.investments {
+    color: rgba(0,0,0,0);
+}
+
+.clientPortfolioPage .win-item.investments {
+    display: -ms-grid;
+    height: 470px;
+    width: 1200px;
+    position: relative;
+}
+
+.clientPortfolioPage .win-item.investments .portfolio-title {
+    font-size:16pt;
+    left:0px;
+    position:absolute;
+    top:-41px;
+}
+
+.clientPortfolioPage .pie-chart {
+    width: 780px;
+    height: 100%;
+}
+
+.clientPortfolioPage .allocations {
+    position: absolute;
+    top: 0px;
+    left: 450px;
+    width: 650px;
+    height: 100%;
+}
+
+.allocations-list {
+    list-style: none inside;
+    /*border-left: 20px solid white;*/
+    margin: 0px;
+    padding: 0px 5px 0px 0px;
+    position: absolute;
+    top: 135px;
+    left: 40px;
+}
+.taxable .allocations-list {
+    top: 100px;
+}
+    .allocations-list.is-selected:before {
+        content: '';
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 15px 20px 15px 0;
+        border-color: transparent #ffffff transparent transparent;
+        position: absolute;
+        top: 50%;
+        left: -40px;
+        margin-top: -11px;
+    }
+.allocation-item:first-child {
+    margin-top: -9px;
+}
+
+.allocation-item {
+    line-height: 50px;
+    padding: 0px 15px;
+    margin: 10px 5px 10px -10px;
+    transition: all 300ms ease;
+    width: 250px;
+    position: relative;
+}
+
+.allocation-item > span {
+    display: inline-block;
+}
+.allocation-item-title {
+    float: left;
+    text-transform: uppercase;
+}
+.allocation-item-value {
+    float: right;
+}
+.allocation-item.selected {
+   font-size: 13px;
+   font-weight: bold;
+   margin-left: 16px;
+   padding-left: 12px;
+   transform: scale3d(1.25, 1.25, 1);
+   width: 210px;
+   z-index: 10;
+}
+    .allocation-item.selected .allocation-item-arrow {
+        content: '';
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 25px 0px 25px 10px;
+        border-bottom-color: transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        position: absolute;
+        top: 0px;
+        right: -10px;
+    }
+.allocation-item-detail {
+    background: rgba(255,255,255,0.2);    
+    left:70px;
+    overflow: hidden;
+    position:absolute;
+    top:150px;
+    width:235px;
+    z-index:-1;
+    transition: all 300ms ease;
+}
+.taxable .allocation-item-detail {
+    top: 115px;
+}
+
+.taxable .allocations-list.is-selected:before {
+    margin-top: -7px;
+}
+    .allocation-item-detail.is-selected {
+        left: 290px;
+        width: 385px;
+    }
+    .allocation-item-detail .holdings-list {
+        transition: all 300ms ease;
+        opacity: 0;
+        position: absolute;
+        top: 0px;
+        left: -300px;
+        list-style: none inside;
+        width: 385px;
+        padding: 0px 20px 0px 40px;
+    }
+    .allocation-item-detail .holdings-list.selected {        
+        opacity: 1;
+        left: 0px;
+    }
+        .allocation-item-detail .holdings-list .holdings-item {
+            height: 30px;
+            line-height: 30px;
+        }
+        .allocation-item-detail .holdings-list .holdings-item > span {
+            display: inline-block;           
+        }
+        .allocation-item-detail .holdings-list .holdings-item > span.holdings-desc {
+            width: 135px;
+        }
+        .allocation-item-detail .holdings-list .holdings-item > span.holdings-pct {
+            text-align:right;
+            width:100px;
+        }
+        .allocation-item-detail .holdings-list .holdings-item > span.holdings-value {
+            text-align:right;
+            width:90px;
+        }
+svg.arc .key-header {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+svg.arc .key-label {
+    font-weight: bold;
+}

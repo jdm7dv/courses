@@ -1,0 +1,91 @@
+﻿/*
+//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF 
+//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A 
+//// PARTICULAR PURPOSE. 
+//// 
+//// Copyright (c) Microsoft Corporation. All rights reserved     
+////
+//// To see the topic that inspired this sample app, go to http://msdn.microsoft.com/en-us/library/windows/apps/dn163530
+*/
+
+.clientSummaryPage .detail-heading {
+    margin: 0 0 10px 0;
+    text-transform: capitalize;
+}
+
+.clientSummaryPage .detail-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.win-groupheader.retirement.active::before {
+    left: 10px;
+    right: 60px;
+}
+
+.win-groupheader.retirement.active::after {
+    margin-left: -45px;
+}
+
+.fragment :not(.win-footprint).win-container .win-item.investments, .fragment :not(.win-footprint).win-container .win-item.retirement {
+   background-color: transparent;
+}
+
+.clientSummaryPage .win-item.investments {
+    width: 250px;
+}
+
+.clientSummaryPage .win-item.investments.total {
+    height: 460px;
+    padding: 0 12px;
+    width: 450px;
+}
+
+.clientSummaryPage .win-item.investments .investment-item-label {
+    font-size: 16pt;
+    left: 150px;
+    margin-top: -15px;
+    position: absolute;
+    text-transform: capitalize;
+    top: 50%;
+}
+
+.clientSummaryPage .win-item.investments.total .investment-item-label {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: auto;
+}
+
+.clientSummaryPage .win-item.investments .investment-item-value {
+    display: none;
+}
+
+.clientSummaryPage .win-item.investments.total .investment-item-value {
+    display: block;
+    font-size: 35pt;
+    font-weight: bold;
+    left: 0;
+    margin-top: -45px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50%;
+}
+
+.clientSummaryPage .win-item.retirement {
+    height: 600px;
+    width: 690px;
+    overflow-y: hidden;
+}
+
+.clientSummaryPage .win-item.retirement.controls {
+    display: none;
+}
+
+.clientSummaryPage .detail-list li {
+    margin: 0 0 5px 0;
+}

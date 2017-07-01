@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-P9CEQ7R</Machine>
+    <WindowsUser>Jonathan_Moore</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\charts\PieChart.js">
+      <PackagePath>charts\PieChart.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\charts\RetirementChart.js">
+      <PackagePath>charts\RetirementChart.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\data\Repository.js">
+      <PackagePath>data\Repository.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\data\ClientModel.js">
+      <PackagePath>data\ClientModel.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\data\RetirementPlanner.js">
+      <PackagePath>data\RetirementPlanner.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\gestures\Gesture.js">
+      <PackagePath>gestures\Gesture.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\gestures\PointerManager.js">
+      <PackagePath>gestures\PointerManager.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\gestures\RotationGesture.js">
+      <PackagePath>gestures\RotationGesture.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\js\d3.v3.min.js">
+      <PackagePath>js\d3.v3.min.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\js\navigator.js">
+      <PackagePath>js\navigator.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\js\svgutils.js">
+      <PackagePath>js\svgutils.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\pages\clientPortfolio\clientPortfolio.js">
+      <PackagePath>pages\clientPortfolio\clientPortfolio.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\pages\clientRetirement\clientRetirement.js">
+      <PackagePath>pages\clientRetirement\clientRetirement.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\pages\clientSummary\clientSummary.js">
+      <PackagePath>pages\clientSummary\clientSummary.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\renderers\ClientRetirementRenderer.js">
+      <PackagePath>renderers\ClientRetirementRenderer.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\renderers\ClientPortfolioRenderer.js">
+      <PackagePath>renderers\ClientPortfolioRenderer.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\renderers\ClientSummaryRenderer.js">
+      <PackagePath>renderers\ClientSummaryRenderer.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\renderers\ItemRenderer.js">
+      <PackagePath>renderers\ItemRenderer.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\css\svg.css">
+      <PackagePath>css\svg.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\pages\clientPortfolio\clientPortfolio.css">
+      <PackagePath>pages\clientPortfolio\clientPortfolio.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\pages\clientRetirement\clientRetirement.css">
+      <PackagePath>pages\clientRetirement\clientRetirement.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\pages\clientSummary\clientSummary.css">
+      <PackagePath>pages\clientSummary\clientSummary.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\images\headerlogo.png">
+      <PackagePath>images\headerlogo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\images\logo.png">
+      <PackagePath>images\logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\images\smalllogo.png">
+      <PackagePath>images\smalllogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\images\splashscreen.png">
+      <PackagePath>images\splashscreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\images\storelogo.png">
+      <PackagePath>images\storelogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\images\john_e_doe.jpg">
+      <PackagePath>images\john_e_doe.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\pages\clientPortfolio\clientPortfolio.html">
+      <PackagePath>pages\clientPortfolio\clientPortfolio.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\pages\clientRetirement\clientRetirement.html">
+      <PackagePath>pages\clientRetirement\clientRetirement.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\pages\clientSummary\clientSummary.html">
+      <PackagePath>pages\clientSummary\clientSummary.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\default.html">
+      <PackagePath>default.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\">
+      <Name>Microsoft.WinJS.1.0</Name>
+      <Version>1.0.8514.0</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.1.0, MinVersion=1.0.8514.0</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\Microsoft.WinJS.1.0.appx</AppxLocation>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

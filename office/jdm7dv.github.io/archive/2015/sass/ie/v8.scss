@@ -1,0 +1,27 @@
+
+@import '../vars';
+@import '../mixins';
+
+/* Header */
+
+	#header {
+		nav {
+			a {
+				position: relative;
+				border: solid 1px $color-fg;
+				border-radius: 100%;
+				-ms-behavior: url('css/ie/PIE.htc');
+				&:before {
+					border: 0;
+				}
+			}
+		}
+	}
+	
+/* Footer */
+
+	#footer {
+		background-image: url('images/footer.png');
+		background-position: bottom left;
+		background-repeat: repeat-x;
+	}

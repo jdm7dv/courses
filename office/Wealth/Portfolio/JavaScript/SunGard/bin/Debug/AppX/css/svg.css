@@ -1,0 +1,39 @@
+﻿/*
+//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF 
+//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A 
+//// PARTICULAR PURPOSE. 
+//// 
+//// Copyright (c) Microsoft Corporation. All rights reserved     
+////
+//// To see the topic that inspired this sample app, go to http://msdn.microsoft.com/en-us/library/windows/apps/dn163530
+*/
+
+#planning-chart {
+    cursor: pointer;
+}
+
+#planning-meta text {
+    fill: #fff;
+}
+#planning-meta .bottomLabel{
+    fill: rgba(255,255,255,0.5);
+    font-size: 12px;
+}
+#planning-meta .bottomLabel.selected {
+    transform: scale(10);
+    fill: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#planning-meta .meta-lines-line {
+    stroke: rgba(255,255,255,0.5);
+}
+#planning-meta .meta-lines-label {
+    fill: rgba(255,255,255,0.5);
+    font-size: 12px;
+}
+#planning-key text {
+    fill: white;
+}

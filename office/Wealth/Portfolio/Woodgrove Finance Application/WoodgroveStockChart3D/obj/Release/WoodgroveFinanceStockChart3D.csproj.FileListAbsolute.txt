@@ -1,0 +1,9 @@
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveStockChart3D\bin\Release\WoodgroveFinanceStockChart3D.dll
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveStockChart3D\obj\Release\WoodgroveFinanceStockChart3D.csprojResolveAssemblyReference.cache
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveStockChart3D\obj\Release\Graph3DResources.baml
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveStockChart3D\obj\Release\Graph3DResources.g.cs
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveStockChart3D\obj\Release\WoodgroveFinanceStockChart3D_MarkupCompile.cache
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveStockChart3D\obj\Release\WoodgroveFinanceStockChart3D.g.resources
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveStockChart3D\obj\Release\WoodgroveFinanceStockChart3D.Properties.Resources.resources
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveStockChart3D\obj\Release\WoodgroveFinanceStockChart3D.csproj.GenerateResource.Cache
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveStockChart3D\obj\Release\WoodgroveFinanceStockChart3D.dll

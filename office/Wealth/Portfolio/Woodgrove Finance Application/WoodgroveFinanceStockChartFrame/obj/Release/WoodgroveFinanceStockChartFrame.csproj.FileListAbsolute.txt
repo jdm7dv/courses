@@ -1,0 +1,10 @@
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceStockChartFrame\bin\Release\WoodgroveFinanceStockChartFrame.dll
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceStockChartFrame\bin\Release\WoodgroveFinanceStockChart3D.dll
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceStockChartFrame\obj\Release\WoodgroveFinanceStockChartFrame.csprojResolveAssemblyReference.cache
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceStockChartFrame\obj\Release\StockChart3D.baml
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceStockChartFrame\obj\Release\StockChart3D.g.cs
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceStockChartFrame\obj\Release\WoodgroveFinanceStockChartFrame_MarkupCompile.cache
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceStockChartFrame\obj\Release\WoodgroveFinanceStockChartFrame.g.resources
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceStockChartFrame\obj\Release\WoodgroveFinanceStockChartFrame.Properties.Resources.resources
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceStockChartFrame\obj\Release\WoodgroveFinanceStockChartFrame.csproj.GenerateResource.Cache
+D:\jdm7dv\office\Wealth\Portfolio\Woodgrove Finance Application\WoodgroveFinanceStockChartFrame\obj\Release\WoodgroveFinanceStockChartFrame.dll

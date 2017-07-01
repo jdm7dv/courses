@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>jonathanmoore.net</title>
+<link rel="stylesheet" href="css-uncompressed/style.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="css-uncompressed/jquery.jscrollpane.css" type="text/css"  media="all" />
+<!--[if IE]> 
+	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js-uncompressed/pop-ups.js"></script>
+		<script type="text/javascript" src="js-uncompressed/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="js-uncompressed/jquery.mousewheel.js"></script>
+        <script type="text/javascript" src="js-uncompressed/jquery.jscrollpane.min.js"></script>
+        <script type="text/javascript" src="js-uncompressed/cufon.js"></script>
+		<script type="text/javascript" src="js-uncompressed/Quicksand_Book_400.font.js"></script>
+		<script type="text/javascript" src="js-uncompressed/functions.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+<div id="main" class="main"> <img src="images/album/1.gif" alt="" class="preview" style="display:none;"/>
+  <section class="overlay"></section>
+  <header id="header">
+    <h3></h3>
+    <h6><a href="http://www.jonathanmoore.net" target="_blank">jonathanmoore.net copyright 2014</a></h6>
+  </header>
+  <div id="loading" class="loading"><span>Loading...</span></div>
+  <nav>
+    <ul id="menu" class="menu">
+      <li> <a href="#" id="about"> <img src="images/1.gif" alt=""/> <span class="active"></span> <span class="wrap"> <span class="link">About</span> <span class="descr">Know me</span> </span> </a> </li>
+      <li> <a href="#" id="projects"> <img src="images/2.gif" alt=""/> <span class="active"></span> <span class="wrap"> <span class="link">Solutions</span> <span class="descr">My work</span> </span> </a> </li>
+      <li> <a href="#" id="contact"> <img src="images/3.gif" alt=""/> <span class="active"></span> <span class="wrap"> <span class="link">Contact</span> <span class="descr">Get in touch</span> </span> </a> </li>
+    </ul>
+  </nav>
+</div>
+<ul id="nav" class="navigation footer" style="">
+  <li class="album"> <span class="link" id="toggle"><span class="arrow_down"></span></span>
+    <div class="wrapper thumbs_wrapper">
+      <div class="thumbs"> 
+      <img src="images/album/thumbs/1.gif" alt="images/album/1.gif"/> 
+      <img src="images/album/thumbs/2.gif" alt="images/album/2.gif"/> 
+      <img src="images/album/thumbs/3.gif" alt="images/album/3.gif"/> 
+      <img src="images/album/thumbs/4.gif" alt="images/album/4.gif"/> 
+      <img src="images/album/thumbs/1.gif" alt="images/album/1.gif"/> 
+      <img src="images/album/thumbs/2.gif" alt="images/album/2.gif"/> 
+      <img src="images/album/thumbs/3.gif" alt="images/album/3.gif"/> 
+      <img src="images/album/thumbs/4.gif" alt="images/album/4.gif"/> 
+      </div>
+    </div>
+  </li>
+</ul>
+<article id="popupAbout" class="popupAbout"> <a id="popupAboutClose"><img src="images/close.png" width="20" alt="" /></a>
+  <h1>About: Jonathan Moore</h1>
+  <p><img src="images/profile.gif" alt="" class="image"/>Jonathan was born in 1978 and started working at Macromedia/Adobe after high school. Gifted, he started using BOINC in 2003 and became a Microsoft Partner 2006. In 2008 he ventured to UVa. to pursue a Software Engineering  
+                                   degree after spending his twenties in graphic design. He is currently at UVa. completing degree work. He would like to get his masters in rejuvenative medicine and technology. If there are online programs available.
+                                   His resume and samples of completed work are available <a id="revue" href="http://re.vu/jdm7dv">here</a> at revue. His other interests include music, astrobiology and robotics. Expressions on this website or social networks do not represent those of friends or employers. .</p>
+</article>
+<article id="popupProjects" class="popupProjects"> <a id="popupProjectsClose"><img src="images/close.png" width="20" alt="" /></a>
+  <h1>Solutions: Jonathan Moore</h1>
+  <h6>BOINC (2003-present)</h6>
+  <p class="nomargin"><!--<img src="images/200x150.png" alt="" class="image"/>-->Jonathan Has been involved in BOINC since 2003 </p>
+  <br />
+  <h6>.NET Extended Framework (2009-present)</h6>
+  <p class="nomargin"><!--<img src="images/200x150.png" alt="" class="image"/>--><a href="https://dotnetextended.codeplex.com/" target="_blank">.NET Extended Framework</a><br />
+  </p>
+  <h6></h6>
+  <p class="nomargin"><!--<img src="images/200x150.png" alt="" class="image"/>-->Many more yet to be staged.<br />
+  </p>
+</article>
+<article id="popupContact" class="popupContact"> <a id="popupContactClose"><img src="images/close.png" width="20" alt="" /></a>
+  <h1>Contact: Jonathan Moore</h1>
+  <p></p>
+  <form action="form.php" method="post">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required placeholder="Name" />
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required placeholder="email@example.com" />
+    <label for="website">Website:</label>
+    <input type="url" name="website" id="website" required placeholder="http://www.example.com" />
+    <label for="message">Message:</label>
+    <textarea name="message" id="message" required></textarea>
+    <input type="submit" value="Send Message" />
+  </form>
+  <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25588.685717769924!2d-81.96875395000002!3d36.70849205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8850131672fdc2dd%3A0x810a281ed5abc43e!2sAbingdon%2C+VA!5e0!3m2!1sen!2sus!4v1401104930598" width="425" height="300" frameborder="0" style="border:0"></iframe>
+  <div id="social-network"> 
+  <a href="https://www.facebook.com/mpmeme"><img src="images/facebook.png" alt="Facebook" /></a>   
+  <a href="http://www.linkedin.com/in/jdm7dv/"><img src="images/linkedin.png" alt="Linkedin" /></a>  
+  <a href="http://www.twitter.com/jdm7dv"><img src="images/twitter.png" alt="Twitter" /></a> 
+  </div>
+</article>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+<script type="text/javascript" src="js-uncompressed/pop-ups.js"></script> 
+<script type="text/javascript" src="js-uncompressed/jquery.easing.1.3.js"></script> 
+<script type="text/javascript" src="js-uncompressed/jquery.mousewheel.js"></script> 
+<script type="text/javascript" src="js-uncompressed/jquery.jscrollpane.min.js"></script> 
+<script type="text/javascript" src="js-uncompressed/cufon.js"></script> 
+<script type="text/javascript" src="js-uncompressed/Quicksand_Book_400.font.js"></script> 
+<script type="text/javascript" src="js-uncompressed/functions.js"></script>
+
+</body>
+</html>

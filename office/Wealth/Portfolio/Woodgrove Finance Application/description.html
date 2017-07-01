@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Woodgrove Finance Application</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Woodgrove Finance Application</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WPF
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Graphics and 3D, Graphical Interaction, Graph Animation, Data Representation
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">2/1/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Woodgrove-Finance-67fc8dcd">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><span style="color:#888888">Uploaded to WindowsClient.net on 05-10-2007</span></p>
+<p>&nbsp;</p>
+<p><img src="description/167900350_9c83993e0d_m.jpg" alt="" width="240" height="192"></p>
+<p><a href="http://scorbs.com/workapps/woodgrove/FinanceApplication.xbap" >Click Here&nbsp;To Run It</a>&nbsp;</p>
+<p><strong>Using The Finance Application</strong></p>
+<p>The application provides a 3D visualization into a hypothetical, static porfolio. It is important to note that this application is not bound to live data.&nbsp; To the left is a 2D list of stocks, grouped by Small Cap, Mid Cap and Large Cap stocks.&nbsp;
+ By clicking on a stock in this list, detailed information about the stock can be seen in the far right column.&nbsp; If you hover over the 2D stock chart, it will expand for an easier reading experience.</p>
+<p>Hovering over a stock will group it with other stocks of the same sector within that market size.&nbsp; For example, hovering over ArvinMeritor will also highlight Men's Wearhouse, both part of the consumer segment.&nbsp; This becomes interesting in terms
+ of the 3D chart, in the center of the application.&nbsp; You can see how the labels for the X and Y axis update when different stocks are hovered over.&nbsp; The hover action pinpoints that particular grouping of sector and market cap, aggregating the results.&nbsp;
+ So, one can immediately get a sense of how Mid Cap stocks in the consumer sector are doing -- in this case, not well, as can seen from the long red bar.</p>
+<p>The application is two way, in that you can also interact with the 3D bar chart and see the corresponding 2D areas become highlighted.&nbsp; If you leave the mouse over a given bar for 1 second, you will get information about that bar as well, letting you
+ know what aggregate of stocks that bar represents as well as the market cap and sector.</p>
+<p>If you click on the the Woodgrove logo, the 2D section will animate away, allowing you to focus on the 3D.&nbsp; Holding the right click button down of the mouse will allow you to trackball the graph.&nbsp; In addition, you can compare stocks against the
+ DJIA if you click that button.&nbsp; (The other comparison buttons aren't wired up.)&nbsp; If you then move the slider, you will see an animation between the current data and a date in the past.</p>
+<p>Lastly, by switching in the drop down from Day % Change to Dollar change, the bars turn to columns.</p>
+<p><br>
+<strong>Decomposing The Finance Application</strong></p>
+<p>While all of the data is static, the application is designed to support databinding to live data and could be done with a nominal amount of effort.&nbsp; Right now, everything is databound to the static asdf.xml file.&nbsp; However, changing the databinding
+ to a webservice would allow for this application to show real data.&nbsp;</p>
+<p>You'll notice that the project is factored into multiple components.&nbsp; The WoodgroveFinanceApplication doesn't really do anything but hold the WoodgroveFinanceHost, which sets up the layout and handles the interaction between the 2D and the 3D.&nbsp;
+ The WoodgroveFinanceStockChartFrame then holds the 2D pieces and the WoodgroveFinanceStockChart3D holds the 3D pieces. By doing this componentization, all of the functionality is really contained in controls, such that they can be added to a different project
+ quite easily.&nbsp; If just the 3D section were desired, it is already isolated from the rest of the application.</p>
+<p>You can open the project in Expression Blend, which is very cool.&nbsp; One could customize the look and feel from within Blend.&nbsp; It also demonstrates how Expression Blend supports opening .sln files and working with multiple projects.</p>
+<p>Lastly, it is worth commenting that the 3D graph is based on work done by Robert Hogue (<a href="http://www.therhogue.com/WinFX/">http://www.therhogue.com/WinFX/</a>).&nbsp; Some of the explanation in his download pack is germaine to the code in the 3D part
+ of the application.</p>
+<p>Enjoy!</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

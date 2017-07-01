@@ -1,0 +1,60 @@
+﻿/*
+//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF 
+//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A 
+//// PARTICULAR PURPOSE. 
+//// 
+//// Copyright (c) Microsoft Corporation. All rights reserved     
+////
+//// To see the topic that inspired this sample app, go to http://msdn.microsoft.com/en-us/library/windows/apps/dn163530
+*/
+
+.clientRetirementPage .win-groupheader {
+    display: -ms-grid;
+    -ms-grid-columns: auto auto auto;
+}
+
+.clientRetirementPage .win-groupheader .header-key {
+    -ms-grid-column: 1;
+    display: block;
+    width: 315px;
+}
+
+.clientRetirementPage .win-groupheader .header-chart {
+    -ms-grid-column: 2;
+    display: block;
+    width: 640px;
+}
+
+.clientRetirementPage .win-groupheader .header-controls {
+    -ms-grid-column: 3;
+    display: block;
+    width: 340px;
+}
+
+.clientRetirementPage .win-item.accounts {
+    height: 600px;
+    width: 940px;
+    overflow-y: hidden;
+}
+
+.clientRetirementPage .win-item.controls {
+    height: 600px;
+    width: 345px;
+}
+
+.clientRetirementPage label {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr auto;
+}
+
+.clientRetirementPage label span {
+    color: rgba(255, 255, 255, .6);
+    display: block;
+    text-align: right;
+    -ms-grid-column: 2;
+}
+
+.clientRetirementPage input[type=range]::-ms-tooltip {
+    display: none;
+}

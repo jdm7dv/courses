@@ -1,0 +1,16 @@
+application: myfirstgoogleapp
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /(.*\.(gif|png|jpg|ico|js|css))
+  static_files: \1
+  upload: (.*\.(gif|png|jpg|ico|js|css))
+
+- url: /robots.txt
+  static_files: robots.txt
+  upload: robots.txt 
+
+- url: .*
+  script: main.py

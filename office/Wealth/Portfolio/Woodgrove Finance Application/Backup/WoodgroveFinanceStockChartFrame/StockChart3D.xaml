@@ -1,0 +1,644 @@
+<Grid 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+  xmlns:local="clr-namespace:WoodgroveFinanceStockChart3D;assembly=WoodgroveFinanceStockChart3D"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/interactivedesigner/2006"
+	mc:Ignorable="d"
+	x:Name="DocumentRoot"
+	x:Class="WoodgroveFinanceStockChartFrame.StockChart3D" 
+  Loaded="OnLoaded">
+  <Grid.Background>
+    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="1" >
+      <GradientBrush.GradientStops>
+        <GradientStopCollection >
+          <GradientStop Color="#ffffff" Offset="0.25" />
+          <GradientStop Color="#cccccc" Offset="1" />
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+  </Grid.Background>
+
+  <Grid.Resources>
+
+      <!-- 
+      Valuation = Row 
+      Sector = Column
+      Height = max\min 4 to -4
+      Scale = max\min 90 to -90
+      -->
+      <XmlDataProvider x:Key="myData" XPath="/Data">
+        <x:XData>
+          <Data xmlns="">
+            <CurrentDay>
+
+
+              <Item>
+                <ID>Large Cap Growth,Materials</ID>
+                <Row>0</Row>
+                <Column>4</Column>
+                <Height>0.1</Height>
+                <Scale>5</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap Growth,Utilities</ID>
+                <Row>0</Row>
+                <Column>7</Column>
+                <Height>3.0</Height>
+                <Scale>60</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap Value,Financials</ID>
+                <Row>1</Row>
+                <Column>1</Column>
+                <Height>0.5</Height>
+                <Scale>25</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap Value,Technology</ID>
+                <Row>1</Row>
+                <Column>5</Column>
+                <Height>0.2</Height>
+                <Scale>10</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap Value,Utilities</ID>
+                <Row>1</Row>
+                <Column>7</Column>
+                <Height>-1.0</Height>
+                <Scale>-20</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap,Consumer</ID>
+                <Row>2</Row>
+                <Column>0</Column>
+                <Height>0.2</Height>
+                <Scale>10</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap,Financials</ID>
+                <Row>2</Row>
+                <Column>1</Column>
+                <Height>1.0</Height>
+                <Scale>30</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap,Healthcare</ID>
+                <Row>2</Row>
+                <Column>2</Column>
+                <Height>2.0</Height>
+                <Scale>60</Scale>
+              </Item>
+              <Item>
+                <ID>Mid Cap Growth,Consumer</ID>
+                <Row>3</Row>
+                <Column>0</Column>
+                <Height>-3.0</Height>
+                <Scale>-80</Scale>
+              </Item>
+              <Item>
+                <ID>Mid Cap Growth,Materials</ID>
+                <Row>3</Row>
+                <Column>4</Column>
+                <Height>-0.2</Height>
+                <Scale>-10</Scale>
+              </Item>
+              <Item>
+                <ID>Mid Cap Value,Utilities</ID>
+                <Row>4</Row>
+                <Column>7</Column>
+                <Height>0.5</Height>
+                <Scale>25</Scale>
+              </Item>
+              <Item>
+                <ID>Mid Cap,Industrials</ID>
+                <Row>5</Row>
+                <Column>3</Column>
+                <Height>-1.0</Height>
+                <Scale>-30</Scale>
+              </Item>
+              <Item>
+                <ID>Mid Cap,Technology</ID>
+                <Row>5</Row>
+                <Column>5</Column>
+                <Height>4.0</Height>
+                <Scale>90</Scale>
+              </Item>
+              <Item>
+                <ID>Mid Cap,Telecommunications</ID>
+                <Row>5</Row>
+                <Column>6</Column>
+                <Height>1.5</Height>
+                <Scale>40</Scale>
+              </Item>
+              <Item>
+                <ID>Small Cap Growth,Consumer</ID>
+                <Row>6</Row>
+                <Column>0</Column>
+                <Height>0.3</Height>
+                <Scale>15</Scale>
+              </Item>
+              <Item>
+                <ID>Small Cap,Consumer</ID>
+                <Row>8</Row>
+                <Column>0</Column>
+                <Height>0.4</Height>
+                <Scale>10</Scale>
+              </Item>
+              <Item>
+                <ID>Small Cap,Materials</ID>
+                <Row>8</Row>
+                <Column>4</Column>
+                <Height>0.8</Height>
+                <Scale>20</Scale>
+              </Item>
+            </CurrentDay>
+            <PastDays>
+              <Day>
+                <Item>
+                  <ID>Small Cap,Consumer</ID>
+                  <Height>4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Small Cap,Materials</ID>
+                  <Height>2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Small Cap Growth,Consumer</ID>
+                  <Height>1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap,Industrials</ID>
+                  <Height>3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap,Technology</ID>
+                  <Height>-4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap,Telecommunications</ID>
+                  <Height>1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap Value,Utilities</ID>
+                  <Height>-1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap Growth,Consumer</ID>
+                  <Height>3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap Growth,Materials</ID>
+                  <Height>-3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap,Consumer</ID>
+                  <Height>1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap,Financials</ID>
+                  <Height>1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap,Healthcare</ID>
+                  <Height>-2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Value,Financials</ID>
+                  <Height>-2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Value,Technology</ID>
+                  <Height>4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Value,Utilities</ID>
+                  <Height>3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Growth,Materials</ID>
+                  <Height>2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Growth,Utilities</ID>
+                  <Height>0.0</Height>
+                </Item>
+              </Day>
+              <Day>
+                <Item>
+                  <ID>Small Cap,Consumer</ID>
+                  <Height>-3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Small Cap,Materials</ID>
+                  <Height>-2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Small Cap Growth,Consumer</ID>
+                  <Height>2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap,Industrials</ID>
+                  <Height>-4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap,Technology</ID>
+                  <Height>4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap,Telecommunications</ID>
+                  <Height>3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap Value,Utilities</ID>
+                  <Height>1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap Growth,Consumer</ID>
+                  <Height>-1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap Growth,Materials</ID>
+                  <Height>2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap,Consumer</ID>
+                  <Height>-4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap,Financials</ID>
+                  <Height>-2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap,Healthcare</ID>
+                  <Height>-4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Value,Financials</ID>
+                  <Height>-0.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Value,Technology</ID>
+                  <Height>-0.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Value,Utilities</ID>
+                  <Height>-3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Growth,Materials</ID>
+                  <Height>3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Growth,Utilities</ID>
+                  <Height>1.0</Height>
+                </Item>
+              </Day>
+
+  
+            </PastDays>
+            <Dow>
+              <Height>3.0</Height>
+              <Height>2.0</Height>
+              <Height>1.0</Height>
+              <Height>-2.0</Height>
+            </Dow>
+          </Data>
+        </x:XData>
+      </XmlDataProvider>
+      <XmlDataProvider x:Key="myData2" XPath="/Data">
+        <x:XData>
+          <Data xmlns="">
+            <CurrentDay>
+
+
+              <Item>
+                <ID>Large Cap Growth,Materials</ID>
+                <Row>0</Row>
+                <Column>4</Column>
+                <Height>0.1</Height>
+                <Scale>5</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap Growth,Utilities</ID>
+                <Row>0</Row>
+                <Column>7</Column>
+                <Height>3.0</Height>
+                <Scale>60</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap Value,Financials</ID>
+                <Row>1</Row>
+                <Column>1</Column>
+                <Height>0.5</Height>
+                <Scale>25</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap Value,Technology</ID>
+                <Row>1</Row>
+                <Column>5</Column>
+                <Height>0.2</Height>
+                <Scale>10</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap Value,Utilities</ID>
+                <Row>1</Row>
+                <Column>7</Column>
+                <Height>-1.0</Height>
+                <Scale>-20</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap,Consumer</ID>
+                <Row>2</Row>
+                <Column>0</Column>
+                <Height>0.2</Height>
+                <Scale>10</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap,Financials</ID>
+                <Row>2</Row>
+                <Column>1</Column>
+                <Height>1.0</Height>
+                <Scale>30</Scale>
+              </Item>
+              <Item>
+                <ID>Large Cap,Healthcare</ID>
+                <Row>2</Row>
+                <Column>2</Column>
+                <Height>2.0</Height>
+                <Scale>60</Scale>
+              </Item>
+              <Item>
+                <ID>Mid Cap Growth,Consumer</ID>
+                <Row>3</Row>
+                <Column>0</Column>
+                <Height>-3.0</Height>
+                <Scale>-80</Scale>
+              </Item>
+              <Item>
+                <ID>Mid Cap Growth,Materials</ID>
+                <Row>3</Row>
+                <Column>4</Column>
+                <Height>-0.2</Height>
+                <Scale>-10</Scale>
+              </Item>
+              <Item>
+                <ID>Mid Cap Value,Utilities</ID>
+                <Row>4</Row>
+                <Column>7</Column>
+                <Height>0.5</Height>
+                <Scale>25</Scale>
+              </Item>
+              <Item>
+                <ID>Mid Cap,Industrials</ID>
+                <Row>5</Row>
+                <Column>3</Column>
+                <Height>-1.0</Height>
+                <Scale>-30</Scale>
+              </Item>
+              <Item>
+                <ID>Mid Cap,Technology</ID>
+                <Row>5</Row>
+                <Column>5</Column>
+                <Height>4.0</Height>
+                <Scale>90</Scale>
+              </Item>
+              <Item>
+                <ID>Mid Cap,Telecommunications</ID>
+                <Row>5</Row>
+                <Column>6</Column>
+                <Height>1.5</Height>
+                <Scale>40</Scale>
+              </Item>
+              <Item>
+                <ID>Small Cap Growth,Consumer</ID>
+                <Row>6</Row>
+                <Column>0</Column>
+                <Height>0.3</Height>
+                <Scale>15</Scale>
+              </Item>
+              <Item>
+                <ID>Small Cap,Consumer</ID>
+                <Row>8</Row>
+                <Column>0</Column>
+                <Height>0.4</Height>
+                <Scale>10</Scale>
+              </Item>
+              <Item>
+                <ID>Small Cap,Materials</ID>
+                <Row>8</Row>
+                <Column>4</Column>
+                <Height>0.8</Height>
+                <Scale>20</Scale>
+              </Item>
+            </CurrentDay>
+            <PastDays>
+              <Day>
+                <Item>
+                  <ID>Small Cap,Consumer</ID>
+                  <Height>4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Small Cap,Materials</ID>
+                  <Height>2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Small Cap Growth,Consumer</ID>
+                  <Height>1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap,Industrials</ID>
+                  <Height>3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap,Technology</ID>
+                  <Height>-4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap,Telecommunications</ID>
+                  <Height>1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap Value,Utilities</ID>
+                  <Height>-1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap Growth,Consumer</ID>
+                  <Height>3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap Growth,Materials</ID>
+                  <Height>-3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap,Consumer</ID>
+                  <Height>1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap,Financials</ID>
+                  <Height>1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap,Healthcare</ID>
+                  <Height>-2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Value,Financials</ID>
+                  <Height>-2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Value,Technology</ID>
+                  <Height>4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Value,Utilities</ID>
+                  <Height>3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Growth,Materials</ID>
+                  <Height>2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Growth,Utilities</ID>
+                  <Height>0.0</Height>
+                </Item>
+              </Day>
+              <Day>
+                <Item>
+                  <ID>Small Cap,Consumer</ID>
+                  <Height>-3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Small Cap,Materials</ID>
+                  <Height>-2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Small Cap Growth,Consumer</ID>
+                  <Height>2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap,Industrials</ID>
+                  <Height>-4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap,Technology</ID>
+                  <Height>4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap,Telecommunications</ID>
+                  <Height>3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap Value,Utilities</ID>
+                  <Height>1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap Growth,Consumer</ID>
+                  <Height>-1.0</Height>
+                </Item>
+                <Item>
+                  <ID>Mid Cap Growth,Materials</ID>
+                  <Height>2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap,Consumer</ID>
+                  <Height>-4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap,Financials</ID>
+                  <Height>-2.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap,Healthcare</ID>
+                  <Height>-4.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Value,Financials</ID>
+                  <Height>-0.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Value,Technology</ID>
+                  <Height>-0.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Value,Utilities</ID>
+                  <Height>-3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Growth,Materials</ID>
+                  <Height>3.0</Height>
+                </Item>
+                <Item>
+                  <ID>Large Cap Growth,Utilities</ID>
+                  <Height>1.0</Height>
+                </Item>
+              </Day>
+
+
+            </PastDays>
+            <Dow>
+              <Height>3.0</Height>
+              <Height>2.0</Height>
+              <Height>1.0</Height>
+              <Height>-2.0</Height>
+            </Dow>
+          </Data>
+        </x:XData>
+      </XmlDataProvider>
+      
+      <Style x:Key="List3DStyle" TargetType="{x:Type local:List3D}">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type local:List3D}">
+              <Grid>
+                <Viewport3D IsHitTestVisible="False" Focusable="false" ClipToBounds="true" x:Name="List3DViewport3D" />
+                <Grid/>
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+
+      <Point3D x:Key="CameraPosition" X="-0.5" Y="20" Z="37" />
+      <Vector3D x:Key="CameraLookDirection" X="0" Y="-0.5" Z="-1.0" />
+      <Vector3D x:Key="GraphTranslation" X="0" Y="1" Z="-5.0" />
+      <Vector3D x:Key="GraphScale" X="0.9" Y="0.9" Z="0.9" />
+      <ImageBrush x:Key="ValuationLabel" ImageSource="Valuationlabel.png" />
+      <ImageBrush x:Key="SectorLabel" ImageSource="SectorLabel.png" />
+    
+    <ImageBrush x:Key="Consumer" ImageSource="LABELS\LABEL_CONSUMER.PNG" />
+    <ImageBrush x:Key="Financials" ImageSource="LABELS\LABEL_FINANCIALS.png" />
+    <ImageBrush x:Key="Healthcare" ImageSource="LABELS\LABEL_HEALTHCARE.png" />
+    <ImageBrush x:Key="Industrials" ImageSource="LABELS\LABELS_INDUSTRIALS.png" />
+    <ImageBrush x:Key="Materials" ImageSource="LABELS\LABEL_MATERIALS.png" />
+    <ImageBrush x:Key="Technology" ImageSource="LABELS\LABEL_TECHNOLOGY.png" />
+    <ImageBrush x:Key="Telecommunications" ImageSource="LABELS\LABEL_TELECOMMUNICATIONS.png" />
+    <ImageBrush x:Key="Utilities" ImageSource="LABELS\LABEL_UTILITIES.png" />
+
+    <ImageBrush x:Key="Small Cap" ImageSource="LABELS\LABEL_SMALLCAP.png" />
+    <ImageBrush x:Key="Small Cap Value" ImageSource="LABELS\LABELS_SMALLCAPVALUE.png" />
+    <ImageBrush x:Key="Small Cap Growth" ImageSource="LABELS\LABLE_SMALLCAPGROWTH.png" />
+    <ImageBrush x:Key="Mid Cap" ImageSource="LABELS\LABEL_MIDCAP.png" />
+    <ImageBrush x:Key="Mid Cap Value" ImageSource="LABELS\LABEL_MIDCAPVALUE.png" />
+    <ImageBrush x:Key="Mid Cap Growth" ImageSource="LABELS\LABEL_MIDCAPGROWTH.png" />
+    <ImageBrush x:Key="Large Cap" ImageSource="LABELS\LABEL_LARGECAP.png" />
+    <ImageBrush x:Key="Large Cap Value" ImageSource="LABELS\LABEL_LARGECAPVALUE.png" />
+    <ImageBrush x:Key="Large Cap Growth" ImageSource="LABELS\LABEL_LARGECAPGROWTH.png" />
+    
+  </Grid.Resources>
+
+ 
+  <local:List3D Background="Blue" x:Name="GraphList3D"  Style="{DynamicResource List3DStyle}" 
+                ItemsSource="{Binding Source={StaticResource myData}, XPath=CurrentDay/Item}"
+                FieldOfView="20" 
+                CameraPosition="{StaticResource CameraPosition}"
+                CameraLookDirection="{StaticResource CameraLookDirection}"
+                HaloXAxisAngle="0"
+                HaloYAxisAngle="-35"
+                HaloZAxisAngle="0"
+                HaloTranslation="{StaticResource GraphTranslation}"
+                HaloScale="{StaticResource GraphScale}"
+                Grid.Column="1"
+						/>
+
+</Grid>

@@ -1,0 +1,46 @@
+C:\Users\Jonathan_Moore\Downloads\SunGard sample financial app\JavaScript\SunGard\bin\Debug\resources.pri
+C:\Users\Jonathan_Moore\Downloads\SunGard sample financial app\JavaScript\SunGard\bin\Debug\AppxManifest.xml
+C:\Users\Jonathan_Moore\Downloads\SunGard sample financial app\JavaScript\SunGard\bin\Debug\SunGard.build.appxrecipe
+C:\Users\Jonathan_Moore\Downloads\SunGard sample financial app\JavaScript\SunGard\bld\Debug\priconfig.xml.intermediate
+C:\Users\Jonathan_Moore\Downloads\SunGard sample financial app\JavaScript\SunGard\bld\Debug\layout.resfiles.intermediate
+C:\Users\Jonathan_Moore\Downloads\SunGard sample financial app\JavaScript\SunGard\bld\Debug\resources.resfiles.intermediate
+C:\Users\Jonathan_Moore\Downloads\SunGard sample financial app\JavaScript\SunGard\bld\Debug\pri.resfiles.intermediate
+C:\Users\Jonathan_Moore\Downloads\SunGard sample financial app\JavaScript\SunGard\bld\Debug\priconfig.xml
+C:\Users\Jonathan_Moore\Downloads\SunGard sample financial app\JavaScript\SunGard\bld\Debug\layout.resfiles
+C:\Users\Jonathan_Moore\Downloads\SunGard sample financial app\JavaScript\SunGard\bld\Debug\resources.resfiles
+C:\Users\Jonathan_Moore\Downloads\SunGard sample financial app\JavaScript\SunGard\bld\Debug\pri.resfiles
+C:\Users\Jonathan_Moore\Downloads\SunGard sample financial app\JavaScript\SunGard\bld\Debug\LanguageQualifiers.txt
+C:\Users\Jonathan_Moore\Downloads\SunGard sample financial app\JavaScript\SunGard\bld\Debug\ProjectArchitectures.txt
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2012\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bin\Debug\resources.pri
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2012\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bin\Debug\AppxManifest.xml
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2012\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bin\Debug\SunGard.build.appxrecipe
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2012\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\priconfig.xml
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2012\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\layout.resfiles
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2012\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\resources.resfiles
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2012\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\pri.resfiles
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2012\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\LanguageQualifiers.txt
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2012\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\ProjectArchitectures.txt
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bin\Debug\resources.pri
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bin\Debug\AppxManifest.xml
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bin\Debug\SunGard.build.appxrecipe
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\priconfig.xml
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\priconfig.xml.intermediate
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\layout.resfiles
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\layout.resfiles.intermediate
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\resources.resfiles
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\resources.resfiles.intermediate
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\pri.resfiles
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\pri.resfiles.intermediate
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\qualifiers.txt
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\qualifiers.txt.intermediate
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Jonathan_Moore\Documents\Visual Studio 2013\Source Control\projects\MyApps\Investments\JavaScript\SunGard\bld\Debug\ProjectArchitectures.txt
+D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\bin\Debug\resources.pri
+D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\bin\Debug\AppxManifest.xml
+D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\bin\Debug\SunGard.build.appxrecipe
+D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\bld\Debug\priconfig.xml
+D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\bld\Debug\layout.resfiles
+D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\bld\Debug\resources.resfiles
+D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\bld\Debug\pri.resfiles
+D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\bld\Debug\LanguageQualifiers.txt
+D:\jdm7dv\office\Wealth\Portfolio\JavaScript\SunGard\bld\Debug\ProjectArchitectures.txt

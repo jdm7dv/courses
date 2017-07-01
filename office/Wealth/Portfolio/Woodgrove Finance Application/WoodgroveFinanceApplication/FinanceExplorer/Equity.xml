@@ -1,0 +1,1837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Portfolio xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="Equity.xsd" generated="2006-03-13T23:23:48">
+  <Equity>
+    <Symbol>XOM</Symbol>
+    <Name>Exxon Mobil Corp</Name>
+    <Shares>45</Shares>
+    <TotalValue>2683.79997253418</TotalValue>
+    <NewsFeed>
+      <rss version="2.0">
+        <channel>
+          <title>Yahoo! Finance: XOM News</title>
+          <copyright>Copyright (c) 2006 Yahoo! Inc. All rights reserved.</copyright>
+          <link>http://finance.yahoo.com/q/h?s=xom</link>
+          <description>Latest Financial News for EXXON MOBIL CP</description>
+          <language>en-us</language>
+          <lastBuildDate>Sat, 11 Mar 2006 01:45:00 GMT</lastBuildDate>
+          <image>
+            <url>http://us.news2.yimg.com/us.yimg.com/p/fi/pr/40197.gif</url>
+            <title>Yahoo! Finance</title>
+            <link>http://finance.yahoo.com</link>
+            <width>144</width>
+            <height>17</height>
+          </image>
+          <item>
+            <title>[$$] Havas Selects Rodes as CEO, Cuts Payout as Net Falls Short (at The Wall Street Journal Online)</title>
+            <link>http://us.rd.yahoo.com/finance/external/wsj/rss/SIG=11popmcgg/*http://online.wsj.com/article/SB114203977421495510.html?mod=yahoo_hs&amp;ru=yahoo</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/3782252556</guid>
+            <pubDate>Sat, 11 Mar 2006 01:45:00 GMT</pubDate>
+          </item>
+          <item>
+            <title>[$$] Energy (at The Wall Street Journal Online)</title>
+            <link>http://us.rd.yahoo.com/finance/external/wsj/rss/SIG=11pkcavta/*http://online.wsj.com/article/SB114201978212595026.html?mod=yahoo_hs&amp;ru=yahoo</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/3502975761</guid>
+            <pubDate>Sat, 11 Mar 2006 00:37:00 GMT</pubDate>
+          </item>
+          <item>
+            <title>Energy Stocks: Oil stocks rally with broad market to higher close (at MarketWatch)</title>
+            <link>http://us.rd.yahoo.com/finance/external/cbsm/rss/SIG=11g622ocl/*http://www.marketwatch.com/news/yhoo/story.asp?source=blq/yhoo&amp;siteid=yhoo&amp;dist=yhoo&amp;guid=%7B4DD8570E%2D1FCB%2D4945%2D9BE8%2D86D89391128F%7D</link>
+            <description>Oil stocks rode a late-week rally to finish Friday&apos;s session mostly higher, catching enough momentum from the broad market to shake off the bearish effects of another down day in the crude oil pit.</description>
+            <guid isPermaLink="false">yahoo_finance/3055906811</guid>
+            <pubDate>Fri, 10 Mar 2006 22:08:47 GMT</pubDate>
+          </item>
+          <item>
+            <title>UPDATE - Alaska&apos;s North Slope sees its biggest oil spill (at Reuters)</title>
+            <link>http://us.rd.yahoo.com/finance/external/reuters/rss/SIG=11vg30000/*http://yahoo.reuters.com/financeQuoteCompanyNewsArticle.jhtml?duid=mtfh00045_2006-03-10_21-33-24_n10312344_newsml</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/303842444</guid>
+            <pubDate>Fri, 10 Mar 2006 21:33:24 GMT</pubDate>
+          </item>
+          <item>
+            <title>Crude Futures End Lower (at TheStreet.com)</title>
+            <link>http://us.rd.yahoo.com/finance/external/tsmfe/rss/SIG=11ubu6l6s/*http://www.thestreet.com/_yahoo/markets/energy/10273020.html?cm_ven=YAHOO&amp;cm_cat=FREE&amp;cm_ite=NA</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/3142430033</guid>
+            <pubDate>Fri, 10 Mar 2006 19:57:10 GMT</pubDate>
+          </item>
+          <item>
+            <title>BP set to seal leaking Alaska oil pipeline (at MarketWatch)</title>
+            <link>http://us.rd.yahoo.com/finance/external/cbsm/rss/SIG=11g622ocl/*http://www.marketwatch.com/news/yhoo/story.asp?source=blq/yhoo&amp;siteid=yhoo&amp;dist=yhoo&amp;guid=%7BDC3B7830%2DE553%2D40F2%2D94BD%2D288E25A96F81%7D</link>
+            <description>BP Plc. said Friday it hoped to soon wrap up repairs to a leaking pipeline on Alaska&apos;s giant Prudhoe oil field that has already spilled over 200,000 gallons of crude, one of the biggest spills ever seen on the state&apos;s North Slope.</description>
+            <guid isPermaLink="false">yahoo_finance/291345523</guid>
+            <pubDate>Fri, 10 Mar 2006 19:48:08 GMT</pubDate>
+          </item>
+          <item>
+            <title>UPDATE - Petro-Canada&apos;s Terra Nova oil output cut (at Reuters)</title>
+            <link>http://us.rd.yahoo.com/finance/external/reuters/rss/SIG=11vg30000/*http://yahoo.reuters.com/financeQuoteCompanyNewsArticle.jhtml?duid=mtfh96040_2006-03-10_18-14-59_n10289133_newsml</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/3120153638</guid>
+            <pubDate>Fri, 10 Mar 2006 18:14:59 GMT</pubDate>
+          </item>
+          <item>
+            <title>Oil Stocks Look Golden (at Forbes.com)</title>
+            <link>http://us.rd.yahoo.com/finance/external/forbes/rss/SIG=129vh3d61/*http://www.forbes.com/2006/03/10/exxon-shell-oil-cx_ms_0309sosnoff.html?partner=yahootix</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/4288593450</guid>
+            <pubDate>Fri, 10 Mar 2006 17:40:00 GMT</pubDate>
+          </item>
+          <item>
+            <title>ExxonMobil Gives NASCAR Fans a Chance to Be an Honorary Member of a Penske Racing Pit Crew (Business Wire)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/bw/060310/20060310005346.html?.v=1</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/688136571</guid>
+            <pubDate>Fri, 10 Mar 2006 16:00:00 GMT</pubDate>
+          </item>
+          <item>
+            <title>Congress Makes Another Stupid Move On Trade (at Forbes.com)</title>
+            <link>http://us.rd.yahoo.com/finance/external/forbes/rss/SIG=12hfssgvi/*http://www.forbes.com/2006/03/09/trade-dubai-protectionism_cx_pm_0309notes.html?partner=yahootix</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/704662638</guid>
+            <pubDate>Fri, 10 Mar 2006 11:00:00 GMT</pubDate>
+          </item>
+          <item>
+            <title>US senator mulls plan to rein in big oil, OPEC (at Reuters)</title>
+            <link>http://us.rd.yahoo.com/finance/external/reuters/rss/SIG=11vg30000/*http://yahoo.reuters.com/financeQuoteCompanyNewsArticle.jhtml?duid=mtfh75529_2006-03-09_23-40-05_n09417962_newsml</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/470030632</guid>
+            <pubDate>Thu, 9 Mar 2006 23:40:05 GMT</pubDate>
+          </item>
+          <item>
+            <title>Video: A Bonanza Below (at Forbes.com)</title>
+            <link>http://us.rd.yahoo.com/finance/external/forbes/rss/SIG=10uoa9ous/*http://www.forbes.com/video/?video_url=http://www.forbes.com/video/fvn/lists/al_06billionaires_vardi&amp;id=al_06billionaires_vardi&amp;title=Video%3A+A+Bonanza+Below&amp;partner=yahootix</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/3895386170</guid>
+            <pubDate>Thu, 9 Mar 2006 23:00:00 GMT</pubDate>
+          </item>
+          <item>
+            <title>Energy Stocks: Oil stocks end lower, tripped by inventory data (at MarketWatch)</title>
+            <link>http://us.rd.yahoo.com/finance/external/cbsm/rss/SIG=11g622ocl/*http://www.marketwatch.com/news/yhoo/story.asp?source=blq/yhoo&amp;siteid=yhoo&amp;dist=yhoo&amp;guid=%7B531BF1DF%2D6D3B%2D4B1C%2DA782%2D3D105E34591B%7D</link>
+            <description>Bearish U.S. natural gas supply data triggered a sector sell-off Thursday from which energy prices gradually recovered and energy stocks did not.</description>
+            <guid isPermaLink="false">yahoo_finance/3978880998</guid>
+            <pubDate>Thu, 9 Mar 2006 22:02:42 GMT</pubDate>
+          </item>
+          <item>
+            <title>Stocks Up Slightly on Japan News (at BusinessWeek Online)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://us.rd.yahoo.com/finance/editorial/xbizwk/SIG=12eqrv9ff/*http://yahoo.businessweek.com/investor/content/mar2006/pi20060309_553708.htm</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/2403840984</guid>
+            <pubDate>Thu, 9 Mar 2006 21:59:01 GMT</pubDate>
+          </item>
+          <item>
+            <title>Stocks fall on Google&apos;s slide, payroll caution (Reuters)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/rb/060309/markets_stocks.html?.v=14</link>
+            <description>U.S. stocks slipped on Thursday as the Nasdaq Composite Index registered its sixth straight day of losses, hurt by a drop in the shares of Web search company Google Inc. .</description>
+            <guid isPermaLink="false">yahoo_finance/938008647</guid>
+            <pubDate>Thu, 9 Mar 2006 21:58:01 GMT</pubDate>
+          </item>
+          <item>
+            <title>[$$] Natural Gas Stocks Are on Slow Burn (at RealMoney by TheStreet.com)</title>
+            <link>http://us.rd.yahoo.com/finance/external/tsmpe/rss/SIG=126ote913/*http://www.thestreet.com/p/_yahoo/rmoney/jimcramerblog/10272763.html?cm_ven=YAHOO&amp;cm_cat=PREMIUM&amp;cm_ite=003190</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/43432614</guid>
+            <pubDate>Thu, 9 Mar 2006 16:25:56 GMT</pubDate>
+          </item>
+          <item>
+            <title>Signum Oil Analysis from ExxonMobil Delivers Technical Expertise and Convenience (Business Wire)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/bw/060309/20060309005053.html?.v=2</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/3221508621</guid>
+            <pubDate>Thu, 9 Mar 2006 16:00:00 GMT</pubDate>
+          </item>
+          <item>
+            <title>Exxon to Appeal Aceh Torture Case Ruling (AP)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/ap/060309/indonesia_exxon_torture.html?.v=2</link>
+            <description>Exxon Mobil Corp. said Thursday it would appeal the ruling by a U.S. judge to allow villagers to sue the oil giant for alleged abuses by Indonesian troops at facilities it operated in Aceh province.</description>
+            <guid isPermaLink="false">yahoo_finance/1373544045</guid>
+            <pubDate>Thu, 9 Mar 2006 14:06:14 GMT</pubDate>
+          </item>
+          <item>
+            <title>An All-ETF Portfolio? (at Motley Fool)</title>
+            <link>http://us.rd.yahoo.com/finance/external/mfool/rss/SIG=121vd2fd3/*http://www.fool.com/news/commentary/2006/commentary06030901.htm?source=eptyholnk303100&amp;logvisit=y&amp;npu=y</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/2995264787</guid>
+            <pubDate>Thu, 9 Mar 2006 13:41:29 GMT</pubDate>
+          </item>
+          <item>
+            <title>An Old Fund Takes a Long View (at BusinessWeek Online)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://us.rd.yahoo.com/finance/editorial/xbizwk/SIG=12e7uqdod/*http://yahoo.businessweek.com/investor/content/mar2006/pi20060309_037847.htm</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/4219698925</guid>
+            <pubDate>Thu, 9 Mar 2006 13:08:42 GMT</pubDate>
+          </item>
+        </channel>
+      </rss>
+    </NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>59.6399993896484</Last_x0020_Price>
+    <Sector>Utilities</Sector>
+    <MarketCapital>364181696392.99</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>7.7728807926178E-03</PercentChange>
+    <PEratio>10.400</PEratio>
+    <CurrentRatio>1.584</CurrentRatio>
+    <PEG>1.55</PEG>
+    <ValueCalc>Value</ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap Value</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>XOM</Symbol>
+      <LastTrade>59.6399993896484</LastTrade>
+      <TradeTime>2006-03-13T16:01:44</TradeTime>
+      <Change>0.459999084472656</Change>
+      <ChangePercent>7.7728807926178E-03</ChangePercent>
+      <PrevClose>59.1800003051758</PrevClose>
+      <Open>59.6800003051758</Open>
+      <Bid>---</Bid>
+      <BidSize>1100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>400</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>59.9599990844727</DayHigh>
+      <DayLow>59.4500007629395</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>65.9599990844727</_52WeekHigh>
+      <_52WeekLow>52.7799987792969</_52WeekLow>
+      <Volume>16885400</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>364181696392.99</MarketCap>
+      <PE>10.400</PE>
+      <EPS>5.71000003814697</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>PTR</Symbol>
+    <Name>PetroChina Co Ltd</Name>
+    <Shares>65</Shares>
+    <TotalValue>6266.65023803711</TotalValue>
+    <NewsFeed>
+      <rss version="2.0">
+        <channel>
+          <title>Yahoo! Finance: ARLP News</title>
+          <copyright>Copyright (c) 2006 Yahoo! Inc. All rights reserved.</copyright>
+          <link>http://finance.yahoo.com/q/h?s=arlp</link>
+          <description>Latest Financial News for ALLIANCE RES PTNR</description>
+          <language>en-us</language>
+          <lastBuildDate>Thu, 9 Mar 2006 16:44:13 GMT</lastBuildDate>
+          <image>
+            <url>http://us.news2.yimg.com/us.yimg.com/p/fi/pr/40197.gif</url>
+            <title>Yahoo! Finance</title>
+            <link>http://finance.yahoo.com</link>
+            <width>144</width>
+            <height>17</height>
+          </image>
+          <item>
+            <title>ALLIANCE RESOURCE PARTNERS LP Files SEC form 8-K, Regulation FD Disclosure, Financial Statements and Exhibits (EDGAR Online)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/e/060309/arlp8-k.html</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/3571195201</guid>
+            <pubDate>Thu, 9 Mar 2006 16:44:13 GMT</pubDate>
+          </item>
+          <item>
+            <title>Alliance CEO to Present at Master Limited Partnership Investor Conference (Business Wire)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/bw/060306/20060306005978.html?.v=1</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/2855857184</guid>
+            <pubDate>Mon, 6 Mar 2006 18:38:00 GMT</pubDate>
+          </item>
+          <item>
+            <title>ALLIANCE RESOURCE PARTNERS LP Files SEC form 8-K, Results of Operations, Financial Statements and Exhibits (EDGAR Online)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/e/060201/arlp8-k.html</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/3159816570</guid>
+            <pubDate>Wed, 1 Feb 2006 18:01:13 GMT</pubDate>
+          </item>
+          <item>
+            <title>New Star Analyst Rankings for ALLIANCE RES PTNR (StarMine)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/a/r/a/arlp.html</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/2644541239</guid>
+            <pubDate>Tue, 31 Jan 2006 15:41:06 GMT</pubDate>
+          </item>
+          <item>
+            <title>Alliance Resource Partners, L.P. Provides Assistance to Investors Comparing Reported Financial Results to Consensus Estimates (Business Wire)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/bw/060130/20060130006252.html?.v=1</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/2197702000</guid>
+            <pubDate>Tue, 31 Jan 2006 02:05:00 GMT</pubDate>
+          </item>
+          <item>
+            <title>Alliance Resource 4Q Profit Increases (AP)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/ap/060130/earns_alliance_resource.html?.v=1</link>
+            <description>Alliance Resource Partners LP on Monday reported fourth-quarter profit surged as the coal mine operator realized stronger production and better prices.</description>
+            <guid isPermaLink="false">yahoo_finance/3666148015</guid>
+            <pubDate>Mon, 30 Jan 2006 12:47:49 GMT</pubDate>
+          </item>
+          <item>
+            <title>ALLIANCE RESOURCE PARTNERS, L.P. Reports Record Annual and Quarterly Financial and Operating Results (Business Wire)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/bw/060130/20060130005416.html?.v=1</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/2396379719</guid>
+            <pubDate>Mon, 30 Jan 2006 11:00:00 GMT</pubDate>
+          </item>
+          <item>
+            <title>ALLIANCE RESOURCE PARTNERS LP Files SEC form 8-K, Other Events, Financial Statements and Exhibits (EDGAR Online)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/e/060103/arlp8-k.html</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/2616744505</guid>
+            <pubDate>Tue, 3 Jan 2006 20:31:32 GMT</pubDate>
+          </item>
+          <item>
+            <title>Allegheny Energy in coal lease deal (bizjournals.com)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/bizj/051229/1208896.html?.v=1</link>
+            <description>Allegheny Energy Inc. has entered into a coal lease and sales agreement with Penn Ridge Coal, LLC, a subsidiary of Alliance Resource Partners L.P.</description>
+            <guid isPermaLink="false">yahoo_finance/3796184902</guid>
+            <pubDate>Thu, 29 Dec 2005 16:06:06 GMT</pubDate>
+          </item>
+          <item>
+            <title>Allegheny Energy, Alliance in Coal Pact (AP)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/ap/051229/allegheny_energy_contract.html?.v=1</link>
+            <description>Allegheny Energy Inc., a provider of electricity and natural gas, said Thursday it agreed with coal mine owner Alliance Resource Partners LP to develop and mine Allegheny&apos;s coal reserve in Washington County, Pa., which Allegheny said would provide it with a long-term supply of coal for its power plants.</description>
+            <guid isPermaLink="false">yahoo_finance/1555244367</guid>
+            <pubDate>Thu, 29 Dec 2005 15:39:59 GMT</pubDate>
+          </item>
+          <item>
+            <title>Alliance Resource Partners, L.P. Announces Acquisition of Coal Reserves, Execution of Coal Sales Agreement, and Plans to Develop New Pennsylvania Coal Mine (Business Wire)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/bw/051229/20051229005028.html?.v=1</link>
+            <description>TULSA, Okla.----Dec. 29, 2005--Alliance Resource Partners, L.P. today announced that its subsidiary, Penn Ridge Coal, LLC , has entered into a coal lease and coal sales agreement with affiliates of Allegheny Energy, Inc. to pursue development of Allegheny&apos;s Buffalo Coal Reserve in Washington County, Pennsylvania.</description>
+            <guid isPermaLink="false">yahoo_finance/3187288770</guid>
+            <pubDate>Thu, 29 Dec 2005 14:00:00 GMT</pubDate>
+          </item>
+          <item>
+            <title>ALLIANCE RESOURCE PARTNERS LP Files SEC form 8-K, Other Events, Financial Statements and Exhibits (EDGAR Online)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/e/051221/arlp8-k.html</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/3921746888</guid>
+            <pubDate>Wed, 21 Dec 2005 20:20:31 GMT</pubDate>
+          </item>
+          <item>
+            <title>Alliance Resource Reaffirms Guidance (AP)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/ap/051221/alliance_resource_guidance.html?.v=1</link>
+            <description>Coal producer Alliance Resource Partners LP reaffirmed its 2005 guidance Wednesday and said it entered into a six-year agreement to sell 23.5 million tons of coal to Louisville Gas and Electric Co. beginning Jan. 1.</description>
+            <guid isPermaLink="false">yahoo_finance/793402271</guid>
+            <pubDate>Wed, 21 Dec 2005 17:03:21 GMT</pubDate>
+          </item>
+          <item>
+            <title>Alliance Resource Partners, L.P. Announces Increased Sales of Illinois Basin Coal to LG&amp;E Beginning in 2006 (Business Wire)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/bw/051221/20051221005182.html?.v=1</link>
+            <description>TULSA, Okla.----Dec. 21, 2005--Alliance Resource Partners, L.P. today announced that its subsidiary, Alliance Coal, LLC, , has entered into a new six-year, 23.5 million ton coal sales agreement, effective January 1, 2006, with Louisville Gas and Electric Company, .</description>
+            <guid isPermaLink="false">yahoo_finance/4172322883</guid>
+            <pubDate>Wed, 21 Dec 2005 11:00:00 GMT</pubDate>
+          </item>
+          <item>
+            <title>ALLIANCE RESOURCE PARTNERS LP Files SEC form 8-K, Regulation FD Disclosure (EDGAR Online)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/e/051122/arlp8-k.html</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/511790044</guid>
+            <pubDate>Tue, 22 Nov 2005 22:01:13 GMT</pubDate>
+          </item>
+          <item>
+            <title>ALLIANCE RESOURCE PARTNERS LP Financials (EDGAR Online Financials)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://finance.yahoo.com/q/is?s=arlp</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/1321632049</guid>
+            <pubDate>Wed, 16 Nov 2005 14:00:00 GMT</pubDate>
+          </item>
+          <item>
+            <title>ALLIANCE RESOURCE PARTNERS LP Files SEC form 10-Q, Quarterly Report (EDGAR Online)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/e/051109/arlp10-q.html</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/3065467484</guid>
+            <pubDate>Wed, 9 Nov 2005 21:18:22 GMT</pubDate>
+          </item>
+          <item>
+            <title>ALLIANCE RESOURCE PARTNERS LP Files SEC form 8-K, Results of Operations, Change in FYE or Articles, Financial Stateme (EDGAR Online)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/e/051027/arlp8-k.html</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/3156068892</guid>
+            <pubDate>Thu, 27 Oct 2005 18:23:25 GMT</pubDate>
+          </item>
+          <item>
+            <title>ALLIANCE RESOURCE PARTNERS LP Files SEC form 8-K, Entry into Material Agreement, Termination of Material Agreement, F (EDGAR Online)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/e/051026/arlp8-k.html</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/3124426579</guid>
+            <pubDate>Wed, 26 Oct 2005 16:05:45 GMT</pubDate>
+          </item>
+          <item>
+            <title>ALLIANCE RESOURCE PARTNERS LP Files SEC form 8-K, Regulation FD Disclosure, Financial Statements and Exhibits (EDGAR Online)</title>
+            <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/e/050819/arlp8-k.html</link>
+            <description></description>
+            <guid isPermaLink="false">yahoo_finance/2741687972</guid>
+            <pubDate>Fri, 19 Aug 2005 15:26:44 GMT</pubDate>
+          </item>
+        </channel>
+      </rss>
+    </NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicarlp.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicarlp.png"  />
+    <Last_x0020_Price>96.4100036621094</Last_x0020_Price>
+    <Sector>Utilities</Sector>
+    <MarketCapital>169512117658.875</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>1.46285736560822E-02</PercentChange>
+    <PEratio>11.600</PEratio>
+    <CurrentRatio>1.189</CurrentRatio>
+    <PEG>0.31</PEG>
+    <ValueCalc>Value</ValueCalc>
+    <GrowthCalc>Growth</GrowthCalc>
+    <ValCat>Large Cap Growth</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>PTR</Symbol>
+      <LastTrade>96.4100036621094</LastTrade>
+      <TradeTime>2006-03-13T16:00:36</TradeTime>
+      <Change>1.39000701904297</Change>
+      <ChangePercent>1.46285736560822E-02</ChangePercent>
+      <PrevClose>95.0199966430664</PrevClose>
+      <Open>95.5</Open>
+      <Bid>---</Bid>
+      <BidSize>1000</BidSize>
+      <Ask>---</Ask>
+      <AskSize>1000</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>96.75</DayHigh>
+      <DayLow>95.370002746582</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>102</_52WeekHigh>
+      <_52WeekLow>59.25</_52WeekLow>
+      <Volume>378700</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>169512117658.875</MarketCap>
+      <PE>11.600</PE>
+      <EPS>8.21000003814697</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>YPF</Symbol>
+    <Name>Yacimientos Petroliferos Fiscales SA</Name>
+    <Shares>75</Shares>
+    <TotalValue>4050</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicypf.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicypf.png"  />
+    <Last_x0020_Price>54</Last_x0020_Price>
+    <Sector>Utilities</Sector>
+    <MarketCapital>21238902000</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>-2.87769508361816E-02</PercentChange>
+    <PEratio>12.800</PEratio>
+    <CurrentRatio>1.682</CurrentRatio>
+    <PEG>na</PEG>
+    <ValueCalc>Value</ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap Value</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>YPF</Symbol>
+      <LastTrade>54</LastTrade>
+      <TradeTime>2006-03-13T16:01:11</TradeTime>
+      <Change>-1.59999847412109</Change>
+      <ChangePercent>-2.87769508361816E-02</ChangePercent>
+      <PrevClose>55.5999984741211</PrevClose>
+      <Open>55</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>55</DayHigh>
+      <DayLow>54</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>69.9800033569336</_52WeekHigh>
+      <_52WeekLow>48.9900016784668</_52WeekLow>
+      <Volume>1800</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>21238902000</MarketCap>
+      <PE>12.800</PE>
+      <EPS>4.3600001335144</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>PWI</Symbol>
+    <Name>PrimeWest Energy Trust</Name>
+    <Shares>200</Shares>
+    <TotalValue>5641.99981689454</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicpwi.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicpwi.png"  />
+    <Last_x0020_Price>28.2099990844727</Last_x0020_Price>
+    <Sector>Utilities</Sector>
+    <MarketCapital>2247377787.0636</MarketCapital>
+    <Valuation>Mid Cap</Valuation>
+    <PercentChange>2.17312002182007E-02</PercentChange>
+    <PEratio>12.100</PEratio>
+    <CurrentRatio>1.142</CurrentRatio>
+    <PEG>na</PEG>
+    <ValueCalc>Value</ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Mid Cap Value</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>PWI</Symbol>
+      <LastTrade>28.2099990844727</LastTrade>
+      <TradeTime>2006-03-13T15:59:58</TradeTime>
+      <Change>0.599998474121094</Change>
+      <ChangePercent>2.17312002182007E-02</ChangePercent>
+      <PrevClose>27.6100006103516</PrevClose>
+      <Open>27.5799999237061</Open>
+      <Bid>---</Bid>
+      <BidSize>1000</BidSize>
+      <Ask>---</Ask>
+      <AskSize>1000</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>28.25</DayHigh>
+      <DayLow>27.5599994659424</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>32.9000015258789</_52WeekHigh>
+      <_52WeekLow>22</_52WeekLow>
+      <Volume>483900</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>2247377787.0636</MarketCap>
+      <PE>12.100</PE>
+      <EPS>2.28999996185303</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>DVN</Symbol>
+    <Name>Devon Energy</Name>
+    <Shares>128</Shares>
+    <TotalValue>7568.64013671875</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>59.1300010681152</Last_x0020_Price>
+    <Sector>Utilities</Sector>
+    <MarketCapital>26127477921.9627</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>4.23515939712524E-02</PercentChange>
+    <PEratio>9.100</PEratio>
+    <CurrentRatio>1.434</CurrentRatio>
+    <PEG>0.90</PEG>
+    <ValueCalc>Value</ValueCalc>
+    <GrowthCalc>Growth</GrowthCalc>
+    <ValCat>Large Cap Growth</ValCat>
+    <MomentumCalc>Momentum</MomentumCalc>
+    <Summary>
+      <Symbol>DVN</Symbol>
+      <LastTrade>59.1300010681152</LastTrade>
+      <TradeTime>2006-03-13T16:00:36</TradeTime>
+      <Change>2.40250015258789</Change>
+      <ChangePercent>4.23515939712524E-02</ChangePercent>
+      <PrevClose>56.7275009155273</PrevClose>
+      <Open>57.7200012207031</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>59.4000015258789</DayHigh>
+      <DayLow>57.4000015258789</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>70.3499984741211</_52WeekHigh>
+      <_52WeekLow>40.5999984741211</_52WeekLow>
+      <Volume>4558400</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>26127477921.9627</MarketCap>
+      <PE>9.100</PE>
+      <EPS>6.26000022888184</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>AOC</Symbol>
+    <Name>Aon Corp</Name>
+    <Shares>220</Shares>
+    <TotalValue>8888.00033569336</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>40.4000015258789</Last_x0020_Price>
+    <Sector>Financials</Sector>
+    <MarketCapital>13007022891.2659</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>6.4773827791214E-03</PercentChange>
+    <PEratio>18.500</PEratio>
+    <CurrentRatio>1.028</CurrentRatio>
+    <PEG>1.64</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>AOC</Symbol>
+      <LastTrade>40.4000015258789</LastTrade>
+      <TradeTime>2006-03-13T16:01:14</TradeTime>
+      <Change>0.260002136230469</Change>
+      <ChangePercent>6.4773827791214E-03</ChangePercent>
+      <PrevClose>40.1399993896484</PrevClose>
+      <Open>40.0200004577637</Open>
+      <Bid>---</Bid>
+      <BidSize>0</BidSize>
+      <Ask>---</Ask>
+      <AskSize>600</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>40.5800018310547</DayHigh>
+      <DayLow>40</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>40.5800018310547</_52WeekHigh>
+      <_52WeekLow>20.6399993896484</_52WeekLow>
+      <Volume>1424500</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>13007022891.2659</MarketCap>
+      <PE>18.500</PE>
+      <EPS>2.17000007629395</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>AIZ</Symbol>
+    <Name>Assurant Inc</Name>
+    <Shares>100</Shares>
+    <TotalValue>4575</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>45.75</Last_x0020_Price>
+    <Sector>Financials</Sector>
+    <MarketCapital>5988537750</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>3.28950732946396E-03</PercentChange>
+    <PEratio>13.000</PEratio>
+    <CurrentRatio>1.585</CurrentRatio>
+    <PEG>1.19</PEG>
+    <ValueCalc>Value</ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap Value</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>AIZ</Symbol>
+      <LastTrade>45.75</LastTrade>
+      <TradeTime>2006-03-13T16:01:32</TradeTime>
+      <Change>0.150001525878906</Change>
+      <ChangePercent>3.28950732946396E-03</ChangePercent>
+      <PrevClose>45.5999984741211</PrevClose>
+      <Open>45.5800018310547</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>1000</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>46</DayHigh>
+      <DayLow>45.3899993896484</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>46.2999992370605</_52WeekHigh>
+      <_52WeekLow>31.8899993896484</_52WeekLow>
+      <Volume>376300</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>5988537750</MarketCap>
+      <PE>13.000</PE>
+      <EPS>3.5</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>BER</Symbol>
+    <Name>Berkley (W.R.)</Name>
+    <Shares>145</Shares>
+    <TotalValue>8544.85004425049</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>58.9300003051758</Last_x0020_Price>
+    <Sector>Financials</Sector>
+    <MarketCapital>7509685658.88977</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>1.08061933517456E-02</PercentChange>
+    <PEratio>14.300</PEratio>
+    <CurrentRatio>na</CurrentRatio>
+    <PEG>1.03</PEG>
+    <ValueCalc>Value</ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap Value</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>BER</Symbol>
+      <LastTrade>58.9300003051758</LastTrade>
+      <TradeTime>2006-03-13T16:03:22</TradeTime>
+      <Change>0.630001068115234</Change>
+      <ChangePercent>1.08061933517456E-02</ChangePercent>
+      <PrevClose>58.2999992370605</PrevClose>
+      <Open>58.7000007629395</Open>
+      <Bid>---</Bid>
+      <BidSize>800</BidSize>
+      <Ask>---</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>59.2200012207031</DayHigh>
+      <DayLow>58.4700012207031</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>59.4900016784668</_52WeekHigh>
+      <_52WeekLow>31.4599990844727</_52WeekLow>
+      <Volume>394800</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>7509685658.88977</MarketCap>
+      <PE>14.300</PE>
+      <EPS>4.07999992370605</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>PFG</Symbol>
+    <Name>Principal Financial Grp</Name>
+    <Shares>75</Shares>
+    <TotalValue>3644.99988555908</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>48.5999984741211</Last_x0020_Price>
+    <Sector>Financials</Sector>
+    <MarketCapital>13583699573.5168</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>0</PercentChange>
+    <PEratio>15.600</PEratio>
+    <CurrentRatio>6.022</CurrentRatio>
+    <PEG>1.27</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>PFG</Symbol>
+      <LastTrade>48.5999984741211</LastTrade>
+      <TradeTime>2006-03-13T16:01:21</TradeTime>
+      <Change>0</Change>
+      <ChangePercent>0</ChangePercent>
+      <PrevClose>48.5999984741211</PrevClose>
+      <Open>48.5</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>48.7900009155273</DayHigh>
+      <DayLow>48.4199981689453</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>52</_52WeekHigh>
+      <_52WeekLow>36.7999992370605</_52WeekLow>
+      <Volume>560300</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>13583699573.5168</MarketCap>
+      <PE>15.600</PE>
+      <EPS>3.10999989509583</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>ARM</Symbol>
+    <Name>ArvinMeritor Inc</Name>
+    <Shares>125</Shares>
+    <TotalValue>1816.2499666214</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>14.5299997329712</Last_x0020_Price>
+    <Sector>Consumer</Sector>
+    <MarketCapital>1023900021.18301</MarketCapital>
+    <Valuation>Mid Cap</Valuation>
+    <PercentChange>-2.06048667430878E-03</PercentChange>
+    <PEratio>37.300</PEratio>
+    <CurrentRatio>1.293</CurrentRatio>
+    <PEG>0.94</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc>Growth</GrowthCalc>
+    <ValCat>Mid Cap Growth</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>ARM</Symbol>
+      <LastTrade>14.5299997329712</LastTrade>
+      <TradeTime>2006-03-13T16:00:30</TradeTime>
+      <Change>-3.00006866455078E-02</Change>
+      <ChangePercent>-2.06048667430878E-03</ChangePercent>
+      <PrevClose>14.5600004196167</PrevClose>
+      <Open>14.6599998474121</Open>
+      <Bid>---</Bid>
+      <BidSize>500</BidSize>
+      <Ask>---</Ask>
+      <AskSize>1000</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>14.8000001907349</DayHigh>
+      <DayLow>14.4399995803833</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>20.2199993133545</_52WeekHigh>
+      <_52WeekLow>11.7399997711182</_52WeekLow>
+      <Volume>722700</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>1023900021.18301</MarketCap>
+      <PE>37.300</PE>
+      <EPS>0.389999985694885</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>HAR</Symbol>
+    <Name>Harman Intl</Name>
+    <Shares>50</Shares>
+    <TotalValue>5542.49992370605</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpichar.png" LargePic="pack://application:,,,/FinanceExplorer/bigpichar.png"  />
+    <Last_x0020_Price>110.849998474121</Last_x0020_Price>
+    <Sector>Consumer</Sector>
+    <MarketCapital>7276969849.83063</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>6.72053277492523E-03</PercentChange>
+    <PEratio>29.200</PEratio>
+    <CurrentRatio>1.731</CurrentRatio>
+    <PEG>1.18</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>HAR</Symbol>
+      <LastTrade>110.849998474121</LastTrade>
+      <TradeTime>2006-03-13T16:02:03</TradeTime>
+      <Change>0.739997863769531</Change>
+      <ChangePercent>6.72053277492523E-03</ChangePercent>
+      <PrevClose>110.110000610352</PrevClose>
+      <Open>110.069999694824</Open>
+      <Bid>---</Bid>
+      <BidSize>700</BidSize>
+      <Ask>---</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>111</DayHigh>
+      <DayLow>109.779998779297</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>113.940002441406</_52WeekHigh>
+      <_52WeekLow>68.5400009155273</_52WeekLow>
+      <Volume>418900</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>7276969849.83063</MarketCap>
+      <PE>29.200</PE>
+      <EPS>3.76999998092651</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>MW</Symbol>
+    <Name>Men&apos;s Wearhouse</Name>
+    <Shares>36</Shares>
+    <TotalValue>1283.75999450684</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>35.6599998474121</Last_x0020_Price>
+    <Sector>Consumer</Sector>
+    <MarketCapital>1884238731.93741</MarketCapital>
+    <Valuation>Mid Cap</Valuation>
+    <PercentChange>-2.79637813568115E-03</PercentChange>
+    <PEratio>20.600</PEratio>
+    <CurrentRatio>3.065</CurrentRatio>
+    <PEG>0.97</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc>Growth</GrowthCalc>
+    <ValCat>Mid Cap Growth</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>MW</Symbol>
+      <LastTrade>35.6599998474121</LastTrade>
+      <TradeTime>2006-03-13T16:01:28</TradeTime>
+      <Change>-9.99984741210938E-02</Change>
+      <ChangePercent>-2.79637813568115E-03</ChangePercent>
+      <PrevClose>35.7599983215332</PrevClose>
+      <Open>36.060001373291</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>36.6500015258789</DayHigh>
+      <DayLow>35.5999984741211</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>37.439998626709</_52WeekHigh>
+      <_52WeekLow>22.75</_52WeekLow>
+      <Volume>355900</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>1884238731.93741</MarketCap>
+      <PE>20.600</PE>
+      <EPS>1.74000000953674</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>SMRT</Symbol>
+    <Name>Stein Mart</Name>
+    <Shares>128</Shares>
+    <TotalValue>2228.47998046875</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>17.4099998474121</Last_x0020_Price>
+    <Sector>Consumer</Sector>
+    <MarketCapital>761200013.328552</MarketCapital>
+    <Valuation>Small Cap</Valuation>
+    <PercentChange>1.81286227703094E-02</PercentChange>
+    <PEratio>14.300</PEratio>
+    <CurrentRatio>2.2</CurrentRatio>
+    <PEG>0.74</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc>Growth</GrowthCalc>
+    <ValCat>Small Cap Growth</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>SMRT</Symbol>
+      <LastTrade>17.4099998474121</LastTrade>
+      <TradeTime>2006-03-13T16:00:01</TradeTime>
+      <Change>0.309999465942383</Change>
+      <ChangePercent>1.81286227703094E-02</ChangePercent>
+      <PrevClose>17.1000003814697</PrevClose>
+      <Open>17.2199993133545</Open>
+      <Bid>8.40</Bid>
+      <BidSize>100</BidSize>
+      <Ask>26.56</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>17.4799995422363</DayHigh>
+      <DayLow>17.1200008392334</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>26.4699993133545</_52WeekHigh>
+      <_52WeekLow>15.8500003814697</_52WeekLow>
+      <Volume>258657</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>761200013.328552</MarketCap>
+      <PE>14.300</PE>
+      <EPS>1.20000004768372</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>ADM</Symbol>
+    <Name>Archer-Daniels-Midland</Name>
+    <Shares>126</Shares>
+    <TotalValue>4214.70009613038</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicadm.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicadm.png"  />
+    <Last_x0020_Price>33.4500007629395</Last_x0020_Price>
+    <Sector>Consumer</Sector>
+    <MarketCapital>21869978448.8182</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>3.81750297546387E-02</PercentChange>
+    <PEratio>20.700</PEratio>
+    <CurrentRatio>1.845</CurrentRatio>
+    <PEG>1.81</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap</ValCat>
+    <MomentumCalc>Momentum</MomentumCalc>
+    <Summary>
+      <Symbol>ADM</Symbol>
+      <LastTrade>33.4500007629395</LastTrade>
+      <TradeTime>2006-03-13T16:01:07</TradeTime>
+      <Change>1.22999954223633</Change>
+      <ChangePercent>3.81750297546387E-02</ChangePercent>
+      <PrevClose>32.2200012207031</PrevClose>
+      <Open>32.25</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>33.7700004577637</DayHigh>
+      <DayLow>32.2200012207031</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>33.7700004577637</_52WeekHigh>
+      <_52WeekLow>17.5</_52WeekLow>
+      <Volume>5720300</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>21869978448.8182</MarketCap>
+      <PE>20.700</PE>
+      <EPS>1.55999994277954</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>COKE</Symbol>
+    <Name>Coca-Cola Bott Consol</Name>
+    <Shares>121</Shares>
+    <TotalValue>5322.79020309448</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>43.9900016784668</Last_x0020_Price>
+    <Sector>Consumer</Sector>
+    <MarketCapital>399561185.245514</MarketCapital>
+    <Valuation>Small Cap</Valuation>
+    <PercentChange>9.40798163414001E-03</PercentChange>
+    <PEratio>17.200</PEratio>
+    <CurrentRatio>na</CurrentRatio>
+    <PEG>na</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Small Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>COKE</Symbol>
+      <LastTrade>43.9900016784668</LastTrade>
+      <TradeTime>2006-03-13T15:56:55</TradeTime>
+      <Change>0.409999847412109</Change>
+      <ChangePercent>9.40798163414001E-03</ChangePercent>
+      <PrevClose>43.5800018310547</PrevClose>
+      <Open>44</Open>
+      <Bid>12.93</Bid>
+      <BidSize>100</BidSize>
+      <Ask>76.35</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>44.0800018310547</DayHigh>
+      <DayLow>43.5909996032715</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>53.9300003051758</_52WeekHigh>
+      <_52WeekLow>42.5800018310547</_52WeekLow>
+      <Volume>12300</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>399561185.245514</MarketCap>
+      <PE>17.200</PE>
+      <EPS>2.52999997138977</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>GIS</Symbol>
+    <Name>Genl Mills</Name>
+    <Shares>95</Shares>
+    <TotalValue>4631.25</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicgis.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicgis.png"  />
+    <Last_x0020_Price>48.75</Last_x0020_Price>
+    <Sector>Consumer</Sector>
+    <MarketCapital>17363823750</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>-2.0470517873764E-03</PercentChange>
+    <PEratio>14.700</PEratio>
+    <CurrentRatio>0.683</CurrentRatio>
+    <PEG>2.02</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>GIS</Symbol>
+      <LastTrade>48.75</LastTrade>
+      <TradeTime>2006-03-13T16:00:41</TradeTime>
+      <Change>-9.99984741210938E-02</Change>
+      <ChangePercent>-2.0470517873764E-03</ChangePercent>
+      <PrevClose>48.8499984741211</PrevClose>
+      <Open>48.9000015258789</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>49.0900001525879</DayHigh>
+      <DayLow>48.7299995422363</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>52.7000007629395</_52WeekHigh>
+      <_52WeekLow>44.6699981689453</_52WeekLow>
+      <Volume>1601800</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>17363823750</MarketCap>
+      <PE>14.700</PE>
+      <EPS>3.32999992370605</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>PBG</Symbol>
+    <Name>Pepsi Bottling Group</Name>
+    <Shares>122</Shares>
+    <TotalValue>3633.16008377075</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicpbg.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicpbg.png"  />
+    <Last_x0020_Price>29.7800006866455</Last_x0020_Price>
+    <Sector>Consumer</Sector>
+    <MarketCapital>7064918022.89772</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>5.06248831748962E-03</PercentChange>
+    <PEratio>15.900</PEratio>
+    <CurrentRatio>0.928</CurrentRatio>
+    <PEG>1.67</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>PBG</Symbol>
+      <LastTrade>29.7800006866455</LastTrade>
+      <TradeTime>2006-03-13T16:00:44</TradeTime>
+      <Change>0.150001525878906</Change>
+      <ChangePercent>5.06248831748962E-03</ChangePercent>
+      <PrevClose>29.6299991607666</PrevClose>
+      <Open>29.7000007629395</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>29.9799995422363</DayHigh>
+      <DayLow>29.6700000762939</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>30.3500003814697</_52WeekHigh>
+      <_52WeekLow>26.6599998474121</_52WeekLow>
+      <Volume>978400</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>7064918022.89772</MarketCap>
+      <PE>15.900</PE>
+      <EPS>1.86000001430511</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>AET</Symbol>
+    <Name>Aetna Inc</Name>
+    <Shares>62</Shares>
+    <TotalValue>3134.09995269775</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>50.5499992370605</Last_x0020_Price>
+    <Sector>Healthcare</Sector>
+    <MarketCapital>28666904567.337</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>-7.65605390071869E-03</PercentChange>
+    <PEratio>18.900</PEratio>
+    <CurrentRatio>2.394</CurrentRatio>
+    <PEG>1.16</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>AET</Symbol>
+      <LastTrade>50.5499992370605</LastTrade>
+      <TradeTime>2006-03-13T16:00:58</TradeTime>
+      <Change>-0.389999389648438</Change>
+      <ChangePercent>-7.65605390071869E-03</ChangePercent>
+      <PrevClose>50.939998626709</PrevClose>
+      <Open>51.2799987792969</Open>
+      <Bid>---</Bid>
+      <BidSize>3000</BidSize>
+      <Ask>---</Ask>
+      <AskSize>300</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>51.6916007995605</DayHigh>
+      <DayLow>49.7000007629395</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>52.4799995422363</_52WeekHigh>
+      <_52WeekLow>33.689998626709</_52WeekLow>
+      <Volume>2905300</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>28666904567.337</MarketCap>
+      <PE>18.900</PE>
+      <EPS>2.70000004768372</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>ABC</Symbol>
+    <Name>AmerisourceBergen Corp</Name>
+    <Shares>45</Shares>
+    <TotalValue>2076.75006866455</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>46.1500015258789</Last_x0020_Price>
+    <Sector>Healthcare</Sector>
+    <MarketCapital>9646227168.93768</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>8.52279782295227E-03</PercentChange>
+    <PEratio>31.100</PEratio>
+    <CurrentRatio>1.29</CurrentRatio>
+    <PEG>1.65</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>ABC</Symbol>
+      <LastTrade>46.1500015258789</LastTrade>
+      <TradeTime>2006-03-13T16:00:33</TradeTime>
+      <Change>0.390003204345703</Change>
+      <ChangePercent>8.52279782295227E-03</ChangePercent>
+      <PrevClose>45.7599983215332</PrevClose>
+      <Open>45.7900009155273</Open>
+      <Bid>---</Bid>
+      <BidSize>200</BidSize>
+      <Ask>---</Ask>
+      <AskSize>0</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>46.2099990844727</DayHigh>
+      <DayLow>45.6800003051758</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>46.7799987792969</_52WeekHigh>
+      <_52WeekLow>26.4699993133545</_52WeekLow>
+      <Volume>1061300</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>9646227168.93768</MarketCap>
+      <PE>31.100</PE>
+      <EPS>1.47000002861023</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>ABI</Symbol>
+    <Name>Applera Corp-Applied Biosys Gr</Name>
+    <Shares>63</Shares>
+    <TotalValue>1747.61998558045</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>27.7399997711182</Last_x0020_Price>
+    <Sector>Healthcare</Sector>
+    <MarketCapital>5083965238.05237</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>1.80567845702171E-03</PercentChange>
+    <PEratio>27.400</PEratio>
+    <CurrentRatio>1.869</CurrentRatio>
+    <PEG>2.23</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>ABI</Symbol>
+      <LastTrade>27.7399997711182</LastTrade>
+      <TradeTime>2006-03-13T16:03:15</TradeTime>
+      <Change>4.99992370605469E-02</Change>
+      <ChangePercent>1.80567845702171E-03</ChangePercent>
+      <PrevClose>27.6900005340576</PrevClose>
+      <Open>27.7900009155273</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>27.8700008392334</DayHigh>
+      <DayLow>27.6599998474121</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>29.2700004577637</_52WeekHigh>
+      <_52WeekLow>19.2000007629395</_52WeekLow>
+      <Volume>712500</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>5083965238.05237</MarketCap>
+      <PE>27.400</PE>
+      <EPS>1.00999999046326</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>CAL</Symbol>
+    <Name>Contl Airlines&apos;B&apos;</Name>
+    <Shares>125</Shares>
+    <TotalValue>3025.00009536744</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>24.2000007629395</Last_x0020_Price>
+    <Sector>Industrials</Sector>
+    <MarketCapital>2101745866.26053</MarketCapital>
+    <Valuation>Mid Cap</Valuation>
+    <PercentChange>-2.37999248504639E-02</PercentChange>
+    <PEratio>---</PEratio>
+    <CurrentRatio>1.008</CurrentRatio>
+    <PEG>1.80</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Mid Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>CAL</Symbol>
+      <LastTrade>24.2000007629395</LastTrade>
+      <TradeTime>2006-03-13T16:01:17</TradeTime>
+      <Change>-0.590000152587891</Change>
+      <ChangePercent>-2.37999248504639E-02</ChangePercent>
+      <PrevClose>24.7900009155273</PrevClose>
+      <Open>24.8099994659424</Open>
+      <Bid>---</Bid>
+      <BidSize>500</BidSize>
+      <Ask>---</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>25.0499992370605</DayHigh>
+      <DayLow>24.0900001525879</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>25.1900005340576</_52WeekHigh>
+      <_52WeekLow>9.02999973297119</_52WeekLow>
+      <Volume>2173800</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>2101745866.26053</MarketCap>
+      <PE>---</PE>
+      <EPS>-0.970000028610229</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>EME</Symbol>
+    <Name>EMCOR Group</Name>
+    <Shares>25</Shares>
+    <TotalValue>1132.49998092651</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>45.2999992370605</Last_x0020_Price>
+    <Sector>Industrials</Sector>
+    <MarketCapital>1410098376.25122</MarketCapital>
+    <Valuation>Mid Cap</Valuation>
+    <PercentChange>-3.08097243309021E-03</PercentChange>
+    <PEratio>24.000</PEratio>
+    <CurrentRatio>1.33</CurrentRatio>
+    <PEG>2.14</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Mid Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>EME</Symbol>
+      <LastTrade>45.2999992370605</LastTrade>
+      <TradeTime>2006-03-13T16:03:45</TradeTime>
+      <Change>-0.139999389648438</Change>
+      <ChangePercent>-3.08097243309021E-03</ChangePercent>
+      <PrevClose>45.439998626709</PrevClose>
+      <Open>45.6800003051758</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>500</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>46.0999984741211</DayHigh>
+      <DayLow>45.0900001525879</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>46.0999984741211</_52WeekHigh>
+      <_52WeekLow>21.7600002288818</_52WeekLow>
+      <Volume>482900</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>1410098376.25122</MarketCap>
+      <PE>24.000</PE>
+      <EPS>1.88999998569489</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>TNB</Symbol>
+    <Name>Thomas &amp; Betts</Name>
+    <Shares>200</Shares>
+    <TotalValue>9944.00024414062</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>49.7200012207031</Last_x0020_Price>
+    <Sector>Industrials</Sector>
+    <MarketCapital>3071801115.41748</MarketCapital>
+    <Valuation>Mid Cap</Valuation>
+    <PercentChange>-5.00300168991089E-03</PercentChange>
+    <PEratio>26.900</PEratio>
+    <CurrentRatio>2.349</CurrentRatio>
+    <PEG>1.34</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Mid Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>TNB</Symbol>
+      <LastTrade>49.7200012207031</LastTrade>
+      <TradeTime>2006-03-13T16:01:35</TradeTime>
+      <Change>-0.25</Change>
+      <ChangePercent>-5.00300168991089E-03</ChangePercent>
+      <PrevClose>49.9700012207031</PrevClose>
+      <Open>50.0499992370605</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>50.1100006103516</DayHigh>
+      <DayLow>49.6699981689453</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>50.7900009155273</_52WeekHigh>
+      <_52WeekLow>27.6800003051758</_52WeekLow>
+      <Volume>274000</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>3071801115.41748</MarketCap>
+      <PE>26.900</PE>
+      <EPS>1.86000001430511</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>AVX</Symbol>
+    <Name>AVX Corp</Name>
+    <Shares>115</Shares>
+    <TotalValue>1919.35006141662</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>16.6900005340576</Last_x0020_Price>
+    <Sector>Technology</Sector>
+    <MarketCapital>2876822012.05444</MarketCapital>
+    <Valuation>Mid Cap</Valuation>
+    <PercentChange>1.19978748261929E-03</PercentChange>
+    <PEratio>49.000</PEratio>
+    <CurrentRatio>6.652</CurrentRatio>
+    <PEG>1.71</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Mid Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>AVX</Symbol>
+      <LastTrade>16.6900005340576</LastTrade>
+      <TradeTime>2006-03-13T16:02:41</TradeTime>
+      <Change>2.00004577636719E-02</Change>
+      <ChangePercent>1.19978748261929E-03</ChangePercent>
+      <PrevClose>16.6700000762939</PrevClose>
+      <Open>16.7700004577637</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>300</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>16.9400005340576</DayHigh>
+      <DayLow>16.6599998474121</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>17.3199996948242</_52WeekHigh>
+      <_52WeekLow>10.5500001907349</_52WeekLow>
+      <Volume>245900</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>2876822012.05444</MarketCap>
+      <PE>49.000</PE>
+      <EPS>0.340000003576279</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>BRCD</Symbol>
+    <Name>Brocade Communic Sys</Name>
+    <Shares>573</Shares>
+    <TotalValue>3191.61009836197</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>5.57000017166138</Last_x0020_Price>
+    <Sector>Technology</Sector>
+    <MarketCapital>1520587766.86287</MarketCapital>
+    <Valuation>Mid Cap</Valuation>
+    <PercentChange>3.60359996557236E-03</PercentChange>
+    <PEratio>55.500</PEratio>
+    <CurrentRatio>1.773</CurrentRatio>
+    <PEG>1.82</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Mid Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>BRCD</Symbol>
+      <LastTrade>5.57000017166138</LastTrade>
+      <TradeTime>2006-03-13T16:00:01</TradeTime>
+      <Change>1.99999809265137E-02</Change>
+      <ChangePercent>3.60359996557236E-03</ChangePercent>
+      <PrevClose>5.55000019073486</PrevClose>
+      <Open>5.59999990463257</Open>
+      <Bid>5.55</Bid>
+      <BidSize>100</BidSize>
+      <Ask>5.94</Ask>
+      <AskSize>500</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>5.61999988555908</DayHigh>
+      <DayLow>5.55999994277954</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>6.01999998092651</_52WeekHigh>
+      <_52WeekLow>3.33999991416931</_52WeekLow>
+      <Volume>5329479</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>1520587766.86287</MarketCap>
+      <PE>55.500</PE>
+      <EPS>0.100000001490116</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>CSC</Symbol>
+    <Name>Computer Sciences</Name>
+    <Shares>102</Shares>
+    <TotalValue>5712</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>56</Last_x0020_Price>
+    <Sector>Technology</Sector>
+    <MarketCapital>10443776000</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>2.6857927441597E-03</PercentChange>
+    <PEratio>9.200</PEratio>
+    <CurrentRatio>1.5</CurrentRatio>
+    <PEG>1.37</PEG>
+    <ValueCalc>Value</ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Large Cap Value</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>CSC</Symbol>
+      <LastTrade>56</LastTrade>
+      <TradeTime>2006-03-13T16:01:22</TradeTime>
+      <Change>0.150001525878906</Change>
+      <ChangePercent>2.6857927441597E-03</ChangePercent>
+      <PrevClose>55.8499984741211</PrevClose>
+      <Open>55.2999992370605</Open>
+      <Bid>---</Bid>
+      <BidSize>300</BidSize>
+      <Ask>---</Ask>
+      <AskSize>1300</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>56.1399993896484</DayHigh>
+      <DayLow>55.0699996948242</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>59.9000015258789</_52WeekHigh>
+      <_52WeekLow>42.310001373291</_52WeekLow>
+      <Volume>1236400</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>10443776000</MarketCap>
+      <PE>9.200</PE>
+      <EPS>6.09000015258789</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>SNPS</Symbol>
+    <Name>Synopsys Inc</Name>
+    <Shares>50</Shares>
+    <TotalValue>1098.99997711182</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>21.9799995422363</Last_x0020_Price>
+    <Sector>Technology</Sector>
+    <MarketCapital>3158086334.22852</MarketCapital>
+    <Valuation>Mid Cap</Valuation>
+    <PercentChange>3.65296453237534E-03</PercentChange>
+    <PEratio>---</PEratio>
+    <CurrentRatio>1.093</CurrentRatio>
+    <PEG>2.14</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Mid Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>SNPS</Symbol>
+      <LastTrade>21.9799995422363</LastTrade>
+      <TradeTime>2006-03-13T16:00:01</TradeTime>
+      <Change>7.99999237060547E-02</Change>
+      <ChangePercent>3.65296453237534E-03</ChangePercent>
+      <PrevClose>21.8999996185303</PrevClose>
+      <Open>22</Open>
+      <Bid>21.00</Bid>
+      <BidSize>300</BidSize>
+      <Ask>22.90</Ask>
+      <AskSize>300</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>22.1000003814697</DayHigh>
+      <DayLow>21.9200000762939</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>24.25</_52WeekHigh>
+      <_52WeekLow>16.1800003051758</_52WeekLow>
+      <Volume>691332</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>3158086334.22852</MarketCap>
+      <PE>---</PE>
+      <EPS>0</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>CCK</Symbol>
+    <Name>Crown Holdings</Name>
+    <Shares>165</Shares>
+    <TotalValue>3049.19992446899</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>18.4799995422363</Last_x0020_Price>
+    <Sector>Materials</Sector>
+    <MarketCapital>3080227843.70041</MarketCapital>
+    <Valuation>Mid Cap</Valuation>
+    <PercentChange>-1.38740789890289E-02</PercentChange>
+    <PEratio>---</PEratio>
+    <CurrentRatio>0.95</CurrentRatio>
+    <PEG>0.85</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc>Growth</GrowthCalc>
+    <ValCat>Mid Cap Growth</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>CCK</Symbol>
+      <LastTrade>18.4799995422363</LastTrade>
+      <TradeTime>2006-03-13T16:01:37</TradeTime>
+      <Change>-0.260000228881836</Change>
+      <ChangePercent>-1.38740789890289E-02</ChangePercent>
+      <PrevClose>18.7399997711182</PrevClose>
+      <Open>18.7000007629395</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>300</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>18.7099990844727</DayHigh>
+      <DayLow>18.4400005340576</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>20.4500007629395</_52WeekHigh>
+      <_52WeekLow>13.5100002288818</_52WeekLow>
+      <Volume>1489700</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>3080227843.70041</MarketCap>
+      <PE>---</PE>
+      <EPS>-2.1800000667572</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>FCX</Symbol>
+    <Name>Freep&apos;t McMoRan Copper&amp;Gold&apos;B&apos;</Name>
+    <Shares>100</Shares>
+    <TotalValue>4977.00004577637</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>49.7700004577637</Last_x0020_Price>
+    <Sector>Materials</Sector>
+    <MarketCapital>9159919734.24912</MarketCapital>
+    <Valuation>Large Cap</Valuation>
+    <PercentChange>3.22515308856964E-03</PercentChange>
+    <PEratio>13.800</PEratio>
+    <CurrentRatio>1.477</CurrentRatio>
+    <PEG>0.94</PEG>
+    <ValueCalc>Value</ValueCalc>
+    <GrowthCalc>Growth</GrowthCalc>
+    <ValCat>Large Cap Growth</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>FCX</Symbol>
+      <LastTrade>49.7700004577637</LastTrade>
+      <TradeTime>2006-03-13T16:00:45</TradeTime>
+      <Change>0.159999847412109</Change>
+      <ChangePercent>3.22515308856964E-03</ChangePercent>
+      <PrevClose>49.6100006103516</PrevClose>
+      <Open>50.0499992370605</Open>
+      <Bid>---</Bid>
+      <BidSize>1000</BidSize>
+      <Ask>---</Ask>
+      <AskSize>300</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>50.2799987792969</DayHigh>
+      <DayLow>49.0499992370605</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>65</_52WeekHigh>
+      <_52WeekLow>31.5200004577637</_52WeekLow>
+      <Volume>2575400</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>9159919734.24912</MarketCap>
+      <PE>13.800</PE>
+      <EPS>3.61999988555908</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>GEF</Symbol>
+    <Name>GreifInc&apos;A&apos;</Name>
+    <Shares>125</Shares>
+    <TotalValue>7912.49990463256</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>63.2999992370605</Last_x0020_Price>
+    <Sector>Materials</Sector>
+    <MarketCapital>722283000</MarketCapital>
+    <Valuation>Small Cap</Valuation>
+    <PercentChange>1.32863450050354E-02</PercentChange>
+    <PEratio>17.500</PEratio>
+    <CurrentRatio>1.773</CurrentRatio>
+    <PEG>1.37</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Small Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>GEF</Symbol>
+      <LastTrade>63.2999992370605</LastTrade>
+      <TradeTime>2006-03-13T16:01:26</TradeTime>
+      <Change>0.829998016357422</Change>
+      <ChangePercent>1.32863450050354E-02</ChangePercent>
+      <PrevClose>62.4700012207031</PrevClose>
+      <Open>62.6500015258789</Open>
+      <Bid>---</Bid>
+      <BidSize>200</BidSize>
+      <Ask>---</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>64.25</DayHigh>
+      <DayLow>62.6500015258789</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>76.8899993896484</_52WeekHigh>
+      <_52WeekLow>53.6100006103516</_52WeekLow>
+      <Volume>78100</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>722283000</MarketCap>
+      <PE>17.500</PE>
+      <EPS>3.55999994277954</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>CZN</Symbol>
+    <Name>Citizens Communications</Name>
+    <Shares>120</Shares>
+    <TotalValue>1641.6000366211</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>13.6800003051758</Last_x0020_Price>
+    <Sector>Telecommunications</Sector>
+    <MarketCapital>4383865537.79602</MarketCapital>
+    <Valuation>Mid Cap</Valuation>
+    <PercentChange>2.93254852294922E-03</PercentChange>
+    <PEratio>22.700</PEratio>
+    <CurrentRatio>0.879</CurrentRatio>
+    <PEG>15.13</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Mid Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>CZN</Symbol>
+      <LastTrade>13.6800003051758</LastTrade>
+      <TradeTime>2006-03-13T16:01:21</TradeTime>
+      <Change>3.99999618530273E-02</Change>
+      <ChangePercent>2.93254852294922E-03</ChangePercent>
+      <PrevClose>13.6400003433228</PrevClose>
+      <Open>13.6700000762939</Open>
+      <Bid>---</Bid>
+      <BidSize>1100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>0</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>13.7200002670288</DayHigh>
+      <DayLow>13.6499996185303</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>13.9799995422363</_52WeekHigh>
+      <_52WeekLow>11.9700002670288</_52WeekLow>
+      <Volume>2734500</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>4383865537.79602</MarketCap>
+      <PE>22.700</PE>
+      <EPS>0.600000023841858</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>CTL</Symbol>
+    <Name>CenturyTel Inc</Name>
+    <Shares>150</Shares>
+    <TotalValue>5577.00004577637</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>37.1800003051758</Last_x0020_Price>
+    <Sector>Telecommunications</Sector>
+    <MarketCapital>4870319779.97589</MarketCapital>
+    <Valuation>Mid Cap</Valuation>
+    <PercentChange>7.3151034116745E-03</PercentChange>
+    <PEratio>14.800</PEratio>
+    <CurrentRatio>0.567</CurrentRatio>
+    <PEG>6.20</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Mid Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>CTL</Symbol>
+      <LastTrade>37.1800003051758</LastTrade>
+      <TradeTime>2006-03-13T16:00:49</TradeTime>
+      <Change>0.270000457763672</Change>
+      <ChangePercent>7.3151034116745E-03</ChangePercent>
+      <PrevClose>36.9099998474121</PrevClose>
+      <Open>36.9199981689453</Open>
+      <Bid>---</Bid>
+      <BidSize>100</BidSize>
+      <Ask>---</Ask>
+      <AskSize>500</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>37.3300018310547</DayHigh>
+      <DayLow>36.9199981689453</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>37.5099983215332</_52WeekHigh>
+      <_52WeekLow>29.5499992370605</_52WeekLow>
+      <Volume>1002400</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>4870319779.97589</MarketCap>
+      <PE>14.800</PE>
+      <EPS>2.49000000953674</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+  <Equity>
+    <Symbol>TWTC</Symbol>
+    <Name>Time Warner Telecom &apos;A&apos;</Name>
+    <Shares>453</Shares>
+    <TotalValue>6763.29013824464</TotalValue>
+    <NewsFeed>newsfeed</NewsFeed>
+    <Chart2D SmallPic="pack://application:,,,/FinanceExplorer/smallpicxom.png" LargePic="pack://application:,,,/FinanceExplorer/bigpicxom.png"  />
+    <Last_x0020_Price>14.9300003051758</Last_x0020_Price>
+    <Sector>Telecommunications</Sector>
+    <MarketCapital>1742181735.61096</MarketCapital>
+    <Valuation>Mid Cap</Valuation>
+    <PercentChange>-1.33775949478149E-03</PercentChange>
+    <PEratio>---</PEratio>
+    <CurrentRatio>1.832</CurrentRatio>
+    <PEG>na</PEG>
+    <ValueCalc> </ValueCalc>
+    <GrowthCalc> </GrowthCalc>
+    <ValCat>Mid Cap</ValCat>
+    <MomentumCalc> </MomentumCalc>
+    <Summary>
+      <Symbol>TWTC</Symbol>
+      <LastTrade>14.9300003051758</LastTrade>
+      <TradeTime>2006-03-13T16:00:01</TradeTime>
+      <Change>-1.99995040893555E-02</Change>
+      <ChangePercent>-1.33775949478149E-03</ChangePercent>
+      <PrevClose>14.9499998092651</PrevClose>
+      <Open>14.9499998092651</Open>
+      <Bid>14.16</Bid>
+      <BidSize>200</BidSize>
+      <Ask>22.76</Ask>
+      <AskSize>100</AskSize>
+      <_1YTargetEst>This is not available</_1YTargetEst>
+      <DaysRange>calculate this</DaysRange>
+      <DayHigh>15.1499996185303</DayHigh>
+      <DayLow>14.8199996948242</DayLow>
+      <_52WeekRange>calculate this</_52WeekRange>
+      <_52WeekHigh>15.0299997329712</_52WeekHigh>
+      <_52WeekLow>3.71000003814697</_52WeekLow>
+      <Volume>707348</Volume>
+      <AvgVol>This is not available</AvgVol>
+      <MarketCap>1742181735.61096</MarketCap>
+      <PE>---</PE>
+      <EPS>0</EPS>
+      <DivYield>This is not available</DivYield>
+    </Summary>
+  </Equity>
+</Portfolio>

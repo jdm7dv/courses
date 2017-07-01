@@ -1,0 +1,53 @@
+<Application x:Class="WoodgroveFinanceApplication.MyApp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    StartupUri="Page1.xaml"
+    >
+    <Application.Resources>
+        
+    <!-- Style the Navigation Window to remove the default navigation chrome -->
+        <Style x:Key="{x:Type NavigationWindow}" TargetType="{x:Type NavigationWindow}">
+          <Setter Property="FontFamily" Value="{DynamicResource {x:Static SystemFonts.MessageFontFamilyKey}}" />
+          <Setter Property="FontSize"   Value="{DynamicResource {x:Static SystemFonts.MessageFontSizeKey}}" />
+          <Setter Property="FontStyle"  Value="{DynamicResource {x:Static SystemFonts.MessageFontStyleKey}}" />
+          <Setter Property="FontWeight" Value="{DynamicResource {x:Static SystemFonts.MessageFontWeightKey}}" />
+          <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" />
+          <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type NavigationWindow}">
+                <Border Name="NavigationBarRoot" 
+                        Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}"  
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                  <Grid>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="*" />
+                      <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <AdornerDecorator Grid.Row="0" Grid.Column="0">
+                      <ContentPresenter ClipToBounds="true" Content="{TemplateBinding Window.Content}" />
+                    </AdornerDecorator>
+                    <ResizeGrip x:Name="WindowResizeGrip" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="right" VerticalAlignment="bottom" Height="23" Width="14" Foreground="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Background="Transparent" Visibility="Collapsed" IsTabStop="false" />
+                  </Grid>
+                </Border>
+                <ControlTemplate.Triggers>
+                  <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                      <Condition Property="Window.ResizeMode" Value="CanResizeWithGrip" />
+                      <Condition Property="Window.WindowState" Value="Normal" />
+                    </MultiTrigger.Conditions>
+                    <Setter TargetName="WindowResizeGrip" Property="Visibility" Value="Visible" />
+                  </MultiTrigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+
+      </Application.Resources>
+</Application>

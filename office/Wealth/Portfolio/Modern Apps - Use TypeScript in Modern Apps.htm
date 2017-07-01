@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0054)http://msdn.microsoft.com/en-us/magazine/dn201754.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml" style="" overflow:auto""=""><object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: block;"></object><head id="ctl00_Head"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link id="ctl00_HeaderLink2" rel="stylesheet" type="text/css" href="./Modern Apps - Use TypeScript in Modern Apps_files/Msdn10a-bn1651.css"><link id="ctl00_HeaderLink3" rel="stylesheet" type="text/css" href="./Modern Apps - Use TypeScript in Modern Apps_files/Magazine2-bn1651.css"><link rel="alternate" type="application/rss+xml" title="MSDN Magazine - Current Issue" href="http://msdn.microsoft.com/magazine/rss/default.aspx?z=z&iss=1"><link rel="alternate" type="application/rss+xml" title="MSDN Magazine - Complete" href="http://msdn.microsoft.com/magazine/rss/default.aspx?z=z&all=1"><link rel="alternate" type="application/rss+xml" title="MSDN Magazine Blog" href="http://blogs.msdn.com/msdnmagazine/rss.xml"><meta name="NormalizedUrl" content="http://msdn.microsoft.com/en-us/magazine(d=default)/dn201754(l=en-us,v=MSDN.10).aspx"><meta name="VotingContextUrl" content="http://msdn.microsoft.com/en-us/magazine(d=default)/dn201754(l=en-us,v=MSDN.10).aspx"><meta name="ROBOTS" content="NOINDEX,NOFOLLOW"><meta name="MN" content="9DDD8832-9:56:28 AM"><meta name="ms.locale" content="en-us"><meta name="Search.ShortId" content="dn201754">
+<!-- Looking for metadata? Use the robot view instead http://currentsite/currenturl(robot).aspx -->
+<link rel="stylesheet" type="text/css" href="./Modern Apps - Use TypeScript in Modern Apps_files/mtps-bn1651.css"><link rel="alternate" media="print" href="http://msdn.microsoft.com/en-us/magazine/dn201754(printer).aspx">
+<title>
+	Modern Apps - Use TypeScript in Modern Apps
+</title><style type="text/css">/* Chili -- js */
+.js__ml_comment { color: gray; }
+.js__sl_comment { color: green; }
+.js__string { color: teal; }
+.js__num { color: red; }
+.js__reg_exp { color: maroon; }
+.js__brace { color: red; font-weight: bold; }
+.js__statement { color: navy; font-weight: bold; }
+.js__error { color: Coral; }
+.js__object { color: DeepPink; }
+.js__property { color: Purple; font-weight: bold; }
+.js__function { color: olive; }
+.js__operator { color: RoyalBlue; font-weight: bold; }
+.js__liveconnect { text-decoration: overline; }</style><script type="text/javascript" async="" src="./Modern Apps - Use TypeScript in Modern Apps_files/ms2.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/document_iterator.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/find_proxy.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/get_html_text.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/global_constants.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/name_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/number_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/menu_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/string_finder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/change_sink.js"></script><meta name="find_proxy.js"><meta name="document_iterator.js"><meta name="get_html_text.js"><meta name="global_constants.js"><meta name="name_injection_builder.js"><meta name="menu_injection_builder.js"><meta name="number_injection_builder.js"><meta name="change_sink.js"><meta name="string_finder.js"><script type="text/javascript" id="waxCS">var WAX = function () { var _arrInputs; return { getElement: function (i) { return _arrInputs[i]; }, setElement: function(i){ _arrInputs=i; } } }(); function waxGetElement(i) { return WAX.getElement(i); } function coSetPageData(t, d){ if('wax'==t) { WAX.setElement(d);} }</script></head>
+<body id="ctl00_MTPS_Body" class="MsdnPageBody" dir="ltr">
+    <form name="aspnetForm" method="post" action="./Modern Apps - Use TypeScript in Modern Apps_files/Modern Apps - Use TypeScript in Modern Apps.htm" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUBMGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFImN0bDAwJE1hc3RoZWFkJFNlYXJjaCRTZWFyY2hCdXR0b24lmakQCE49nay/Oh+qSjeDZiRv+Q==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./Modern Apps - Use TypeScript in Modern Apps_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var CurUserId="";var ClientURL="http%3a%2f%2fmsdn.microsoft.com%2fen-us%2fmagazine(d%3ddefault)%2fdn201754(l%3den-us%2cv%3dMSDN.10).aspx";var maxRating=5;var RatingObjId="ctl00_tb1_Flyout_Rating1";var tbCommentsId="ctl00_tb1_Flyout_tbComments";var PageId="dn201754";var pageTag="contentRatingdn201754MSDN.10en-us";var sendBtnId="ctl00_tb1_Flyout_btnSend";var curRating="5";var contentRated=false;var RatingTooltipText="Click a star and provide feedback";var RatedTooltipText="You have already rated this content. Thank you for your feedback.";var userIPAddress="50.147.87.94";var MtpsPageDirection="ltr";var RatingFlyoutID="ctl00_tb1_Flyout";var Rating_Device="default";//]]>
+</script>
+
+<script src="./Modern Apps - Use TypeScript in Modern Apps_files/jquery-1.2.6-bn1651.js" type="text/javascript"></script>
+<script src="./Modern Apps - Use TypeScript in Modern Apps_files/Silverlight-bn1651.js" type="text/javascript"></script>
+<script src="./Modern Apps - Use TypeScript in Modern Apps_files/jquery.chili-2.2-bn1651.js" type="text/javascript"></script>
+<script src="./Modern Apps - Use TypeScript in Modern Apps_files/recipes-bn1651.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+ $(document).ready(function() {$('A[rel="reportAbuse"]').click(function() {   var t = $(this).attr('targetUrl');   window.open(t,'SiteFeedback','width=670,resizable=no,height=700,toolbar=no,location=no,scrollbars=yes,directories=no,status=no,menubar=no'); return false; }); }); $(document).ready(function() {$('.icon_Abusive').click(function() {   var t = $(this).attr('targetUrl');   window.open(t,'SiteFeedback','width=670,resizable=no,height=700,toolbar=no,location=no,scrollbars=yes,directories=no,status=no,menubar=no'); return false; }); });var deletepath='http://msdn.microsoft.com/Platform/Controls/MtpsComments/MtpsComments.asmx/DeleteCommentObject';var jpagepath='http://msdn.microsoft.com/Platform/Controls/MtpsComments/MtpsComments.asmx/CreateCommentObject'; var shortid='dn201754'; var locale='en-US';var productversion='MSDN.10';var stopProcessing = false; var passporterror ='You have not signed in to comment! Please sign in to comment..'; var postComment = 'Post Comment'; var processingTxt = 'Processing..'; var commentEmptyError = 'Comments cannot be empty.'; var commentsTopLeft = 'Comments'; var authorFirstName = ''; var authorLastName = ''; var deleteProcessgif='http://i.msdn.microsoft.com/platform/Controls/MtpsComments/resources/ani_loading.gif'; var userStatus='SignedOut';var jcommentsid = 'ctl00_MTContentSelector1_mainContentContainer_ctl21_txtComments'; var commentsCnt = 0;var wt_nvr_ru = "WT_NVR_RU";var wt_fpcdom = ".microsoft.com";var wt_domlist = "msdn.microsoft.com";var wt_pathlist = "";var wt_paramlist = "DCSext.mtps_devcenter";var wt_siteid = "MSDN";var gDomain="m.webtrends.com";
+var gDcsId="dcsmgru7m99k7mqmgrhudo0k8_8c6m";
+var gFpc="WT_FPC";
+/*<![CDATA[*/
+if(document.cookie.indexOf(gFpc+"=")==-1){document.write("<scr"+"ipt type='text/javascript' src='"+"http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+gDomain+"/"+gDcsId+"/wtid.js"+"'><\/scr"+"ipt>");}
+/*]]>*/
+var detectedLocale = 'en-us';
+var wtsp="_msdnmag_";
+var gTrackEvents = 1;
+var omni_guid='0b3dc8f0-f5ee-414f-b6cc-5f616b048a8c';//]]>
+</script>
+<script src="./Modern Apps - Use TypeScript in Modern Apps_files/omni_rsid_msdn-bn1651.js" type="text/javascript"></script><noscript>&lt;a href='http://www.omniture.com' title='Web Analytics'&gt;&lt;img src='http://msstonojsmsdn.112.2o7.net/b/ss/msstonojsmsdn/1/H.20.2--NS/0'  height='1' width='1' border='0' alt='' /&gt;&lt;/a&gt;</noscript>
+<script type="text/javascript">
+//<![CDATA[
+var CurUserId="";var ClientURL="http%3a%2f%2fmsdn.microsoft.com%2fen-us%2fmagazine(d%3ddefault)%2fdn201754(l%3den-us%2cv%3dMSDN.10).aspx";var maxRating=5;var RatingObjId="ctl00_MTContentSelector1_mainContentContainer_ctl19_A";var tbCommentsId="";var PageId="dn201754";var pageTag="contentRatingdn201754MSDN.10en-us";var sendBtnId="";var curRating="5";var contentRated=false;var RatingTooltipText="Click a star and provide feedback";var RatedTooltipText="You have already rated this content. Thank you for your feedback.";var userIPAddress="50.147.87.94";var MtpsPageDirection="ltr";var RatingFlyoutID="";var Rating_Device="default";$(document).ready(function() { var sf = "a[@rel$='sitefeedback']"; if ($(sf) == null) return;  $(sf).click(function() {   var t = $(this).attr('targetUrl');   window.open(t,'SiteFeedback','width=670,resizable=no,height=700,toolbar=no,location=no,scrollbars=yes,directories=no,status=no,menubar=no'); return false; }); });//]]>
+</script>
+
+<script src="./Modern Apps - Use TypeScript in Modern Apps_files/compositejscript3.js" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__PREVIOUSPAGE" id="__PREVIOUSPAGE" value="EEEhFxJN81-lRGk564tsTZ4j8xYAA5OzChqRgWdUuWG5MS4MXSZe2-nuz8QO_DukWrPobk0PVzipLfyKoy1v_9Hu60l7cJDMeClGWfY57n_XYJqv0">
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+    <div id="ctl00_checkFlyer">
+
+</div>
+    
+    
+    <div id="BodyBackground">
+        <div id="ctl00_JelloSizer" class="JelloSizer">
+            <div id="JelloExpander">
+                <div id="ctl00_JelloWrapper" class="JelloWrapper">
+                    <div class="Clear"> </div>
+                    
+                        <div class="Clear"> </div>
+                        
+
+<div class="Masthead">
+    <div id="ctl00_Masthead_brandLogo" class="BrandLogo">
+        <a href="http://msdn.microsoft.com/en-us/magazine/default.aspx" id="ctl00_Masthead_brandlink" title="MSDN Magazine">MSDN Magazine</a>
+    </div>
+    <div class="Search">
+        <div id="ctl00_Masthead_Search_SearchBox" class="SearchBox">
+    <input name="ctl00$Masthead$Search$SearchTextBox" type="text" id="ctl00_Masthead_Search_SearchTextBox" title="Search MSDN Magazine with Bing" class="TextBoxSearch" autocomplete="off" style="color: rgb(170, 170, 170); font-style: italic;">
+    <input type="image" name="ctl00$Masthead$Search$SearchButton" id="ctl00_Masthead_Search_SearchButton" title="Search MSDN Magazine with Bing" class="SearchButton" alt="Click here to search" src="./Modern Apps - Use TypeScript in Modern Apps_files/clear.gif" style="border-width:0px;">
+    <span class="Bing"></span>
+<script type="text/javascript" defer="defer" src="./Modern Apps - Use TypeScript in Modern Apps_files/SearchBox.jss" id="mscom.srch.searchBox"></script><div id="SearchFlyoutContainer" style="display: none; text-align: left; border: 1px solid buttonshadow; position: absolute; z-index: 1000; padding: 2px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: Arial; font-size: 13px;"><div id="SuggestionContainer"><ul style="list-style: none; padding: 4px 2px 0px 1px; cursor: pointer; margin: 1px; white-space: nowrap;"></ul></div></div></div>
+    </div>
+    <div class="GlobalBar">
+        <div id="ctl00_Masthead_passportScarab" class="PassportScarab"> 
+            <a id="idPPScarab" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=11&ct=1382547388&rver=6.0.5276.0&wp=MCLBI&wlcxt=msdn%24msdn%24msdn&wreply=http%3a%2f%2fmsdn.microsoft.com%2fen-us%2fmagazine%2fdn201754.aspx&lc=1033&id=254354&mkt=en-US"><span id="idPPScarabSIT" class="MTPS_GlobalToolbarLinks_msdn">Sign in</span></a>
+<div id="idPPMWOverlay" style="display: none;"></div>
+        </div>
+        <div class="LocaleFlyout">
+            
+    <div id="MainDiv" onmouseover="FlyoutPopupShow()" onmouseout="FlyoutPopupHide()">
+        <div id="FlyoutTop">
+            <a id="ctl00_Masthead_LocaleManagement_linkCountryLanguage" class="LocaleManagementFlyoutStaticLink">United States - English&nbsp;</a>
+            <img id="img_Arrow" class="LocaleManagementFlyoutPopArrow" src="./Modern Apps - Use TypeScript in Modern Apps_files/clear.gif" alt="choose your country or language">
+        </div>
+        <div id="FlyoutPopup" class="LocaleManagementFlyoutPopup">
+            <table class="LocaleManagementFlyoutPopupTable">
+                <tbody><tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Arg" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Arg','')">
+                Argentina (Español)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Bra" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Bra','')">
+                Brasil (Português)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_CanE" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_CanE','')">
+                Canada (English)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_CanF" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_CanF','')">
+                Canada (Français)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Chi" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Chi','')">
+                中国 (简体中文)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Col" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Col','')">
+                Colombia (Español)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Deu" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Deu','')">
+                Deutschland (Deutsch)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Esp" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Esp','')">
+                España (Español)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Fra" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Fra','')">
+                France (Français)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Ind" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Ind','')">
+                India (English)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Ita" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Ita','')">
+                Italia (Italiano)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Jpa" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Jpa','')">
+                日本 (日本語)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Kor" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Kor','')">
+                한국 (한국어)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Mex" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Mex','')">
+                México (Español)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Per" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Per','')">
+                Perú (Español)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Рос" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Рос','')">
+                Россия (Pусский)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_Tai" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_Tai','')">
+                台灣 (繁體中文)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_UK" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_UK','')">
+                United Kingdom (English)</a></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_US" href="javascript:__doPostBack('ctl00$Masthead$LocaleManagement$lkbtn_US','')">
+                United States (English)</a></td></tr>
+                <tr><td class="LocaleManagementFlyoutPopupHr"></td></tr>
+                <tr><td><a id="ctl00_Masthead_LocaleManagement_lkbtn_More" href="http://msdn.microsoft.com/en-us/selectLocale">More...</a></td></tr>
+            </tbody></table>
+        </div>
+    </div>
+
+
+        </div>
+        <div class="Clear"></div>
+        <div id="ctl00_Masthead_ProfileLink_UserName" class="UserName"></div>
+    </div>
+    <div class="Clear"></div>
+    <div id="ctl00_Masthead_networkTagLineArea" class="NetworkLogo">
+        <a href="http://msdn.microsoft.com/en-us/default.aspx" id="ctl00_Masthead_networkLink"><img title="microsoft developer network" src="./Modern Apps - Use TypeScript in Modern Apps_files/brand_logo.png" style="border-width:0px;"></a>
+    </div>
+    
+
+<div class="leftcap"></div>
+    <div class="internav">
+	    <div id="ctl00_Masthead_tabs_manTabsHolder"><a id="ctl00_Masthead_tabs_ctl01" class="normal" href="http://msdn.microsoft.com/en-us/magazine/default.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl00|ctl00_Masthead_tabs_ctl01&#39;,this);">Home</a><a id="ctl00_Masthead_tabs_ctl03" class="normal" href="http://msdn.microsoft.com/en-us/magazine/ee532082.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl02|ctl00_Masthead_tabs_ctl03&#39;,this);">Topics</a><a id="ctl00_Masthead_tabs_ctl05" class="active" href="http://msdn.microsoft.com/en-us/magazine/ee310108.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl04|ctl00_Masthead_tabs_ctl05&#39;,this);">Issues and Downloads</a><a id="ctl00_Masthead_tabs_ctl07" class="normal" href="http://msdn.microsoft.com/en-us/magazine/ee729207.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl06|ctl00_Masthead_tabs_ctl07&#39;,this);">Script Junkie</a><a id="ctl00_Masthead_tabs_ctl09" class="normal" href="http://msdn.microsoft.com/en-us/magazine/ee358702.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl08|ctl00_Masthead_tabs_ctl09&#39;,this);">Subscribe</a><a id="ctl00_Masthead_tabs_ctl11" class="normal" href="http://msdn.microsoft.com/en-us/magazine/ee291618.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl10|ctl00_Masthead_tabs_ctl11&#39;,this);">Submit an Article</a><a id="ctl00_Masthead_tabs_ctl13" class="normal" href="http://msdn.microsoft.com/en-us/magazine/cc194384.aspx" onclick="javascript:Track(&#39;|TabStrip Link|ctl00_Masthead_tabs_ctl12|ctl00_Masthead_tabs_ctl13&#39;,this);">RSS</a></div>
+    </div>
+<div class="rightcap"></div>
+<div class="Clear"></div>
+   
+</div>
+                        <div class="Clear"> </div>
+                        <div class="topleftcorner"> </div>
+                        <div class="toprightcorner"> </div>
+                        <div class="alley">
+                            <div class="wrapper">
+                                <div class="inner">
+                                    
+                                    <div class="Clear"> </div>
+                                    <div id="ctl00_EyebrowMenu_EyebrowContainer" class="EyebrowContainer"><a id="ctl00_EyebrowMenu_ctl00" title="MSDN Magazine" class="EyebrowLink" href="http://msdn.microsoft.com/en-us/magazine/dd767791.aspx" onclick="javascript:Track(&#39;|Eyebrow|ctl00_EyebrowMenu_EyebrowContainer|ctl00_EyebrowMenu_ctl00&#39;,this);">MSDN Magazine</a><span>&nbsp;&gt;&nbsp;</span><a id="ctl00_EyebrowMenu_ctl01" title="Issues and Downloads" class="EyebrowLink" href="http://msdn.microsoft.com/en-us/magazine/ee310108.aspx" onclick="javascript:Track(&#39;|Eyebrow|ctl00_EyebrowMenu_EyebrowContainer|ctl00_EyebrowMenu_ctl01&#39;,this);">Issues and Downloads</a><span>&nbsp;&gt;&nbsp;</span><a id="ctl00_EyebrowMenu_ctl02" title="2013" class="EyebrowLink" href="http://msdn.microsoft.com/en-us/magazine/jj883945.aspx" onclick="javascript:Track(&#39;|Eyebrow|ctl00_EyebrowMenu_EyebrowContainer|ctl00_EyebrowMenu_ctl02&#39;,this);">2013</a><span>&nbsp;&gt;&nbsp;</span><a id="ctl00_EyebrowMenu_ctl03" title="June 2013 Issue" class="EyebrowLink" href="http://msdn.microsoft.com/en-us/magazine/dn201737.aspx" onclick="javascript:Track(&#39;|Eyebrow|ctl00_EyebrowMenu_EyebrowContainer|ctl00_EyebrowMenu_ctl03&#39;,this);">June 2013 Issue</a><span>&nbsp;&gt;&nbsp;</span><span class="EyebrowElement">&nbsp;Modern Apps - Use TypeScript in Modern Apps</span></div>
+                                    <div class="Clear"> </div>
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; table-layout: fixed;">
+                                        <tbody><tr>
+                                            <td style="vertical-align: top; width: auto;" valign="top">
+                                                
+                                                <div id="MainContent" style="width: 100%">
+                                                    
+                                                            
+                                                            <div class="navpage"><div class="MagazineStyle"><div class="FeatureTitle"><h2>Modern Apps</h2><h1>Use TypeScript in Modern Apps</h1><p><strong><a id="ctl00_MTContentSelector1_mainContentContainer_ctl01" href="http://msdn.microsoft.com/en-us/magazine/ee532098.aspx?sdmr=RachelAppel&sdmi=authors" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl01&#39;,this);">Rachel Appel</a></strong></p></div><p><img alt="Rachel Appel" height="150" src="./Modern Apps - Use TypeScript in Modern Apps_files/dn201754.rachel_appel_headshot(en-us,MSDN.10).jpg" style="float:left;margin:0 1em .5em 0;" width="167">The original intent of JavaScript was for Document Object Model (DOM) manipulation in a small DOM tree. Over time, however, JavaScript has become so popular that it’s now a mainstream language for any kind of app, from small marketplace apps to apps for the enterprise. As the popularity of JavaScript continues to grow, a rise in the number of tools and languages required to support its developers is inevitable, with TypeScript being one such language.&nbsp;</p><h2>What Is TypeScript and How Does It Work?</h2><p>TypeScript is a superset of JavaScript that allows you to write and generate JavaScript code that acts more strongly typed and object-oriented, but retains the flexibility that developers love (or sometimes hate) about JavaScript. TypeScript boosts the viable range of use of JavaScript into the realm of enterprise apps, Web sites and apps where JavaScript has historically run amok due to lack of tools in this space.</p><p>Tsc.exe, an open source TypeScript compiler/code generator, is available for download at <a id="ctl00_MTContentSelector1_mainContentContainer_ctl02" href="http://typescriptlang.org/" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl02&#39;,this);">typescriptlang.org</a>. TypeScript is a standalone compiler, so you can open up a command prompt and execute tsc.exe with the proper arguments at any time, like so:</p><div class="CodeHighlighter"><pre><code class="xml">tsc.exe --out outputfile.js inputfile.ts</code></pre></div><script type="text/javascript">ChiliBook.lineNumbers = true;ChiliBook.automatic = true;</script><p>You write TypeScript code, then spin it through the compiler and out comes production JavaScript. Although TypeScript is a code generator, it doesn’t output unnecessary code (as is often done for the sake of a visual design tool), mangle variable names or change the variable order. This means it’s easier to debug the final product because it’s straight-up JavaScript.</p><p>JavaScript is already an object-oriented language, but its prototypal syntax is off-putting to many developers. To solve this problem, TypeScript adds features to JavaScript such as classes and interfaces, which are proposed features of the ECMAScript 6 (ES6) standard. This makes TypeScript a code generator covered in syntactic sugar that in most cases cuts down the amount of JavaScript to maintain. For example, the following code uses the prototypal syntax:</p><div class="CodeHighlighter"><pre><code class="js"><ol><li style=""><span class="js__operator">function</span>&nbsp;Animal(name,&nbsp;species,&nbsp;habitat)&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;<span class="js__operator">this</span>.name&nbsp;=&nbsp;name;</li><li style="">&nbsp;&nbsp;<span class="js__operator">this</span>.species&nbsp;=&nbsp;species;</li><li style="">&nbsp;&nbsp;<span class="js__operator">this</span>.habitat&nbsp;=&nbsp;habitat;</li><li style=""><span class="js__brace">}</span></li><li style="">Animal.prototype.sayHello&nbsp;=&nbsp;<span class="js__operator">function</span>()<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;console.log(<span class="js__string">"RAWR!"</span>);</li><li style=""><span class="js__brace">}</span></li><li style=""><span class="js__statement">var</span>&nbsp;animal&nbsp;=&nbsp;&nbsp;&nbsp;<span class="js__operator">new</span>&nbsp;Animal(<span class="js__string">"Fluffy"</span>,&nbsp;</li><li style="">&nbsp;&nbsp;<span class="js__string">"Velociraptor&nbsp;"</span>,&nbsp;</li><li style="">&nbsp;&nbsp;<span class="js__string">"Everywhere.&nbsp;Run&nbsp;and&nbsp;hide."</span>);</li><li style="">animal.sayHello();</li></ol></code></pre></div><script type="text/javascript">ChiliBook.lineNumbers = true;ChiliBook.automatic = true;</script><p>The preceding sample starts with a constructor function, a heavily used JavaScript pattern without the surrounding class definition that you’d normally see in other object-oriented languages. You define what is similar to instance members of classes inside constructor functions by using the this keyword. Outside the constructor function lies the actual prototype method that binds JavaScript methods to classes. Classes in TypeScript allow you to write the same code as in the preceding sample but with a more natural syntax, as shown in <strong>Figure 1</strong>.</p><div><p><strong>Figure 1 A TypeScript Class</strong></p></div><div class="CodeHighlighter"><pre><code class="js"><ol><li style="">class&nbsp;Animal</li><li style=""><span class="js__brace">{</span>&nbsp;&nbsp;</li><li style="">&nbsp;&nbsp;name:&nbsp;string;</li><li style="">&nbsp;&nbsp;species:&nbsp;string;</li><li style="">&nbsp;&nbsp;habitat:&nbsp;string;</li><li style="">&nbsp;&nbsp;constructor(name:&nbsp;string,&nbsp;species:&nbsp;string,&nbsp;habitat:&nbsp;string)</li><li style="">&nbsp;&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">this</span>.name&nbsp;=&nbsp;name;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">this</span>.species&nbsp;=&nbsp;species;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">this</span>.habitat&nbsp;=&nbsp;habitat;</li><li style="">&nbsp;&nbsp;<span class="js__brace">}</span></li><li style="">&nbsp;&nbsp;sayhello()</li><li style="">&nbsp;&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;Console.log(<span class="js__string">"RAWR"</span>);</li><li style="">&nbsp;&nbsp;<span class="js__brace">}</span></li><li style=""><span class="js__brace">}</span></li></ol></code></pre></div><script type="text/javascript">ChiliBook.lineNumbers = true;ChiliBook.automatic = true;</script><p>To many developers the TypeScript code sample in <strong>Figure 1</strong> is more readable than the traditional JavaScript equivalent. Clearly, the code serves as a class definition and list of members, and it shows the types of arguments. TypeScript also provides type checking, interfaces, static compile-time checking, lambda-style expressions and goodies usually found in compiled—not interpreted—languages. These extensions to the JavaScript language are beneficial, as they keep you from falling into common coding pitfalls.</p><p>Other common JavaScript challenges arise when too many variables that have public scope exist in the JavaScript global namespace, causing global namespace pollution (which seems to happen all too frequently). Fortunately, TypeScript helps in this case because it implements modules that behave like namespaces and create closures that prevent global clutter. Modules in TypeScript come in two flavors: internal and external. Internal modules contain code declared in the current file, and you must import external modules by adding ///&lt;reference path=‘path/reference-file.ts’ /&gt; to the top of the current code file. You can declare modules with the module keyword and need only curly brackets to close. A TypeScript module looks something like this:</p><div class="CodeHighlighter"><pre><code class="js"><ol><li style="">module&nbsp;outerModule&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;<span class="js__string">"use&nbsp;strict"</span>;</li><li style="">&nbsp;&nbsp;module&nbsp;innerModule&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;export&nbsp;<span class="js__operator">function</span>&nbsp;aFunction&nbsp;<span class="js__brace">{</span>&nbsp;s:&nbsp;string&nbsp;<span class="js__brace">}</span>;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;export&nbsp;<span class="js__statement">var</span>&nbsp;variable&nbsp;=&nbsp;<span class="js__num">1</span>;</li><li style="">&nbsp;&nbsp;<span class="js__brace">}</span></li><li style=""><span class="js__brace">}</span></li></ol></code></pre></div><script type="text/javascript">ChiliBook.lineNumbers = true;ChiliBook.automatic = true;</script><p>And the emitted JavaScript looks like this:</p><div class="CodeHighlighter"><pre><code class="js"><ol><li style=""><span class="js__statement">var</span>&nbsp;outerModule;</li><li style="">(<span class="js__operator">function</span>&nbsp;(outerModule)&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;<span class="js__string">"use&nbsp;strict"</span>;</li><li style="">&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;innerModule;</li><li style="">&nbsp;&nbsp;(<span class="js__operator">function</span>&nbsp;(innerModule)&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;aFunction()&nbsp;<span class="js__brace">{</span>&nbsp;s:&nbsp;string&nbsp;<span class="js__brace">}</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;innerModule.aFunction&nbsp;=&nbsp;aFunction;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;innerModule.variable&nbsp;=&nbsp;<span class="js__num">1</span>;</li><li style="">&nbsp;&nbsp;<span class="js__brace">}</span>)(innerModule&nbsp;||&nbsp;(innerModule&nbsp;=&nbsp;<span class="js__brace">{</span><span class="js__brace">}</span>));</li><li style=""><span class="js__brace">}</span>)(outerModule&nbsp;||&nbsp;(outerModule&nbsp;=&nbsp;<span class="js__brace">{</span><span class="js__brace">}</span>));</li></ol></code></pre></div><script type="text/javascript">ChiliBook.lineNumbers = true;ChiliBook.automatic = true;</script><p>The preceding code creates a singleton module instance accessible from anywhere in a Windows Store app in the outerModule namespace. As you can see, modules render as anonymous functions (that is, Immediately Invoked Function Expressions, or IIFEs). Any member marked with the export directive has global scope, which is equivalent to C# members marked with the internal keyword (that is, project-wide).</p><h2>Configure and Build Windows Store Apps with TypeScript</h2><p>Tight integration exists between TypeScript and Visual Studio, but TypeScript ships separately, so you need to install the following tools in addition to Visual Studio 2012 Express, Pro or Ultimate editions:</p><ul><li>TypeScript (<a id="ctl00_MTContentSelector1_mainContentContainer_ctl08" href="http://bit.ly/QHxbEZ" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl08&#39;,this);">bit.ly/QHxbEZ</a>)</li><li>Web Essentials for Visual Studio (<a id="ctl00_MTContentSelector1_mainContentContainer_ctl09" href="http://bit.ly/MpJIHh" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl09&#39;,this);">bit.ly/MpJIHh</a>)</li></ul><p>After installing the extensions, you can find a TypeScript project template for Visual Studio located just underneath the JavaScript node in the New Project dialog box. This particular built-in template is an HTML client Web app template with the appropriate TypeScript assets built in, so you need do nothing else for this template to work.</p><p>Even with tight integration between Visual Studio and TypeScript, at the time of this writing there are no built-in Windows Store project templates with TypeScript (only the client Web template previously mentioned); however, the TypeScript documentation says they’re coming soon. In the meantime, if you’re building Windows Store apps with JavaScript, you can use any of the current JavaScript project templates, such as Blank, Grid, Split and more. TypeScript automatically works in them all, but you need to make some minor modifications to the project to get things going.&nbsp;</p><p>To integrate TypeScript into an existing Windows Store app, you need to copy the following declaration files to a folder, for example &lt;project-root&gt;\tslib:</p><ul><li>lib.d.ts</li><li>winjs.d.ts</li><li>winrt.d.ts</li></ul><p>These files are available at the TypeScript download page at <a id="ctl00_MTContentSelector1_mainContentContainer_ctl10" href="http://typescript.codeplex.com/" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl10&#39;,this);">typescript.codeplex.com</a>. Notice that the file extensions for the listed files end in .d.ts, in which the “d” stands for declaration. These files contain type declarations for popular frameworks like jQuery or the native Windows Runtime (WinRT) and Windows Library for JavaScript (WinJS) libraries. <strong>Figure 2</strong>contains a sample of the winjs.d.ts file, outlining commonly used WinJS methods. Notice the file is full of public declarations used by Visual Studio or other tools for compile-time checks. Because TypeScript at this point is still somewhat immature, there might be some missing, but you can add them in yourself.</p><div><p><strong>Figure 2 Examining the winjs.d.ts Definition File</strong></p></div><div class="CodeHighlighter"><pre><code class="js"><ol><li style="">declare&nbsp;module&nbsp;WinJS&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;export&nbsp;<span class="js__operator">function</span>&nbsp;strictProcessing():&nbsp;<span class="js__operator">void</span>;</li><li style="">&nbsp;&nbsp;export&nbsp;module&nbsp;Binding&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;export&nbsp;<span class="js__operator">function</span>&nbsp;as(data:&nbsp;any):&nbsp;any;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;export&nbsp;class&nbsp;List&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constructor&nbsp;(data:&nbsp;any[]);</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;push(item:&nbsp;any):&nbsp;any;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;indexOf(item:&nbsp;any):&nbsp;number;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;splice(index:&nbsp;number,&nbsp;count:&nbsp;number,&nbsp;newelems:&nbsp;any[]):&nbsp;any[];</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;splice(index:&nbsp;number,&nbsp;count:&nbsp;number):&nbsp;any[];</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;splice(index:&nbsp;number):&nbsp;any[];</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;createFiltered(predicate:&nbsp;(x:&nbsp;any)&nbsp;=&gt;&nbsp;bool):&nbsp;List;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;createGrouped(keySelector:&nbsp;(x:&nbsp;any)&nbsp;=&gt;&nbsp;any,&nbsp;dataSelector:</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(x:&nbsp;any)&nbsp;=&gt;&nbsp;any):&nbsp;List;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;groups:&nbsp;any;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;dataSource:&nbsp;any;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;getAt:&nbsp;any;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;export&nbsp;<span class="js__statement">var</span>&nbsp;optimizeBindingReferences:&nbsp;bool;</li><li style="">&nbsp;&nbsp;<span class="js__brace">}</span></li><li style="">&nbsp;&nbsp;export&nbsp;module&nbsp;Namespace&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;export&nbsp;<span class="js__statement">var</span>&nbsp;define:&nbsp;any;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;export&nbsp;<span class="js__statement">var</span>&nbsp;defineWithParent:&nbsp;any;</li><li style="">&nbsp;&nbsp;<span class="js__brace">}</span></li><li style="">&nbsp;&nbsp;export&nbsp;module&nbsp;Class&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;export&nbsp;<span class="js__operator">function</span>&nbsp;define(constructor:&nbsp;any,&nbsp;instanceMembers:&nbsp;any):&nbsp;any;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;export&nbsp;<span class="js__operator">function</span>&nbsp;derive(</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;baseClass:&nbsp;any,&nbsp;constructor:&nbsp;any,&nbsp;instanceMembers:&nbsp;any):&nbsp;any;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;export&nbsp;<span class="js__operator">function</span>&nbsp;mix(constructor:&nbsp;any,&nbsp;mixin:&nbsp;any):&nbsp;any;</li><li style="">&nbsp;&nbsp;<span class="js__brace">}</span></li><li style="">&nbsp;&nbsp;export&nbsp;<span class="js__operator">function</span>&nbsp;xhr(options:&nbsp;<span class="js__brace">{</span>&nbsp;type:&nbsp;string;&nbsp;url:&nbsp;string;&nbsp;user:&nbsp;string;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password:&nbsp;string;&nbsp;headers:&nbsp;any;&nbsp;data:&nbsp;any;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;responseType:&nbsp;string;&nbsp;<span class="js__brace">}</span>):&nbsp;WinJS.Promise;</li><li style="">&nbsp;&nbsp;export&nbsp;module&nbsp;Application&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;export&nbsp;interface&nbsp;IOHelper&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exists(filename:&nbsp;string):&nbsp;bool;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;readText(fileName:&nbsp;string,&nbsp;def:&nbsp;string):&nbsp;WinJS.Promise;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;readText(fileName:&nbsp;string):&nbsp;WinJS.Promise;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writeText(fileName:&nbsp;string,&nbsp;text:&nbsp;string):&nbsp;WinJS.Promise;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;remove(fileName:&nbsp;string):&nbsp;WinJS.Promise;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span></li><li style=""><span class="js__sl_comment">//&nbsp;More&nbsp;definitions</span></li></ol></code></pre></div><script type="text/javascript">ChiliBook.lineNumbers = true;ChiliBook.automatic = true;</script><p>If you write WinJS apps you should be quite familiar with these method stubs, including WinJS.Binding.List and WinJS.xhr objects—all the WinRT/WinJS library stubs are at your disposal. These definition files allow IntelliSense to work in Visual Studio.</p><p>Adding a .ts file to any folder in the project causes Visual Studio to automatically create corresponding .js and .min.js (minified) companion files. TypeScript rebuilds these files each time you save a .ts file in Visual Studio.</p><p>In most of the Windows Store JavaScript templates a folder named pages contains subfolders with the collective .html, .css and .js assets needed for each page. In addition to these files are more JavaScript files in the \js folder, such as data.js, default.js and navigator.js. You must integrate TypeScript into these files by performing the following steps for each:</p><ol><li>Add declaration references to the top of each file, for example, ///&lt;reference path=‘path/reference-file.ts’ /&gt;.</li><li>Rename the .js files to a .ts extension.</li><li>Modify existing JavaScript to corresponding TypeScript language constructs, that is, modules, classes, declarations and so on.</li></ol><p>For example, to integrate \js\data.js, you need to insert references at the top of the file and convert the top-level function to a module like the code in <strong>Figure 3</strong>. If you rename data.js to data.ts, Visual Studio will create the corresponding .js and mapping files on file save.</p><div><p><strong>Figure 3 TypeScript Transformation from data.js to data.ts</strong></p></div><div class="CodeHighlighter"><pre><code class="js"><ol><li style=""><span class="js__sl_comment">//&nbsp;Original&nbsp;code&nbsp;in&nbsp;data.js</span></li><li style="">(<span class="js__operator">function</span>&nbsp;()&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;<span class="js__string">"use&nbsp;strict"</span>;</li><li style="">&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;list&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;WinJS.Binding.List();</li><li style="">&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;groupedItems&nbsp;=&nbsp;list.createGrouped(</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;groupKeySelector(item)&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__statement">return</span>&nbsp;item.group.key;&nbsp;<span class="js__brace">}</span>,</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;groupDataSelector(item)&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__statement">return</span>&nbsp;item.group;&nbsp;<span class="js__brace">}</span></li><li style="">&nbsp;&nbsp;);</li><li style="">&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;TODO:&nbsp;Replace&nbsp;the&nbsp;data&nbsp;with&nbsp;your&nbsp;real&nbsp;data</span></li><li style="">&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;You&nbsp;can&nbsp;add&nbsp;data&nbsp;from&nbsp;asynchronous&nbsp;sources</span></li><li style="">&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;whenever&nbsp;it&nbsp;becomes&nbsp;available</span></li><li style="">&nbsp;&nbsp;generateSampleData().forEach(<span class="js__operator">function</span>&nbsp;(item)&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;list.push(item);</li><li style="">&nbsp;&nbsp;<span class="js__brace">}</span>);</li><li style="">&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;...&nbsp;More&nbsp;data-access&nbsp;code</span></li><li style=""><span class="js__brace">}</span>)();</li><li style=""><span class="js__sl_comment">//&nbsp;The&nbsp;modified&nbsp;data.ts&nbsp;file</span></li><li style=""><span class="js__sl_comment">///&lt;reference&nbsp;path='../ts/winjs.d.ts'&nbsp;/&gt;</span></li><li style=""><span class="js__sl_comment">///&lt;reference&nbsp;path='../ts/winrt.d.ts'&nbsp;/&gt;</span></li><li style="">&nbsp;&nbsp;module&nbsp;TypeScriptApp&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">"use&nbsp;strict"</span>;</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;list&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;WinJS.Binding.List();</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;groupedItems&nbsp;=&nbsp;list.createGrouped(</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;groupKeySelector(item)&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__statement">return</span>&nbsp;item.group.key;&nbsp;<span class="js__brace">}</span>,</li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;groupDataSelector(item)&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__statement">return</span>&nbsp;item.group;&nbsp;<span class="js__brace">}</span></li><li style="">&nbsp;&nbsp;);</li><li style="">&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;TODO:&nbsp;Replace&nbsp;the&nbsp;data&nbsp;with&nbsp;your&nbsp;real&nbsp;data.</span></li><li style="">&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;You&nbsp;can&nbsp;add&nbsp;data&nbsp;from&nbsp;asynchronous&nbsp;sources&nbsp;whenever&nbsp;it&nbsp;becomes&nbsp;available</span></li><li style="">&nbsp;&nbsp;generateSampleData().forEach(<span class="js__operator">function</span>&nbsp;(item)&nbsp;<span class="js__brace">{</span></li><li style="">&nbsp;&nbsp;&nbsp;&nbsp;list.push(item);</li><li style="">&nbsp;&nbsp;<span class="js__brace">}</span>);</li><li style="">&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;...&nbsp;More&nbsp;data-access&nbsp;code</span></li><li style=""><span class="js__brace">}</span></li></ol></code></pre></div><script type="text/javascript">ChiliBook.lineNumbers = true;ChiliBook.automatic = true;</script><p>The code in <strong>Figure 3</strong> acts as a top-level namespace (module) using the project’s name, TypeScriptApp, sticking with standard conventions familiar to Visual Studio users.</p><p>Of course, you can always leave the current JavaScript from the templates unchanged and the code will still run as expected, but it isn’t consistent in its style or syntax, making maintenance difficult.</p><h2>Visual Studio Options for TypeScript</h2><p>There are settings you need to know about for optimal use of TypeScript, especially in Windows Store apps. Because there’s no need for the minified .js files in Windows Store apps, you can change the “Minify generated JavaScript” option to False in the Web Essentials tab from the Visual Studio Tools | Options dialog box and delete any that might exist. Minified files improve performance in Web sites only—not client apps—because they decrease overall required bandwidth across the Internet.</p><p>Another necessary change for use with TypeScript in Windows Store apps is to set encoding to “Re-save JS with UTF-8 BOM” (see <a id="ctl00_MTContentSelector1_mainContentContainer_ctl13" href="http://bit.ly/ceKkYq" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl13&#39;,this);">bit.ly/ceKkYq</a>) in the Tools | Options dialog. Setting to UTF-8 BOM (byte order mark) makes the app perform better at startup, adhering to Windows Store process lifecycle management guidelines (see my Windows 8 Special Issue column, “The Windows Store App Lifecycle,” at <a id="ctl00_MTContentSelector1_mainContentContainer_ctl14" href="http://msdn.microsoft.com/magazine/jj660301" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl14&#39;,this);">msdn.microsoft.com/magazine/jj660301</a> for more on these guidelines). In addition to performance, this encoding spec is required for passing Windows Store certification and publishing your app.</p><p>JavaScript developers know that tools like source maps are a neces­sity for debugging deployed code or source code from JavaScript generators. That’s because source maps are files that map code to other code, often between standard-sized development files and minified and combined production files that aren’t easily debugged. Set the “Generate Source Map” to True in the Visual Studio options to create source maps between TypeScript and JavaScript to enable TypeScript debugging. This option applies the --sourcemap compiler switch, which in turn creates the maps at compile time.</p><p>The TypeScript compiler by default compiles to ECMAScript 3 (ES3)-compliant code; however, you can compile to ECMAScript 5 (ES5) if you change the “Compile to ECMAScript 3” option to False in Visual Studio, which sets the tsc compiler flag --target to generate ES5 code. Developers who want to use property-style syntax or any ES5 or proposed ES6 TypeScript features should set this switch.</p><h2>Extra Benefits</h2><p>JavaScript is here to stay and it’s more popular than ever, so those who move to JavaScript from the land of compiled languages now have TypeScript to help them write and manage application-scale JavaScript code. JavaScript developers benefit from extra type checking and compiler services to which they don’t normally have access when writing straight-up JavaScript.</p><hr><div><div><div><div><p><strong>Rachel Appel</strong>&nbsp;<em>is a developer evangelist at Microsoft New York City. Reach her via her Web site at <a id="ctl00_MTContentSelector1_mainContentContainer_ctl15" href="http://rachelappel.com/" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl15&#39;,this);">rachelappel.com</a> or by e-mail at <a id="ctl00_MTContentSelector1_mainContentContainer_ctl16" href="mailto:rachel.appel@microsoft.com" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl16&#39;,this);">rachel.appel@microsoft.com</a>. You can also follow her latest updates on Twitter at <a id="ctl00_MTContentSelector1_mainContentContainer_ctl17" href="http://twitter.com/rachelappel" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl17&#39;,this);">twitter.com/rachelappel</a>.</em></p></div><p>Thanks to the following technical expert for reviewing this article: Christopher Bennage (Microsoft)<br>Christopher Bennage (Microsoft)<br><br> Christopher Bennage is a developer at Microsoft on the Patterns &amp; Practices team. His job is to discover, collect and encourage practices that bring developers joy. Amongst his recent technical interests are JavaScript and (casual) game development. He blogs at <a id="ctl00_MTContentSelector1_mainContentContainer_ctl18" href="http://dev.bennage.com/" onclick="javascript:Track(&#39;ctl00_MTContentSelector1_mainContentContainer_ctl00|ctl00_MTContentSelector1_mainContentContainer_ctl18&#39;,this);">dev.bennage.com</a>.</p></div></div></div><p>&nbsp;</p><div id="ctl00_MTContentSelector1_mainContentContainer_ctl19_rtgContainer" class="DivRatingsOnly">
+	
+              <table class="tableCss">
+                <tbody><tr>
+                  <td class="tableCellRateCss"><strong>
+                    <span id="ctl00_MTContentSelector1_mainContentContainer_ctl19_rateTitleLabel" class="tbFont">Rate: </span>&nbsp;</strong>
+                  </td>
+                  <td id="ctl00_MTContentSelector1_mainContentContainer_ctl19_tdRtg" class="tableCellRateControlCss">
+                      
+                  <a id="ctl00_MTContentSelector1_mainContentContainer_ctl19_ctl00_MTContentSelector1_mainContentContainer_ctl19_A" style="Style:text-decoration:none;" class="ratingsOnlyClass"><span><span id="ctl00_MTContentSelector1_mainContentContainer_ctl19_Star_1" counter="1" class="ratingStar filledRatingStar ratingsOnlyStar"></span></span><span><span id="ctl00_MTContentSelector1_mainContentContainer_ctl19_Star_2" counter="2" class="ratingStar filledRatingStar ratingsOnlyStar"></span></span><span><span id="ctl00_MTContentSelector1_mainContentContainer_ctl19_Star_3" counter="3" class="ratingStar filledRatingStar ratingsOnlyStar"></span></span><span><span id="ctl00_MTContentSelector1_mainContentContainer_ctl19_Star_4" counter="4" class="ratingStar filledRatingStar ratingsOnlyStar"></span></span><span><span id="ctl00_MTContentSelector1_mainContentContainer_ctl19_Star_5" counter="5" class="ratingStar filledRatingStar ratingsOnlyStar"></span></span></a></td>
+	
+                </tr>
+              </tbody></table>
+            
+</div>
+
+         <div class="ShareThisButton4">
+	<div id="ctl00_MTContentSelector1_mainContentContainer_ctl20_ShareThis_rootDiv_69812071_bc9f_42f3_be7b_4eb301ba61b7" class="ShareThis_RootButton" style="float:left;">
+		<a class="ShareThis_BtnLink" id="ShareThis_RootButton_Href" onmouseover="ShowShareThisChildPanels(this.id);"><span title="Share this content">Share this content</span></a>
+	</div><div id="ctl00_MTContentSelector1_mainContentContainer_ctl20_825a0fd4_432c_4e2d_b0b9_86f906dc28a2" class="ShareThis_ChildRootPanel" style="float:left;">
+		<div id="ctl00_MTContentSelector1_mainContentContainer_ctl20_ShareThisBtnCollPanel_24e7f0ef96c84f9eb4f4e0c7f0293302" class="TierOneButtons1">
+			<div class="buttonPanel">
+				<a title="E-mail" class="iconsOnPanel" href="mailto:?subject=Modern%20Apps%20-%20Use%20TypeScript%20in%20Modern%20Apps&Body=http://msdn.microsoft.com/en-us/magazine/dn201754.aspx"><img title="E-mail" src="./Modern Apps - Use TypeScript in Modern Apps_files/email.gif" alt="" style="border-width:0px;"></a><a title="E-mail" class="buttonPanelHyperLink" href="mailto:?subject=Modern%20Apps%20-%20Use%20TypeScript%20in%20Modern%20Apps&Body=http://msdn.microsoft.com/en-us/magazine/dn201754.aspx"></a>
+			</div><div class="buttonPanel">
+				<a title="Twitter" class="iconsOnPanel" href="http://twitter.com/home?status=Modern%20Apps%20-%20Use%20TypeScript%20in%20Modern%20Apps%20:%20http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Fmagazine%2Fdn201754.aspx"><img title="Twitter" src="./Modern Apps - Use TypeScript in Modern Apps_files/twitter.gif" alt="" style="border-width:0px;"></a><a title="Twitter" class="buttonPanelHyperLink" href="http://twitter.com/home?status=Modern%20Apps%20-%20Use%20TypeScript%20in%20Modern%20Apps%20:%20http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Fmagazine%2Fdn201754.aspx"></a>
+			</div><div class="buttonPanel">
+				<a title="del.icio.us" class="iconsOnPanel" href="http://del.icio.us/post?url=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Fmagazine%2Fdn201754.aspx&title=Modern%20Apps%20-%20Use%20TypeScript%20in%20Modern%20Apps"><img title="del.icio.us" src="./Modern Apps - Use TypeScript in Modern Apps_files/delicious.gif" alt="" style="border-width:0px;"></a><a title="del.icio.us" class="buttonPanelHyperLink" href="http://del.icio.us/post?url=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Fmagazine%2Fdn201754.aspx&title=Modern%20Apps%20-%20Use%20TypeScript%20in%20Modern%20Apps"></a>
+			</div><div class="buttonPanel">
+				<a title="Digg" class="iconsOnPanel" href="http://digg.com/submit?url=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Fmagazine%2Fdn201754.aspx&title=Modern%20Apps%20-%20Use%20TypeScript%20in%20Modern%20Apps"><img title="Digg" src="./Modern Apps - Use TypeScript in Modern Apps_files/digg.gif" alt="" style="border-width:0px;"></a><a title="Digg" class="buttonPanelHyperLink" href="http://digg.com/submit?url=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Fmagazine%2Fdn201754.aspx&title=Modern%20Apps%20-%20Use%20TypeScript%20in%20Modern%20Apps"></a>
+			</div><div class="buttonPanel">
+				<a title="Facebook" class="iconsOnPanel" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Fmagazine%2Fdn201754.aspx&t=Modern%20Apps%20-%20Use%20TypeScript%20in%20Modern%20Apps"><img title="Facebook" src="./Modern Apps - Use TypeScript in Modern Apps_files/facebook.gif" alt="" style="border-width:0px;"></a><a title="Facebook" class="buttonPanelHyperLink" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Fmagazine%2Fdn201754.aspx&t=Modern%20Apps%20-%20Use%20TypeScript%20in%20Modern%20Apps"></a>
+			</div>
+		</div>
+	</div>
+</div><p><br><br></p><div id="ctl00_MTContentSelector1_mainContentContainer_ctl21_outer" class="BostonPostCard" min-height="15px">
+	
+    <div id="leftFloat">
+        <h3>
+            <span id="ctl00_MTContentSelector1_mainContentContainer_ctl21_commentsCount" class="cmtslblClass"><b>Comments</b> (0)</span>
+            <a href="http://msdn.microsoft.com/en-us/magazine/community-edits.rss?topic=dn201754|en-us|10" id="ctl00_MTContentSelector1_mainContentContainer_ctl21_recentPageLink" style="float: right">
+                <img id="ctl00_MTContentSelector1_mainContentContainer_ctl21_imageRSS" src="./Modern Apps - Use TypeScript in Modern Apps_files/rss_button.gif" style="border-width:0px;"></a>
+        </h3>
+    </div>
+    <div style="width: 99.5%">
+        <div id="rightFloat" style="float: right;">
+            <a id="ctl00_MTContentSelector1_mainContentContainer_ctl21_Add" href="javascript:__doPostBack('ctl00$MTContentSelector1$mainContentContainer$ctl21$Add','')"></a>
+            
+            <a id="ctl00_MTContentSelector1_mainContentContainer_ctl21_lblLeaveCommentTop" class="topSingInClss" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$MTContentSelector1$mainContentContainer$ctl21$lblLeaveCommentTop", "", false, "", "http://msdn.microsoft.com/en-us/magazine/Community-Signup.aspx?ru=http%3a%2f%2fmsdn.microsoft.com%2fen-us%2fmagazine%2fdn201754(MSDN.10).aspx%3fwbi%3dnew", false, true))">Sign in to Leave a Comment</a>
+        </div>
+        <div id="ctl00_MTContentSelector1_mainContentContainer_ctl21_commentsDisplay" class="commentsDisplay">
+		<div class="Clear">
+
+		</div>
+            
+            <div id="ctl00_MTContentSelector1_mainContentContainer_ctl21_errorSection" class="errorSection" style="display: none;">
+			
+                <img id="ctl00_MTContentSelector1_mainContentContainer_ctl21_errorImage" src="./Modern Apps - Use TypeScript in Modern Apps_files/erroricon.jpg" style="border-width:0px;">
+                <label id="errorLbl">
+                </label>
+            
+		</div>
+            
+            
+        
+	</div>
+        
+    </div>
+
+</div>
+</div></div>
+                                                        
+                                                </div>
+                                                <div class="FeatureSmallHeadWithLogo">&nbsp;</div>
+                                            </td>
+                                            <td style="width: 303px; vertical-align: top; padding-left: 3px;" valign="top">
+                                                <div id="RightContent">
+                                                    <div id="ctl00_RightSideBox">
+	<p:primary pcat:primaryformat="Mtps.Xhtml" xmlns:asp="http://msdn2.microsoft.com/aspnet" xmlns:pcat="urn:mtpg-com:mtps/2004/1/primary/category" xmlns:p="urn:mtpg-com:mtps/2004/1/primary"><div class="navpage"><div style="margin-bottom:10px;"><iframe frameborder="0" framespacing="0" height="250" id="4f2320cbb2378" name="4f2320cbb2378" scrolling="no" src="./Modern Apps - Use TypeScript in Modern Apps_files/afr(1).htm" width="300">&lt;a id="ctl00_ctl15" href="http://ox-d.101m3.com/w/1.0/rc?cs=4f2320cbb2378&amp;cb=INSERT_RANDOM_NUMBER_HERE" onclick="javascript:Track('ctl00_ctl14|ctl00_ctl15',this);"&gt;&lt;img alt="" border="0" src="http://ox-d.101m3.com/w/1.0/ai?auid=139281&amp;amp;cs=4f2320cbb2378&amp;amp;cb=INSERT_RANDOM_NUMBER_HERE" /&gt;&lt;/a&gt;</iframe></div><div style="margin-bottom:10px;"><iframe frameborder="0" framespacing="0" height="250" id="4f2320971b57d" name="4f2320971b57d" scrolling="no" src="./Modern Apps - Use TypeScript in Modern Apps_files/afr.htm" width="300">&lt;a id="ctl00_ctl16" href="http://ox-d.101m3.com/w/1.0/rc?cs=4f2320971b57d&amp;cb=INSERT_RANDOM_NUMBER_HERE" onclick="javascript:Track('ctl00_ctl14|ctl00_ctl16',this);"&gt;&lt;img alt="" border="0" src="http://ox-d.101m3.com/w/1.0/ai?auid=139280&amp;amp;cs=4f2320971b57d&amp;amp;cb=INSERT_RANDOM_NUMBER_HERE" /&gt;&lt;/a&gt;</iframe></div><div style="border-width:5px;border-color:black;border-style:solid;"><div style="margin-left:5px; margin-right:5px;"><h3><a id="ctl00_ctl17" href="http://blogs.msdn.com/msdnmagazine/" onclick="javascript:Track(&#39;ctl00_ctl14|ctl00_ctl17&#39;,this);">MSDN Magazine Blog</a></h3><p><!-- RSSURL : http://blogs.msdn.com/msdnmagazine/rss.xml | RSS GUID : 44CFFA5F-CCC2-14A2-2403-529DE793E787 --></p><div id="ctl00_ctl18_MtpsFeedViewerBasicPanelWebSlice" class="hslice">
+		
+	<p id="ctl00_ctl18_titlediv" class="entry-title"></p>
+	<div class="entry-content">
+			
+		<div id="ctl00_ctl18_MtpsFeedViewerBasicPanel" class="MtpsFeedViewerBasicRootPanelClass">
+				
+			<div id="ctl00_ctl18_MtpsFeedViewerBasicHeaderPanel" class="MtpsFeedViewerBasicHeaderStylePanel">
+					
+			
+				</div>
+		<div class="ColumnDiv">
+					<div id="ctl00_ctl18_ctl02" class="BasicHeadlinesItemPanelCssClass" style="width:99%;">
+						<a id="ctl00_ctl18_ctl03" title="MSDN Magazine June Issue Preview" class="BasicHeadlinesTitleBold" href="http://blogs.msdn.com/b/msdnmagazine/archive/2013/05/31/10422739.aspx" onclick="javascript:Track(&#39;ctl00_ctl18_ctl02|ctl00_ctl18_ctl03&#39;,this);">MSDN Magazine June Issue Preview</a><br><span class="BasicHeadlinesDescLabelCssClass">Monday morning the June issue of MSDN Magazine will go live on our Web site. Here’s what you can expect to find in the magazine.  Windows 8 figures pr... </span><a id="ctl00_ctl18_ctl06" title="MSDN Magazine June Issue Preview" href="http://blogs.msdn.com/b/msdnmagazine/archive/2013/05/31/10422739.aspx" onclick="javascript:Track(&#39;ctl00_ctl18_ctl02|ctl00_ctl18_ctl06&#39;,this);">More...</a><br><span class="FVBPubDateLabel">Friday, May 31</span>
+					</div>
+				</div><div class="ColumnDiv">
+					<div id="ctl00_ctl18_ctl10" class="BasicHeadlinesItemPanelCssClass" style="width:99%;">
+						<a id="ctl00_ctl18_ctl11" title="MSDN Magazine May Issue Preview" class="BasicHeadlinesTitleBold" href="http://blogs.msdn.com/b/msdnmagazine/archive/2013/04/30/10415190.aspx" onclick="javascript:Track(&#39;ctl00_ctl18_ctl10|ctl00_ctl18_ctl11&#39;,this);">MSDN Magazine May Issue Preview</a><br><span class="BasicHeadlinesDescLabelCssClass">Tomorrow afternoon the May issue of MSDN Magazine will go live on our Web site. Here’s what you can look forward to in the upcoming issue.  Craig Shoe... </span><a id="ctl00_ctl18_ctl14" title="MSDN Magazine May Issue Preview" href="http://blogs.msdn.com/b/msdnmagazine/archive/2013/04/30/10415190.aspx" onclick="javascript:Track(&#39;ctl00_ctl18_ctl10|ctl00_ctl18_ctl14&#39;,this);">More...</a><br><span class="FVBPubDateLabel">Tuesday, Apr 30</span>
+					</div>
+				</div><div class="EmptyPanel">
+
+				</div>
+			</div>
+	
+		</div>
+
+	</div><p></p><p><a id="ctl00_ctl19" href="http://blogs.msdn.com/msdnmagazine/" onclick="javascript:Track(&#39;ctl00_ctl14|ctl00_ctl19&#39;,this);">More MSDN Magazine Blog entries &gt;</a></p></div><div style="margin-left:5px; margin-right:5px; background-color:#5b6871;height:12px"><!--PublishThis!: An empty tag was encountered. This comment was inserted to prevent a self-closing tag.--></div><div style="margin-left:5px; margin-right:5px;"><p><br></p><div style="text-align:left;font-family:Segoe UI;font-size:12pt;">Current Issue</div><div style="text-align:center;display:block;height:260px"><p><br><a id="ctl00_ctl20" href="http://msdn.microsoft.com/en-us/magazine/dn451433.aspx" onclick="javascript:Track(&#39;ctl00_ctl14|ctl00_ctl20&#39;,this);"><img align="Middle" alt="October 2013" height="239" src="./Modern Apps - Use TypeScript in Modern Apps_files/dn451433.cover_lrg(en-us,MSDN.10).jpg" title="October 2013" width="179"></a></p></div><div style="text-align:right;"><p><a id="ctl00_ctl21" href="http://msdn.microsoft.com/en-us/magazine/ee310108.aspx" onclick="javascript:Track(&#39;ctl00_ctl14|ctl00_ctl21&#39;,this);">Browse All MSDN Magazines</a><br></p></div><div style="background-color:#5b6871;height:12px"><!--PublishThis!: An empty tag was encountered. This comment was inserted to prevent a self-closing tag.--></div></div><div style="margin-left:5px; margin-right:5px;"><div style="text-align:Right;font-family:Segoe UI;font-size:12pt;"><p><br><a id="ctl00_ctl22" href="http://msdn.microsoft.com/en-US/aa570311.aspx?ocid=msdn_magazine" onclick="javascript:Track(&#39;ctl00_ctl14|ctl00_ctl22&#39;,this);"><img align="Left" alt="Subscribe to the MSDN Flash newsletter" src="./Modern Apps - Use TypeScript in Modern Apps_files/dd799403.Question_opt(en-us,MSDN.10).png" title="Subscribe to the MSDN Flash newsletter"> Subscribe to MSDN Flash newsletter</a></p></div><div style="text-align:left;"><p><br>Receive the MSDN Flash e-mail newsletter every other week, with news and information personalized to your interests and areas of focus.</p></div></div></div></div></p:primary>
+</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    <div id="ctl00_FooterAd" class="MsdnPage_ContentInclude" align="center"><div>
+	<div>
+		<div class="navpage"><p>&nbsp;</p><div><iframe frameborder="0" framespacing="0" height="90" id="4f2320f8e860a" name="4f2320f8e860a" scrolling="no" src="./Modern Apps - Use TypeScript in Modern Apps_files/afr(2).htm" width="728">&lt;a id="ctl00_ctl31" href="http://ox-d.101m3.com/w/1.0/rc?cs=4f2320f8e860a&amp;cb=INSERT_RANDOM_NUMBER_HERE" onclick="javascript:Track('ctl00_ctl30|ctl00_ctl31',this);"&gt;&lt;img alt="" border="0" src="http://ox-d.101m3.com/w/1.0/ai?auid=139282&amp;amp;cs=4f2320f8e860a&amp;amp;cb=INSERT_RANDOM_NUMBER_HERE" /&gt;&lt;/a&gt;</iframe></div></div>
+	</div>
+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Clearbottom"> </div>
+                        <div class="bottomleftcorner"> </div>
+                        <div class="bottomrightcorner"> </div>
+                        <div id="Footer">
+                            
+
+<div class="FooterLinks">
+    <div id="ctl00_Footer1_SiteLinks">
+
+</div>
+    <span id="ctl00_Footer1_Copyright" title="© 2013  Microsoft. All rights reserved." class="FooterCopyright">© 2013  Microsoft. All rights reserved.</span>
+    <a id="ctl00_Footer1_Terms" title="Terms of Use" href="http://msdn.microsoft.com/cc300389.aspx">Terms of Use</a>
+    <span class="Pipe">|</span>
+    <a id="ctl00_Footer1_Trademarks" title="Trademarks" href="http://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx">Trademarks</a>
+    <span class="Pipe">|</span>
+    <a id="ctl00_Footer1_PrivacyStatement" title="Privacy Statement" href="http://www.microsoft.com/info/privacy.mspx">Privacy Statement</a>
+    <span id="ctl00_Footer1_PipeSpan3" class="Pipe">|</span>
+    <a id="ctl00_Footer1_Feedback" title="Site Feedback" rel="sitefeedback" targeturl="https://lab.msdn.microsoft.com/mailform/contactus.aspx?refurl=http://msdn.microsoft.com/en-us/magazine/dn201754.aspx&amp;loc=en-us" href="https://lab.msdn.microsoft.com/mailform/contactus.aspx?refurl=http://msdn.microsoft.com/en-us/magazine/dn201754.aspx&loc=en-us" target="_blank">Site Feedback</a>
+</div>
+
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display:none"><img src="./Modern Apps - Use TypeScript in Modern Apps_files/trans_pixel.asp" width="0" height="0" hspace="0" vspace="0" border="0" alt="Page view tracker"></div>
+    
+<script src="./Modern Apps - Use TypeScript in Modern Apps_files/webtrendsscript-bn1651.js" type="text/javascript"></script>
+<noscript>
+&lt;div&gt;&lt;img alt="DCSIMG" id="Img1" width="1" height="1" src="http://m.webtrends.com/dcsmgru7m99k7mqmgrhudo0k8_8c6m/njs.gif?dcsuri=/nojavascript&amp;amp;WT.js=No" /&gt;&lt;/div&gt;
+</noscript>
+    <script type="text/javascript" src="./Modern Apps - Use TypeScript in Modern Apps_files/mtps-bn1651.js"></script>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+ RegisterAutoSubmit('ctl00_tb1_Flyout_Rating1','ctl00_tb1_Flyout_btnSend','contentRatingdn201754MSDN.10en-us');
+
+//]]>
+</script>
+<script type="text/javascript" language="javascript">
+<!--
+ function GetContentWnd(){ return parent; } function OnInitPage(){var oWnd = GetContentWnd();}
+
+-->
+</script></form>
+
+
+<script language="javascript" type="text/javascript" src="./Modern Apps - Use TypeScript in Modern Apps_files/broker.js"></script>
+
+<script src="./Modern Apps - Use TypeScript in Modern Apps_files/broker-config.js"></script><div id="_WEDCSInsertedData" style="display: none;"><iframe id="_msnFrame" src="./Modern Apps - Use TypeScript in Modern Apps_files/c.gif" style="z-index:-1;height:1px;width:1px;display:none;visibility:hidden;" onload="javascript:MscomBeacon();"></iframe></div></body><span id="skype_highlighting_settings" display="none" autoextractnumbers="1" hightlightingswitched="0"></span><object id="skype_plugin_object" location.href="http://msdn.microsoft.com/en-us/magazine/dn201754.aspx" location.hostname="msdn.microsoft.com" width="0" height="0" type="application/x-vnd.skype.click2call.chrome.5.7.0" style="position: absolute; visibility: hidden; left: -100px; top: -100px;"></object></html>
